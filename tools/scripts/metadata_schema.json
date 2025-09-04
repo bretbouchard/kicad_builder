@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Part metadata",
+  "type": "object",
+  "properties": {
+    "name": {"type": "string"},
+    "pad_w": {"type": "number"},
+    "pad_l": {"type": "number"},
+    "ep": {"type": "number"},
+    "pitch": {"type": "number"},
+    "pads_per_side": {"type": "integer"},
+    "datasheet": {"type": "string"}
+  }
+}

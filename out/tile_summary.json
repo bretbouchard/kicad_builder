@@ -1,0 +1,132 @@
+{
+  "title": "tile",
+  "symbols": [
+    {
+      "lib": "MCU",
+      "name": "RP2040",
+      "ref": "U1",
+      "at": [
+        20.0,
+        30.0
+      ],
+      "orientation": 0,
+      "value": null,
+      "footprint": null,
+      "unit": 1,
+      "fields": null
+    },
+    {
+      "lib": "Power",
+      "name": "VCC",
+      "ref": "PWR1",
+      "at": [
+        5.0,
+        5.0
+      ],
+      "orientation": 0,
+      "value": null,
+      "footprint": null,
+      "unit": 1,
+      "fields": null
+    },
+    {
+      "lib": "Power",
+      "name": "GND",
+      "ref": "GND1",
+      "at": [
+        5.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": null,
+      "footprint": null,
+      "unit": 1,
+      "fields": null
+    },
+    {
+      "lib": "Device",
+      "name": "PAD",
+      "ref": "PAD1",
+      "at": [
+        10,
+        50
+      ],
+      "orientation": 0,
+      "value": null,
+      "footprint": null,
+      "unit": 1,
+      "fields": null
+    },
+    {
+      "lib": "Device",
+      "name": "PAD",
+      "ref": "PAD2",
+      "at": [
+        20,
+        50
+      ],
+      "orientation": 0,
+      "value": null,
+      "footprint": null,
+      "unit": 1,
+      "fields": null
+    },
+    {
+      "lib": "Device",
+      "name": "PAD",
+      "ref": "PAD3",
+      "at": [
+        10,
+        40
+      ],
+      "orientation": 0,
+      "value": null,
+      "footprint": null,
+      "unit": 1,
+      "fields": null
+    },
+    {
+      "lib": "Device",
+      "name": "PAD",
+      "ref": "PAD4",
+      "at": [
+        20,
+        40
+      ],
+      "orientation": 0,
+      "value": null,
+      "footprint": null,
+      "unit": 1,
+      "fields": null
+    },
+    {
+      "lib": "LEDs",
+      "name": "APA102",
+      "ref": "D1",
+      "at": [
+        40,
+        50
+      ],
+      "orientation": 0,
+      "value": null,
+      "footprint": null,
+      "unit": 1,
+      "fields": null
+    },
+    {
+      "lib": "LEDs",
+      "name": "APA102",
+      "ref": "D2",
+      "at": [
+        40,
+        40
+      ],
+      "orientation": 0,
+      "value": null,
+      "footprint": null,
+      "unit": 1,
+      "fields": null
+    }
+  ],
+  "wires": []
+}

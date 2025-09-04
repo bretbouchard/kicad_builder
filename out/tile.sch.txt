@@ -1,0 +1,12 @@
+# Schematic: tile
+# Symbols:
+- U1: MCU/RP2040 at (20.0, 30.0) ori=0
+- PWR1: Power/VCC at (5.0, 5.0) ori=0
+- GND1: Power/GND at (5.0, 0.0) ori=0
+- PAD1: Device/PAD at (10, 50) ori=0
+- PAD2: Device/PAD at (20, 50) ori=0
+- PAD3: Device/PAD at (10, 40) ori=0
+- PAD4: Device/PAD at (20, 40) ori=0
+- D1: LEDs/APA102 at (40, 50) ori=0
+- D2: LEDs/APA102 at (40, 40) ori=0
+# Wires:

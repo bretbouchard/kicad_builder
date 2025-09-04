@@ -1,0 +1,50 @@
+(kicad_sch (version 1) (generator tools.kicad_helpers))
+(title "tile")
+(components
+  (symbol (lib_id "REPO-MCU:RP2040") (ref "U1") (unit 1) (value "RP2040")
+    (at 20.0 30.0) (orientation 0)
+
+  )
+  (symbol (lib_id "REPO-Power:VCC") (ref "PWR1") (unit 1) (value "VCC")
+    (at 5.0 5.0) (orientation 0)
+
+  )
+  (symbol (lib_id "REPO-Power:GND") (ref "GND1") (unit 1) (value "GND")
+    (at 5.0 0.0) (orientation 0)
+
+  )
+  (symbol (lib_id "REPO-Device:PAD") (ref "PAD1") (unit 1) (value "PAD")
+    (at 10 50) (orientation 0)
+
+  )
+  (symbol (lib_id "REPO-Device:PAD") (ref "PAD2") (unit 1) (value "PAD")
+    (at 20 50) (orientation 0)
+
+  )
+  (symbol (lib_id "REPO-Device:PAD") (ref "PAD3") (unit 1) (value "PAD")
+    (at 10 40) (orientation 0)
+
+  )
+  (symbol (lib_id "REPO-Device:PAD") (ref "PAD4") (unit 1) (value "PAD")
+    (at 20 40) (orientation 0)
+
+  )
+  (symbol (lib_id "REPO-LEDs:APA102") (ref "D1") (unit 1) (value "APA102")
+    (at 40 50) (orientation 0)
+
+  )
+  (symbol (lib_id "REPO-LEDs:APA102") (ref "D2") (unit 1) (value "APA102")
+    (at 40 40) (orientation 0)
+
+  )
+)
+(nets
+  (net (name "VCC") (node (ref "U1") (pin 4)) (node (ref "PWR1") (pin 1)))
+  (net (name "GND") (node (ref "U1") (pin 5)) (node (ref "GND1") (pin 1)))
+  (net (name "LED_DATA") (node (ref "D1") (pin "DATA")) (node (ref "U1") (pin 13)))
+)
+(power_flags
+  (power_flag (name VCC) (at 5.0 5.0))
+  (power_flag (name GND) (at 5.0 0.0))
+)
+)

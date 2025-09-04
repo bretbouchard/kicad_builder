@@ -1,0 +1,4 @@
+{
+  "library": "MCU",
+  "symbols": ["RP2040"]
+}

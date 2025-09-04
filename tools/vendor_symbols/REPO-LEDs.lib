@@ -1,0 +1,15 @@
+(kicad_symbol_lib (version 20211014) (generator minimal)
+  (symbol "APA102"
+    (properties
+      (property "Reference" "D")
+      (property "Value" "APA102")
+      (property "Footprint" "LED_SMD:APA102")
+    )
+    (pins
+      (pin "DATA" "passive" "DATA")
+      (pin "CLK" "passive" "CLK")
+      (pin "VCC" "power" "VCC")
+      (pin "GND" "power" "GND")
+    )
+  )
+)

@@ -1,0 +1,2 @@
+# hardware Python requirements (kept minimal)
+# add entries like: skidl==0.0.0

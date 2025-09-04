@@ -1,0 +1,8 @@
+{
+  "name": "REPO-rp2040-QFN56",
+  "pad_w": 0.45,
+  "pad_l": 0.9,
+  "ep": 4.4,
+  "datasheet": "docs/rp2040-datasheet.pdf",
+  "notes": "Generated defaults from datasheet extraction; verify in KiCad"
+}

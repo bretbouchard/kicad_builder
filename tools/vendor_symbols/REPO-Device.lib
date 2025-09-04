@@ -1,0 +1,12 @@
+(kicad_symbol_lib (version 20211014) (generator minimal)
+  (symbol "PAD"
+    (properties
+      (property "Reference" "PAD")
+      (property "Value" "PAD")
+      (property "Footprint" "Pad:Generic_Pad")
+    )
+    (pins
+      (pin "1" "passive" "1")
+    )
+  )
+)
