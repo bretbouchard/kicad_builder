@@ -9,8 +9,10 @@ Note: this file is intentionally a scaffold — it makes it easy to extend the
 writer to produce fully-valid KiCad 9 S-expression schematics. For now it
 focuses on clear data structures and a simple `write()` placeholder.
 """
+
 from dataclasses import dataclass, asdict
 from typing import Dict, List, Optional, Tuple, Any
+
 try:
     # When tools/ is added to sys.path (generators), this resolves as
     # a top-level module. When imported as a package, fall back to
@@ -78,7 +80,7 @@ class Schematic:
     def add_gnd(self, at: Optional[Tuple[float, float]] = None) -> None:
         self.add_power_flag("GND", at=at)
 
-    def summary(self) -> dict:
+    def summary(self) -> Dict[str, Any]:
         return {
             "title": self.title,
             "symbols": [asdict(s) for s in self.symbols],
@@ -125,22 +127,18 @@ class Schematic:
         lib_id = resolve_lib_id(s.lib, s.name)
 
         value = s.value if s.value is not None else s.name
-        footprint = (
-            f" (footprint \"{s.footprint}\")" if s.footprint else ""
-        )
+        footprint = f' (footprint "{s.footprint}")' if s.footprint else ""
         fields_block = ""
         if s.fields:
             for k, v in s.fields.items():
-                fields_block += f"    (property \"{k}\" \"{v}\")\n"
+                fields_block += f'    (property "{k}" "{v}")\n'
 
         return (
-            (
-                f"  (symbol (lib_id \"{lib_id}\") (ref \"{s.ref}\") "
-                f"(unit {s.unit}) (value \"{value}\")\n"
-                f"    (at {s.at[0]} {s.at[1]}) (orientation {s.orientation})\n"
-                f"{footprint}\n"
-                f"{fields_block}  )\n"
-            )
+            f'  (symbol (lib_id "{lib_id}") (ref "{s.ref}") '
+            f'(unit {s.unit}) (value "{value}")\n'
+            f"    (at {s.at[0]} {s.at[1]}) (orientation {s.orientation})\n"
+            f"{footprint}\n"
+            f"{fields_block}  )\n"
         )
 
     def write_kicad_sch(self, out_dir: str = "out") -> None:
@@ -154,7 +152,7 @@ class Schematic:
         sch_path = os.path.join(out_dir, f"{self.title}.kicad_sch")
         with open(sch_path, "w") as f:
             f.write("(kicad_sch (version 1) (generator tools.kicad_helpers))\n")
-            f.write(f"(title \"{self.title}\")\n")
+            f.write(f'(title "{self.title}")\n')
             f.write("(components\n")
             for s in self.symbols:
                 f.write(self._emit_symbol_sexp(s))
@@ -164,41 +162,36 @@ class Schematic:
                 f.write("(nets\n")
                 for n in self.nets:
                     # net name
-                    f.write(f"  (net (name \"{n.name}\")")
+                    f.write(f'  (net (name "{n.name}")')
                     for p in n.pins:
                         # p expected like "U1.1" or "GND". Try to emit a
                         # KiCad-style node: (node (ref U1) (pin 1)). If the
                         # pin part is not an integer, emit it as a string.
                         if "." in p:
-                            ref, pin = p.split('.', 1)
+                            ref, pin = p.split(".", 1)
                             # attempt to normalize pin to int
                             try:
                                 int_pin = int(pin)
-                                f.write(
-                                    f" (node (ref \"{ref}\") (pin {int_pin}))"
-                                )
+                                f.write(f' (node (ref "{ref}") (pin {int_pin}))')
                             except Exception:
-                                f.write(
-                                    f" (node (ref \"{ref}\") (pin \"{pin}\"))"
-                                )
+                                f.write(f' (node (ref "{ref}") (pin "{pin}"))')
                         else:
                             # power symbols or named nodes
-                            f.write(f" (node (ref \"{p}\"))")
+                            f.write(f' (node (ref "{p}"))')
                     f.write(")\n")
                 f.write(")\n")
 
             if self.power_flags:
                 f.write("(power_flags\n")
-                for p in self.power_flags:
-                    at = p.get("at")
+                for pf in self.power_flags:
+                    at = pf.get("at")
                     if at:
-                        f.write(f"  (power_flag (name {p['name']}) (at {at[0]} {at[1]}))\n")
+                        f.write(("  (power_flag (name %s) (at %s %s))\n" % (pf["name"], at[0], at[1])))
                     else:
-                        f.write(f"  (power_flag (name {p['name']}))\n")
+                        f.write("  (power_flag (name %s))\n" % (pf["name"]))
                 f.write(")\n")
 
             f.write(")\n")
-
 
 
 if __name__ == "__main__":

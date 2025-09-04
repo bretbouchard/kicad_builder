@@ -1,0 +1,21 @@
+mapping,package,signal,pins,notes
+rp2040_qfn56_pinmap.json,QFN-56,IOVDD,"1,10,22,33,42,49",Validate this mapping against the RP2040 datasheet before production. Use pin_to_signal for generators and signal_to_pin for reverse lookup.
+rp2040_qfn56_pinmap.json,QFN-56,DVDD,"23,50",Validate this mapping against the RP2040 datasheet before production. Use pin_to_signal for generators and signal_to_pin for reverse lookup.
+rp2040_qfn56_pinmap.json,QFN-56,VREG_VIN,44,Validate this mapping against the RP2040 datasheet before production. Use pin_to_signal for generators and signal_to_pin for reverse lookup.
+rp2040_qfn56_pinmap.json,QFN-56,VREG_VOUT,45,Validate this mapping against the RP2040 datasheet before production. Use pin_to_signal for generators and signal_to_pin for reverse lookup.
+rp2040_qfn56_pinmap.json,QFN-56,USB_VDD,48,Validate this mapping against the RP2040 datasheet before production. Use pin_to_signal for generators and signal_to_pin for reverse lookup.
+rp2040_qfn56_pinmap.json,QFN-56,ADC_AVDD,43,Validate this mapping against the RP2040 datasheet before production. Use pin_to_signal for generators and signal_to_pin for reverse lookup.
+rp2040_qfn56_pinmap.json,QFN-56,RUN,26,Validate this mapping against the RP2040 datasheet before production. Use pin_to_signal for generators and signal_to_pin for reverse lookup.
+rp2040_qfn56_pinmap.json,QFN-56,TESTEN,19,Validate this mapping against the RP2040 datasheet before production. Use pin_to_signal for generators and signal_to_pin for reverse lookup.
+rp2040_qfn56_pinmap.json,QFN-56,XIN,20,Validate this mapping against the RP2040 datasheet before production. Use pin_to_signal for generators and signal_to_pin for reverse lookup.
+rp2040_qfn56_pinmap.json,QFN-56,XOUT,21,Validate this mapping against the RP2040 datasheet before production. Use pin_to_signal for generators and signal_to_pin for reverse lookup.
+rp2040_qfn56_pinmap.json,QFN-56,SWCLK,24,Validate this mapping against the RP2040 datasheet before production. Use pin_to_signal for generators and signal_to_pin for reverse lookup.
+rp2040_qfn56_pinmap.json,QFN-56,SWDIO,25,Validate this mapping against the RP2040 datasheet before production. Use pin_to_signal for generators and signal_to_pin for reverse lookup.
+rp2040_qfn56_pinmap.json,QFN-56,USB_DP,47,Validate this mapping against the RP2040 datasheet before production. Use pin_to_signal for generators and signal_to_pin for reverse lookup.
+rp2040_qfn56_pinmap.json,QFN-56,USB_DM,46,Validate this mapping against the RP2040 datasheet before production. Use pin_to_signal for generators and signal_to_pin for reverse lookup.
+rp2040_qfn56_pinmap.json,QFN-56,QSPI_SCLK,52,Validate this mapping against the RP2040 datasheet before production. Use pin_to_signal for generators and signal_to_pin for reverse lookup.
+rp2040_qfn56_pinmap.json,QFN-56,QSPI_SD0,53,Validate this mapping against the RP2040 datasheet before production. Use pin_to_signal for generators and signal_to_pin for reverse lookup.
+rp2040_qfn56_pinmap.json,QFN-56,QSPI_SD1,55,Validate this mapping against the RP2040 datasheet before production. Use pin_to_signal for generators and signal_to_pin for reverse lookup.
+rp2040_qfn56_pinmap.json,QFN-56,QSPI_SD2,54,Validate this mapping against the RP2040 datasheet before production. Use pin_to_signal for generators and signal_to_pin for reverse lookup.
+rp2040_qfn56_pinmap.json,QFN-56,QSPI_SD3,51,Validate this mapping against the RP2040 datasheet before production. Use pin_to_signal for generators and signal_to_pin for reverse lookup.
+rp2040_qfn56_pinmap.json,QFN-56,QSPI_CSn,56,Validate this mapping against the RP2040 datasheet before production. Use pin_to_signal for generators and signal_to_pin for reverse lookup.

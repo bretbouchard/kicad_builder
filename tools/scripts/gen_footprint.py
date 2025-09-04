@@ -33,35 +33,47 @@ def make_pads(pad_w, pad_l, pitch=0.5, pads_per_side=14, pad_shape="rect"):
     # top pads 1..N
     for i in range(pads_per_side):
         x = -half_span + i * pitch
+        x_str = f"{x:.2f}"
+        half_str = f"{half_span:.2f}"
         pads.append(
-            f"  (pad {i+1} smd {pad_shape} (at {x:.2f} {half_span:.2f}) (size {pad_w} {pad_l}) (layers F.Cu F.Paste F.Mask))"
+            f"  (pad {i+1} smd {pad_shape} (at {x_str} {half_str}) "
+            f"(size {pad_w} {pad_l}) (layers F.Cu F.Paste F.Mask))"
         )
     # right side
     for i in range(pads_per_side):
         y = half_span - i * pitch
+        y_str = f"{y:.2f}"
+        half_str = f"{half_span:.2f}"
         pads.append(
-            f"  (pad {pads_per_side+1+i} smd {pad_shape} (at {half_span:.2f} {y:.2f}) (size {pad_l} {pad_w}) (layers F.Cu F.Paste F.Mask))"
+            f"  (pad {pads_per_side+1+i} smd {pad_shape} (at {half_str} {y_str}) "
+            f"(size {pad_l} {pad_w}) (layers F.Cu F.Paste F.Mask))"
         )
     # bottom
     for i in range(pads_per_side):
         x = half_span - i * pitch
+        x_str = f"{x:.2f}"
+        neg_half_str = f"{-half_span:.2f}"
         pads.append(
-            f"  (pad {2*pads_per_side+1+i} smd {pad_shape} (at {x:.2f} {-half_span:.2f}) (size {pad_w} {pad_l}) (layers F.Cu F.Paste F.Mask))"
+            f"  (pad {2*pads_per_side+1+i} smd {pad_shape} (at {x_str} {neg_half_str}) "
+            f"(size {pad_w} {pad_l}) (layers F.Cu F.Paste F.Mask))"
         )
     # left
     for i in range(pads_per_side):
         y = -half_span + i * pitch
+        y_str = f"{y:.2f}"
+        neg_half_str = f"{-half_span:.2f}"
         pads.append(
-            f"  (pad {3*pads_per_side+1+i} smd {pad_shape} (at {-half_span:.2f} {y:.2f}) (size {pad_l} {pad_w}) (layers F.Cu F.Paste F.Mask))"
+            f"  (pad {3*pads_per_side+1+i} smd {pad_shape} (at {neg_half_str} {y_str}) "
+            f"(size {pad_l} {pad_w}) (layers F.Cu F.Paste F.Mask))"
         )
     return "\n".join(pads)
 
 
 def make_ep(ep, ep_shape="rect"):
     if ep_shape == "round":
-        return f'  (pad "EP" smd circle (at 0 0) (size {ep} {ep}) (layers F.Cu F.Paste F.Mask) (thermal))'
+        return f'  (pad "EP" smd circle (at 0 0) ' f"(size {ep} {ep}) (layers F.Cu F.Paste F.Mask) (thermal))"
     else:
-        return f'  (pad "EP" smd rect (at 0 0) (size {ep} {ep}) (layers F.Cu F.Paste F.Mask) (thermal))'
+        return f'  (pad "EP" smd rect (at 0 0) ' f"(size {ep} {ep}) (layers F.Cu F.Paste F.Mask) (thermal))"
 
 
 def make_paste_fp(ep, paste_reduction=0.0, ep_shape="rect"):
@@ -70,8 +82,8 @@ def make_paste_fp(ep, paste_reduction=0.0, ep_shape="rect"):
         return ""
     size = max(0.0, ep - paste_reduction)
     if ep_shape == "round":
-        return f'  (pad "EP_PASTE" smd circle (at 0 0) (size {size:.2f} {size:.2f}) (layers F.Paste))'
-    return f'  (pad "EP_PASTE" smd rect (at 0 0) (size {size:.2f} {size:.2f}) (layers F.Paste))'
+        return f'  (pad "EP_PASTE" smd circle (at 0 0) ' f"(size {size:.2f} {size:.2f}) (layers F.Paste))"
+    return f'  (pad "EP_PASTE" smd rect (at 0 0) ' f"(size {size:.2f} {size:.2f}) (layers F.Paste))"
 
 
 def make_ep_vias(
@@ -82,19 +94,20 @@ def make_ep_vias(
     margin=0.5,
     pattern="grid",
 ):
+    """Generate EP thermal vias inside the exposed pad.
+
+    Vias are placed either on a square grid or a hex pattern inside the
+    exposed pad area reduced by `margin` on each side. Returns a string
+    containing KiCad thru-hole pad definitions for the vias.
     """
-    Generate a simple grid of drill via definitions in the EP area (F.Cu) as "via" pads
-    represented as holes; KiCad footprint pads for plated through holes use (pad .. thru_hole circle ...).
-    This is a conservative default: place vias on a grid inside EP minus margin.
-    """
-    # area available inside EP
+    # area available inside EP after margin
     avail = max(0.0, ep - 2 * margin)
     if avail <= 0:
         return ""
-    # choose pattern
+
     positions = []
     if pattern == "grid":
-        # compute grid counts
+        # compute counts that will fit in the available space
         count = max(1, int((avail + 1e-6) // via_pitch))
         if count == 1:
             positions = [(0.0, 0.0)]
@@ -107,7 +120,6 @@ def make_ep_vias(
                     positions.append((x, y))
     else:
         # hex pattern: vertical spacing is pitch * sqrt(3)/2
-        import math
 
         y_pitch = via_pitch * 0.8660254037844386
         nx = max(1, int((avail + 1e-6) // via_pitch))
@@ -119,14 +131,22 @@ def make_ep_vias(
             for col in range(nx):
                 x = start_x + col * via_pitch + row_offset
                 y = start_y + row * y_pitch
-                # include only points within the avail square
                 if abs(x) <= avail / 2.0 and abs(y) <= avail / 2.0:
                     positions.append((x, y))
+
     pads = []
     idx = 1
     for x, y in positions:
+        x_str = f"{x:.2f}"
+        y_str = f"{y:.2f}"
+        dia_str = f"{via_diameter:.2f}"
+        drill_str = f"{via_drill:.2f}"
         pads.append(
-            f"  (pad EP_VIA_{idx} thru_hole circle (at {x:.2f} {y:.2f}) (size {via_diameter:.2f} {via_diameter:.2f}) (drill {via_drill:.2f}) (layers *.Cu *.Mask))"
+            (
+                f"  (pad EP_VIA_{idx} thru_hole circle (at {x_str} {y_str}) "
+                f"(size {dia_str} {dia_str}) "
+                f"(drill {drill_str}) (layers *.Cu *.Mask))"
+            )
         )
         idx += 1
     return "\n".join(pads)
@@ -141,33 +161,100 @@ def make_courtyard(ep, half_span, courtyard=0.5):
     y2 = extent
     w = 0.15
     lines = []
-    lines.append(f"  (fp_line (start {x1:.2f} {y1:.2f}) (end {x2:.2f} {y1:.2f}) (layer F.CrtYd) (width {w}))")
-    lines.append(f"  (fp_line (start {x2:.2f} {y1:.2f}) (end {x2:.2f} {y2:.2f}) (layer F.CrtYd) (width {w}))")
-    lines.append(f"  (fp_line (start {x2:.2f} {y2:.2f}) (end {x1:.2f} {y2:.2f}) (layer F.CrtYd) (width {w}))")
-    lines.append(f"  (fp_line (start {x1:.2f} {y2:.2f}) (end {x1:.2f} {y1:.2f}) (layer F.CrtYd) (width {w}))")
+    lines.append(f"  (fp_line (start {x1:.2f} {y1:.2f}) (end {x2:.2f} {y1:.2f}) " f"(layer F.CrtYd) (width {w}))")
+    lines.append(f"  (fp_line (start {x2:.2f} {y1:.2f}) (end {x2:.2f} {y2:.2f}) " f"(layer F.CrtYd) (width {w}))")
+    lines.append(f"  (fp_line (start {x2:.2f} {y2:.2f}) (end {x1:.2f} {y2:.2f}) " f"(layer F.CrtYd) (width {w}))")
+    lines.append(f"  (fp_line (start {x1:.2f} {y2:.2f}) (end {x1:.2f} {y1:.2f}) " f"(layer F.CrtYd) (width {w}))")
     return "\n".join(lines)
 
 
 def main():
     p = argparse.ArgumentParser()
     p.add_argument("--out", required=True)
-    p.add_argument("--name", default="REPO-MCU-QFN56", help="Module name to use in the kicad_mod")
+    p.add_argument(
+        "--name",
+        default="REPO-MCU-QFN56",
+        help="Module name to use in the kicad_mod",
+    )
     p.add_argument("--pad_w", type=float, default=0.45)
     p.add_argument("--pad_l", type=float, default=0.9)
     p.add_argument("--ep", type=float, default=4.4)
-    p.add_argument("--pitch", type=float, default=0.5, help="Pad center-to-center pitch")
-    p.add_argument("--pads_per_side", type=int, default=14, help="Number of pads per side")
-    p.add_argument("--pad_shape", choices=["rect", "oval", "round"], default="rect")
-    p.add_argument("--ep_shape", choices=["rect", "round"], default="rect")
-    p.add_argument("--paste_reduction", type=float, default=0.0, help="Paste reduction in mm for EP")
-    p.add_argument("--courtyard", type=float, default=0.5, help="Courtyard margin in mm")
-    p.add_argument("--ep_via_pitch", type=float, default=1.5, help="Pitch between EP thermal vias in mm")
-    p.add_argument("--ep_via_drill", type=float, default=0.3, help="Drill diameter for EP vias in mm")
-    p.add_argument("--ep_via_dia", type=float, default=0.6, help="Finished diameter for EP vias in mm")
-    p.add_argument("--ep_via_margin", type=float, default=0.5, help="Margin from EP edge where vias are not placed")
-    p.add_argument("--ep_via_pattern", choices=["grid", "hex"], default="grid", help="Via placement pattern inside EP")
-    p.add_argument("--ep_via_tenting", choices=["none", "top", "both"], default="none", help="Suggest via tenting for EP (note only)")
-    p.add_argument("--no-ep-vias", dest="no_ep_vias", action="store_true", help="Do not generate EP thermal vias")
+    p.add_argument(
+        "--pitch",
+        type=float,
+        default=0.5,
+        help="Pad center-to-center pitch",
+    )
+    p.add_argument(
+        "--pads_per_side",
+        type=int,
+        default=14,
+        help="Number of pads per side",
+    )
+    p.add_argument(
+        "--pad_shape",
+        choices=["rect", "oval", "round"],
+        default="rect",
+    )
+    p.add_argument(
+        "--ep_shape",
+        choices=["rect", "round"],
+        default="rect",
+    )
+    p.add_argument(
+        "--paste_reduction",
+        type=float,
+        default=0.0,
+        help="Paste reduction in mm for EP",
+    )
+    p.add_argument(
+        "--courtyard",
+        type=float,
+        default=0.5,
+        help="Courtyard margin in mm",
+    )
+    p.add_argument(
+        "--ep_via_pitch",
+        type=float,
+        default=1.5,
+        help="Pitch between EP thermal vias in mm",
+    )
+    p.add_argument(
+        "--ep_via_drill",
+        type=float,
+        default=0.3,
+        help="Drill diameter for EP vias in mm",
+    )
+    p.add_argument(
+        "--ep_via_dia",
+        type=float,
+        default=0.6,
+        help="Finished diameter for EP vias in mm",
+    )
+    p.add_argument(
+        "--ep_via_margin",
+        type=float,
+        default=0.5,
+        help="Margin from EP edge where vias are not placed",
+    )
+    p.add_argument(
+        "--ep_via_pattern",
+        choices=["grid", "hex"],
+        default="grid",
+        help="Via placement pattern inside EP",
+    )
+    p.add_argument(
+        "--ep_via_tenting",
+        choices=["none", "top", "both"],
+        default="none",
+        help="Suggest via tenting for EP (note only)",
+    )
+    p.add_argument(
+        "--no-ep-vias",
+        dest="no_ep_vias",
+        action="store_true",
+        help="Do not generate EP thermal vias",
+    )
     args = p.parse_args()
     pads = make_pads(
         args.pad_w,
@@ -178,20 +265,31 @@ def main():
     )
     half_span = (args.pads_per_side - 1) * args.pitch / 2.0
     ep_pad = make_ep(args.ep, ep_shape=args.ep_shape)
-    paste_fp = make_paste_fp(args.ep, paste_reduction=args.paste_reduction, ep_shape=args.ep_shape)
-    courtyard_fp = make_courtyard(args.ep, half_span, courtyard=args.courtyard) if args.courtyard > 0 else ""
-    ep_vias = "" if args.no_ep_vias else make_ep_vias(
+    paste_fp = make_paste_fp(
         args.ep,
-        via_pitch=args.ep_via_pitch,
-        via_drill=args.ep_via_drill,
-        via_diameter=args.ep_via_dia,
-        margin=args.ep_via_margin,
-        pattern=args.ep_via_pattern,
+        paste_reduction=args.paste_reduction,
+        ep_shape=args.ep_shape,
+    )
+    courtyard_fp = make_courtyard(args.ep, half_span, courtyard=args.courtyard) if args.courtyard > 0 else ""
+    ep_vias = (
+        ""
+        if args.no_ep_vias
+        else make_ep_vias(
+            args.ep,
+            via_pitch=args.ep_via_pitch,
+            via_drill=args.ep_via_drill,
+            via_diameter=args.ep_via_dia,
+            margin=args.ep_via_margin,
+            pattern=args.ep_via_pattern,
+        )
     )
     # add a small user text note about tenting preference for human reviewers
     tent_note = ""
     if args.ep_via_tenting != "none":
-        tent_note = f'  (fp_text user "EP_VIA_TENT={args.ep_via_tenting}" (at 0 {-args.ep/2 - 1.0}) (layer F.Fab))\n'
+        tent_y = -args.ep / 2 - 1.0
+        tent_note = ('  (fp_text user "EP_VIA_TENT={}" ' "(at 0 {}) (layer F.Fab))\n").format(
+            args.ep_via_tenting, tent_y
+        )
         # prefer placing note before courtyard/paste for visibility
         if courtyard_fp:
             courtyard_fp = tent_note + courtyard_fp

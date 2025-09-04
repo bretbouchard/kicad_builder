@@ -1,0 +1,16 @@
+# Button Bar — top-level schematic (placeholder)
+
+# Sheets:
+# - power.sch.txt         : power supply and decoupling
+# - matrix.sch.txt        : button matrix and scanning MCU
+# - connectors.sch.txt    : USB connector and external I/O
+
+# Nets to define:
+# - VBUS (5V USB)
+# - VINT (3V3 regulated)
+# - GND
+# - SDA / SCL (I2C) or SPI signals if used
+# - ROWx / COLx (button matrix)
+# - USB D+ / D-
+
+// ... populate with generated schematic later

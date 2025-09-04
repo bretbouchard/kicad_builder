@@ -8,6 +8,7 @@ and easily switchable.
 The mapping here is deliberately minimal — extend it with real mappings
 or a metadata file if you vendor real KiCad .lib files into the repo.
 """
+
 from typing import Dict, Optional
 import os
 
@@ -34,9 +35,7 @@ MAPPING: Dict[str, str] = {
 SYMBOL_VARIANT = os.environ.get("SYMBOL_VARIANT", "QFN").upper()
 
 
-def resolve_lib_id(
-    lib: str, symbol_name: str, use_vendor: Optional[bool] = None
-) -> str:
+def resolve_lib_id(lib: str, symbol_name: str, use_vendor: Optional[bool] = None) -> str:
     """Return a lib_id for the given logical library and symbol name.
 
     If use_vendor is True, the function returns a vendor-prefixed lib_id

@@ -1,0 +1,13 @@
+# Button Bar — power sheet (placeholder)
+
+# Components to add:
+# - USB Type-C or micro-USB connector
+# - 3V3 regulator (e.g., RP2040 on-board regulator or external LDO)
+# - Bulk input capacitors and decoupling caps
+# - Optional power selection (VBUS vs external VIN)
+
+# Nets:
+# - VBUS (5V USB)
+# - VIN (if external)
+# - VINT / 3V3
+# - GND

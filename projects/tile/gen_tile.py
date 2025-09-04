@@ -5,12 +5,17 @@ schematic description and writes `out/tile_summary.json` and a human-readable
 `.sch.txt` file. It's a starting point — later we'll extend the helper to
 emit true KiCad 9 `.kicad_sch` S-expressions.
 """
+
 from pathlib import Path
 import json
 import sys
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "tools"))
-from kicad_helpers import Schematic, Symbol
+try:
+    from kicad_helpers import Schematic, Symbol
+except Exception:
+    # when running from repo root, ensure tools/ is on sys.path
+    sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "tools"))
+    from kicad_helpers import Schematic, Symbol
 
 
 def build_tile():
