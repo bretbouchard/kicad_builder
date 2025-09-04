@@ -1,0 +1,38 @@
+# pad.sch.txt — Pad primitive for Touch+LED
+
+# Purpose:
+# - Represents one capacitive touch pad with locally mounted LEDs (baseline 4 LEDs per pad).
+# - Exposes hierarchical pins so segment/tile sheets can wire them together.
+
+# Component refs inside primitive (suggested):
+# - PADnn: copper pad footprint (alias PAD_FOOTPRINT)
+# - LED1..LED4: APA102 footprints (SMD 5050)
+# - C_Lx: decoupling caps for LED clusters
+
+# Nets exposed by this primitive (hierarchical pins):
+# - PAD_SENSE  -> capacitive sense net for this pad (to touch MCU or multiplexer)
+# - LED_PWR    -> LED power (V5 or segmented LED supply)
+# - LED_GND    -> ground
+# - LED_DATA_IN -> data in for this pad's first LED (if localized addressing)
+# - LED_CLK_IN  -> clock in for this pad's LEDs
+# - LED_DATA_OUT -> data out to chain to next LED in pad (if present)
+
+# Notes:
+# - For segmented-data approach we typically do NOT wire `LED_DATA_IN` on every pad to the MCU;
+#   instead `segment.sch` aggregates pad LED chains and exposes a single `DATA_IN/CLK_IN`.
+
+# Example (human-readable schematic placeholder):
+# PAD1 PAD_FOOTPRINT
+# LED1 APA102 (LED_PWR, LED_GND, LED_DATA_IN -> LED_DATA_OUT -> next)
+# LED2 APA102
+# LED3 APA102
+# LED4 APA102
+
+# Hierarchical pin mapping (to be used by higher-level sheets):
+# PIN PAD_SENSE <net>        ; capacitive sense node for this pad
+# PIN LED_PWR <net>         ; power net for local LEDs (e.g., 5V)
+# PIN LED_GND <net>         ; ground
+# PIN LED_DATA_IN <net>     ; DATA in to first APA102 on this pad
+# PIN LED_CLK_IN <net>      ; CLK in to first APA102 on this pad
+# PIN LED_DATA_OUT <net>    ; DATA out from last APA102 on this pad (for chaining)
+# PIN LED_CLK_OUT <net>     ; CLK out from last APA102 on this pad

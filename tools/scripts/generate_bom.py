@@ -123,7 +123,19 @@ def main(
     include_filter: Optional[str] = None,
     include_common: bool = True,
 ) -> None:
-    repo_root = pathlib.Path(__file__).resolve().parents[2]
+    # Compute repository root by searching upward from this file's
+    # directory for a marker (a 'tools' subdirectory or pyproject.toml).
+    # This is robust when the script is executed from different CWDs or
+    # inside pre-commit/temporary environments.
+    repo_root = None
+    this_file = pathlib.Path(__file__).resolve()
+    for p in [this_file] + list(this_file.parents):
+        if (p / "tools").exists() or (p / "pyproject.toml").exists() or (p / ".git").exists():
+            repo_root = p
+            break
+    if repo_root is None:
+        # last-resort: fall back to the previous heuristic
+        repo_root = pathlib.Path(__file__).resolve().parents[2]
     mapping_dir = repo_root / "tools" / "vendor_symbols" / "mappings"
     if not mapping_dir.exists():
         print(f"No mappings dir at {mapping_dir}", file=sys.stderr)

@@ -1,0 +1,10 @@
+# USB-C connector placeholder symbol
+
+# J1: USB-C receptacle (VBUS, D+, D-, GND)
+# Nets:
+# - VBUS
+# - USB_DPLUS
+# - USB_DMINUS
+# - GND
+
+# Replace with a proper KiCad symbol or use the generator script.

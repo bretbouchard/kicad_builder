@@ -1,16 +1,69 @@
-# Button Bar — top-level schematic (placeholder)
+# Button Bar — top-level schematic (detailed placeholder)
 
-# Sheets:
-# - power.sch.txt         : power supply and decoupling
-# - matrix.sch.txt        : button matrix and scanning MCU
-# - connectors.sch.txt    : USB connector and external I/O
+# Overview
+# This top-level sheet wires the MCU, power, connectors and the button
+# matrix subsheets. Use the listed net names consistently across subsheets so
+# automation can match parts to BOM/placement outputs.
 
-# Nets to define:
-# - VBUS (5V USB)
-# - VINT (3V3 regulated)
-# - GND
-# - SDA / SCL (I2C) or SPI signals if used
-# - ROWx / COLx (button matrix)
-# - USB D+ / D-
+# Recommended nets and signals
+# - VBUS: USB 5V power from connector
+# - VIN: optional external input (if supporting battery or barrel jack)
+# - VINT or 3V3: regulated board voltage for MCU and peripherals
+# - GND: common ground
+# - USB_DPLUS, USB_DMINUS: USB data lines
+# - SDA, SCL: I2C signals (if used)
+# - ROW0..ROWN, COL0..COLM: button matrix nets
 
-// ... populate with generated schematic later
+# High-level components on this sheet
+# - U1: MCU (e.g., RP2040 module/SoC)
+#   - power pins: VINT, GND, VSYS (if present)
+#   - USB pins: D+, D- (if MCU handles USB directly)
+#   - GPIOs: mapped to ROW/COL lines (or to I2C/SPI bus)
+# - J1: USB connector (VBUS, D+, D-, GND)
+# - REG1: 3V3 regulator (VBUS or VIN -> VINT)
+# - Cx: decoupling caps near MCU and regulator
+# - Matrix subsheet: includes buttons, resistors/diodes per-row/col
+
+# Suggested sheet structure
+# - instantiate "power.sch.txt" and wire VBUS -> REG1 -> VINT
+# - instantiate "matrix.sch.txt" and map MCU GPIOs to ROW/COL nets
+# - instantiate "connectors.sch.txt" for USB and external connectors
+
+# Example net mapping (informational; adapt to chosen MCU module):
+# U1.GP0 -> ROW0
+# U1.GP1 -> ROW1
+# U1.GP2 -> COL0
+# U1.GP3 -> COL1
+
+# Notes:
+# - Decide whether to place diodes in the matrix (prevents ghosting) and
+#   account for them in the BOM (one diode per button if used).
+# - Account for decoupling: at minimum 0.1uF per VCC pin and a 10uF bulk
+#   capacitor on VINT.
+
+// ... fill in sheet wiring as we generate symbols
+
+# Concrete example instantiation
+# Instantiate power and connectors
+U1 RP2040
+# Power pins
+#  VBUS -> USB connector VBUS
+#  VINT -> 3V3 regulator output
+#  GND -> system ground
+
+J1 USB_C
+# J1 pins: VBUS, USB_DPLUS, USB_DMINUS, GND
+
+# Matrix subsheet instance (refer to schematic/matrix.sch.txt)
+# Connect U1 GPIOs to ROW/COL nets according to projects/button_bar/pinmap.json
+# Example mapping (from pinmap.json):
+#  U1.GP0 -> ROW0
+#  U1.GP1 -> ROW1
+#  U1.GP2 -> ROW2
+#  U1.GP3 -> ROW3
+#  U1.GP4 -> COL0
+#  U1.GP5 -> COL1
+
+# Notes:
+# - Add REG1 (3V3 regulator) between VBUS and VINT on this sheet.
+# - Place decoupling capacitors C1..C5 near U1 and REG1.

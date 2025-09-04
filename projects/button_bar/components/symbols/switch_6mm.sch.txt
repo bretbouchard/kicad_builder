@@ -1,0 +1,10 @@
+# Push switch placeholder symbol
+
+# SWx: momentary push switch (SPST)
+# Typical footprint: 6mm through-hole or SMT tactile (document in footprint)
+
+# Nets:
+# - One side -> ROWn or COLn
+# - Other side -> COLn or ROWn (depending on matrix wiring)
+
+# Example refs: SW1..SW8

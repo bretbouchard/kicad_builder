@@ -1,0 +1,39 @@
+# segment.sch.txt — Segment sheet (e.g., 16×16 block) using demuxed data lines
+
+# Purpose:
+# - Instantiates many `pad` primitives and groups their LED chains into N segments.
+# - Each segment shares a DATA/CLK pair driven by the LED MCU via a demultiplexer.
+# - The touch MCU scans PAD_SENSE nets via an analog/digital multiplexer (or direct GPIOs).
+
+# Hierarchical pins exposed by this sheet:
+# - SEG_LED_DATA_IN[0..N-1]
+# - SEG_LED_CLK_IN[0..N-1]
+# - SEG_LED_PWR
+# - SEG_PAD_SENSE_BUS (collection of PAD_SENSE nets or a routed mux)
+# - SEG_LED_PWR_IN, SEG_GND
+
+# Demux arrangement (example):
+# - LED MCU provides LED_DATA and LED_CLK to the demux driver (e.g., 74HC4051 or 74HC138 + FETs)
+# - Demux select lines are controlled by the TOUCH MCU over I2C/SPI or GPIOs (here we use a small MCU-to-MCU protocol)
+# - Demux outputs route to segment DATA_IN pins (one per sub-segment)
+
+# Example instantiation (informational):
+# PAD_00 .. PAD_0F (first row) -> chain to SEG0_DATA
+# PAD_10 .. PAD_1F -> chain to SEG1_DATA
+# Example concrete instantiation for one segment (8 pads)
+
+; Expanded example segment: 16 pads chained
+% for i in range(1,17):
+INSTANCE PAD PAD{i}
+	PIN PAD_SENSE PAD{i}_SENSE
+	PIN LED_PWR LED_SEG_PWR
+	PIN LED_GND GND
+	; chain DATA/CLK from previous PAD or segment input
+	PIN LED_DATA_IN {('SEG0_LED_DATA' if i==1 else 'PAD'+str(i-1)+'_DO')}
+	PIN LED_CLK_IN {('SEG0_LED_CLK' if i==1 else 'PAD'+str(i-1)+'_CLK_DO')}
+ENDINSTANCE
+% endfor
+
+# Segment-level pins (to be connected at tile/top level):
+# SEG0_LED_DATA -> from demux output controlled by TOUCH MCU
+# SEG0_LED_CLK -> from demux output

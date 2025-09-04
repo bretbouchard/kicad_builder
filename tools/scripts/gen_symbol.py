@@ -38,7 +38,15 @@ def main():
     p.add_argument("--package", default=None, help="Override package name in symbol")
     args = p.parse_args()
 
-    pm = json.loads(Path(args.pinmap).read_text())
+    pinmap_path = Path(args.pinmap)
+    if not pinmap_path.exists() or not pinmap_path.is_file() or pinmap_path.stat().st_size == 0:
+        print(f"Pinmap {pinmap_path} not found or empty; skipping generation.")
+        return
+    try:
+        pm = json.loads(pinmap_path.read_text())
+    except json.JSONDecodeError:
+        print(f"Pinmap {pinmap_path} contains invalid JSON; skipping generation.")
+        return
     out_path = Path(args.out)
     out_path.parent.mkdir(parents=True, exist_ok=True)
     name = pm.get("description", "PART").split()[0]

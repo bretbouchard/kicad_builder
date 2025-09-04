@@ -1,0 +1,12 @@
+(module APA102_5050 (layer F.Cu) (tedit 5B107A2B)
+  (descr "Placeholder 5050 APA102 addressable LED footprint")
+  (tags "LED APA102 5050")
+  (fp_text reference U ?" (at 0 0) (layer F.SilkS))
+  (fp_text value APA102_5050 (at 0 -1.5) (layer F.Fab))
+  ;; pads (placeholder mapping): 1=VCC, 2=GND, 3=DATA, 4=CLK
+  ;; pads are approximate and NOT verified against datasheet
+  (pad 1 smd rect (at -1.5 0) (size 1.2 1.6) (layers F.Cu F.Paste F.Mask))
+  (pad 2 smd rect (at 1.5 0) (size 1.2 1.6) (layers F.Cu F.Paste F.Mask))
+  (pad 3 smd rect (at 0 1.8) (size 1.6 1.6) (layers F.Cu F.Paste F.Mask))
+  (pad 4 smd rect (at 0 -1.8) (size 1.6 1.6) (layers F.Cu F.Paste F.Mask))
+)

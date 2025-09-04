@@ -1,0 +1,6 @@
+# Generic diode placeholder symbol
+
+# D1..D8: small signal diodes (e.g., 1N4148 or SOD-523 package)
+# Use to prevent ghosting in button matrix if needed.
+
+# Nets: anode, cathode

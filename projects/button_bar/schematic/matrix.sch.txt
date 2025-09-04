@@ -1,0 +1,27 @@
+# Button Bar — matrix subsheet (placeholder)
+
+# This subsheet defines the button matrix. It assumes an 8-button bar arranged
+# as 4 rows x 2 columns for this starter project (adjust as needed).
+
+# Nets:
+# - ROW0..ROW3
+# - COL0..COL1
+# - GND
+
+# Components:
+# - SW1..SW8: mechanical push switches
+# - R_PULLUP per column or per row (depending on MCU GPIO configuration)
+# - Optional diodes D1..D8 to prevent ghosting
+
+# Example mapping (informational):
+# SW1: ROW0 -> COL0
+# SW2: ROW0 -> COL1
+# SW3: ROW1 -> COL0
+# SW4: ROW1 -> COL1
+# SW5: ROW2 -> COL0
+# SW6: ROW2 -> COL1
+# SW7: ROW3 -> COL0
+# SW8: ROW3 -> COL1
+
+# Recommended BOM entries already include SW1-SW8 and D1-D8
+

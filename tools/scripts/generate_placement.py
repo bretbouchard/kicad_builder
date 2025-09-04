@@ -5,6 +5,8 @@ Reads BOM CSV and emits placement CSV with placeholder coordinates.
 
 import csv
 import pathlib
+import tempfile
+import os
 
 
 def main(bom_path: pathlib.Path, out_path: pathlib.Path):
@@ -22,19 +24,27 @@ def main(bom_path: pathlib.Path, out_path: pathlib.Path):
     center_y = height / 2
 
     # categorize parts
-    mcus = [
-        r
-        for r in reader
-        if (r.get("component") or "").upper().startswith("RP2040") or (r.get("refdes") or "").upper().startswith("U")
-    ]
+    from typing import Any, Dict
 
-    connectors = [
-        r
-        for r in reader
-        if "USB" in (r.get("component") or "").upper() or (r.get("refdes") or "").upper().startswith("J")
-    ]
+    def _is_mcu(r: Dict[str, Any]) -> bool:
+        comp = (r.get("component") or "").upper()
+        ref = (r.get("refdes") or "").upper()
+        return comp.startswith("RP2040") or ref.startswith("U")
 
-    passives = [r for r in reader if (r.get("component") or "").upper().startswith(("CAP", "C", "R"))]
+    mcus = [r for r in reader if _is_mcu(r)]
+
+    def _is_connector(r: Dict[str, Any]) -> bool:
+        comp = (r.get("component") or "").upper()
+        ref = (r.get("refdes") or "").upper()
+        return "USB" in comp or ref.startswith("J")
+
+    connectors = [r for r in reader if _is_connector(r)]
+
+    def _is_passive(r: Dict[str, Any]) -> bool:
+        comp = (r.get("component") or "").upper()
+        return comp.startswith(("CAP", "C", "R"))
+
+    passives = [r for r in reader if _is_passive(r)]
 
     others = [r for r in reader if r not in mcus and r not in connectors and r not in passives]
 
@@ -104,20 +114,67 @@ def main(bom_path: pathlib.Path, out_path: pathlib.Path):
         )
 
     out_path.parent.mkdir(parents=True, exist_ok=True)
-    with out_path.open("w", newline="", encoding="utf8") as f:
-        writer = csv.DictWriter(
-            f,
-            fieldnames=["refdes", "x", "y", "rotation", "footprint", "value"],
-        )
-        writer.writeheader()
-        for r in rows:
-            r.setdefault("value", "")
-            writer.writerow(r)
+    # write atomically to avoid races where other hooks read a partial file
+    fd, tmp_path = tempfile.mkstemp(
+        prefix="placement-",
+        dir=str(out_path.parent),
+    )
+    try:
+        with os.fdopen(fd, "w", newline="", encoding="utf8") as f:
+            writer = csv.DictWriter(
+                f,
+                fieldnames=[
+                    "refdes",
+                    "x",
+                    "y",
+                    "rotation",
+                    "footprint",
+                    "value",
+                ],
+            )
+            writer.writeheader()
+            for r in rows:
+                r.setdefault("value", "")
+                writer.writerow(r)
+            f.flush()
+            os.fsync(f.fileno())
+        os.replace(tmp_path, out_path)
+    finally:
+        if os.path.exists(tmp_path):
+            try:
+                os.remove(tmp_path)
+            except Exception:
+                pass
     print(f"Wrote placement to {out_path}")
 
 
 if __name__ == "__main__":
+    import argparse
+
+    p = argparse.ArgumentParser(
+        description="Generate placement CSV from BOM CSV",
+    )
+    p.add_argument(
+        "--bom",
+        type=pathlib.Path,
+        help="input BOM CSV path",
+        default=None,
+    )
+    p.add_argument(
+        "--out",
+        type=pathlib.Path,
+        help="output placement CSV path",
+        default=None,
+    )
+    args = p.parse_args()
+
     repo_root = pathlib.Path(__file__).resolve().parents[2]
-    bom = repo_root / "tools" / "output" / "bom.csv"
-    out = repo_root / "tools" / "output" / "placement.csv"
+    if args.bom is None:
+        bom = repo_root / "tools" / "output" / "bom.csv"
+    else:
+        bom = args.bom
+    if args.out is None:
+        out = repo_root / "tools" / "output" / "placement.csv"
+    else:
+        out = args.out
     main(bom, out)

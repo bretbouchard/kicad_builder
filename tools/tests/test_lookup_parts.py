@@ -1,9 +1,21 @@
 import os
 import types
 
+import importlib.util
+import pathlib
+import sys
+
 import pytest
 
-from tools.scripts import lookup_parts
+# Ensure we load the lookup_parts module by path to avoid import issues when
+# pytest is executed from different working directories or venvs used by
+# pre-commit hooks. This keeps the test hermetic.
+repo_root = pathlib.Path(__file__).resolve().parents[2]
+lookup_path = repo_root / "tools" / "scripts" / "lookup_parts.py"
+spec = importlib.util.spec_from_file_location("lookup_parts", str(lookup_path))
+lookup_parts = importlib.util.module_from_spec(spec)
+sys.modules["lookup_parts"] = lookup_parts
+spec.loader.exec_module(lookup_parts)
 
 
 def test_query_with_retries_mock(monkeypatch):

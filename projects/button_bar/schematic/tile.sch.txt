@@ -1,0 +1,89 @@
+# tile.sch.txt — Tile sheet wiring MCU, power, demux and segments
+
+# Components on this sheet:
+# - U1: RP2040 (LED driver)
+# - U2: RP2040 (Touch scanner)
+# - REG1: 3V3 regulator (from V5)
+# - J1: USB-C / power connector (VBUS, GND)
+# - DMX1, DMX2: demultiplexers (e.g., 74HC4051 or 74HC138) to route LED data lines across segments
+# - MUX1 (optional): analog mux for PAD_SENSE scanning to the touch MCU
+
+# Wiring notes (segmented data with demux):
+# - LED RP2040 (U1) provides a single DATA and CLK line to demux chips.
+# - Demux select lines are driven by TOUCH MCU (U2) or via a small I2C-controlled GPIO expander.
+# - When a given segment is selected by the demux, U1's DATA/CLK are routed to that segment's DATA_IN.
+# - Touch MCU (U2) controls selection of demux outputs rapidly to route scanning and to coordinate which segment is lit.
+
+# Suggested nets:
+# - VBUS (5V), VINT (3V3), GND
+# - LED_DATA (to demux), LED_CLK (to demux)
+# - DEMUX_SEL[0..n]
+# - I2C_SDA, I2C_SCL (if using I2C between MCUs)
+
+# Example concrete connections (informational):
+# U1 (LED MCU) pins:
+#  - GPIO_SPI_MOSI -> LED_DATA -> through level shifter U4 -> DEMUX_IN (pin IN)
+#  - GPIO_SPI_SCK  -> LED_CLK  -> through level shifter U4 -> DEMUX_CLK (shared or separate input)
+# U2 (TOUCH MCU) pins:
+#  - GPIOs / I2C -> control DEMUX_SEL[0..2] lines (U2 -> DEMUX S0..S2)
+#  - Optionally U2 <-> U1 I2C for coordination (I2C_SDA/I2C_SCL)
+
+# Example instances on this sheet (high level):
+# INSTANCE U1 RP2040_LED
+# INSTANCE U2 RP2040_TOUCH
+# INSTANCE DMX1 74HC4051_A  ; routes LED_DATA to SEG0..SEG7
+# INSTANCE DMX2 74HC4051_B  ; routes LED_CLK to SEG0..SEG7 (or share DMX1 depending on part)
+# INSTANCE U4 74AHCT125     ; level shifter between U1 (3V3) and DMX inputs (5V tolerant)
+# INSTANCE U5 MCP23017      ; optional I2C GPIO expander for demux selects
+
+# Notes on timing and control:
+# - When U2 selects segment i, DMX1 output Xi connects to LED_DATA.
+# - U1 streams pixel data for the pads in segment i while DMX is enabled to that output.
+# - U2 coordinates PAD_SENSE scanning with segment selection so touch reads and LED updates don't interfere.
+
+# Example explicit demux instances (covering 16 segments with two 8-channel demuxes)
+INSTANCE DMX_DATA_A DMX74HC4051_A
+	PIN IN LED_DATA
+	PIN X0 SEG0_LED_DATA
+	PIN X1 SEG1_LED_DATA
+	PIN X2 SEG2_LED_DATA
+	PIN X3 SEG3_LED_DATA
+	PIN X4 SEG4_LED_DATA
+	PIN X5 SEG5_LED_DATA
+	PIN X6 SEG6_LED_DATA
+	PIN X7 SEG7_LED_DATA
+	PIN S0 DEMUX_S0
+	PIN S1 DEMUX_S1
+	PIN S2 DEMUX_S2
+	PIN EN DEMUX_EN_A
+ENDINSTANCE
+
+INSTANCE DMX_DATA_B DMX74HC4051_B
+	PIN IN LED_DATA
+	PIN X0 SEG8_LED_DATA
+	PIN X1 SEG9_LED_DATA
+	PIN X2 SEG10_LED_DATA
+	PIN X3 SEG11_LED_DATA
+	PIN X4 SEG12_LED_DATA
+	PIN X5 SEG13_LED_DATA
+	PIN X6 SEG14_LED_DATA
+	PIN X7 SEG15_LED_DATA
+	PIN S0 DEMUX_S0
+	PIN S1 DEMUX_S1
+	PIN S2 DEMUX_S2
+	PIN EN DEMUX_EN_B
+ENDINSTANCE
+
+# Level shifter between U1 and demux inputs (if required):
+INSTANCE U4_1 74AHCT125_INST
+	PIN VCC LED_VCC
+	PIN GND GND
+	PIN IN0 LED_DATA
+	PIN OUT0 LED_DATA_SHIFTERED
+	PIN IN1 LED_CLK
+	PIN OUT1 LED_CLK_SHIFTERED
+ENDINSTANCE
+
+# Example control connection: TOUCH MCU (U2) drives DEMUX_S0..S2; optional U5 (MCP23017) can be used instead
+# U2 -> DEMUX_S0..S2
+# U2 -> I2C -> U5 -> DEMUX_S0..S2 (if using expander)
