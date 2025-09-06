@@ -1,3 +1,55 @@
+name: Hardware CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  unit-tests:
+    name: Python unit tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pytest skidl
+          if [ -f hardware/requirements.txt ]; then pip install -r hardware/requirements.txt; fi
+      - name: Run SKiDL/ERC tests
+        run: pytest -q hardware/projects/button_grid/tests/test_skidl_erc_full.py
+
+  hardware-build:
+    name: Hardware build & artifact generation
+    runs-on: ubuntu-latest
+    container:
+      image: kicad/kicad:9.0
+    needs: unit-tests
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r hardware/requirements-dev.txt || true
+      - name: Generate artifacts
+        run: |
+          make -C hardware/projects/button_grid gen verify pdf || true
+      - name: Archive outputs
+        uses: actions/upload-artifact@v3
+        with:
+          name: hardware-artifacts
+          path: |
+            hardware/projects/button_grid/out/*.pdf
+            hardware/projects/button_grid/out/*.log
 name: CI
 
 on:

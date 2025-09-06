@@ -1,0 +1,9 @@
+[Extracted from apa102c.pdf - partial]
+
+... (excerpt)
+
+iPixel LED / Shiji Lighting vendor PDF
+Text extraction noisy; mechanical drawings not friendly to plain-text extraction.
+Vendor contact blocks repeated; recommended: open PDF visually to copy pad dimensions manually.
+
+[End excerpt]

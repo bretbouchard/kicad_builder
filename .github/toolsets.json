@@ -1,0 +1,18 @@
+{
+  "design": {
+    "description": "SKiDL/KiCad design work",
+    "prompts": ["@prompt-patterns.md:Add Generator + ERC", "@review-checklists.md:Schema Checklist"]
+  },
+  "erc-fix": {
+    "description": "Debug and fix ERC",
+    "prompts": ["@prompt-patterns.md:Fix ERC Finding"]
+  },
+  "release": {
+    "description": "Produce fab artifacts",
+    "prompts": ["@prompt-patterns.md:Fab Pack", "@review-checklists.md:PR Checklist"]
+  },
+  "bringup": {
+    "description": "Add/adjust hardware test steps",
+    "prompts": ["@prompt-patterns.md:Bring-Up Test Step"]
+  }
+}

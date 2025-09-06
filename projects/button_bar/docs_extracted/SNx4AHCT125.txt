@@ -1,0 +1,42 @@
+[Extracted from SNx4AHCT125.pdf - partial]
+
+... (excerpt)
+
+EXAMPLE BOARD LAYOUT RGY0014A
+VQFN - 1 mm max height
+
+(    2.05)
+2X (1.5)
+SYMM
+1                                14
+
+4X (0.6)
+
+14X (0.24)
+
+8X (0.5)
+
+(3.3)
+(0.775)
+
+LAND PATTERN EXAMPLE
+
+EXAMPLE STENCIL DESIGN RGY0014A
+VQFN - 1 mm max height
+
+2X (1.5)
+4X (0.92)
+14X (0.6)
+14X (0.24)
+8X (0.5)
+(3.3)
+(0.56)
+
+SOLDER MASK DETAILS
+
+NOTES:
+1. All linear dimensions are in millimeters.
+2. This drawing is subject to change without notice.
+3. The package thermal pad must be soldered to the printed circuit board for thermal and mechanical performance.
+
+[End excerpt]

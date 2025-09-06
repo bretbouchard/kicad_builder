@@ -1,0 +1,37 @@
+name: verify-local
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      - name: Create venv & install deps
+        run: |
+          python -m venv .venv
+          . .venv/bin/activate
+          pip install --upgrade pip
+          if [ -f hardware/requirements.txt ]; then pip install -r hardware/requirements.txt; fi
+          if [ -f hardware/requirements-dev.txt ]; then pip install -r hardware/requirements-dev.txt; fi
+      - name: Run verify-all
+        run: |
+          . .venv/bin/activate
+          make verify-all
+      - name: Upload logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: verify-logs
+          path: |
+            .venv/
+            .pytest_cache/
+            out/

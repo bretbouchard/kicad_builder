@@ -1,3 +1,54 @@
+# Python bytecode
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Editor directories and files
+.vscode/
+.idea/
+*.swp
+
+# macOS
+.DS_Store
+
+# Build / distribution
+build/
+dist/
+*.egg-info/
+
+# Project artifacts and outputs
+output/
+lib_pickle_dir/
+inbox/
+docs/
+backup/
+
+# Archives and local bundles
+copilot-setup.zip
+
+# Logs and runtime files
+*.log
+.pytest_cache/
+.mypy_cache/
+.coverage
+
+# Temporary / cache
+.cache/
+*.tmp
+*.bak
+
+# Environment files
+.env
+.env.*
+
+# Misc
+*.sqlite3
 #Ignore vscode AI rules
 .github/instructions/codacy.instructions.md
 .clinerules/byterover-rules.md

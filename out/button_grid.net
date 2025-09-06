@@ -1,0 +1,8 @@
+# button_grid netlist (text fallback)
+U1	MCU
+C1	100nF
+C2	100nF
+C3	100nF
+R_PU_1	4.7k
+R_PU_2	4.7k
+J1	LED_ARRAY

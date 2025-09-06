@@ -1,0 +1,4 @@
+(module USB_C_PLACEHOLDER (layer F.Cu)
+  # Placeholder footprint for USB-C receptacle.
+  # Replace with a proper footprint when ready.
+)

@@ -53,8 +53,8 @@ def main(bom_path: pathlib.Path, out_path: pathlib.Path):
         rows.append(
             {
                 "refdes": r.get("refdes"),
-                "x": f"{center_x + (i-1)*5.0:.2f}",
-                "y": f"{center_y + (i-1)*5.0:.2f}",
+                "x": f"{center_x + (i - 1) * 5.0:.2f}",
+                "y": f"{center_y + (i - 1) * 5.0:.2f}",
                 "rotation": "0",
                 "footprint": r.get("footprint", ""),
                 "value": r.get("value", ""),

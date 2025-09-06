@@ -1,0 +1,18 @@
+[Extracted from 20001952C.pdf - partial]
+
+... (excerpt)
+
+Package Types
+• 28-pin QFN, 6 x 6 mm Body
+• 28-pin SOIC, Wide, 7.50 mm Body
+• 28-pin SPDIP, 300 mil Body
+• 28-pin SSOP, 5.30 mm Body
+
+* Includes Exposed Thermal Pad; see Table 2-1.
+
+EXPOSED PAD
+LAND PATTERN EXAMPLE
+
+3. The package thermal pad must be soldered to the printed circuit board for thermal and mechanical performance.
+
+[End excerpt]

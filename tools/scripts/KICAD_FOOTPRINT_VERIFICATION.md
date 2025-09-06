@@ -1,23 +1,17 @@
-KiCad footprint verification checklist
+## APA102-2020 Footprint Validation Checklist
 
-1) Add the generated pretty folder to KiCad's Footprint Libraries (Preferences > Manage Footprint Libraries).
+### Physical Dimensions (vs datasheet page 3)
+- [ ] Body size: 2.0x2.0mm (verify Fab layer)
+- [ ] Pad arrangement: 4-side symmetrical
+- [ ] Pad size: 0.5x0.37mm (matches JLC PCB assembly specs)
 
-2) Open a PCB or create a new board.
+### Electrical Requirements
+- [ ] Thermal pad connection (pad 5_1/5_2)
+- [ ] Clearance: 
+  - Pad-to-pad ≥0.2mm
+  - Pad-to-silkscreen ≥0.15mm
 
-3) Place the footprint by library/name and visually inspect pad outlines and courtyard.
-
-4) For the exposed pad (EP):
-   - Ensure the EP size matches the generated value.
-   - Add thermal vias if required; typical pattern: 4-8 vias in a grid across the EP.
-   - Verify paste mask expansion for the EP to avoid solder shorts (usually reduce paste for large EPs).
-
-5) Run DRC and check:
-   - Pad-to-pad clearances
-   - Solder mask openings
-   - Silkscreen overlaps
-
-6) Export gerbers and inspect with a gerber viewer.
-
-Notes:
-- The generated footprint is a starting point; verify all physical dimensions against the RP2040 QFN-56 datasheet.
-- For Pico-module variant, confirm the castellated pads and module outline in the footprint.
+### Manufacturing Readiness
+- [ ] Solder mask expansion: 0.102mm
+- [ ] Paste mask reduction: -0.05mm
+- [ ] Courtyard clearance: 0.25mm all sides

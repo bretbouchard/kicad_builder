@@ -1,7 +1,10 @@
 """tools package marker.
 
-This file makes the `tools` directory importable as a package during tests
-and when running generators that import `tools.scripts`.
+This file re-exports a small set of helper symbols so callers can do
+`from tools.lib_map import resolve_lib_id` reliably regardless of how
+the test runner or hooks set up sys.path.
 """
 
-__all__ = []
+from .lib_map import resolve_lib_id, validate_klc_rules, Symbol  # noqa: F401
+
+__all__ = ["resolve_lib_id", "validate_klc_rules", "Symbol"]

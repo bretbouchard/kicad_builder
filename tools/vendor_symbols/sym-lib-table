@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sym_lib_table>
-  <lib name="REPO-MCU" type="KiCad" uri="file:../tools/vendor_symbols/REPO-MCU.lib" />
-  <lib name="REPO-LEDs" type="KiCad" uri="file:../tools/vendor_symbols/REPO-LEDs.lib" />
-  <lib name="REPO-Device" type="KiCad" uri="file:../tools/vendor_symbols/REPO-Device.lib" />
-  <lib name="REPO-Power" type="KiCad" uri="file:../tools/vendor_symbols/REPO-Power.lib" />
+  <lib name="REPO-MCU" type="KiCad" uri="file:///Users/bretbouchard/apps/buttons/tools/vendor_symbols/REPO-MCU.lib" />
+  <lib name="REPO-LEDs" type="KiCad" uri="file:///Users/bretbouchard/apps/buttons/tools/vendor_symbols/REPO-LEDs.lib" />
+  <lib name="Device" type="KiCad" uri="file:///Users/bretbouchard/apps/buttons/tools/vendor_symbols/REPO-Device.lib" />
+  <lib name="REPO-Power" type="KiCad" uri="file:///Users/bretbouchard/apps/buttons/tools/vendor_symbols/REPO-Power.lib" />
 </sym_lib_table>

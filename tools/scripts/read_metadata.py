@@ -3,6 +3,7 @@
 
 Simple helper to read part metadata JSON and print key=value pairs for Makefile use.
 """
+
 import json
 import sys
 from pathlib import Path

@@ -1,6 +1,0 @@
-refdes,component,footprint,package,qty,value,part_number,manufacturer,pins_used,mapping_file
-U1,RP2040,REPO-MCU-QFN56,QFN-56,1,,,,20,rp2040_qfn56_pinmap.json
-U2,USB-C-RECEPTACLE,USB-C,USB-C,1,,,,0,rp2040_qfn56_pinmap.json
-C1-C4,CAP_0.1uF,0603,CAP_0603,4,0.1uF,CC0603KRX7R9BB104,Murata,0,rp2040_qfn56_pinmap.json
-C5,CAP_10uF,1206,CAP_1206,1,10uF,GRM31CR61E106KA12L,Murata,0,rp2040_qfn56_pinmap.json
-R1,R_PULLUP,0603,R_0603,1,10k,RC0603FR-0710KL,Yageo,0,rp2040_qfn56_pinmap.json

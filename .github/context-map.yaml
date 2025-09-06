@@ -1,0 +1,14 @@
+prefer:
+  - tools/scaffold.py
+  - docs/ENV.md
+  - hardware/ERC_RULES.md
+  - hardware/SCHEMATIC_STYLE.md
+  - hardware/TEST_PLAN.md
+  - Makefile
+  - tools/check_env.py
+  - hardware/gen/
+  - tests/
+exclude:
+  - hardware/outputs/
+  - .git/
+  - venv/

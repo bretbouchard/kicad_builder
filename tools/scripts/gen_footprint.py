@@ -7,6 +7,7 @@ Generate a simple parameterized QFN-56 footprint kicad_mod.
 Usage:
   python3 gen_footprint.py --out path.kicad_mod --pad_w 0.45 --pad_l 0.9 --ep 4.4
 """
+
 import argparse
 from pathlib import Path
 
@@ -36,7 +37,7 @@ def make_pads(pad_w, pad_l, pitch=0.5, pads_per_side=14, pad_shape="rect"):
         x_str = f"{x:.2f}"
         half_str = f"{half_span:.2f}"
         pads.append(
-            f"  (pad {i+1} smd {pad_shape} (at {x_str} {half_str}) "
+            f"  (pad {i + 1} smd {pad_shape} (at {x_str} {half_str}) "
             f"(size {pad_w} {pad_l}) (layers F.Cu F.Paste F.Mask))"
         )
     # right side
@@ -45,7 +46,7 @@ def make_pads(pad_w, pad_l, pitch=0.5, pads_per_side=14, pad_shape="rect"):
         y_str = f"{y:.2f}"
         half_str = f"{half_span:.2f}"
         pads.append(
-            f"  (pad {pads_per_side+1+i} smd {pad_shape} (at {half_str} {y_str}) "
+            f"  (pad {pads_per_side + 1 + i} smd {pad_shape} (at {half_str} {y_str}) "
             f"(size {pad_l} {pad_w}) (layers F.Cu F.Paste F.Mask))"
         )
     # bottom
@@ -54,7 +55,7 @@ def make_pads(pad_w, pad_l, pitch=0.5, pads_per_side=14, pad_shape="rect"):
         x_str = f"{x:.2f}"
         neg_half_str = f"{-half_span:.2f}"
         pads.append(
-            f"  (pad {2*pads_per_side+1+i} smd {pad_shape} (at {x_str} {neg_half_str}) "
+            f"  (pad {2 * pads_per_side + 1 + i} smd {pad_shape} (at {x_str} {neg_half_str}) "
             f"(size {pad_w} {pad_l}) (layers F.Cu F.Paste F.Mask))"
         )
     # left
@@ -63,7 +64,7 @@ def make_pads(pad_w, pad_l, pitch=0.5, pads_per_side=14, pad_shape="rect"):
         y_str = f"{y:.2f}"
         neg_half_str = f"{-half_span:.2f}"
         pads.append(
-            f"  (pad {3*pads_per_side+1+i} smd {pad_shape} (at {neg_half_str} {y_str}) "
+            f"  (pad {3 * pads_per_side + 1 + i} smd {pad_shape} (at {neg_half_str} {y_str}) "
             f"(size {pad_l} {pad_w}) (layers F.Cu F.Paste F.Mask))"
         )
     return "\n".join(pads)
@@ -71,9 +72,9 @@ def make_pads(pad_w, pad_l, pitch=0.5, pads_per_side=14, pad_shape="rect"):
 
 def make_ep(ep, ep_shape="rect"):
     if ep_shape == "round":
-        return f'  (pad "EP" smd circle (at 0 0) ' f"(size {ep} {ep}) (layers F.Cu F.Paste F.Mask) (thermal))"
+        return f'  (pad "EP" smd circle (at 0 0) (size {ep} {ep}) (layers F.Cu F.Paste F.Mask) (thermal))'
     else:
-        return f'  (pad "EP" smd rect (at 0 0) ' f"(size {ep} {ep}) (layers F.Cu F.Paste F.Mask) (thermal))"
+        return f'  (pad "EP" smd rect (at 0 0) (size {ep} {ep}) (layers F.Cu F.Paste F.Mask) (thermal))'
 
 
 def make_paste_fp(ep, paste_reduction=0.0, ep_shape="rect"):
@@ -82,8 +83,8 @@ def make_paste_fp(ep, paste_reduction=0.0, ep_shape="rect"):
         return ""
     size = max(0.0, ep - paste_reduction)
     if ep_shape == "round":
-        return f'  (pad "EP_PASTE" smd circle (at 0 0) ' f"(size {size:.2f} {size:.2f}) (layers F.Paste))"
-    return f'  (pad "EP_PASTE" smd rect (at 0 0) ' f"(size {size:.2f} {size:.2f}) (layers F.Paste))"
+        return f'  (pad "EP_PASTE" smd circle (at 0 0) (size {size:.2f} {size:.2f}) (layers F.Paste))'
+    return f'  (pad "EP_PASTE" smd rect (at 0 0) (size {size:.2f} {size:.2f}) (layers F.Paste))'
 
 
 def make_ep_vias(
@@ -161,10 +162,10 @@ def make_courtyard(ep, half_span, courtyard=0.5):
     y2 = extent
     w = 0.15
     lines = []
-    lines.append(f"  (fp_line (start {x1:.2f} {y1:.2f}) (end {x2:.2f} {y1:.2f}) " f"(layer F.CrtYd) (width {w}))")
-    lines.append(f"  (fp_line (start {x2:.2f} {y1:.2f}) (end {x2:.2f} {y2:.2f}) " f"(layer F.CrtYd) (width {w}))")
-    lines.append(f"  (fp_line (start {x2:.2f} {y2:.2f}) (end {x1:.2f} {y2:.2f}) " f"(layer F.CrtYd) (width {w}))")
-    lines.append(f"  (fp_line (start {x1:.2f} {y2:.2f}) (end {x1:.2f} {y1:.2f}) " f"(layer F.CrtYd) (width {w}))")
+    lines.append(f"  (fp_line (start {x1:.2f} {y1:.2f}) (end {x2:.2f} {y1:.2f}) (layer F.CrtYd) (width {w}))")
+    lines.append(f"  (fp_line (start {x2:.2f} {y1:.2f}) (end {x2:.2f} {y2:.2f}) (layer F.CrtYd) (width {w}))")
+    lines.append(f"  (fp_line (start {x2:.2f} {y2:.2f}) (end {x1:.2f} {y2:.2f}) (layer F.CrtYd) (width {w}))")
+    lines.append(f"  (fp_line (start {x1:.2f} {y2:.2f}) (end {x1:.2f} {y1:.2f}) (layer F.CrtYd) (width {w}))")
     return "\n".join(lines)
 
 
@@ -287,9 +288,7 @@ def main():
     tent_note = ""
     if args.ep_via_tenting != "none":
         tent_y = -args.ep / 2 - 1.0
-        tent_note = ('  (fp_text user "EP_VIA_TENT={}" ' "(at 0 {}) (layer F.Fab))\n").format(
-            args.ep_via_tenting, tent_y
-        )
+        tent_note = ('  (fp_text user "EP_VIA_TENT={}" (at 0 {}) (layer F.Fab))\n').format(args.ep_via_tenting, tent_y)
         # prefer placing note before courtyard/paste for visibility
         if courtyard_fp:
             courtyard_fp = tent_note + courtyard_fp

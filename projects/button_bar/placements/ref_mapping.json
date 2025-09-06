@@ -1,0 +1,1538 @@
+{
+  "LED1": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": -2.0,
+    "y_mm": -2.0,
+    "rotation": 0.0
+  },
+  "LED2": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 2.0,
+    "y_mm": -2.0,
+    "rotation": 0.0
+  },
+  "LED3": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": -2.0,
+    "y_mm": 2.0,
+    "rotation": 0.0
+  },
+  "LED4": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 2.0,
+    "y_mm": 2.0,
+    "rotation": 0.0
+  },
+  "LED5": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 24.0,
+    "y_mm": -2.0,
+    "rotation": 0.0
+  },
+  "LED6": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 28.0,
+    "y_mm": -2.0,
+    "rotation": 0.0
+  },
+  "LED7": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 24.0,
+    "y_mm": 2.0,
+    "rotation": 0.0
+  },
+  "LED8": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 28.0,
+    "y_mm": 2.0,
+    "rotation": 0.0
+  },
+  "LED9": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 50.0,
+    "y_mm": -2.0,
+    "rotation": 0.0
+  },
+  "LED10": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 54.0,
+    "y_mm": -2.0,
+    "rotation": 0.0
+  },
+  "LED11": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 50.0,
+    "y_mm": 2.0,
+    "rotation": 0.0
+  },
+  "LED12": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 54.0,
+    "y_mm": 2.0,
+    "rotation": 0.0
+  },
+  "LED13": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 76.0,
+    "y_mm": -2.0,
+    "rotation": 0.0
+  },
+  "LED14": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 80.0,
+    "y_mm": -2.0,
+    "rotation": 0.0
+  },
+  "LED15": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 76.0,
+    "y_mm": 2.0,
+    "rotation": 0.0
+  },
+  "LED16": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 80.0,
+    "y_mm": 2.0,
+    "rotation": 0.0
+  },
+  "LED17": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 102.0,
+    "y_mm": -2.0,
+    "rotation": 0.0
+  },
+  "LED18": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 106.0,
+    "y_mm": -2.0,
+    "rotation": 0.0
+  },
+  "LED19": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 102.0,
+    "y_mm": 2.0,
+    "rotation": 0.0
+  },
+  "LED20": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 106.0,
+    "y_mm": 2.0,
+    "rotation": 0.0
+  },
+  "LED21": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 128.0,
+    "y_mm": -2.0,
+    "rotation": 0.0
+  },
+  "LED22": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 132.0,
+    "y_mm": -2.0,
+    "rotation": 0.0
+  },
+  "LED23": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 128.0,
+    "y_mm": 2.0,
+    "rotation": 0.0
+  },
+  "LED24": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 132.0,
+    "y_mm": 2.0,
+    "rotation": 0.0
+  },
+  "LED25": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 154.0,
+    "y_mm": -2.0,
+    "rotation": 0.0
+  },
+  "LED26": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 158.0,
+    "y_mm": -2.0,
+    "rotation": 0.0
+  },
+  "LED27": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 154.0,
+    "y_mm": 2.0,
+    "rotation": 0.0
+  },
+  "LED28": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 158.0,
+    "y_mm": 2.0,
+    "rotation": 0.0
+  },
+  "LED29": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 180.0,
+    "y_mm": -2.0,
+    "rotation": 0.0
+  },
+  "LED30": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 184.0,
+    "y_mm": -2.0,
+    "rotation": 0.0
+  },
+  "LED31": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 180.0,
+    "y_mm": 2.0,
+    "rotation": 0.0
+  },
+  "LED32": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 184.0,
+    "y_mm": 2.0,
+    "rotation": 0.0
+  },
+  "LED33": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": -2.0,
+    "y_mm": 24.0,
+    "rotation": 0.0
+  },
+  "LED34": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 2.0,
+    "y_mm": 24.0,
+    "rotation": 0.0
+  },
+  "LED35": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": -2.0,
+    "y_mm": 28.0,
+    "rotation": 0.0
+  },
+  "LED36": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 2.0,
+    "y_mm": 28.0,
+    "rotation": 0.0
+  },
+  "LED37": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 24.0,
+    "y_mm": 24.0,
+    "rotation": 0.0
+  },
+  "LED38": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 28.0,
+    "y_mm": 24.0,
+    "rotation": 0.0
+  },
+  "LED39": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 24.0,
+    "y_mm": 28.0,
+    "rotation": 0.0
+  },
+  "LED40": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 28.0,
+    "y_mm": 28.0,
+    "rotation": 0.0
+  },
+  "LED41": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 50.0,
+    "y_mm": 24.0,
+    "rotation": 0.0
+  },
+  "LED42": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 54.0,
+    "y_mm": 24.0,
+    "rotation": 0.0
+  },
+  "LED43": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 50.0,
+    "y_mm": 28.0,
+    "rotation": 0.0
+  },
+  "LED44": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 54.0,
+    "y_mm": 28.0,
+    "rotation": 0.0
+  },
+  "LED45": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 76.0,
+    "y_mm": 24.0,
+    "rotation": 0.0
+  },
+  "LED46": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 80.0,
+    "y_mm": 24.0,
+    "rotation": 0.0
+  },
+  "LED47": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 76.0,
+    "y_mm": 28.0,
+    "rotation": 0.0
+  },
+  "LED48": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 80.0,
+    "y_mm": 28.0,
+    "rotation": 0.0
+  },
+  "LED49": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 102.0,
+    "y_mm": 24.0,
+    "rotation": 0.0
+  },
+  "LED50": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 106.0,
+    "y_mm": 24.0,
+    "rotation": 0.0
+  },
+  "LED51": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 102.0,
+    "y_mm": 28.0,
+    "rotation": 0.0
+  },
+  "LED52": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 106.0,
+    "y_mm": 28.0,
+    "rotation": 0.0
+  },
+  "LED53": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 128.0,
+    "y_mm": 24.0,
+    "rotation": 0.0
+  },
+  "LED54": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 132.0,
+    "y_mm": 24.0,
+    "rotation": 0.0
+  },
+  "LED55": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 128.0,
+    "y_mm": 28.0,
+    "rotation": 0.0
+  },
+  "LED56": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 132.0,
+    "y_mm": 28.0,
+    "rotation": 0.0
+  },
+  "LED57": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 154.0,
+    "y_mm": 24.0,
+    "rotation": 0.0
+  },
+  "LED58": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 158.0,
+    "y_mm": 24.0,
+    "rotation": 0.0
+  },
+  "LED59": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 154.0,
+    "y_mm": 28.0,
+    "rotation": 0.0
+  },
+  "LED60": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 158.0,
+    "y_mm": 28.0,
+    "rotation": 0.0
+  },
+  "LED61": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 180.0,
+    "y_mm": 24.0,
+    "rotation": 0.0
+  },
+  "LED62": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 184.0,
+    "y_mm": 24.0,
+    "rotation": 0.0
+  },
+  "LED63": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 180.0,
+    "y_mm": 28.0,
+    "rotation": 0.0
+  },
+  "LED64": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 184.0,
+    "y_mm": 28.0,
+    "rotation": 0.0
+  },
+  "LED65": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": -2.0,
+    "y_mm": 50.0,
+    "rotation": 0.0
+  },
+  "LED66": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 2.0,
+    "y_mm": 50.0,
+    "rotation": 0.0
+  },
+  "LED67": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": -2.0,
+    "y_mm": 54.0,
+    "rotation": 0.0
+  },
+  "LED68": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 2.0,
+    "y_mm": 54.0,
+    "rotation": 0.0
+  },
+  "LED69": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 24.0,
+    "y_mm": 50.0,
+    "rotation": 0.0
+  },
+  "LED70": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 28.0,
+    "y_mm": 50.0,
+    "rotation": 0.0
+  },
+  "LED71": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 24.0,
+    "y_mm": 54.0,
+    "rotation": 0.0
+  },
+  "LED72": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 28.0,
+    "y_mm": 54.0,
+    "rotation": 0.0
+  },
+  "LED73": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 50.0,
+    "y_mm": 50.0,
+    "rotation": 0.0
+  },
+  "LED74": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 54.0,
+    "y_mm": 50.0,
+    "rotation": 0.0
+  },
+  "LED75": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 50.0,
+    "y_mm": 54.0,
+    "rotation": 0.0
+  },
+  "LED76": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 54.0,
+    "y_mm": 54.0,
+    "rotation": 0.0
+  },
+  "LED77": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 76.0,
+    "y_mm": 50.0,
+    "rotation": 0.0
+  },
+  "LED78": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 80.0,
+    "y_mm": 50.0,
+    "rotation": 0.0
+  },
+  "LED79": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 76.0,
+    "y_mm": 54.0,
+    "rotation": 0.0
+  },
+  "LED80": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 80.0,
+    "y_mm": 54.0,
+    "rotation": 0.0
+  },
+  "LED81": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 102.0,
+    "y_mm": 50.0,
+    "rotation": 0.0
+  },
+  "LED82": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 106.0,
+    "y_mm": 50.0,
+    "rotation": 0.0
+  },
+  "LED83": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 102.0,
+    "y_mm": 54.0,
+    "rotation": 0.0
+  },
+  "LED84": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 106.0,
+    "y_mm": 54.0,
+    "rotation": 0.0
+  },
+  "LED85": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 128.0,
+    "y_mm": 50.0,
+    "rotation": 0.0
+  },
+  "LED86": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 132.0,
+    "y_mm": 50.0,
+    "rotation": 0.0
+  },
+  "LED87": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 128.0,
+    "y_mm": 54.0,
+    "rotation": 0.0
+  },
+  "LED88": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 132.0,
+    "y_mm": 54.0,
+    "rotation": 0.0
+  },
+  "LED89": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 154.0,
+    "y_mm": 50.0,
+    "rotation": 0.0
+  },
+  "LED90": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 158.0,
+    "y_mm": 50.0,
+    "rotation": 0.0
+  },
+  "LED91": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 154.0,
+    "y_mm": 54.0,
+    "rotation": 0.0
+  },
+  "LED92": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 158.0,
+    "y_mm": 54.0,
+    "rotation": 0.0
+  },
+  "LED93": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 180.0,
+    "y_mm": 50.0,
+    "rotation": 0.0
+  },
+  "LED94": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 184.0,
+    "y_mm": 50.0,
+    "rotation": 0.0
+  },
+  "LED95": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 180.0,
+    "y_mm": 54.0,
+    "rotation": 0.0
+  },
+  "LED96": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 184.0,
+    "y_mm": 54.0,
+    "rotation": 0.0
+  },
+  "LED97": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": -2.0,
+    "y_mm": 76.0,
+    "rotation": 0.0
+  },
+  "LED98": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 2.0,
+    "y_mm": 76.0,
+    "rotation": 0.0
+  },
+  "LED99": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": -2.0,
+    "y_mm": 80.0,
+    "rotation": 0.0
+  },
+  "LED100": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 2.0,
+    "y_mm": 80.0,
+    "rotation": 0.0
+  },
+  "LED101": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 24.0,
+    "y_mm": 76.0,
+    "rotation": 0.0
+  },
+  "LED102": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 28.0,
+    "y_mm": 76.0,
+    "rotation": 0.0
+  },
+  "LED103": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 24.0,
+    "y_mm": 80.0,
+    "rotation": 0.0
+  },
+  "LED104": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 28.0,
+    "y_mm": 80.0,
+    "rotation": 0.0
+  },
+  "LED105": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 50.0,
+    "y_mm": 76.0,
+    "rotation": 0.0
+  },
+  "LED106": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 54.0,
+    "y_mm": 76.0,
+    "rotation": 0.0
+  },
+  "LED107": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 50.0,
+    "y_mm": 80.0,
+    "rotation": 0.0
+  },
+  "LED108": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 54.0,
+    "y_mm": 80.0,
+    "rotation": 0.0
+  },
+  "LED109": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 76.0,
+    "y_mm": 76.0,
+    "rotation": 0.0
+  },
+  "LED110": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 80.0,
+    "y_mm": 76.0,
+    "rotation": 0.0
+  },
+  "LED111": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 76.0,
+    "y_mm": 80.0,
+    "rotation": 0.0
+  },
+  "LED112": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 80.0,
+    "y_mm": 80.0,
+    "rotation": 0.0
+  },
+  "LED113": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 102.0,
+    "y_mm": 76.0,
+    "rotation": 0.0
+  },
+  "LED114": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 106.0,
+    "y_mm": 76.0,
+    "rotation": 0.0
+  },
+  "LED115": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 102.0,
+    "y_mm": 80.0,
+    "rotation": 0.0
+  },
+  "LED116": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 106.0,
+    "y_mm": 80.0,
+    "rotation": 0.0
+  },
+  "LED117": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 128.0,
+    "y_mm": 76.0,
+    "rotation": 0.0
+  },
+  "LED118": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 132.0,
+    "y_mm": 76.0,
+    "rotation": 0.0
+  },
+  "LED119": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 128.0,
+    "y_mm": 80.0,
+    "rotation": 0.0
+  },
+  "LED120": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 132.0,
+    "y_mm": 80.0,
+    "rotation": 0.0
+  },
+  "LED121": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 154.0,
+    "y_mm": 76.0,
+    "rotation": 0.0
+  },
+  "LED122": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 158.0,
+    "y_mm": 76.0,
+    "rotation": 0.0
+  },
+  "LED123": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 154.0,
+    "y_mm": 80.0,
+    "rotation": 0.0
+  },
+  "LED124": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 158.0,
+    "y_mm": 80.0,
+    "rotation": 0.0
+  },
+  "LED125": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 180.0,
+    "y_mm": 76.0,
+    "rotation": 0.0
+  },
+  "LED126": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 184.0,
+    "y_mm": 76.0,
+    "rotation": 0.0
+  },
+  "LED127": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 180.0,
+    "y_mm": 80.0,
+    "rotation": 0.0
+  },
+  "LED128": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 184.0,
+    "y_mm": 80.0,
+    "rotation": 0.0
+  },
+  "LED129": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": -2.0,
+    "y_mm": 102.0,
+    "rotation": 0.0
+  },
+  "LED130": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 2.0,
+    "y_mm": 102.0,
+    "rotation": 0.0
+  },
+  "LED131": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": -2.0,
+    "y_mm": 106.0,
+    "rotation": 0.0
+  },
+  "LED132": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 2.0,
+    "y_mm": 106.0,
+    "rotation": 0.0
+  },
+  "LED133": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 24.0,
+    "y_mm": 102.0,
+    "rotation": 0.0
+  },
+  "LED134": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 28.0,
+    "y_mm": 102.0,
+    "rotation": 0.0
+  },
+  "LED135": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 24.0,
+    "y_mm": 106.0,
+    "rotation": 0.0
+  },
+  "LED136": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 28.0,
+    "y_mm": 106.0,
+    "rotation": 0.0
+  },
+  "LED137": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 50.0,
+    "y_mm": 102.0,
+    "rotation": 0.0
+  },
+  "LED138": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 54.0,
+    "y_mm": 102.0,
+    "rotation": 0.0
+  },
+  "LED139": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 50.0,
+    "y_mm": 106.0,
+    "rotation": 0.0
+  },
+  "LED140": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 54.0,
+    "y_mm": 106.0,
+    "rotation": 0.0
+  },
+  "LED141": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 76.0,
+    "y_mm": 102.0,
+    "rotation": 0.0
+  },
+  "LED142": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 80.0,
+    "y_mm": 102.0,
+    "rotation": 0.0
+  },
+  "LED143": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 76.0,
+    "y_mm": 106.0,
+    "rotation": 0.0
+  },
+  "LED144": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 80.0,
+    "y_mm": 106.0,
+    "rotation": 0.0
+  },
+  "LED145": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 102.0,
+    "y_mm": 102.0,
+    "rotation": 0.0
+  },
+  "LED146": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 106.0,
+    "y_mm": 102.0,
+    "rotation": 0.0
+  },
+  "LED147": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 102.0,
+    "y_mm": 106.0,
+    "rotation": 0.0
+  },
+  "LED148": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 106.0,
+    "y_mm": 106.0,
+    "rotation": 0.0
+  },
+  "LED149": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 128.0,
+    "y_mm": 102.0,
+    "rotation": 0.0
+  },
+  "LED150": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 132.0,
+    "y_mm": 102.0,
+    "rotation": 0.0
+  },
+  "LED151": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 128.0,
+    "y_mm": 106.0,
+    "rotation": 0.0
+  },
+  "LED152": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 132.0,
+    "y_mm": 106.0,
+    "rotation": 0.0
+  },
+  "LED153": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 154.0,
+    "y_mm": 102.0,
+    "rotation": 0.0
+  },
+  "LED154": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 158.0,
+    "y_mm": 102.0,
+    "rotation": 0.0
+  },
+  "LED155": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 154.0,
+    "y_mm": 106.0,
+    "rotation": 0.0
+  },
+  "LED156": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 158.0,
+    "y_mm": 106.0,
+    "rotation": 0.0
+  },
+  "LED157": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 180.0,
+    "y_mm": 102.0,
+    "rotation": 0.0
+  },
+  "LED158": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 184.0,
+    "y_mm": 102.0,
+    "rotation": 0.0
+  },
+  "LED159": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 180.0,
+    "y_mm": 106.0,
+    "rotation": 0.0
+  },
+  "LED160": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 184.0,
+    "y_mm": 106.0,
+    "rotation": 0.0
+  },
+  "LED161": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": -2.0,
+    "y_mm": 128.0,
+    "rotation": 0.0
+  },
+  "LED162": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 2.0,
+    "y_mm": 128.0,
+    "rotation": 0.0
+  },
+  "LED163": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": -2.0,
+    "y_mm": 132.0,
+    "rotation": 0.0
+  },
+  "LED164": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 2.0,
+    "y_mm": 132.0,
+    "rotation": 0.0
+  },
+  "LED165": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 24.0,
+    "y_mm": 128.0,
+    "rotation": 0.0
+  },
+  "LED166": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 28.0,
+    "y_mm": 128.0,
+    "rotation": 0.0
+  },
+  "LED167": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 24.0,
+    "y_mm": 132.0,
+    "rotation": 0.0
+  },
+  "LED168": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 28.0,
+    "y_mm": 132.0,
+    "rotation": 0.0
+  },
+  "LED169": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 50.0,
+    "y_mm": 128.0,
+    "rotation": 0.0
+  },
+  "LED170": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 54.0,
+    "y_mm": 128.0,
+    "rotation": 0.0
+  },
+  "LED171": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 50.0,
+    "y_mm": 132.0,
+    "rotation": 0.0
+  },
+  "LED172": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 54.0,
+    "y_mm": 132.0,
+    "rotation": 0.0
+  },
+  "LED173": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 76.0,
+    "y_mm": 128.0,
+    "rotation": 0.0
+  },
+  "LED174": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 80.0,
+    "y_mm": 128.0,
+    "rotation": 0.0
+  },
+  "LED175": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 76.0,
+    "y_mm": 132.0,
+    "rotation": 0.0
+  },
+  "LED176": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 80.0,
+    "y_mm": 132.0,
+    "rotation": 0.0
+  },
+  "LED177": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 102.0,
+    "y_mm": 128.0,
+    "rotation": 0.0
+  },
+  "LED178": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 106.0,
+    "y_mm": 128.0,
+    "rotation": 0.0
+  },
+  "LED179": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 102.0,
+    "y_mm": 132.0,
+    "rotation": 0.0
+  },
+  "LED180": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 106.0,
+    "y_mm": 132.0,
+    "rotation": 0.0
+  },
+  "LED181": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 128.0,
+    "y_mm": 128.0,
+    "rotation": 0.0
+  },
+  "LED182": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 132.0,
+    "y_mm": 128.0,
+    "rotation": 0.0
+  },
+  "LED183": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 128.0,
+    "y_mm": 132.0,
+    "rotation": 0.0
+  },
+  "LED184": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 132.0,
+    "y_mm": 132.0,
+    "rotation": 0.0
+  },
+  "LED185": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 154.0,
+    "y_mm": 128.0,
+    "rotation": 0.0
+  },
+  "LED186": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 158.0,
+    "y_mm": 128.0,
+    "rotation": 0.0
+  },
+  "LED187": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 154.0,
+    "y_mm": 132.0,
+    "rotation": 0.0
+  },
+  "LED188": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 158.0,
+    "y_mm": 132.0,
+    "rotation": 0.0
+  },
+  "LED189": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 180.0,
+    "y_mm": 128.0,
+    "rotation": 0.0
+  },
+  "LED190": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 184.0,
+    "y_mm": 128.0,
+    "rotation": 0.0
+  },
+  "LED191": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 180.0,
+    "y_mm": 132.0,
+    "rotation": 0.0
+  },
+  "LED192": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 184.0,
+    "y_mm": 132.0,
+    "rotation": 0.0
+  },
+  "LED193": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": -2.0,
+    "y_mm": 154.0,
+    "rotation": 0.0
+  },
+  "LED194": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 2.0,
+    "y_mm": 154.0,
+    "rotation": 0.0
+  },
+  "LED195": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": -2.0,
+    "y_mm": 158.0,
+    "rotation": 0.0
+  },
+  "LED196": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 2.0,
+    "y_mm": 158.0,
+    "rotation": 0.0
+  },
+  "LED197": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 24.0,
+    "y_mm": 154.0,
+    "rotation": 0.0
+  },
+  "LED198": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 28.0,
+    "y_mm": 154.0,
+    "rotation": 0.0
+  },
+  "LED199": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 24.0,
+    "y_mm": 158.0,
+    "rotation": 0.0
+  },
+  "LED200": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 28.0,
+    "y_mm": 158.0,
+    "rotation": 0.0
+  },
+  "LED201": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 50.0,
+    "y_mm": 154.0,
+    "rotation": 0.0
+  },
+  "LED202": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 54.0,
+    "y_mm": 154.0,
+    "rotation": 0.0
+  },
+  "LED203": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 50.0,
+    "y_mm": 158.0,
+    "rotation": 0.0
+  },
+  "LED204": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 54.0,
+    "y_mm": 158.0,
+    "rotation": 0.0
+  },
+  "LED205": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 76.0,
+    "y_mm": 154.0,
+    "rotation": 0.0
+  },
+  "LED206": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 80.0,
+    "y_mm": 154.0,
+    "rotation": 0.0
+  },
+  "LED207": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 76.0,
+    "y_mm": 158.0,
+    "rotation": 0.0
+  },
+  "LED208": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 80.0,
+    "y_mm": 158.0,
+    "rotation": 0.0
+  },
+  "LED209": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 102.0,
+    "y_mm": 154.0,
+    "rotation": 0.0
+  },
+  "LED210": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 106.0,
+    "y_mm": 154.0,
+    "rotation": 0.0
+  },
+  "LED211": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 102.0,
+    "y_mm": 158.0,
+    "rotation": 0.0
+  },
+  "LED212": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 106.0,
+    "y_mm": 158.0,
+    "rotation": 0.0
+  },
+  "LED213": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 128.0,
+    "y_mm": 154.0,
+    "rotation": 0.0
+  },
+  "LED214": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 132.0,
+    "y_mm": 154.0,
+    "rotation": 0.0
+  },
+  "LED215": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 128.0,
+    "y_mm": 158.0,
+    "rotation": 0.0
+  },
+  "LED216": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 132.0,
+    "y_mm": 158.0,
+    "rotation": 0.0
+  },
+  "LED217": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 154.0,
+    "y_mm": 154.0,
+    "rotation": 0.0
+  },
+  "LED218": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 158.0,
+    "y_mm": 154.0,
+    "rotation": 0.0
+  },
+  "LED219": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 154.0,
+    "y_mm": 158.0,
+    "rotation": 0.0
+  },
+  "LED220": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 158.0,
+    "y_mm": 158.0,
+    "rotation": 0.0
+  },
+  "LED221": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 180.0,
+    "y_mm": 154.0,
+    "rotation": 0.0
+  },
+  "LED222": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 184.0,
+    "y_mm": 154.0,
+    "rotation": 0.0
+  },
+  "LED223": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 180.0,
+    "y_mm": 158.0,
+    "rotation": 0.0
+  },
+  "LED224": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 184.0,
+    "y_mm": 158.0,
+    "rotation": 0.0
+  },
+  "LED225": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": -2.0,
+    "y_mm": 180.0,
+    "rotation": 0.0
+  },
+  "LED226": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 2.0,
+    "y_mm": 180.0,
+    "rotation": 0.0
+  },
+  "LED227": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": -2.0,
+    "y_mm": 184.0,
+    "rotation": 0.0
+  },
+  "LED228": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 2.0,
+    "y_mm": 184.0,
+    "rotation": 0.0
+  },
+  "LED229": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 24.0,
+    "y_mm": 180.0,
+    "rotation": 0.0
+  },
+  "LED230": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 28.0,
+    "y_mm": 180.0,
+    "rotation": 0.0
+  },
+  "LED231": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 24.0,
+    "y_mm": 184.0,
+    "rotation": 0.0
+  },
+  "LED232": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 28.0,
+    "y_mm": 184.0,
+    "rotation": 0.0
+  },
+  "LED233": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 50.0,
+    "y_mm": 180.0,
+    "rotation": 0.0
+  },
+  "LED234": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 54.0,
+    "y_mm": 180.0,
+    "rotation": 0.0
+  },
+  "LED235": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 50.0,
+    "y_mm": 184.0,
+    "rotation": 0.0
+  },
+  "LED236": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 54.0,
+    "y_mm": 184.0,
+    "rotation": 0.0
+  },
+  "LED237": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 76.0,
+    "y_mm": 180.0,
+    "rotation": 0.0
+  },
+  "LED238": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 80.0,
+    "y_mm": 180.0,
+    "rotation": 0.0
+  },
+  "LED239": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 76.0,
+    "y_mm": 184.0,
+    "rotation": 0.0
+  },
+  "LED240": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 80.0,
+    "y_mm": 184.0,
+    "rotation": 0.0
+  },
+  "LED241": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 102.0,
+    "y_mm": 180.0,
+    "rotation": 0.0
+  },
+  "LED242": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 106.0,
+    "y_mm": 180.0,
+    "rotation": 0.0
+  },
+  "LED243": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 102.0,
+    "y_mm": 184.0,
+    "rotation": 0.0
+  },
+  "LED244": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 106.0,
+    "y_mm": 184.0,
+    "rotation": 0.0
+  },
+  "LED245": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 128.0,
+    "y_mm": 180.0,
+    "rotation": 0.0
+  },
+  "LED246": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 132.0,
+    "y_mm": 180.0,
+    "rotation": 0.0
+  },
+  "LED247": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 128.0,
+    "y_mm": 184.0,
+    "rotation": 0.0
+  },
+  "LED248": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 132.0,
+    "y_mm": 184.0,
+    "rotation": 0.0
+  },
+  "LED249": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 154.0,
+    "y_mm": 180.0,
+    "rotation": 0.0
+  },
+  "LED250": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 158.0,
+    "y_mm": 180.0,
+    "rotation": 0.0
+  },
+  "LED251": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 154.0,
+    "y_mm": 184.0,
+    "rotation": 0.0
+  },
+  "LED252": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 158.0,
+    "y_mm": 184.0,
+    "rotation": 0.0
+  },
+  "LED253": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 180.0,
+    "y_mm": 180.0,
+    "rotation": 0.0
+  },
+  "LED254": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 184.0,
+    "y_mm": 180.0,
+    "rotation": 0.0
+  },
+  "LED255": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 180.0,
+    "y_mm": 184.0,
+    "rotation": 0.0
+  },
+  "LED256": {
+    "footprint": "LED_APA-102-2020-256-8:APA102_5050",
+    "x_mm": 184.0,
+    "y_mm": 184.0,
+    "rotation": 0.0
+  }
+}

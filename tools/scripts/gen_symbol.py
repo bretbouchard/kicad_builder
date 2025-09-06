@@ -6,6 +6,7 @@ Generate a minimal KiCad symbol library entry from a pinmap JSON.
 Usage:
   python3 gen_symbol.py pinmap.json out.lib --footprint "LIB:FOO" --package RP2040
 """
+
 from pathlib import Path
 import argparse
 import json

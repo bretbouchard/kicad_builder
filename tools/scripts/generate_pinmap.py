@@ -11,6 +11,7 @@ The script accepts '-' as input to read from stdin. If input has a .csv or .tsv 
 it will be parsed as CSV, otherwise it is treated as JSON and validated for a
 `pin_to_signal` mapping.
 """
+
 from pathlib import Path
 import argparse
 import json

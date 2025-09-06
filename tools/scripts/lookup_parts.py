@@ -170,7 +170,7 @@ def main():
                 try:
                     num = float(v.replace("uF", ""))
                     if num < 1:
-                        out.append(f"{int(num*1000)}nF")
+                        out.append(f"{int(num * 1000)}nF")
                 except Exception:
                     pass
             return out
