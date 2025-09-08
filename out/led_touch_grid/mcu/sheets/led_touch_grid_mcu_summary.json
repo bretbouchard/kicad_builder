@@ -1,0 +1,485 @@
+{
+  "title": "led_touch_grid_mcu",
+  "symbols": [
+    {
+      "lib": "RP2040",
+      "name": "RP2040",
+      "ref": "U1",
+      "at": [
+        50.0,
+        50.0
+      ],
+      "orientation": 0,
+      "value": "Touch RP2040",
+      "footprint": "MCU_QFN56.pretty:RP2040-QFN56",
+      "unit": 1,
+      "fields": {
+        "Part": "RP2040",
+        "Package": "QFN-56",
+        "Function": "Capacitive Touch Controller",
+        "Clock": "133MHz"
+      }
+    },
+    {
+      "lib": "RP2040",
+      "name": "RP2040",
+      "ref": "U2",
+      "at": [
+        200.0,
+        50.0
+      ],
+      "orientation": 0,
+      "value": "LED RP2040",
+      "footprint": "MCU_QFN56.pretty:RP2040-QFN56",
+      "unit": 1,
+      "fields": {
+        "Part": "RP2040",
+        "Package": "QFN-56",
+        "Function": "LED SPI Controller",
+        "Clock": "133MHz"
+      }
+    },
+    {
+      "lib": "Crystal",
+      "name": "HC49U",
+      "ref": "Y1",
+      "at": [
+        80.0,
+        70.0
+      ],
+      "orientation": 0,
+      "value": "12MHz Crystal",
+      "footprint": "Crystal:Crystal_HC49U_11.05x4.65mm",
+      "unit": 1,
+      "fields": {
+        "Frequency": "12MHz",
+        "Load": "12pF"
+      }
+    },
+    {
+      "lib": "Crystal",
+      "name": "HC49U",
+      "ref": "Y2",
+      "at": [
+        230.0,
+        70.0
+      ],
+      "orientation": 0,
+      "value": "12MHz Crystal",
+      "footprint": "Crystal:Crystal_HC49U_11.05x4.65mm",
+      "unit": 1,
+      "fields": {
+        "Frequency": "12MHz",
+        "Load": "12pF"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C10",
+      "at": [
+        90.0,
+        80.0
+      ],
+      "orientation": 0,
+      "value": "22pF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "Voltage": "50V",
+        "Type": "Ceramic"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C11",
+      "at": [
+        90.0,
+        90.0
+      ],
+      "orientation": 0,
+      "value": "22pF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "Voltage": "50V",
+        "Type": "Ceramic"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C12",
+      "at": [
+        240.0,
+        80.0
+      ],
+      "orientation": 0,
+      "value": "22pF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "Voltage": "50V",
+        "Type": "Ceramic"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C13",
+      "at": [
+        240.0,
+        90.0
+      ],
+      "orientation": 0,
+      "value": "22pF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "Voltage": "50V",
+        "Type": "Ceramic"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C24",
+      "at": [
+        50.0,
+        30.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "Voltage": "50V",
+        "Type": "Ceramic Decoupling"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C25",
+      "at": [
+        60.0,
+        30.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "Voltage": "50V",
+        "Type": "Ceramic Decoupling"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C26",
+      "at": [
+        70.0,
+        30.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "Voltage": "50V",
+        "Type": "Ceramic Decoupling"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C27",
+      "at": [
+        80.0,
+        30.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "Voltage": "50V",
+        "Type": "Ceramic Decoupling"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C28",
+      "at": [
+        200.0,
+        30.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "Voltage": "50V",
+        "Type": "Ceramic Decoupling"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C29",
+      "at": [
+        210.0,
+        30.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "Voltage": "50V",
+        "Type": "Ceramic Decoupling"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C30",
+      "at": [
+        220.0,
+        30.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "Voltage": "50V",
+        "Type": "Ceramic Decoupling"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C31",
+      "at": [
+        230.0,
+        30.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "Voltage": "50V",
+        "Type": "Ceramic Decoupling"
+      }
+    },
+    {
+      "lib": "Connector_PinHeader_2.54mm",
+      "name": "PinHeader_1x04_P2.54mm_Vertical",
+      "ref": "J2",
+      "at": [
+        20.0,
+        80.0
+      ],
+      "orientation": 0,
+      "value": "SWD J2",
+      "footprint": "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical",
+      "unit": 1,
+      "fields": {
+        "Type": "SWD Programming",
+        "Pins": "SWDIO, SWCLK, GND, 3.3V"
+      }
+    },
+    {
+      "lib": "Connector_PinHeader_2.54mm",
+      "name": "PinHeader_1x04_P2.54mm_Vertical",
+      "ref": "J3",
+      "at": [
+        170.0,
+        80.0
+      ],
+      "orientation": 0,
+      "value": "SWD J3",
+      "footprint": "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical",
+      "unit": 1,
+      "fields": {
+        "Type": "SWD Programming",
+        "Pins": "SWDIO, SWCLK, GND, 3.3V"
+      }
+    }
+  ],
+  "wires": [
+    {
+      "a": "3.3V_OUT",
+      "b": "U1.VDD"
+    },
+    {
+      "a": "GND",
+      "b": "U1.GND"
+    },
+    {
+      "a": "U1.XIN",
+      "b": "Y1.1"
+    },
+    {
+      "a": "U1.XOUT",
+      "b": "Y1.2"
+    },
+    {
+      "a": "Y1.1",
+      "b": "C10.1"
+    },
+    {
+      "a": "C10.2",
+      "b": "GND"
+    },
+    {
+      "a": "Y1.2",
+      "b": "C11.1"
+    },
+    {
+      "a": "C11.2",
+      "b": "GND"
+    },
+    {
+      "a": "U1.SWDIO",
+      "b": "J2.1"
+    },
+    {
+      "a": "U1.SWCLK",
+      "b": "J2.2"
+    },
+    {
+      "a": "GND",
+      "b": "J2.3"
+    },
+    {
+      "a": "3.3V_OUT",
+      "b": "J2.4"
+    },
+    {
+      "a": "3.3V_OUT",
+      "b": "U2.VDD"
+    },
+    {
+      "a": "GND",
+      "b": "U2.GND"
+    },
+    {
+      "a": "U2.XIN",
+      "b": "Y2.1"
+    },
+    {
+      "a": "U2.XOUT",
+      "b": "Y2.2"
+    },
+    {
+      "a": "Y2.1",
+      "b": "C12.1"
+    },
+    {
+      "a": "C12.2",
+      "b": "GND"
+    },
+    {
+      "a": "Y2.2",
+      "b": "C13.1"
+    },
+    {
+      "a": "C13.2",
+      "b": "GND"
+    },
+    {
+      "a": "U2.SWDIO",
+      "b": "J3.1"
+    },
+    {
+      "a": "U2.SWCLK",
+      "b": "J3.2"
+    },
+    {
+      "a": "GND",
+      "b": "J3.3"
+    },
+    {
+      "a": "3.3V_OUT",
+      "b": "J3.4"
+    },
+    {
+      "a": "MOSI0",
+      "b": "U2.GPIO16"
+    },
+    {
+      "a": "MOSI1",
+      "b": "U2.GPIO17"
+    },
+    {
+      "a": "MOSI2",
+      "b": "U2.GPIO18"
+    },
+    {
+      "a": "MOSI3",
+      "b": "U2.GPIO19"
+    },
+    {
+      "a": "MOSI4",
+      "b": "U2.GPIO20"
+    },
+    {
+      "a": "MOSI5",
+      "b": "U2.GPIO21"
+    },
+    {
+      "a": "MOSI6",
+      "b": "U2.GPIO22"
+    },
+    {
+      "a": "MOSI7",
+      "b": "U2.GPIO23"
+    },
+    {
+      "a": "MOSI8",
+      "b": "U2.GPIO24"
+    },
+    {
+      "a": "MOSI9",
+      "b": "U2.GPIO25"
+    },
+    {
+      "a": "MOSI10",
+      "b": "U2.GPIO26"
+    },
+    {
+      "a": "MOSI11",
+      "b": "U2.GPIO27"
+    },
+    {
+      "a": "MOSI12",
+      "b": "U2.GPIO28"
+    },
+    {
+      "a": "MOSI13",
+      "b": "U2.GPIO29"
+    },
+    {
+      "a": "MOSI14",
+      "b": "U2.GPIO30"
+    },
+    {
+      "a": "MOSI15",
+      "b": "U2.GPIO31"
+    },
+    {
+      "a": "SCK",
+      "b": "U2.GPIO14"
+    },
+    {
+      "a": "I2C_SDA",
+      "b": "U1.GPIO4"
+    }
+  ]
+}

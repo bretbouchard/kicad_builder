@@ -34,7 +34,7 @@ MAPPING_FILE = ROOT / "projects" / "button_bar" / "snapmagic_mapping.json"
 
 
 def read_bom(bom_path: Path) -> List[str]:
-    parts = []
+    parts: List[str] = []
     if not bom_path.exists():
         return parts
     with bom_path.open() as f:
@@ -49,7 +49,7 @@ def read_bom(bom_path: Path) -> List[str]:
 
 def find_in_inbox(part: str) -> Dict[str, Path]:
     """Return dict with keys 'footprint' and 'symbol' if found in inbox."""
-    out = {}
+    out: Dict[str, Path] = {}
     if not INBOX.exists():
         return out
     # naive search: look for files or folders containing the part string
@@ -137,9 +137,14 @@ def update_symbol_json(symbol_path: Path, footprint_name: str) -> bool:
     return True
 
 
-def process_part(part: str) -> Dict:
+def process_part(part: str) -> Dict[str, Optional[str]]:
     found = find_in_inbox(part)
-    entry = {"part": part, "footprint": None, "symbol": None, "source": None}
+    entry: Dict[str, Optional[str]] = {
+        "part": part,
+        "footprint": None,
+        "symbol": None,
+        "source": None,
+    }
     if "footprint" in found:
         dst = safe_copy(found["footprint"], PROJECT_FOOTPRINTS)
         entry["footprint"] = str(dst.relative_to(ROOT))
@@ -154,7 +159,9 @@ def process_part(part: str) -> Dict:
         entry["symbol"] = str(dsts.relative_to(ROOT))
         # try safe update of JSON-format symbol to point at footprint
         try:
-            update_symbol_json(dsts, Path(entry["footprint"]).name)
+            fp = entry.get("footprint")
+            if fp is not None:
+                update_symbol_json(dsts, Path(fp).name)
         except Exception:
             pass
     else:
@@ -164,8 +171,8 @@ def process_part(part: str) -> Dict:
     return entry
 
 
-def run(parts: List[str], do_write: bool = True) -> List[Dict]:
-    mapping = []
+def run(parts: List[str], do_write: bool = True) -> List[Dict[str, Optional[str]]]:
+    mapping: List[Dict[str, Optional[str]]] = []
     for p in parts:
         entry = process_part(p)
         mapping.append(entry)
@@ -179,10 +186,14 @@ def main(argv: Optional[List[str]] = None):
     ap = argparse.ArgumentParser()
     ap.add_argument("parts", nargs="*", help="Part names to search/install")
     ap.add_argument("--from-bom", help="Path to BOM CSV to extract part names")
-    ap.add_argument("--no-write", action="store_true", help="Don't write mapping file (dry run)")
+    ap.add_argument(
+        "--no-write",
+        action="store_true",
+        help="Don't write mapping file (dry run)",
+    )
     args = ap.parse_args(argv)
 
-    parts = []
+    parts: List[str] = []
     if args.from_bom:
         parts.extend(read_bom(Path(args.from_bom)))
     parts.extend(args.parts)

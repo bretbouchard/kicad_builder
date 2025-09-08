@@ -1,0 +1,1671 @@
+{
+  "title": "led_touch_grid_touch",
+  "symbols": [
+    {
+      "lib": "Device",
+      "name": "PAD",
+      "ref": "P1",
+      "at": [
+        50.0,
+        50.0
+      ],
+      "orientation": 0,
+      "value": "TouchPad",
+      "footprint": "",
+      "unit": 1,
+      "fields": {
+        "Row": "0",
+        "Col": "0",
+        "Group": "TOUCH"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "PAD",
+      "ref": "P2",
+      "at": [
+        70.0,
+        50.0
+      ],
+      "orientation": 0,
+      "value": "TouchPad",
+      "footprint": "",
+      "unit": 1,
+      "fields": {
+        "Row": "0",
+        "Col": "1",
+        "Group": "TOUCH"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "PAD",
+      "ref": "P3",
+      "at": [
+        90.0,
+        50.0
+      ],
+      "orientation": 0,
+      "value": "TouchPad",
+      "footprint": "",
+      "unit": 1,
+      "fields": {
+        "Row": "0",
+        "Col": "2",
+        "Group": "TOUCH"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "PAD",
+      "ref": "P4",
+      "at": [
+        110.0,
+        50.0
+      ],
+      "orientation": 0,
+      "value": "TouchPad",
+      "footprint": "",
+      "unit": 1,
+      "fields": {
+        "Row": "0",
+        "Col": "3",
+        "Group": "TOUCH"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "PAD",
+      "ref": "P5",
+      "at": [
+        130.0,
+        50.0
+      ],
+      "orientation": 0,
+      "value": "TouchPad",
+      "footprint": "",
+      "unit": 1,
+      "fields": {
+        "Row": "0",
+        "Col": "4",
+        "Group": "TOUCH"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "PAD",
+      "ref": "P6",
+      "at": [
+        150.0,
+        50.0
+      ],
+      "orientation": 0,
+      "value": "TouchPad",
+      "footprint": "",
+      "unit": 1,
+      "fields": {
+        "Row": "0",
+        "Col": "5",
+        "Group": "TOUCH"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "PAD",
+      "ref": "P7",
+      "at": [
+        170.0,
+        50.0
+      ],
+      "orientation": 0,
+      "value": "TouchPad",
+      "footprint": "",
+      "unit": 1,
+      "fields": {
+        "Row": "0",
+        "Col": "6",
+        "Group": "TOUCH"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "PAD",
+      "ref": "P8",
+      "at": [
+        190.0,
+        50.0
+      ],
+      "orientation": 0,
+      "value": "TouchPad",
+      "footprint": "",
+      "unit": 1,
+      "fields": {
+        "Row": "0",
+        "Col": "7",
+        "Group": "TOUCH"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "PAD",
+      "ref": "P9",
+      "at": [
+        50.0,
+        70.0
+      ],
+      "orientation": 0,
+      "value": "TouchPad",
+      "footprint": "",
+      "unit": 1,
+      "fields": {
+        "Row": "1",
+        "Col": "0",
+        "Group": "TOUCH"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "PAD",
+      "ref": "P10",
+      "at": [
+        70.0,
+        70.0
+      ],
+      "orientation": 0,
+      "value": "TouchPad",
+      "footprint": "",
+      "unit": 1,
+      "fields": {
+        "Row": "1",
+        "Col": "1",
+        "Group": "TOUCH"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "PAD",
+      "ref": "P11",
+      "at": [
+        90.0,
+        70.0
+      ],
+      "orientation": 0,
+      "value": "TouchPad",
+      "footprint": "",
+      "unit": 1,
+      "fields": {
+        "Row": "1",
+        "Col": "2",
+        "Group": "TOUCH"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "PAD",
+      "ref": "P12",
+      "at": [
+        110.0,
+        70.0
+      ],
+      "orientation": 0,
+      "value": "TouchPad",
+      "footprint": "",
+      "unit": 1,
+      "fields": {
+        "Row": "1",
+        "Col": "3",
+        "Group": "TOUCH"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "PAD",
+      "ref": "P13",
+      "at": [
+        130.0,
+        70.0
+      ],
+      "orientation": 0,
+      "value": "TouchPad",
+      "footprint": "",
+      "unit": 1,
+      "fields": {
+        "Row": "1",
+        "Col": "4",
+        "Group": "TOUCH"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "PAD",
+      "ref": "P14",
+      "at": [
+        150.0,
+        70.0
+      ],
+      "orientation": 0,
+      "value": "TouchPad",
+      "footprint": "",
+      "unit": 1,
+      "fields": {
+        "Row": "1",
+        "Col": "5",
+        "Group": "TOUCH"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "PAD",
+      "ref": "P15",
+      "at": [
+        170.0,
+        70.0
+      ],
+      "orientation": 0,
+      "value": "TouchPad",
+      "footprint": "",
+      "unit": 1,
+      "fields": {
+        "Row": "1",
+        "Col": "6",
+        "Group": "TOUCH"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "PAD",
+      "ref": "P16",
+      "at": [
+        190.0,
+        70.0
+      ],
+      "orientation": 0,
+      "value": "TouchPad",
+      "footprint": "",
+      "unit": 1,
+      "fields": {
+        "Row": "1",
+        "Col": "7",
+        "Group": "TOUCH"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "PAD",
+      "ref": "P17",
+      "at": [
+        50.0,
+        90.0
+      ],
+      "orientation": 0,
+      "value": "TouchPad",
+      "footprint": "",
+      "unit": 1,
+      "fields": {
+        "Row": "2",
+        "Col": "0",
+        "Group": "TOUCH"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "PAD",
+      "ref": "P18",
+      "at": [
+        70.0,
+        90.0
+      ],
+      "orientation": 0,
+      "value": "TouchPad",
+      "footprint": "",
+      "unit": 1,
+      "fields": {
+        "Row": "2",
+        "Col": "1",
+        "Group": "TOUCH"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "PAD",
+      "ref": "P19",
+      "at": [
+        90.0,
+        90.0
+      ],
+      "orientation": 0,
+      "value": "TouchPad",
+      "footprint": "",
+      "unit": 1,
+      "fields": {
+        "Row": "2",
+        "Col": "2",
+        "Group": "TOUCH"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "PAD",
+      "ref": "P20",
+      "at": [
+        110.0,
+        90.0
+      ],
+      "orientation": 0,
+      "value": "TouchPad",
+      "footprint": "",
+      "unit": 1,
+      "fields": {
+        "Row": "2",
+        "Col": "3",
+        "Group": "TOUCH"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "PAD",
+      "ref": "P21",
+      "at": [
+        130.0,
+        90.0
+      ],
+      "orientation": 0,
+      "value": "TouchPad",
+      "footprint": "",
+      "unit": 1,
+      "fields": {
+        "Row": "2",
+        "Col": "4",
+        "Group": "TOUCH"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "PAD",
+      "ref": "P22",
+      "at": [
+        150.0,
+        90.0
+      ],
+      "orientation": 0,
+      "value": "TouchPad",
+      "footprint": "",
+      "unit": 1,
+      "fields": {
+        "Row": "2",
+        "Col": "5",
+        "Group": "TOUCH"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "PAD",
+      "ref": "P23",
+      "at": [
+        170.0,
+        90.0
+      ],
+      "orientation": 0,
+      "value": "TouchPad",
+      "footprint": "",
+      "unit": 1,
+      "fields": {
+        "Row": "2",
+        "Col": "6",
+        "Group": "TOUCH"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "PAD",
+      "ref": "P24",
+      "at": [
+        190.0,
+        90.0
+      ],
+      "orientation": 0,
+      "value": "TouchPad",
+      "footprint": "",
+      "unit": 1,
+      "fields": {
+        "Row": "2",
+        "Col": "7",
+        "Group": "TOUCH"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "PAD",
+      "ref": "P25",
+      "at": [
+        50.0,
+        110.0
+      ],
+      "orientation": 0,
+      "value": "TouchPad",
+      "footprint": "",
+      "unit": 1,
+      "fields": {
+        "Row": "3",
+        "Col": "0",
+        "Group": "TOUCH"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "PAD",
+      "ref": "P26",
+      "at": [
+        70.0,
+        110.0
+      ],
+      "orientation": 0,
+      "value": "TouchPad",
+      "footprint": "",
+      "unit": 1,
+      "fields": {
+        "Row": "3",
+        "Col": "1",
+        "Group": "TOUCH"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "PAD",
+      "ref": "P27",
+      "at": [
+        90.0,
+        110.0
+      ],
+      "orientation": 0,
+      "value": "TouchPad",
+      "footprint": "",
+      "unit": 1,
+      "fields": {
+        "Row": "3",
+        "Col": "2",
+        "Group": "TOUCH"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "PAD",
+      "ref": "P28",
+      "at": [
+        110.0,
+        110.0
+      ],
+      "orientation": 0,
+      "value": "TouchPad",
+      "footprint": "",
+      "unit": 1,
+      "fields": {
+        "Row": "3",
+        "Col": "3",
+        "Group": "TOUCH"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "PAD",
+      "ref": "P29",
+      "at": [
+        130.0,
+        110.0
+      ],
+      "orientation": 0,
+      "value": "TouchPad",
+      "footprint": "",
+      "unit": 1,
+      "fields": {
+        "Row": "3",
+        "Col": "4",
+        "Group": "TOUCH"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "PAD",
+      "ref": "P30",
+      "at": [
+        150.0,
+        110.0
+      ],
+      "orientation": 0,
+      "value": "TouchPad",
+      "footprint": "",
+      "unit": 1,
+      "fields": {
+        "Row": "3",
+        "Col": "5",
+        "Group": "TOUCH"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "PAD",
+      "ref": "P31",
+      "at": [
+        170.0,
+        110.0
+      ],
+      "orientation": 0,
+      "value": "TouchPad",
+      "footprint": "",
+      "unit": 1,
+      "fields": {
+        "Row": "3",
+        "Col": "6",
+        "Group": "TOUCH"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "PAD",
+      "ref": "P32",
+      "at": [
+        190.0,
+        110.0
+      ],
+      "orientation": 0,
+      "value": "TouchPad",
+      "footprint": "",
+      "unit": 1,
+      "fields": {
+        "Row": "3",
+        "Col": "7",
+        "Group": "TOUCH"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "PAD",
+      "ref": "P33",
+      "at": [
+        50.0,
+        130.0
+      ],
+      "orientation": 0,
+      "value": "TouchPad",
+      "footprint": "",
+      "unit": 1,
+      "fields": {
+        "Row": "4",
+        "Col": "0",
+        "Group": "TOUCH"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "PAD",
+      "ref": "P34",
+      "at": [
+        70.0,
+        130.0
+      ],
+      "orientation": 0,
+      "value": "TouchPad",
+      "footprint": "",
+      "unit": 1,
+      "fields": {
+        "Row": "4",
+        "Col": "1",
+        "Group": "TOUCH"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "PAD",
+      "ref": "P35",
+      "at": [
+        90.0,
+        130.0
+      ],
+      "orientation": 0,
+      "value": "TouchPad",
+      "footprint": "",
+      "unit": 1,
+      "fields": {
+        "Row": "4",
+        "Col": "2",
+        "Group": "TOUCH"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "PAD",
+      "ref": "P36",
+      "at": [
+        110.0,
+        130.0
+      ],
+      "orientation": 0,
+      "value": "TouchPad",
+      "footprint": "",
+      "unit": 1,
+      "fields": {
+        "Row": "4",
+        "Col": "3",
+        "Group": "TOUCH"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "PAD",
+      "ref": "P37",
+      "at": [
+        130.0,
+        130.0
+      ],
+      "orientation": 0,
+      "value": "TouchPad",
+      "footprint": "",
+      "unit": 1,
+      "fields": {
+        "Row": "4",
+        "Col": "4",
+        "Group": "TOUCH"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "PAD",
+      "ref": "P38",
+      "at": [
+        150.0,
+        130.0
+      ],
+      "orientation": 0,
+      "value": "TouchPad",
+      "footprint": "",
+      "unit": 1,
+      "fields": {
+        "Row": "4",
+        "Col": "5",
+        "Group": "TOUCH"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "PAD",
+      "ref": "P39",
+      "at": [
+        170.0,
+        130.0
+      ],
+      "orientation": 0,
+      "value": "TouchPad",
+      "footprint": "",
+      "unit": 1,
+      "fields": {
+        "Row": "4",
+        "Col": "6",
+        "Group": "TOUCH"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "PAD",
+      "ref": "P40",
+      "at": [
+        190.0,
+        130.0
+      ],
+      "orientation": 0,
+      "value": "TouchPad",
+      "footprint": "",
+      "unit": 1,
+      "fields": {
+        "Row": "4",
+        "Col": "7",
+        "Group": "TOUCH"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "PAD",
+      "ref": "P41",
+      "at": [
+        50.0,
+        150.0
+      ],
+      "orientation": 0,
+      "value": "TouchPad",
+      "footprint": "",
+      "unit": 1,
+      "fields": {
+        "Row": "5",
+        "Col": "0",
+        "Group": "TOUCH"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "PAD",
+      "ref": "P42",
+      "at": [
+        70.0,
+        150.0
+      ],
+      "orientation": 0,
+      "value": "TouchPad",
+      "footprint": "",
+      "unit": 1,
+      "fields": {
+        "Row": "5",
+        "Col": "1",
+        "Group": "TOUCH"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "PAD",
+      "ref": "P43",
+      "at": [
+        90.0,
+        150.0
+      ],
+      "orientation": 0,
+      "value": "TouchPad",
+      "footprint": "",
+      "unit": 1,
+      "fields": {
+        "Row": "5",
+        "Col": "2",
+        "Group": "TOUCH"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "PAD",
+      "ref": "P44",
+      "at": [
+        110.0,
+        150.0
+      ],
+      "orientation": 0,
+      "value": "TouchPad",
+      "footprint": "",
+      "unit": 1,
+      "fields": {
+        "Row": "5",
+        "Col": "3",
+        "Group": "TOUCH"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "PAD",
+      "ref": "P45",
+      "at": [
+        130.0,
+        150.0
+      ],
+      "orientation": 0,
+      "value": "TouchPad",
+      "footprint": "",
+      "unit": 1,
+      "fields": {
+        "Row": "5",
+        "Col": "4",
+        "Group": "TOUCH"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "PAD",
+      "ref": "P46",
+      "at": [
+        150.0,
+        150.0
+      ],
+      "orientation": 0,
+      "value": "TouchPad",
+      "footprint": "",
+      "unit": 1,
+      "fields": {
+        "Row": "5",
+        "Col": "5",
+        "Group": "TOUCH"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "PAD",
+      "ref": "P47",
+      "at": [
+        170.0,
+        150.0
+      ],
+      "orientation": 0,
+      "value": "TouchPad",
+      "footprint": "",
+      "unit": 1,
+      "fields": {
+        "Row": "5",
+        "Col": "6",
+        "Group": "TOUCH"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "PAD",
+      "ref": "P48",
+      "at": [
+        190.0,
+        150.0
+      ],
+      "orientation": 0,
+      "value": "TouchPad",
+      "footprint": "",
+      "unit": 1,
+      "fields": {
+        "Row": "5",
+        "Col": "7",
+        "Group": "TOUCH"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "PAD",
+      "ref": "P49",
+      "at": [
+        50.0,
+        170.0
+      ],
+      "orientation": 0,
+      "value": "TouchPad",
+      "footprint": "",
+      "unit": 1,
+      "fields": {
+        "Row": "6",
+        "Col": "0",
+        "Group": "TOUCH"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "PAD",
+      "ref": "P50",
+      "at": [
+        70.0,
+        170.0
+      ],
+      "orientation": 0,
+      "value": "TouchPad",
+      "footprint": "",
+      "unit": 1,
+      "fields": {
+        "Row": "6",
+        "Col": "1",
+        "Group": "TOUCH"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "PAD",
+      "ref": "P51",
+      "at": [
+        90.0,
+        170.0
+      ],
+      "orientation": 0,
+      "value": "TouchPad",
+      "footprint": "",
+      "unit": 1,
+      "fields": {
+        "Row": "6",
+        "Col": "2",
+        "Group": "TOUCH"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "PAD",
+      "ref": "P52",
+      "at": [
+        110.0,
+        170.0
+      ],
+      "orientation": 0,
+      "value": "TouchPad",
+      "footprint": "",
+      "unit": 1,
+      "fields": {
+        "Row": "6",
+        "Col": "3",
+        "Group": "TOUCH"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "PAD",
+      "ref": "P53",
+      "at": [
+        130.0,
+        170.0
+      ],
+      "orientation": 0,
+      "value": "TouchPad",
+      "footprint": "",
+      "unit": 1,
+      "fields": {
+        "Row": "6",
+        "Col": "4",
+        "Group": "TOUCH"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "PAD",
+      "ref": "P54",
+      "at": [
+        150.0,
+        170.0
+      ],
+      "orientation": 0,
+      "value": "TouchPad",
+      "footprint": "",
+      "unit": 1,
+      "fields": {
+        "Row": "6",
+        "Col": "5",
+        "Group": "TOUCH"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "PAD",
+      "ref": "P55",
+      "at": [
+        170.0,
+        170.0
+      ],
+      "orientation": 0,
+      "value": "TouchPad",
+      "footprint": "",
+      "unit": 1,
+      "fields": {
+        "Row": "6",
+        "Col": "6",
+        "Group": "TOUCH"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "PAD",
+      "ref": "P56",
+      "at": [
+        190.0,
+        170.0
+      ],
+      "orientation": 0,
+      "value": "TouchPad",
+      "footprint": "",
+      "unit": 1,
+      "fields": {
+        "Row": "6",
+        "Col": "7",
+        "Group": "TOUCH"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "PAD",
+      "ref": "P57",
+      "at": [
+        50.0,
+        190.0
+      ],
+      "orientation": 0,
+      "value": "TouchPad",
+      "footprint": "",
+      "unit": 1,
+      "fields": {
+        "Row": "7",
+        "Col": "0",
+        "Group": "TOUCH"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "PAD",
+      "ref": "P58",
+      "at": [
+        70.0,
+        190.0
+      ],
+      "orientation": 0,
+      "value": "TouchPad",
+      "footprint": "",
+      "unit": 1,
+      "fields": {
+        "Row": "7",
+        "Col": "1",
+        "Group": "TOUCH"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "PAD",
+      "ref": "P59",
+      "at": [
+        90.0,
+        190.0
+      ],
+      "orientation": 0,
+      "value": "TouchPad",
+      "footprint": "",
+      "unit": 1,
+      "fields": {
+        "Row": "7",
+        "Col": "2",
+        "Group": "TOUCH"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "PAD",
+      "ref": "P60",
+      "at": [
+        110.0,
+        190.0
+      ],
+      "orientation": 0,
+      "value": "TouchPad",
+      "footprint": "",
+      "unit": 1,
+      "fields": {
+        "Row": "7",
+        "Col": "3",
+        "Group": "TOUCH"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "PAD",
+      "ref": "P61",
+      "at": [
+        130.0,
+        190.0
+      ],
+      "orientation": 0,
+      "value": "TouchPad",
+      "footprint": "",
+      "unit": 1,
+      "fields": {
+        "Row": "7",
+        "Col": "4",
+        "Group": "TOUCH"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "PAD",
+      "ref": "P62",
+      "at": [
+        150.0,
+        190.0
+      ],
+      "orientation": 0,
+      "value": "TouchPad",
+      "footprint": "",
+      "unit": 1,
+      "fields": {
+        "Row": "7",
+        "Col": "5",
+        "Group": "TOUCH"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "PAD",
+      "ref": "P63",
+      "at": [
+        170.0,
+        190.0
+      ],
+      "orientation": 0,
+      "value": "TouchPad",
+      "footprint": "",
+      "unit": 1,
+      "fields": {
+        "Row": "7",
+        "Col": "6",
+        "Group": "TOUCH"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "PAD",
+      "ref": "P64",
+      "at": [
+        190.0,
+        190.0
+      ],
+      "orientation": 0,
+      "value": "TouchPad",
+      "footprint": "",
+      "unit": 1,
+      "fields": {
+        "Row": "7",
+        "Col": "7",
+        "Group": "TOUCH"
+      }
+    }
+  ],
+  "wires": [
+    {
+      "a": "GPIO0",
+      "b": "P1.1"
+    },
+    {
+      "a": "TOUCH_GRID_BUS",
+      "b": "GPIO0"
+    },
+    {
+      "a": "GPIO1",
+      "b": "P2.1"
+    },
+    {
+      "a": "TOUCH_GRID_BUS",
+      "b": "GPIO1"
+    },
+    {
+      "a": "GPIO2",
+      "b": "P3.1"
+    },
+    {
+      "a": "TOUCH_GRID_BUS",
+      "b": "GPIO2"
+    },
+    {
+      "a": "GPIO3",
+      "b": "P4.1"
+    },
+    {
+      "a": "TOUCH_GRID_BUS",
+      "b": "GPIO3"
+    },
+    {
+      "a": "GPIO4",
+      "b": "P5.1"
+    },
+    {
+      "a": "TOUCH_GRID_BUS",
+      "b": "GPIO4"
+    },
+    {
+      "a": "GPIO5",
+      "b": "P6.1"
+    },
+    {
+      "a": "TOUCH_GRID_BUS",
+      "b": "GPIO5"
+    },
+    {
+      "a": "GPIO6",
+      "b": "P7.1"
+    },
+    {
+      "a": "TOUCH_GRID_BUS",
+      "b": "GPIO6"
+    },
+    {
+      "a": "GPIO7",
+      "b": "P8.1"
+    },
+    {
+      "a": "TOUCH_GRID_BUS",
+      "b": "GPIO7"
+    },
+    {
+      "a": "GPIO8",
+      "b": "P9.1"
+    },
+    {
+      "a": "TOUCH_GRID_BUS",
+      "b": "GPIO8"
+    },
+    {
+      "a": "GPIO9",
+      "b": "P10.1"
+    },
+    {
+      "a": "TOUCH_GRID_BUS",
+      "b": "GPIO9"
+    },
+    {
+      "a": "GPIO10",
+      "b": "P11.1"
+    },
+    {
+      "a": "TOUCH_GRID_BUS",
+      "b": "GPIO10"
+    },
+    {
+      "a": "GPIO11",
+      "b": "P12.1"
+    },
+    {
+      "a": "TOUCH_GRID_BUS",
+      "b": "GPIO11"
+    },
+    {
+      "a": "GPIO12",
+      "b": "P13.1"
+    },
+    {
+      "a": "TOUCH_GRID_BUS",
+      "b": "GPIO12"
+    },
+    {
+      "a": "GPIO13",
+      "b": "P14.1"
+    },
+    {
+      "a": "TOUCH_GRID_BUS",
+      "b": "GPIO13"
+    },
+    {
+      "a": "GPIO14",
+      "b": "P15.1"
+    },
+    {
+      "a": "TOUCH_GRID_BUS",
+      "b": "GPIO14"
+    },
+    {
+      "a": "GPIO15",
+      "b": "P16.1"
+    },
+    {
+      "a": "TOUCH_GRID_BUS",
+      "b": "GPIO15"
+    },
+    {
+      "a": "GPIO16",
+      "b": "P17.1"
+    },
+    {
+      "a": "TOUCH_GRID_BUS",
+      "b": "GPIO16"
+    },
+    {
+      "a": "GPIO17",
+      "b": "P18.1"
+    },
+    {
+      "a": "TOUCH_GRID_BUS",
+      "b": "GPIO17"
+    },
+    {
+      "a": "GPIO18",
+      "b": "P19.1"
+    },
+    {
+      "a": "TOUCH_GRID_BUS",
+      "b": "GPIO18"
+    },
+    {
+      "a": "GPIO19",
+      "b": "P20.1"
+    },
+    {
+      "a": "TOUCH_GRID_BUS",
+      "b": "GPIO19"
+    },
+    {
+      "a": "GPIO20",
+      "b": "P21.1"
+    },
+    {
+      "a": "TOUCH_GRID_BUS",
+      "b": "GPIO20"
+    },
+    {
+      "a": "GPIO21",
+      "b": "P22.1"
+    },
+    {
+      "a": "TOUCH_GRID_BUS",
+      "b": "GPIO21"
+    },
+    {
+      "a": "GPIO22",
+      "b": "P23.1"
+    },
+    {
+      "a": "TOUCH_GRID_BUS",
+      "b": "GPIO22"
+    },
+    {
+      "a": "GPIO23",
+      "b": "P24.1"
+    },
+    {
+      "a": "TOUCH_GRID_BUS",
+      "b": "GPIO23"
+    },
+    {
+      "a": "GPIO24",
+      "b": "P25.1"
+    },
+    {
+      "a": "TOUCH_GRID_BUS",
+      "b": "GPIO24"
+    },
+    {
+      "a": "GPIO25",
+      "b": "P26.1"
+    },
+    {
+      "a": "TOUCH_GRID_BUS",
+      "b": "GPIO25"
+    },
+    {
+      "a": "GPIO26",
+      "b": "P27.1"
+    },
+    {
+      "a": "TOUCH_GRID_BUS",
+      "b": "GPIO26"
+    },
+    {
+      "a": "GPIO27",
+      "b": "P28.1"
+    },
+    {
+      "a": "TOUCH_GRID_BUS",
+      "b": "GPIO27"
+    },
+    {
+      "a": "GPIO28",
+      "b": "P29.1"
+    },
+    {
+      "a": "TOUCH_GRID_BUS",
+      "b": "GPIO28"
+    },
+    {
+      "a": "GPIO29",
+      "b": "P30.1"
+    },
+    {
+      "a": "TOUCH_GRID_BUS",
+      "b": "GPIO29"
+    },
+    {
+      "a": "GPIO30",
+      "b": "P31.1"
+    },
+    {
+      "a": "TOUCH_GRID_BUS",
+      "b": "GPIO30"
+    },
+    {
+      "a": "GPIO31",
+      "b": "P32.1"
+    },
+    {
+      "a": "TOUCH_GRID_BUS",
+      "b": "GPIO31"
+    },
+    {
+      "a": "GPIO32",
+      "b": "P33.1"
+    },
+    {
+      "a": "TOUCH_GRID_BUS",
+      "b": "GPIO32"
+    },
+    {
+      "a": "GPIO33",
+      "b": "P34.1"
+    },
+    {
+      "a": "TOUCH_GRID_BUS",
+      "b": "GPIO33"
+    },
+    {
+      "a": "GPIO34",
+      "b": "P35.1"
+    },
+    {
+      "a": "TOUCH_GRID_BUS",
+      "b": "GPIO34"
+    },
+    {
+      "a": "GPIO35",
+      "b": "P36.1"
+    },
+    {
+      "a": "TOUCH_GRID_BUS",
+      "b": "GPIO35"
+    },
+    {
+      "a": "GPIO36",
+      "b": "P37.1"
+    },
+    {
+      "a": "TOUCH_GRID_BUS",
+      "b": "GPIO36"
+    },
+    {
+      "a": "GPIO37",
+      "b": "P38.1"
+    },
+    {
+      "a": "TOUCH_GRID_BUS",
+      "b": "GPIO37"
+    },
+    {
+      "a": "GPIO38",
+      "b": "P39.1"
+    },
+    {
+      "a": "TOUCH_GRID_BUS",
+      "b": "GPIO38"
+    },
+    {
+      "a": "GPIO39",
+      "b": "P40.1"
+    },
+    {
+      "a": "TOUCH_GRID_BUS",
+      "b": "GPIO39"
+    },
+    {
+      "a": "GPIO40",
+      "b": "P41.1"
+    },
+    {
+      "a": "TOUCH_GRID_BUS",
+      "b": "GPIO40"
+    },
+    {
+      "a": "GPIO41",
+      "b": "P42.1"
+    },
+    {
+      "a": "TOUCH_GRID_BUS",
+      "b": "GPIO41"
+    },
+    {
+      "a": "GPIO42",
+      "b": "P43.1"
+    },
+    {
+      "a": "TOUCH_GRID_BUS",
+      "b": "GPIO42"
+    },
+    {
+      "a": "GPIO43",
+      "b": "P44.1"
+    },
+    {
+      "a": "TOUCH_GRID_BUS",
+      "b": "GPIO43"
+    },
+    {
+      "a": "GPIO44",
+      "b": "P45.1"
+    },
+    {
+      "a": "TOUCH_GRID_BUS",
+      "b": "GPIO44"
+    },
+    {
+      "a": "GPIO45",
+      "b": "P46.1"
+    },
+    {
+      "a": "TOUCH_GRID_BUS",
+      "b": "GPIO45"
+    },
+    {
+      "a": "GPIO46",
+      "b": "P47.1"
+    },
+    {
+      "a": "TOUCH_GRID_BUS",
+      "b": "GPIO46"
+    },
+    {
+      "a": "GPIO47",
+      "b": "P48.1"
+    },
+    {
+      "a": "TOUCH_GRID_BUS",
+      "b": "GPIO47"
+    },
+    {
+      "a": "GPIO48",
+      "b": "P49.1"
+    },
+    {
+      "a": "TOUCH_GRID_BUS",
+      "b": "GPIO48"
+    },
+    {
+      "a": "GPIO49",
+      "b": "P50.1"
+    },
+    {
+      "a": "TOUCH_GRID_BUS",
+      "b": "GPIO49"
+    },
+    {
+      "a": "GPIO50",
+      "b": "P51.1"
+    },
+    {
+      "a": "TOUCH_GRID_BUS",
+      "b": "GPIO50"
+    },
+    {
+      "a": "GPIO51",
+      "b": "P52.1"
+    },
+    {
+      "a": "TOUCH_GRID_BUS",
+      "b": "GPIO51"
+    },
+    {
+      "a": "GPIO52",
+      "b": "P53.1"
+    },
+    {
+      "a": "TOUCH_GRID_BUS",
+      "b": "GPIO52"
+    },
+    {
+      "a": "GPIO53",
+      "b": "P54.1"
+    },
+    {
+      "a": "TOUCH_GRID_BUS",
+      "b": "GPIO53"
+    },
+    {
+      "a": "GPIO54",
+      "b": "P55.1"
+    },
+    {
+      "a": "TOUCH_GRID_BUS",
+      "b": "GPIO54"
+    },
+    {
+      "a": "GPIO55",
+      "b": "P56.1"
+    },
+    {
+      "a": "TOUCH_GRID_BUS",
+      "b": "GPIO55"
+    },
+    {
+      "a": "GPIO56",
+      "b": "P57.1"
+    },
+    {
+      "a": "TOUCH_GRID_BUS",
+      "b": "GPIO56"
+    },
+    {
+      "a": "GPIO57",
+      "b": "P58.1"
+    },
+    {
+      "a": "TOUCH_GRID_BUS",
+      "b": "GPIO57"
+    },
+    {
+      "a": "GPIO58",
+      "b": "P59.1"
+    },
+    {
+      "a": "TOUCH_GRID_BUS",
+      "b": "GPIO58"
+    },
+    {
+      "a": "GPIO59",
+      "b": "P60.1"
+    },
+    {
+      "a": "TOUCH_GRID_BUS",
+      "b": "GPIO59"
+    },
+    {
+      "a": "GPIO60",
+      "b": "P61.1"
+    },
+    {
+      "a": "TOUCH_GRID_BUS",
+      "b": "GPIO60"
+    },
+    {
+      "a": "GPIO61",
+      "b": "P62.1"
+    },
+    {
+      "a": "TOUCH_GRID_BUS",
+      "b": "GPIO61"
+    },
+    {
+      "a": "GPIO62",
+      "b": "P63.1"
+    },
+    {
+      "a": "TOUCH_GRID_BUS",
+      "b": "GPIO62"
+    },
+    {
+      "a": "GPIO63",
+      "b": "P64.1"
+    },
+    {
+      "a": "TOUCH_GRID_BUS",
+      "b": "GPIO63"
+    }
+  ]
+}

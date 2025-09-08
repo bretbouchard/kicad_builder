@@ -19,8 +19,11 @@ import csv
 import sys
 
 
-def csv_to_pinmap(path: Path, package: str = ""):
-    pin_to_signal = {}
+from typing import Dict, Any
+
+
+def csv_to_pinmap(path: Path, package: str = "") -> Dict[str, Any]:
+    pin_to_signal: Dict[str, str] = {}
     with path.open() as f:
         reader = csv.reader(f)
         for row in reader:
@@ -49,18 +52,32 @@ def json_validate(path: Path):
     return data
 
 
-def build_reverse(map_obj: dict):
-    rev: dict = {}
+def build_reverse(map_obj: Dict[str, str]) -> Dict[str, list[object]]:
+    rev: Dict[str, list[object]] = {}
     for p, s in map_obj.items():
-        rev.setdefault(s, []).append(int(p) if isinstance(p, str) and p.isdigit() else p)
+        val: object
+        if isinstance(p, str) and p.isdigit():
+            val = int(p)
+        else:
+            val = p
+        rev.setdefault(s, []).append(val)
     return rev
 
 
-def main():
-    parser = argparse.ArgumentParser(description="Generate or validate a canonical pinmap JSON")
-    parser.add_argument("input", help="Input CSV/JSON file path or '-' for stdin")
-    parser.add_argument("--package", help="Package name to set when generating from CSV")
-    parser.add_argument("--out", help="Output JSON file (defaults to stdout)")
+def main() -> None:
+    parser = argparse.ArgumentParser(description=("Generate or validate a canonical pinmap JSON"))
+    parser.add_argument(
+        "input",
+        help="Input CSV/JSON file path or '-' for stdin",
+    )
+    parser.add_argument(
+        "--package",
+        help="Package name to set when generating from CSV",
+    )
+    parser.add_argument(
+        "--out",
+        help="Output JSON file (defaults to stdout)",
+    )
     args = parser.parse_args()
 
     inp = args.input

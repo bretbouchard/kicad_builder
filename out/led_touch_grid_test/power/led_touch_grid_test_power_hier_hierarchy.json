@@ -1,0 +1,221 @@
+{
+  "sheets": {
+    "power": {
+      "title": "led_touch_grid_test_power",
+      "file": "sheets/led_touch_grid_test_power.kicad_sch",
+      "symbols": [
+        {
+          "lib": "Connector_USB",
+          "name": "USB_C_Receptacle",
+          "ref": "J1",
+          "at": [
+            50.0,
+            50.0
+          ],
+          "orientation": 0,
+          "value": "USB-C Input",
+          "footprint": "Connector_USB:CUSB-B-RA_SMD",
+          "unit": 1,
+          "fields": {
+            "Type": "Power Input"
+          }
+        },
+        {
+          "lib": "Diode",
+          "name": "D_SMA",
+          "ref": "D1",
+          "at": [
+            75.0,
+            50.0
+          ],
+          "orientation": 0,
+          "value": "Schottky 5V Protection",
+          "footprint": "Diode_SMD:D_SMA",
+          "unit": 1,
+          "fields": {
+            "Part": "BAT54C"
+          }
+        },
+        {
+          "lib": "Regulator_Linear",
+          "name": "SOT-223",
+          "ref": "U1",
+          "at": [
+            100.0,
+            50.0
+          ],
+          "orientation": 0,
+          "value": "3.3V LDO",
+          "footprint": "Package_TO_SOT_SMD:SOT-223",
+          "unit": 1,
+          "fields": {
+            "Part": "AMS1117-3.3"
+          }
+        },
+        {
+          "lib": "Device",
+          "name": "C",
+          "ref": "C1",
+          "at": [
+            150.0,
+            50.0
+          ],
+          "orientation": 0,
+          "value": "1000\u00b5F 10V",
+          "footprint": "Package_DIL:D6.3x5.3mm_P2.50mm_Horizontal",
+          "unit": 1,
+          "fields": {
+            "Voltage": "10V",
+            "Type": "Electrolytic"
+          }
+        },
+        {
+          "lib": "Device",
+          "name": "C",
+          "ref": "C2",
+          "at": [
+            200.0,
+            40.0
+          ],
+          "orientation": 0,
+          "value": "100nF 50V",
+          "footprint": "Capacitor_SMD:C_0805_2012Metric",
+          "unit": 1,
+          "fields": {
+            "Voltage": "50V",
+            "Type": "Ceramic"
+          }
+        },
+        {
+          "lib": "Device",
+          "name": "C",
+          "ref": "C3",
+          "at": [
+            200.0,
+            60.0
+          ],
+          "orientation": 0,
+          "value": "100nF 50V",
+          "footprint": "Capacitor_SMD:C_0805_2012Metric",
+          "unit": 1,
+          "fields": {
+            "Voltage": "50V",
+            "Type": "Ceramic"
+          }
+        },
+        {
+          "lib": "Device",
+          "name": "C",
+          "ref": "C4",
+          "at": [
+            100.0,
+            70.0
+          ],
+          "orientation": 0,
+          "value": "10\u00b5F 10V",
+          "footprint": "Capacitor_SMD:C_0805_2012Metric",
+          "unit": 1,
+          "fields": {
+            "Voltage": "10V",
+            "Type": "Tantalum"
+          }
+        },
+        {
+          "lib": "Device",
+          "name": "C",
+          "ref": "C5",
+          "at": [
+            150.0,
+            70.0
+          ],
+          "orientation": 0,
+          "value": "10\u00b5F 6.3V",
+          "footprint": "Capacitor_SMD:C_0805_2012Metric",
+          "unit": 1,
+          "fields": {
+            "Voltage": "6.3V",
+            "Type": "Tantalum"
+          }
+        },
+        {
+          "lib": "Diode_TVS",
+          "name": "SMA",
+          "ref": "D2",
+          "at": [
+            25.0,
+            50.0
+          ],
+          "orientation": 0,
+          "value": "ESD Protection 5V",
+          "footprint": "Diode_SMD:D_SMA",
+          "unit": 1,
+          "fields": {
+            "Part": "PESD5V0S1BA"
+          }
+        },
+        {
+          "lib": "Device",
+          "name": "FB_SMD_0805_2012Metric",
+          "ref": "FB1",
+          "at": [
+            60.0,
+            50.0
+          ],
+          "orientation": 0,
+          "value": "Ferrite Bead 600\u03a9",
+          "footprint": "Inductor_SMD:FB_SMD_0805_2012Metric",
+          "unit": 1,
+          "fields": {
+            "Impedance": "600\u03a9 @ 100MHz"
+          }
+        }
+      ],
+      "hierarchical_pins": [
+        {
+          "name": "5V_OUT",
+          "direction": "inout",
+          "sheet_ref": null
+        },
+        {
+          "name": "3.3V_OUT",
+          "direction": "inout",
+          "sheet_ref": null
+        },
+        {
+          "name": "GND",
+          "direction": "inout",
+          "sheet_ref": null
+        },
+        {
+          "name": "5V_IN",
+          "direction": "in",
+          "sheet_ref": null
+        },
+        {
+          "name": "EXT_5V_IN",
+          "direction": "inout",
+          "sheet_ref": null
+        },
+        {
+          "name": "EXT_GND",
+          "direction": "inout",
+          "sheet_ref": null
+        }
+      ]
+    }
+  },
+  "connections": [
+    [
+      "root.POWER_5V",
+      "power.5V_OUT"
+    ],
+    [
+      "root.POWER_3V3",
+      "power.3.3V_OUT"
+    ],
+    [
+      "root.GND",
+      "power.GND"
+    ]
+  ]
+}

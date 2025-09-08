@@ -25,9 +25,9 @@ import os
 import sys
 
 
-def _read_dotenv(dotenv_path: str) -> dict:
+def _read_dotenv(dotenv_path: str) -> dict[str, str]:
     """Very small .env parser: returns dict of KEY->VALUE for simple KEY=VALUE lines."""
-    out = {}
+    out: dict[str, str] = {}
     try:
         with open(dotenv_path, "r", encoding="utf-8") as fh:
             for ln in fh:
@@ -67,14 +67,14 @@ def mm_to_nm(mm: float) -> int:
 def create_board_from_csv(out_board: str, csv_path: str) -> None:
     """Create a new KiCad board and add footprint modules based on CSV."""
     try:
-        import pcbnew
+        import pcbnew  # type: ignore[import]
     except Exception as e:
         raise RuntimeError("This script must be run inside KiCad (pcbnew available)") from e
 
     # Ensure a wx App exists for GUI-related pcbnew calls (needed when running
     # KiCad's python from command line on macOS)
     try:
-        import wx
+        import wx  # type: ignore[import]
 
         if not wx.GetApp():
             _app = wx.App(False)

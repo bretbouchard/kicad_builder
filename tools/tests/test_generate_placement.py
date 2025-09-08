@@ -3,7 +3,7 @@ from pathlib import Path
 import tempfile
 
 
-def test_generate_placement_creates_csv():
+def test_generate_placement_creates_csv() -> None:
     repo_root = Path(__file__).resolve().parents[2]
     tmp = Path(tempfile.mkdtemp(prefix="test-place-"))
     bom = tmp / "bom.csv"

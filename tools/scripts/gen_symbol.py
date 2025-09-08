@@ -15,8 +15,11 @@ import json
 TEMPLATE_HEADER = "(kicad_symbol_lib (version 20211014) (generator gen_symbol))\n"
 
 
-def make_symbol(name: str, pinmap: dict, footprint: str = "REPO-MCU:REPO-MCU-QFN56") -> str:
-    pins = pinmap.get("pin_to_signal", {})
+from typing import Dict, Any
+
+
+def make_symbol(name: str, pinmap: Dict[str, Any], footprint: str = "REPO-MCU:REPO-MCU-QFN56") -> str:
+    pins: Dict[str, str] = pinmap.get("pin_to_signal", {})
     lines = []
     lines.append(f'(symbol "{name}")')
     lines.append("  (pin_numbers_have_shape)")
@@ -31,7 +34,7 @@ def make_symbol(name: str, pinmap: dict, footprint: str = "REPO-MCU:REPO-MCU-QFN
     return "\n".join(lines)
 
 
-def main():
+def main() -> None:
     p = argparse.ArgumentParser(description="Generate a KiCad symbol from a pinmap JSON")
     p.add_argument("pinmap")
     p.add_argument("out")

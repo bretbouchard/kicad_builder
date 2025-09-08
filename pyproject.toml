@@ -8,3 +8,12 @@ extend-ignore = ["E203", "W503"]
 [tool.ruff]
 line-length = 120
 extend-select = ["E","F","W"]
+
+[tool.mypy]
+python_version = "3.11"
+# Reduce external noise: allow missing stubs for third-party packages
+# while we incrementally add annotations for our code.
+follow_imports = "silent"
+ignore_missing_imports = true
+strict = false
+warn_unused_configs = true

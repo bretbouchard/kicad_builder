@@ -43,7 +43,7 @@ class LEDPlacement:
     layer: str = "F.Cu"
 
 
-def ensure_outdir():
+def ensure_outdir() -> None:
     os.makedirs(OUT_DIR, exist_ok=True)
 
 
@@ -59,36 +59,61 @@ def generate_tile(
     led_spacing: float,
     led_footprint: str,
     start_led_index: int,
-) -> Tuple[List[LEDPlacement], int]:
-    """Return placements for one tile and the next start index."""
-    placements: List[LEDPlacement] = []
+    touch_footprint: str = "Custom:Touch_Pad_19x19mm",
+    start_tp_index: int = 1,
+) -> Tuple[List[TouchPadPlacement], List[LEDPlacement], int, int]:
+    """Return placements for touch pads and LEDs in one tile and next indices."""
+    touch_placements: List[TouchPadPlacement] = []
+    led_placements: List[LEDPlacement] = []
     pad_cols = pads_x
     pad_rows = pads_y
-    # leds_per_pad assumed to equal led_pattern[0]*led_pattern[1]
     led_cols, led_rows = led_pattern
 
-    idx = start_led_index
+    tp_idx = start_tp_index
+    led_idx = start_led_index
     for py in range(pad_rows):
         for px in range(pad_cols):
             pad_center_x = tile_origin_x + px * pad_pitch
             pad_center_y = tile_origin_y + py * pad_pitch
-            # arrange leds in small grid centered on pad_center
+
+            # Touch pad placement (centered in grid cell)
+            tp_ref = f"TP{tp_idx:02d}"
+            tp_x = pad_center_x
+            tp_y = pad_center_y
+            touch_placements.append(
+                TouchPadPlacement(
+                    ref=tp_ref,
+                    footprint=touch_footprint,
+                    x_mm=round(tp_x, 3),
+                    y_mm=round(tp_y, 3),
+                )
+            )
+            tp_idx += 1
+
+            # LEDs within pad (2x2 pattern)
             total_w = (led_cols - 1) * led_spacing
             total_h = (led_rows - 1) * led_spacing
-            origin_x = pad_center_x - total_w / 2.0
-            origin_y = pad_center_y - total_h / 2.0
+            led_origin_x = pad_center_x - total_w / 2.0
+            led_origin_y = pad_center_y - total_h / 2.0
 
             for ly in range(led_rows):
                 for lx in range(led_cols):
-                    x = origin_x + lx * led_spacing
-                    y = origin_y + ly * led_spacing
-                    ref = f"LED{idx}"
-                    placements.append(
-                        LEDPlacement(ref=ref, footprint=led_footprint, x_mm=round(x, 3), y_mm=round(y, 3))
+                    x = led_origin_x + lx * led_spacing
+                    y = led_origin_y + ly * led_spacing
+                    ref = f"LED{led_idx:03d}"
+                    data_line = (px * pad_rows + py) % 16  # 16 parallel lines
+                    led_placements.append(
+                        LEDPlacement(
+                            ref=ref,
+                            footprint=led_footprint,
+                            x_mm=round(x, 3),
+                            y_mm=round(y, 3),
+                            data_line=data_line,
+                        )
                     )
-                    idx += 1
+                    led_idx += 1
 
-    return placements, idx
+    return touch_placements, led_placements, tp_idx, led_idx
 
 
 def generate_grid(
@@ -106,7 +131,7 @@ def generate_grid(
     led_pattern: Tuple[int, int] = (2, 2),
     led_spacing: float = 3.5,
     led_footprint: str = "LED_APA-102-2020-256-8:APA102_5050",
-):
+) -> None:
     ensure_outdir()
     out_csv = out_csv or os.path.join(OUT_DIR, "grid_placements.csv")
     out_bom = out_bom or os.path.join(OUT_DIR, "generated_bom.csv")
@@ -209,7 +234,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--led-footprint",
         type=str,
-        default=("LED_APA-102-2020-256-8:APA102_5050"),
+        default="LED_APA-102-2020-256-8:APA102_5050",
     )
     parser.add_argument("--out-csv", type=str)
     parser.add_argument("--out-bom", type=str)
@@ -232,3 +257,4 @@ if __name__ == "__main__":
         led_spacing=args.led_spacing,
         led_footprint=args.led_footprint,
     )
+class TouchPadPlacement:\n    def __init__(self, ref, footprint, x, y):\n        self.ref = ref\n        self.footprint = footprint\n        self.x = x\n        self.y = y\n

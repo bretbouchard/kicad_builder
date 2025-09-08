@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "Part metadata",
+  "title": "Part metadata for LED Touch Grid",
   "type": "object",
   "properties": {
     "name": {"type": "string"},
@@ -9,6 +9,14 @@
     "ep": {"type": "number"},
     "pitch": {"type": "number"},
     "pads_per_side": {"type": "integer"},
-    "datasheet": {"type": "string"}
-  }
+    "datasheet": {"type": "string"},
+    "led_type": {"type": "string", "enum": ["APA102", "SK9822"], "description": "Addressable LED type for RGB control"},
+    "led_current_ma": {"type": "number", "description": "Maximum current per LED at full brightness (60mA for APA102)"},
+    "touch_size_mm": {"type": "number", "description": "Touch pad size in mm (19.0 for 0.75 inch)"},
+    "touch_clearance_mm": {"type": "number", "description": "Routing clearance around touch pads (0.2mm)"},
+    "rp2040_variant": {"type": "string", "enum": ["QFN56", "QFN56-B0"], "description": "RP2040 package variant"},
+    "ldo_output_v": {"type": "number", "enum": [3.3], "description": "LDO regulator output voltage"},
+    "esd_clamp_v": {"type": "number", "description": "ESD protection clamp voltage (5V for input protection)"}
+  },
+  "required": ["name", "led_type", "touch_size_mm", "rp2040_variant"]
 }

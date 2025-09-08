@@ -8,6 +8,10 @@ the pre-KiCad stage.
 from __future__ import annotations
 import os
 from skidl import Part, Net, ERC, generate_netlist
+from pathlib import Path
+import json
+import sys
+from typing import Any, Dict, List
 
 
 def build_circuit() -> None:
@@ -38,14 +42,14 @@ def write_netlist(path: str = "out/button_grid.net") -> None:
     generate_netlist(path)
 
 
-def main() -> int:
+def cli_main() -> int:
     build_circuit()
     write_netlist()
     return 0
 
 
 if __name__ == "__main__":
-    raise SystemExit(main())
+    raise SystemExit(cli_main())
 """Netlist generator for button_grid (M1 implementation).
 
 Generates a structured netlist (JSON + simple text) describing rails, I2C
@@ -55,11 +59,6 @@ for decoupling caps per VDD group and exactly one I2C pull-up set.
 The script will optionally use SKiDL if importable, but does not depend on
 it for the primary netlist output.
 """
-
-from pathlib import Path
-import json
-import sys
-from typing import Any, Dict, List
 
 
 def build_netlist() -> Dict[str, Any]:

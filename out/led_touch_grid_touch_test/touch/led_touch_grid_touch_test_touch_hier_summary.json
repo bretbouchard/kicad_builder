@@ -1,0 +1,30 @@
+{
+  "title": "led_touch_grid_touch_test_touch_hier",
+  "symbols": [],
+  "wires": [],
+  "sheets": {
+    "touch": {
+      "title": "led_touch_grid_touch_test_touch",
+      "pins": [
+        {
+          "name": "TOUCH_GRID_BUS",
+          "direction": "inout",
+          "sheet_ref": null
+        },
+        {
+          "name": "3.3V_IN",
+          "direction": "in",
+          "sheet_ref": null
+        },
+        {
+          "name": "GND",
+          "direction": "inout",
+          "sheet_ref": null
+        }
+      ]
+    }
+  },
+  "hier_connections": [],
+  "erc_status": "passed",
+  "erc_errors": []
+}

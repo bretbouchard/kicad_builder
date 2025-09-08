@@ -1,0 +1,32 @@
+# Schematic: led_touch_grid_power
+# Symbols:
+- J1: Connector_USB/USB_C_Receptacle at (50.0, 50.0) ori=0
+- D1: Diode/D_SMA at (75.0, 50.0) ori=0
+- U1: Regulator_Linear/SOT-223 at (100.0, 50.0) ori=0
+- C1: Device/C at (150.0, 50.0) ori=0
+- C2: Device/C at (200.0, 40.0) ori=0
+- C3: Device/C at (200.0, 60.0) ori=0
+- C4: Device/C at (100.0, 70.0) ori=0
+- C5: Device/C at (150.0, 70.0) ori=0
+- D2: Diode_TVS/SMA at (25.0, 50.0) ori=0
+- FB1: Device/FB_SMD_0805_2012Metric at (60.0, 50.0) ori=0
+# Wires:
+- J1.VBUS -> D2.1
+- D2.2 -> FB1.1
+- FB1.2 -> D1.A
+- D1.K -> C1.1
+- C1.2 -> 5V_OUT
+- 5V_OUT -> 5V_IN
+- 5V_IN -> U1.VIN
+- U1.VIN -> C4.1
+- C4.2 -> GND
+- U1.VOUT -> C5.1
+- C5.2 -> GND
+- C5.1 -> 3.3V_OUT
+- 3.3V_OUT -> C2.1
+- C2.2 -> GND
+- 3.3V_OUT -> C3.1
+- C3.2 -> GND
+- U1.GND -> GND
+- EXT_5V_IN -> 5V_OUT
+- EXT_GND -> GND

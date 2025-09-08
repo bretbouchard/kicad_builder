@@ -1,0 +1,10 @@
+Netlist Statistics for led_touch_grid:
+==================================================
+Power nets: 5
+GPIO nets: 64
+SPI nets: 0
+I2C nets: 0
+Control nets: 0
+Other nets: 117
+Total components: 0
+Total nets: 186

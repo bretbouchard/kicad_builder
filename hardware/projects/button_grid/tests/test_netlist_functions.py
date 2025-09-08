@@ -1,14 +1,15 @@
 from pathlib import Path
+from typing import Any, Dict
 
 
-def _load_netlist_ns():
+def _load_netlist_ns() -> Dict[str, Any]:
     gen = Path(__file__).resolve().parents[1] / "gen" / "netlist.py"
-    ns = {}
+    ns: Dict[str, Any] = {}
     exec(gen.read_text(), ns)
     return ns
 
 
-def test_build_netlist_structure():
+def test_build_netlist_structure() -> None:
     ns = _load_netlist_ns()
     nl = ns["build_netlist"]()
     assert "nets" in nl and "components" in nl
@@ -19,36 +20,30 @@ def test_build_netlist_structure():
     assert "U1" in refs and "C1" in refs and "J1" in refs
 
 
-def test_check_decoupling_pass_and_fail():
+def test_check_decoupling_pass_and_fail() -> None:
     ns = _load_netlist_ns()
     nl = ns["build_netlist"]()
     assert ns["check_decoupling"](nl)
     # remove decoupling caps to simulate missing caps
     nl2 = {
         "nets": nl["nets"],
-        "components": [
-            c
-            for c in nl["components"]
-            if c.get("ref") not in ("C1", "C3")
-        ],
+        "components": [c for c in nl["components"] if c.get("ref") not in ("C1", "C3")],
     }
     assert not ns["check_decoupling"](nl2)
 
 
-def test_check_i2c_pullups_pass_and_fail():
+def test_check_i2c_pullups_pass_and_fail() -> None:
     ns = _load_netlist_ns()
     nl = ns["build_netlist"]()
     assert ns["check_i2c_pullups"](nl)
     nl2 = {
         "nets": nl["nets"],
-        "components": [
-            c for c in nl["components"] if c.get("ref") != "R_PU_1"
-        ],
+        "components": [c for c in nl["components"] if c.get("ref") != "R_PU_1"],
     }
     assert not ns["check_i2c_pullups"](nl2)
 
 
-def test_write_outputs_creates_files(tmp_path, monkeypatch):
+def test_write_outputs_creates_files(tmp_path: Path, monkeypatch: Any) -> None:
     ns = _load_netlist_ns()
     nl = ns["build_netlist"]()
     monkeypatch.chdir(tmp_path)

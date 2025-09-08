@@ -1,82 +1,87 @@
-name: Hardware CI
+name: LED Touch Grid CI
 
 on:
   push:
-    branches: [ main ]
+    branches: [main, master]
   pull_request:
-    branches: [ main ]
+    branches: [main, master]
 
 jobs:
-  unit-tests:
-    name: Python unit tests
+  build-and-test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.11'
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install pytest skidl
-          if [ -f hardware/requirements.txt ]; then pip install -r hardware/requirements.txt; fi
-      - name: Run SKiDL/ERC tests
-        run: pytest -q hardware/projects/button_grid/tests/test_skidl_erc_full.py
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-  hardware-build:
-    name: Hardware build & artifact generation
-    runs-on: ubuntu-latest
-    container:
-      image: kicad/kicad:9.0
-    needs: unit-tests
-    steps:
-      - uses: actions/checkout@v4
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.11'
-      - name: Install dependencies
+
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y kicad
+
+      - name: Set up Python environment
         run: |
           python -m pip install --upgrade pip
-          pip install -r hardware/requirements-dev.txt || true
-      - name: Generate artifacts
+          pip install -r hardware/requirements.txt
+          pip install -r hardware/requirements-dev.txt
+
+      - name: Lint code
         run: |
-          make -C hardware/projects/button_grid gen verify pdf || true
-      - name: Archive outputs
+          pip install flake8 black isort
+          flake8 hardware/projects/led_touch_grid/
+          black --check hardware/projects/led_touch_grid/
+          isort --check-only hardware/projects/led_touch_grid/
+
+      - name: Run tests
+        run: |
+          pytest hardware/projects/led_touch_grid/tests/ -v
+
+      - name: Generate all project files
+        run: |
+          make -C hardware/projects/led_touch_grid gen
+
+      - name: Run validation
+        run: |
+          make -C hardware/projects/led_touch_grid validate
+
+      - name: Export fabrication outputs
+        run: |
+          make -C hardware/projects/led_touch_grid export
+
+      - name: Archive artifacts
         uses: actions/upload-artifact@v3
         with:
-          name: hardware-artifacts
+          name: led-touch-grid-artifacts
           path: |
-            hardware/projects/button_grid/out/*.pdf
-            hardware/projects/button_grid/out/*.log
-name: CI
+            hardware/projects/led_touch_grid/out/
+            hardware/projects/led_touch_grid/kicad/
+            hardware/projects/led_touch_grid/docs/
 
-on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
-
-jobs:
-  test:
+  docker-ci:
     runs-on: ubuntu-latest
+    container:
+      image: python:3.11-slim
     steps:
-      - uses: actions/checkout@v4
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.11'
-      - name: Install deps
-        run: python -m pip install -r tools/requirements-dev.txt
-      - name: Run tests
-        run: pytest -q
-      - name: Generate BOM & placement
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Install system dependencies
         run: |
-          python tools/scripts/generate_bom.py --out tools/output/bom.csv
-          python tools/scripts/generate_placement.py
-      - name: Upload artifacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: generated-artifacts
-          path: tools/output
+          apt-get update
+          apt-get install -y kicad
+
+      - name: Set up Python environment
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r hardware/requirements.txt
+          pip install -r hardware/requirements-dev.txt
+
+      - name: Run CI workflow validation tests
+        run: |
+          pytest hardware/projects/led_touch_grid/tests/ -v
+          make -C hardware/projects/led_touch_grid validate
+          make -C hardware/projects/led_touch_grid export

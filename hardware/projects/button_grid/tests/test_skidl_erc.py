@@ -1,7 +1,7 @@
 from pathlib import Path
 
 
-def test_skidl_import_available():
+def test_skidl_import_available() -> None:
     """Ensure SKiDL is importable and reports a version string."""
     try:
         import skidl  # type: ignore
@@ -11,11 +11,11 @@ def test_skidl_import_available():
     assert getattr(skidl, "__version__", None)
 
 
-def test_generator_runs_with_skidl():
+def test_generator_runs_with_skidl() -> None:
     """Ensure the existing generator can run when SKiDL is available."""
     gen = Path(__file__).resolve().parents[1] / "gen" / "netlist.py"
     # run generator in-process by importing (it guards with if __name__)
-    ns = {}
+    ns: dict[str, object] = {}
     exec(gen.read_text(), ns)
     # expect build_netlist exists
     assert "build_netlist" in ns

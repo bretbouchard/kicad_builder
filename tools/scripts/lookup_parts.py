@@ -108,7 +108,7 @@ def query_with_retries(
     return None
 
 
-def main():
+def main() -> None:
     repo_root = pathlib.Path(__file__).resolve().parents[2]
     out_dir = repo_root / "tools" / "output"
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -260,4 +260,4 @@ def main():
 
 
 if __name__ == "__main__":
-    raise SystemExit(main())
+    main()

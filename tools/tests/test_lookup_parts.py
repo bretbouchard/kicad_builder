@@ -13,6 +13,7 @@ import pytest
 repo_root = pathlib.Path(__file__).resolve().parents[2]
 lookup_path = repo_root / "tools" / "scripts" / "lookup_parts.py"
 spec = importlib.util.spec_from_file_location("lookup_parts", str(lookup_path))
+assert spec is not None and spec.loader is not None
 lookup_parts = importlib.util.module_from_spec(spec)
 sys.modules["lookup_parts"] = lookup_parts
 spec.loader.exec_module(lookup_parts)

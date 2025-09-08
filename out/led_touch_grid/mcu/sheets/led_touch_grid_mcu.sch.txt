@@ -1,0 +1,63 @@
+# Schematic: led_touch_grid_mcu
+# Symbols:
+- U1: RP2040/RP2040 at (50.0, 50.0) ori=0
+- U2: RP2040/RP2040 at (200.0, 50.0) ori=0
+- Y1: Crystal/HC49U at (80.0, 70.0) ori=0
+- Y2: Crystal/HC49U at (230.0, 70.0) ori=0
+- C10: Device/C at (90.0, 80.0) ori=0
+- C11: Device/C at (90.0, 90.0) ori=0
+- C12: Device/C at (240.0, 80.0) ori=0
+- C13: Device/C at (240.0, 90.0) ori=0
+- C24: Device/C at (50.0, 30.0) ori=0
+- C25: Device/C at (60.0, 30.0) ori=0
+- C26: Device/C at (70.0, 30.0) ori=0
+- C27: Device/C at (80.0, 30.0) ori=0
+- C28: Device/C at (200.0, 30.0) ori=0
+- C29: Device/C at (210.0, 30.0) ori=0
+- C30: Device/C at (220.0, 30.0) ori=0
+- C31: Device/C at (230.0, 30.0) ori=0
+- J2: Connector_PinHeader_2.54mm/PinHeader_1x04_P2.54mm_Vertical at (20.0, 80.0) ori=0
+- J3: Connector_PinHeader_2.54mm/PinHeader_1x04_P2.54mm_Vertical at (170.0, 80.0) ori=0
+# Wires:
+- 3.3V_OUT -> U1.VDD
+- GND -> U1.GND
+- U1.XIN -> Y1.1
+- U1.XOUT -> Y1.2
+- Y1.1 -> C10.1
+- C10.2 -> GND
+- Y1.2 -> C11.1
+- C11.2 -> GND
+- U1.SWDIO -> J2.1
+- U1.SWCLK -> J2.2
+- GND -> J2.3
+- 3.3V_OUT -> J2.4
+- 3.3V_OUT -> U2.VDD
+- GND -> U2.GND
+- U2.XIN -> Y2.1
+- U2.XOUT -> Y2.2
+- Y2.1 -> C12.1
+- C12.2 -> GND
+- Y2.2 -> C13.1
+- C13.2 -> GND
+- U2.SWDIO -> J3.1
+- U2.SWCLK -> J3.2
+- GND -> J3.3
+- 3.3V_OUT -> J3.4
+- MOSI0 -> U2.GPIO16
+- MOSI1 -> U2.GPIO17
+- MOSI2 -> U2.GPIO18
+- MOSI3 -> U2.GPIO19
+- MOSI4 -> U2.GPIO20
+- MOSI5 -> U2.GPIO21
+- MOSI6 -> U2.GPIO22
+- MOSI7 -> U2.GPIO23
+- MOSI8 -> U2.GPIO24
+- MOSI9 -> U2.GPIO25
+- MOSI10 -> U2.GPIO26
+- MOSI11 -> U2.GPIO27
+- MOSI12 -> U2.GPIO28
+- MOSI13 -> U2.GPIO29
+- MOSI14 -> U2.GPIO30
+- MOSI15 -> U2.GPIO31
+- SCK -> U2.GPIO14
+- I2C_SDA -> U1.GPIO4

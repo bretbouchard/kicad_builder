@@ -1,0 +1,55 @@
+{
+  "title": "led_touch_grid_led_hier",
+  "symbols": [],
+  "wires": [],
+  "sheets": {
+    "led": {
+      "title": "led_touch_grid_led",
+      "pins": [
+        {
+          "name": "5V_IN",
+          "direction": "in",
+          "sheet_ref": null
+        },
+        {
+          "name": "GND",
+          "direction": "inout",
+          "sheet_ref": null
+        },
+        {
+          "name": "SPI_DATA",
+          "direction": "in",
+          "sheet_ref": null
+        },
+        {
+          "name": "SPI_CLK",
+          "direction": "in",
+          "sheet_ref": null
+        },
+        {
+          "name": "LED_CLK",
+          "direction": "inout",
+          "sheet_ref": null
+        },
+        {
+          "name": "LED_DATA",
+          "direction": "inout",
+          "sheet_ref": null
+        },
+        {
+          "name": "LED_CLK_OUT",
+          "direction": "out",
+          "sheet_ref": null
+        },
+        {
+          "name": "LED_DATA_OUT",
+          "direction": "out",
+          "sheet_ref": null
+        }
+      ]
+    }
+  },
+  "hier_connections": [],
+  "erc_status": "passed",
+  "erc_errors": []
+}

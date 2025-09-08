@@ -1,0 +1,9094 @@
+{
+  "title": "test_led_touch_grid_led",
+  "symbols": [
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D1",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "0",
+        "col": "0",
+        "index": "1"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D2",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "0",
+        "col": "1",
+        "index": "2"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D3",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "0",
+        "col": "2",
+        "index": "3"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D4",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "0",
+        "col": "3",
+        "index": "4"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D5",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "0",
+        "col": "4",
+        "index": "5"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D6",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "0",
+        "col": "5",
+        "index": "6"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D7",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "0",
+        "col": "6",
+        "index": "7"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D8",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "0",
+        "col": "7",
+        "index": "8"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D9",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "0",
+        "col": "8",
+        "index": "9"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D10",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "0",
+        "col": "9",
+        "index": "10"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D11",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "0",
+        "col": "10",
+        "index": "11"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D12",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "0",
+        "col": "11",
+        "index": "12"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D13",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "0",
+        "col": "12",
+        "index": "13"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D14",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "0",
+        "col": "13",
+        "index": "14"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D15",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "0",
+        "col": "14",
+        "index": "15"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D16",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "0",
+        "col": "15",
+        "index": "16"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D17",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "1",
+        "col": "0",
+        "index": "17"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D18",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "1",
+        "col": "1",
+        "index": "18"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D19",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "1",
+        "col": "2",
+        "index": "19"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D20",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "1",
+        "col": "3",
+        "index": "20"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D21",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "1",
+        "col": "4",
+        "index": "21"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D22",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "1",
+        "col": "5",
+        "index": "22"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D23",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "1",
+        "col": "6",
+        "index": "23"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D24",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "1",
+        "col": "7",
+        "index": "24"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D25",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "1",
+        "col": "8",
+        "index": "25"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D26",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "1",
+        "col": "9",
+        "index": "26"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D27",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "1",
+        "col": "10",
+        "index": "27"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D28",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "1",
+        "col": "11",
+        "index": "28"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D29",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "1",
+        "col": "12",
+        "index": "29"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D30",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "1",
+        "col": "13",
+        "index": "30"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D31",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "1",
+        "col": "14",
+        "index": "31"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D32",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "1",
+        "col": "15",
+        "index": "32"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D33",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "2",
+        "col": "0",
+        "index": "33"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D34",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "2",
+        "col": "1",
+        "index": "34"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D35",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "2",
+        "col": "2",
+        "index": "35"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D36",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "2",
+        "col": "3",
+        "index": "36"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D37",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "2",
+        "col": "4",
+        "index": "37"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D38",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "2",
+        "col": "5",
+        "index": "38"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D39",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "2",
+        "col": "6",
+        "index": "39"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D40",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "2",
+        "col": "7",
+        "index": "40"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D41",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "2",
+        "col": "8",
+        "index": "41"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D42",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "2",
+        "col": "9",
+        "index": "42"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D43",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "2",
+        "col": "10",
+        "index": "43"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D44",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "2",
+        "col": "11",
+        "index": "44"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D45",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "2",
+        "col": "12",
+        "index": "45"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D46",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "2",
+        "col": "13",
+        "index": "46"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D47",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "2",
+        "col": "14",
+        "index": "47"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D48",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "2",
+        "col": "15",
+        "index": "48"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D49",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "3",
+        "col": "0",
+        "index": "49"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D50",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "3",
+        "col": "1",
+        "index": "50"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D51",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "3",
+        "col": "2",
+        "index": "51"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D52",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "3",
+        "col": "3",
+        "index": "52"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D53",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "3",
+        "col": "4",
+        "index": "53"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D54",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "3",
+        "col": "5",
+        "index": "54"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D55",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "3",
+        "col": "6",
+        "index": "55"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D56",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "3",
+        "col": "7",
+        "index": "56"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D57",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "3",
+        "col": "8",
+        "index": "57"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D58",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "3",
+        "col": "9",
+        "index": "58"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D59",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "3",
+        "col": "10",
+        "index": "59"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D60",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "3",
+        "col": "11",
+        "index": "60"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D61",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "3",
+        "col": "12",
+        "index": "61"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D62",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "3",
+        "col": "13",
+        "index": "62"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D63",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "3",
+        "col": "14",
+        "index": "63"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D64",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "3",
+        "col": "15",
+        "index": "64"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D65",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "4",
+        "col": "0",
+        "index": "65"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D66",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "4",
+        "col": "1",
+        "index": "66"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D67",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "4",
+        "col": "2",
+        "index": "67"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D68",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "4",
+        "col": "3",
+        "index": "68"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D69",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "4",
+        "col": "4",
+        "index": "69"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D70",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "4",
+        "col": "5",
+        "index": "70"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D71",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "4",
+        "col": "6",
+        "index": "71"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D72",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "4",
+        "col": "7",
+        "index": "72"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D73",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "4",
+        "col": "8",
+        "index": "73"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D74",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "4",
+        "col": "9",
+        "index": "74"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D75",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "4",
+        "col": "10",
+        "index": "75"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D76",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "4",
+        "col": "11",
+        "index": "76"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D77",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "4",
+        "col": "12",
+        "index": "77"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D78",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "4",
+        "col": "13",
+        "index": "78"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D79",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "4",
+        "col": "14",
+        "index": "79"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D80",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "4",
+        "col": "15",
+        "index": "80"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D81",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "5",
+        "col": "0",
+        "index": "81"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D82",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "5",
+        "col": "1",
+        "index": "82"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D83",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "5",
+        "col": "2",
+        "index": "83"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D84",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "5",
+        "col": "3",
+        "index": "84"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D85",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "5",
+        "col": "4",
+        "index": "85"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D86",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "5",
+        "col": "5",
+        "index": "86"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D87",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "5",
+        "col": "6",
+        "index": "87"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D88",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "5",
+        "col": "7",
+        "index": "88"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D89",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "5",
+        "col": "8",
+        "index": "89"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D90",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "5",
+        "col": "9",
+        "index": "90"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D91",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "5",
+        "col": "10",
+        "index": "91"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D92",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "5",
+        "col": "11",
+        "index": "92"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D93",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "5",
+        "col": "12",
+        "index": "93"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D94",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "5",
+        "col": "13",
+        "index": "94"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D95",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "5",
+        "col": "14",
+        "index": "95"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D96",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "5",
+        "col": "15",
+        "index": "96"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D97",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "6",
+        "col": "0",
+        "index": "97"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D98",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "6",
+        "col": "1",
+        "index": "98"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D99",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "6",
+        "col": "2",
+        "index": "99"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D100",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "6",
+        "col": "3",
+        "index": "100"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D101",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "6",
+        "col": "4",
+        "index": "101"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D102",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "6",
+        "col": "5",
+        "index": "102"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D103",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "6",
+        "col": "6",
+        "index": "103"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D104",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "6",
+        "col": "7",
+        "index": "104"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D105",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "6",
+        "col": "8",
+        "index": "105"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D106",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "6",
+        "col": "9",
+        "index": "106"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D107",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "6",
+        "col": "10",
+        "index": "107"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D108",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "6",
+        "col": "11",
+        "index": "108"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D109",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "6",
+        "col": "12",
+        "index": "109"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D110",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "6",
+        "col": "13",
+        "index": "110"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D111",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "6",
+        "col": "14",
+        "index": "111"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D112",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "6",
+        "col": "15",
+        "index": "112"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D113",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "7",
+        "col": "0",
+        "index": "113"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D114",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "7",
+        "col": "1",
+        "index": "114"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D115",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "7",
+        "col": "2",
+        "index": "115"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D116",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "7",
+        "col": "3",
+        "index": "116"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D117",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "7",
+        "col": "4",
+        "index": "117"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D118",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "7",
+        "col": "5",
+        "index": "118"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D119",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "7",
+        "col": "6",
+        "index": "119"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D120",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "7",
+        "col": "7",
+        "index": "120"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D121",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "7",
+        "col": "8",
+        "index": "121"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D122",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "7",
+        "col": "9",
+        "index": "122"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D123",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "7",
+        "col": "10",
+        "index": "123"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D124",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "7",
+        "col": "11",
+        "index": "124"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D125",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "7",
+        "col": "12",
+        "index": "125"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D126",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "7",
+        "col": "13",
+        "index": "126"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D127",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "7",
+        "col": "14",
+        "index": "127"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D128",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "7",
+        "col": "15",
+        "index": "128"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D129",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "8",
+        "col": "0",
+        "index": "129"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D130",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "8",
+        "col": "1",
+        "index": "130"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D131",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "8",
+        "col": "2",
+        "index": "131"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D132",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "8",
+        "col": "3",
+        "index": "132"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D133",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "8",
+        "col": "4",
+        "index": "133"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D134",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "8",
+        "col": "5",
+        "index": "134"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D135",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "8",
+        "col": "6",
+        "index": "135"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D136",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "8",
+        "col": "7",
+        "index": "136"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D137",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "8",
+        "col": "8",
+        "index": "137"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D138",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "8",
+        "col": "9",
+        "index": "138"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D139",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "8",
+        "col": "10",
+        "index": "139"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D140",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "8",
+        "col": "11",
+        "index": "140"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D141",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "8",
+        "col": "12",
+        "index": "141"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D142",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "8",
+        "col": "13",
+        "index": "142"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D143",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "8",
+        "col": "14",
+        "index": "143"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D144",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "8",
+        "col": "15",
+        "index": "144"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D145",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "9",
+        "col": "0",
+        "index": "145"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D146",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "9",
+        "col": "1",
+        "index": "146"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D147",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "9",
+        "col": "2",
+        "index": "147"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D148",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "9",
+        "col": "3",
+        "index": "148"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D149",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "9",
+        "col": "4",
+        "index": "149"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D150",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "9",
+        "col": "5",
+        "index": "150"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D151",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "9",
+        "col": "6",
+        "index": "151"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D152",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "9",
+        "col": "7",
+        "index": "152"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D153",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "9",
+        "col": "8",
+        "index": "153"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D154",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "9",
+        "col": "9",
+        "index": "154"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D155",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "9",
+        "col": "10",
+        "index": "155"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D156",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "9",
+        "col": "11",
+        "index": "156"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D157",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "9",
+        "col": "12",
+        "index": "157"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D158",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "9",
+        "col": "13",
+        "index": "158"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D159",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "9",
+        "col": "14",
+        "index": "159"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D160",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "9",
+        "col": "15",
+        "index": "160"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D161",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "10",
+        "col": "0",
+        "index": "161"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D162",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "10",
+        "col": "1",
+        "index": "162"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D163",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "10",
+        "col": "2",
+        "index": "163"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D164",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "10",
+        "col": "3",
+        "index": "164"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D165",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "10",
+        "col": "4",
+        "index": "165"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D166",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "10",
+        "col": "5",
+        "index": "166"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D167",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "10",
+        "col": "6",
+        "index": "167"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D168",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "10",
+        "col": "7",
+        "index": "168"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D169",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "10",
+        "col": "8",
+        "index": "169"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D170",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "10",
+        "col": "9",
+        "index": "170"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D171",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "10",
+        "col": "10",
+        "index": "171"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D172",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "10",
+        "col": "11",
+        "index": "172"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D173",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "10",
+        "col": "12",
+        "index": "173"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D174",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "10",
+        "col": "13",
+        "index": "174"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D175",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "10",
+        "col": "14",
+        "index": "175"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D176",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "10",
+        "col": "15",
+        "index": "176"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D177",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "11",
+        "col": "0",
+        "index": "177"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D178",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "11",
+        "col": "1",
+        "index": "178"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D179",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "11",
+        "col": "2",
+        "index": "179"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D180",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "11",
+        "col": "3",
+        "index": "180"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D181",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "11",
+        "col": "4",
+        "index": "181"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D182",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "11",
+        "col": "5",
+        "index": "182"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D183",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "11",
+        "col": "6",
+        "index": "183"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D184",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "11",
+        "col": "7",
+        "index": "184"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D185",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "11",
+        "col": "8",
+        "index": "185"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D186",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "11",
+        "col": "9",
+        "index": "186"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D187",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "11",
+        "col": "10",
+        "index": "187"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D188",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "11",
+        "col": "11",
+        "index": "188"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D189",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "11",
+        "col": "12",
+        "index": "189"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D190",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "11",
+        "col": "13",
+        "index": "190"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D191",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "11",
+        "col": "14",
+        "index": "191"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D192",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "11",
+        "col": "15",
+        "index": "192"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D193",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "12",
+        "col": "0",
+        "index": "193"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D194",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "12",
+        "col": "1",
+        "index": "194"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D195",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "12",
+        "col": "2",
+        "index": "195"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D196",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "12",
+        "col": "3",
+        "index": "196"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D197",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "12",
+        "col": "4",
+        "index": "197"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D198",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "12",
+        "col": "5",
+        "index": "198"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D199",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "12",
+        "col": "6",
+        "index": "199"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D200",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "12",
+        "col": "7",
+        "index": "200"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D201",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "12",
+        "col": "8",
+        "index": "201"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D202",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "12",
+        "col": "9",
+        "index": "202"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D203",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "12",
+        "col": "10",
+        "index": "203"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D204",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "12",
+        "col": "11",
+        "index": "204"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D205",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "12",
+        "col": "12",
+        "index": "205"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D206",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "12",
+        "col": "13",
+        "index": "206"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D207",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "12",
+        "col": "14",
+        "index": "207"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D208",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "12",
+        "col": "15",
+        "index": "208"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D209",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "13",
+        "col": "0",
+        "index": "209"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D210",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "13",
+        "col": "1",
+        "index": "210"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D211",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "13",
+        "col": "2",
+        "index": "211"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D212",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "13",
+        "col": "3",
+        "index": "212"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D213",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "13",
+        "col": "4",
+        "index": "213"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D214",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "13",
+        "col": "5",
+        "index": "214"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D215",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "13",
+        "col": "6",
+        "index": "215"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D216",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "13",
+        "col": "7",
+        "index": "216"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D217",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "13",
+        "col": "8",
+        "index": "217"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D218",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "13",
+        "col": "9",
+        "index": "218"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D219",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "13",
+        "col": "10",
+        "index": "219"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D220",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "13",
+        "col": "11",
+        "index": "220"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D221",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "13",
+        "col": "12",
+        "index": "221"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D222",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "13",
+        "col": "13",
+        "index": "222"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D223",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "13",
+        "col": "14",
+        "index": "223"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D224",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "13",
+        "col": "15",
+        "index": "224"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D225",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "14",
+        "col": "0",
+        "index": "225"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D226",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "14",
+        "col": "1",
+        "index": "226"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D227",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "14",
+        "col": "2",
+        "index": "227"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D228",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "14",
+        "col": "3",
+        "index": "228"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D229",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "14",
+        "col": "4",
+        "index": "229"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D230",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "14",
+        "col": "5",
+        "index": "230"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D231",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "14",
+        "col": "6",
+        "index": "231"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D232",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "14",
+        "col": "7",
+        "index": "232"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D233",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "14",
+        "col": "8",
+        "index": "233"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D234",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "14",
+        "col": "9",
+        "index": "234"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D235",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "14",
+        "col": "10",
+        "index": "235"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D236",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "14",
+        "col": "11",
+        "index": "236"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D237",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "14",
+        "col": "12",
+        "index": "237"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D238",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "14",
+        "col": "13",
+        "index": "238"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D239",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "14",
+        "col": "14",
+        "index": "239"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D240",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "14",
+        "col": "15",
+        "index": "240"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D241",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "15",
+        "col": "0",
+        "index": "241"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D242",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "15",
+        "col": "1",
+        "index": "242"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D243",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "15",
+        "col": "2",
+        "index": "243"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D244",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "15",
+        "col": "3",
+        "index": "244"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D245",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "15",
+        "col": "4",
+        "index": "245"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D246",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "15",
+        "col": "5",
+        "index": "246"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D247",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "15",
+        "col": "6",
+        "index": "247"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D248",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "15",
+        "col": "7",
+        "index": "248"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D249",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "15",
+        "col": "8",
+        "index": "249"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D250",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "15",
+        "col": "9",
+        "index": "250"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D251",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "15",
+        "col": "10",
+        "index": "251"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D252",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "15",
+        "col": "11",
+        "index": "252"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D253",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "15",
+        "col": "12",
+        "index": "253"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D254",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "15",
+        "col": "13",
+        "index": "254"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D255",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "15",
+        "col": "14",
+        "index": "255"
+      }
+    },
+    {
+      "lib": "LED_Programmable",
+      "name": "APA102",
+      "ref": "D256",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "APA102",
+      "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+      "unit": 1,
+      "fields": {
+        "row": "15",
+        "col": "15",
+        "index": "256"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C1",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D1",
+        "index": "1"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C2",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D2",
+        "index": "2"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C3",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D3",
+        "index": "3"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C4",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D4",
+        "index": "4"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C5",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D5",
+        "index": "5"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C6",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D6",
+        "index": "6"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C7",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D7",
+        "index": "7"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C8",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D8",
+        "index": "8"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C9",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D9",
+        "index": "9"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C10",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D10",
+        "index": "10"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C11",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D11",
+        "index": "11"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C12",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D12",
+        "index": "12"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C13",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D13",
+        "index": "13"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C14",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D14",
+        "index": "14"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C15",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D15",
+        "index": "15"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C16",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D16",
+        "index": "16"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C17",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D17",
+        "index": "17"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C18",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D18",
+        "index": "18"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C19",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D19",
+        "index": "19"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C20",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D20",
+        "index": "20"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C21",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D21",
+        "index": "21"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C22",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D22",
+        "index": "22"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C23",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D23",
+        "index": "23"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C24",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D24",
+        "index": "24"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C25",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D25",
+        "index": "25"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C26",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D26",
+        "index": "26"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C27",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D27",
+        "index": "27"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C28",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D28",
+        "index": "28"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C29",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D29",
+        "index": "29"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C30",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D30",
+        "index": "30"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C31",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D31",
+        "index": "31"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C32",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D32",
+        "index": "32"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C33",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D33",
+        "index": "33"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C34",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D34",
+        "index": "34"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C35",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D35",
+        "index": "35"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C36",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D36",
+        "index": "36"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C37",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D37",
+        "index": "37"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C38",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D38",
+        "index": "38"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C39",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D39",
+        "index": "39"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C40",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D40",
+        "index": "40"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C41",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D41",
+        "index": "41"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C42",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D42",
+        "index": "42"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C43",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D43",
+        "index": "43"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C44",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D44",
+        "index": "44"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C45",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D45",
+        "index": "45"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C46",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D46",
+        "index": "46"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C47",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D47",
+        "index": "47"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C48",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D48",
+        "index": "48"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C49",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D49",
+        "index": "49"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C50",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D50",
+        "index": "50"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C51",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D51",
+        "index": "51"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C52",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D52",
+        "index": "52"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C53",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D53",
+        "index": "53"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C54",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D54",
+        "index": "54"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C55",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D55",
+        "index": "55"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C56",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D56",
+        "index": "56"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C57",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D57",
+        "index": "57"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C58",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D58",
+        "index": "58"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C59",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D59",
+        "index": "59"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C60",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D60",
+        "index": "60"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C61",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D61",
+        "index": "61"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C62",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D62",
+        "index": "62"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C63",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D63",
+        "index": "63"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C64",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D64",
+        "index": "64"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C65",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D65",
+        "index": "65"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C66",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D66",
+        "index": "66"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C67",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D67",
+        "index": "67"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C68",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D68",
+        "index": "68"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C69",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D69",
+        "index": "69"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C70",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D70",
+        "index": "70"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C71",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D71",
+        "index": "71"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C72",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D72",
+        "index": "72"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C73",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D73",
+        "index": "73"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C74",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D74",
+        "index": "74"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C75",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D75",
+        "index": "75"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C76",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D76",
+        "index": "76"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C77",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D77",
+        "index": "77"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C78",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D78",
+        "index": "78"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C79",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D79",
+        "index": "79"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C80",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D80",
+        "index": "80"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C81",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D81",
+        "index": "81"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C82",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D82",
+        "index": "82"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C83",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D83",
+        "index": "83"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C84",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D84",
+        "index": "84"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C85",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D85",
+        "index": "85"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C86",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D86",
+        "index": "86"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C87",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D87",
+        "index": "87"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C88",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D88",
+        "index": "88"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C89",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D89",
+        "index": "89"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C90",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D90",
+        "index": "90"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C91",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D91",
+        "index": "91"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C92",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D92",
+        "index": "92"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C93",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D93",
+        "index": "93"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C94",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D94",
+        "index": "94"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C95",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D95",
+        "index": "95"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C96",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D96",
+        "index": "96"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C97",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D97",
+        "index": "97"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C98",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D98",
+        "index": "98"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C99",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D99",
+        "index": "99"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C100",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D100",
+        "index": "100"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C101",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D101",
+        "index": "101"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C102",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D102",
+        "index": "102"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C103",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D103",
+        "index": "103"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C104",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D104",
+        "index": "104"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C105",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D105",
+        "index": "105"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C106",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D106",
+        "index": "106"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C107",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D107",
+        "index": "107"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C108",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D108",
+        "index": "108"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C109",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D109",
+        "index": "109"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C110",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D110",
+        "index": "110"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C111",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D111",
+        "index": "111"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C112",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D112",
+        "index": "112"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C113",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D113",
+        "index": "113"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C114",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D114",
+        "index": "114"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C115",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D115",
+        "index": "115"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C116",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D116",
+        "index": "116"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C117",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D117",
+        "index": "117"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C118",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D118",
+        "index": "118"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C119",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D119",
+        "index": "119"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C120",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D120",
+        "index": "120"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C121",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D121",
+        "index": "121"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C122",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D122",
+        "index": "122"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C123",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D123",
+        "index": "123"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C124",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D124",
+        "index": "124"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C125",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D125",
+        "index": "125"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C126",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D126",
+        "index": "126"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C127",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D127",
+        "index": "127"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C128",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D128",
+        "index": "128"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C129",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D129",
+        "index": "129"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C130",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D130",
+        "index": "130"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C131",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D131",
+        "index": "131"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C132",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D132",
+        "index": "132"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C133",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D133",
+        "index": "133"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C134",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D134",
+        "index": "134"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C135",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D135",
+        "index": "135"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C136",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D136",
+        "index": "136"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C137",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D137",
+        "index": "137"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C138",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D138",
+        "index": "138"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C139",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D139",
+        "index": "139"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C140",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D140",
+        "index": "140"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C141",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D141",
+        "index": "141"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C142",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D142",
+        "index": "142"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C143",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D143",
+        "index": "143"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C144",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D144",
+        "index": "144"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C145",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D145",
+        "index": "145"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C146",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D146",
+        "index": "146"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C147",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D147",
+        "index": "147"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C148",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D148",
+        "index": "148"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C149",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D149",
+        "index": "149"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C150",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D150",
+        "index": "150"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C151",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D151",
+        "index": "151"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C152",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D152",
+        "index": "152"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C153",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D153",
+        "index": "153"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C154",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D154",
+        "index": "154"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C155",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D155",
+        "index": "155"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C156",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D156",
+        "index": "156"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C157",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D157",
+        "index": "157"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C158",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D158",
+        "index": "158"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C159",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D159",
+        "index": "159"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C160",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D160",
+        "index": "160"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C161",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D161",
+        "index": "161"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C162",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D162",
+        "index": "162"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C163",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D163",
+        "index": "163"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C164",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D164",
+        "index": "164"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C165",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D165",
+        "index": "165"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C166",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D166",
+        "index": "166"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C167",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D167",
+        "index": "167"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C168",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D168",
+        "index": "168"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C169",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D169",
+        "index": "169"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C170",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D170",
+        "index": "170"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C171",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D171",
+        "index": "171"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C172",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D172",
+        "index": "172"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C173",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D173",
+        "index": "173"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C174",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D174",
+        "index": "174"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C175",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D175",
+        "index": "175"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C176",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D176",
+        "index": "176"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C177",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D177",
+        "index": "177"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C178",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D178",
+        "index": "178"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C179",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D179",
+        "index": "179"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C180",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D180",
+        "index": "180"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C181",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D181",
+        "index": "181"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C182",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D182",
+        "index": "182"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C183",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D183",
+        "index": "183"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C184",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D184",
+        "index": "184"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C185",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D185",
+        "index": "185"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C186",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D186",
+        "index": "186"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C187",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D187",
+        "index": "187"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C188",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D188",
+        "index": "188"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C189",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D189",
+        "index": "189"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C190",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D190",
+        "index": "190"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C191",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D191",
+        "index": "191"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C192",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D192",
+        "index": "192"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C193",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D193",
+        "index": "193"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C194",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D194",
+        "index": "194"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C195",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D195",
+        "index": "195"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C196",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D196",
+        "index": "196"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C197",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D197",
+        "index": "197"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C198",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D198",
+        "index": "198"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C199",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D199",
+        "index": "199"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C200",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D200",
+        "index": "200"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C201",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D201",
+        "index": "201"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C202",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D202",
+        "index": "202"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C203",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D203",
+        "index": "203"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C204",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D204",
+        "index": "204"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C205",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D205",
+        "index": "205"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C206",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D206",
+        "index": "206"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C207",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D207",
+        "index": "207"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C208",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D208",
+        "index": "208"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C209",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D209",
+        "index": "209"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C210",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D210",
+        "index": "210"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C211",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D211",
+        "index": "211"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C212",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D212",
+        "index": "212"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C213",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D213",
+        "index": "213"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C214",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D214",
+        "index": "214"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C215",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D215",
+        "index": "215"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C216",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D216",
+        "index": "216"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C217",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D217",
+        "index": "217"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C218",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D218",
+        "index": "218"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C219",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D219",
+        "index": "219"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C220",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D220",
+        "index": "220"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C221",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D221",
+        "index": "221"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C222",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D222",
+        "index": "222"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C223",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D223",
+        "index": "223"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C224",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D224",
+        "index": "224"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C225",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D225",
+        "index": "225"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C226",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D226",
+        "index": "226"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C227",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D227",
+        "index": "227"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C228",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D228",
+        "index": "228"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C229",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D229",
+        "index": "229"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C230",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D230",
+        "index": "230"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C231",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D231",
+        "index": "231"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C232",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D232",
+        "index": "232"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C233",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D233",
+        "index": "233"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C234",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D234",
+        "index": "234"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C235",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D235",
+        "index": "235"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C236",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D236",
+        "index": "236"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C237",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D237",
+        "index": "237"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C238",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D238",
+        "index": "238"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C239",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D239",
+        "index": "239"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C240",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D240",
+        "index": "240"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C241",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D241",
+        "index": "241"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C242",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D242",
+        "index": "242"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C243",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D243",
+        "index": "243"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C244",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D244",
+        "index": "244"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C245",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D245",
+        "index": "245"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C246",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D246",
+        "index": "246"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C247",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D247",
+        "index": "247"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C248",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D248",
+        "index": "248"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C249",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D249",
+        "index": "249"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C250",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D250",
+        "index": "250"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C251",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D251",
+        "index": "251"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C252",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D252",
+        "index": "252"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C253",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D253",
+        "index": "253"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C254",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D254",
+        "index": "254"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C255",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D255",
+        "index": "255"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C256",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "100nF 50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unit": 1,
+      "fields": {
+        "for": "D256",
+        "index": "256"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "CB_MAIN",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "220\u00b5F 10V",
+      "footprint": "Capacitor_SMD:CP_Elec_6.3x5.4",
+      "unit": 1,
+      "fields": {
+        "role": "bulk_main"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "CB1",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "47\u00b5F 10V",
+      "footprint": "Capacitor_SMD:CP_Elec_6.3x5.4",
+      "unit": 1,
+      "fields": {
+        "role": "bulk_seg_1"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "CB2",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "47\u00b5F 10V",
+      "footprint": "Capacitor_SMD:CP_Elec_6.3x5.4",
+      "unit": 1,
+      "fields": {
+        "role": "bulk_seg_2"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "CB3",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "47\u00b5F 10V",
+      "footprint": "Capacitor_SMD:CP_Elec_6.3x5.4",
+      "unit": 1,
+      "fields": {
+        "role": "bulk_seg_3"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "CB4",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "47\u00b5F 10V",
+      "footprint": "Capacitor_SMD:CP_Elec_6.3x5.4",
+      "unit": 1,
+      "fields": {
+        "role": "bulk_seg_4"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "CB5",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "47\u00b5F 10V",
+      "footprint": "Capacitor_SMD:CP_Elec_6.3x5.4",
+      "unit": 1,
+      "fields": {
+        "role": "bulk_seg_5"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "CB6",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "47\u00b5F 10V",
+      "footprint": "Capacitor_SMD:CP_Elec_6.3x5.4",
+      "unit": 1,
+      "fields": {
+        "role": "bulk_seg_6"
+      }
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "CB7",
+      "at": [
+        0.0,
+        0.0
+      ],
+      "orientation": 0,
+      "value": "47\u00b5F 10V",
+      "footprint": "Capacitor_SMD:CP_Elec_6.3x5.4",
+      "unit": 1,
+      "fields": {
+        "role": "bulk_seg_7"
+      }
+    }
+  ],
+  "wires": []
+}

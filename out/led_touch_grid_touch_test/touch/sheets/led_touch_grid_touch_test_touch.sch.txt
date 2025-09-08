@@ -1,0 +1,195 @@
+# Schematic: led_touch_grid_touch_test_touch
+# Symbols:
+- P1: Device/PAD at (50.0, 50.0) ori=0
+- P2: Device/PAD at (70.0, 50.0) ori=0
+- P3: Device/PAD at (90.0, 50.0) ori=0
+- P4: Device/PAD at (110.0, 50.0) ori=0
+- P5: Device/PAD at (130.0, 50.0) ori=0
+- P6: Device/PAD at (150.0, 50.0) ori=0
+- P7: Device/PAD at (170.0, 50.0) ori=0
+- P8: Device/PAD at (190.0, 50.0) ori=0
+- P9: Device/PAD at (50.0, 70.0) ori=0
+- P10: Device/PAD at (70.0, 70.0) ori=0
+- P11: Device/PAD at (90.0, 70.0) ori=0
+- P12: Device/PAD at (110.0, 70.0) ori=0
+- P13: Device/PAD at (130.0, 70.0) ori=0
+- P14: Device/PAD at (150.0, 70.0) ori=0
+- P15: Device/PAD at (170.0, 70.0) ori=0
+- P16: Device/PAD at (190.0, 70.0) ori=0
+- P17: Device/PAD at (50.0, 90.0) ori=0
+- P18: Device/PAD at (70.0, 90.0) ori=0
+- P19: Device/PAD at (90.0, 90.0) ori=0
+- P20: Device/PAD at (110.0, 90.0) ori=0
+- P21: Device/PAD at (130.0, 90.0) ori=0
+- P22: Device/PAD at (150.0, 90.0) ori=0
+- P23: Device/PAD at (170.0, 90.0) ori=0
+- P24: Device/PAD at (190.0, 90.0) ori=0
+- P25: Device/PAD at (50.0, 110.0) ori=0
+- P26: Device/PAD at (70.0, 110.0) ori=0
+- P27: Device/PAD at (90.0, 110.0) ori=0
+- P28: Device/PAD at (110.0, 110.0) ori=0
+- P29: Device/PAD at (130.0, 110.0) ori=0
+- P30: Device/PAD at (150.0, 110.0) ori=0
+- P31: Device/PAD at (170.0, 110.0) ori=0
+- P32: Device/PAD at (190.0, 110.0) ori=0
+- P33: Device/PAD at (50.0, 130.0) ori=0
+- P34: Device/PAD at (70.0, 130.0) ori=0
+- P35: Device/PAD at (90.0, 130.0) ori=0
+- P36: Device/PAD at (110.0, 130.0) ori=0
+- P37: Device/PAD at (130.0, 130.0) ori=0
+- P38: Device/PAD at (150.0, 130.0) ori=0
+- P39: Device/PAD at (170.0, 130.0) ori=0
+- P40: Device/PAD at (190.0, 130.0) ori=0
+- P41: Device/PAD at (50.0, 150.0) ori=0
+- P42: Device/PAD at (70.0, 150.0) ori=0
+- P43: Device/PAD at (90.0, 150.0) ori=0
+- P44: Device/PAD at (110.0, 150.0) ori=0
+- P45: Device/PAD at (130.0, 150.0) ori=0
+- P46: Device/PAD at (150.0, 150.0) ori=0
+- P47: Device/PAD at (170.0, 150.0) ori=0
+- P48: Device/PAD at (190.0, 150.0) ori=0
+- P49: Device/PAD at (50.0, 170.0) ori=0
+- P50: Device/PAD at (70.0, 170.0) ori=0
+- P51: Device/PAD at (90.0, 170.0) ori=0
+- P52: Device/PAD at (110.0, 170.0) ori=0
+- P53: Device/PAD at (130.0, 170.0) ori=0
+- P54: Device/PAD at (150.0, 170.0) ori=0
+- P55: Device/PAD at (170.0, 170.0) ori=0
+- P56: Device/PAD at (190.0, 170.0) ori=0
+- P57: Device/PAD at (50.0, 190.0) ori=0
+- P58: Device/PAD at (70.0, 190.0) ori=0
+- P59: Device/PAD at (90.0, 190.0) ori=0
+- P60: Device/PAD at (110.0, 190.0) ori=0
+- P61: Device/PAD at (130.0, 190.0) ori=0
+- P62: Device/PAD at (150.0, 190.0) ori=0
+- P63: Device/PAD at (170.0, 190.0) ori=0
+- P64: Device/PAD at (190.0, 190.0) ori=0
+# Wires:
+- GPIO0 -> P1.1
+- TOUCH_GRID_BUS -> GPIO0
+- GPIO1 -> P2.1
+- TOUCH_GRID_BUS -> GPIO1
+- GPIO2 -> P3.1
+- TOUCH_GRID_BUS -> GPIO2
+- GPIO3 -> P4.1
+- TOUCH_GRID_BUS -> GPIO3
+- GPIO4 -> P5.1
+- TOUCH_GRID_BUS -> GPIO4
+- GPIO5 -> P6.1
+- TOUCH_GRID_BUS -> GPIO5
+- GPIO6 -> P7.1
+- TOUCH_GRID_BUS -> GPIO6
+- GPIO7 -> P8.1
+- TOUCH_GRID_BUS -> GPIO7
+- GPIO8 -> P9.1
+- TOUCH_GRID_BUS -> GPIO8
+- GPIO9 -> P10.1
+- TOUCH_GRID_BUS -> GPIO9
+- GPIO10 -> P11.1
+- TOUCH_GRID_BUS -> GPIO10
+- GPIO11 -> P12.1
+- TOUCH_GRID_BUS -> GPIO11
+- GPIO12 -> P13.1
+- TOUCH_GRID_BUS -> GPIO12
+- GPIO13 -> P14.1
+- TOUCH_GRID_BUS -> GPIO13
+- GPIO14 -> P15.1
+- TOUCH_GRID_BUS -> GPIO14
+- GPIO15 -> P16.1
+- TOUCH_GRID_BUS -> GPIO15
+- GPIO16 -> P17.1
+- TOUCH_GRID_BUS -> GPIO16
+- GPIO17 -> P18.1
+- TOUCH_GRID_BUS -> GPIO17
+- GPIO18 -> P19.1
+- TOUCH_GRID_BUS -> GPIO18
+- GPIO19 -> P20.1
+- TOUCH_GRID_BUS -> GPIO19
+- GPIO20 -> P21.1
+- TOUCH_GRID_BUS -> GPIO20
+- GPIO21 -> P22.1
+- TOUCH_GRID_BUS -> GPIO21
+- GPIO22 -> P23.1
+- TOUCH_GRID_BUS -> GPIO22
+- GPIO23 -> P24.1
+- TOUCH_GRID_BUS -> GPIO23
+- GPIO24 -> P25.1
+- TOUCH_GRID_BUS -> GPIO24
+- GPIO25 -> P26.1
+- TOUCH_GRID_BUS -> GPIO25
+- GPIO26 -> P27.1
+- TOUCH_GRID_BUS -> GPIO26
+- GPIO27 -> P28.1
+- TOUCH_GRID_BUS -> GPIO27
+- GPIO28 -> P29.1
+- TOUCH_GRID_BUS -> GPIO28
+- GPIO29 -> P30.1
+- TOUCH_GRID_BUS -> GPIO29
+- GPIO30 -> P31.1
+- TOUCH_GRID_BUS -> GPIO30
+- GPIO31 -> P32.1
+- TOUCH_GRID_BUS -> GPIO31
+- GPIO32 -> P33.1
+- TOUCH_GRID_BUS -> GPIO32
+- GPIO33 -> P34.1
+- TOUCH_GRID_BUS -> GPIO33
+- GPIO34 -> P35.1
+- TOUCH_GRID_BUS -> GPIO34
+- GPIO35 -> P36.1
+- TOUCH_GRID_BUS -> GPIO35
+- GPIO36 -> P37.1
+- TOUCH_GRID_BUS -> GPIO36
+- GPIO37 -> P38.1
+- TOUCH_GRID_BUS -> GPIO37
+- GPIO38 -> P39.1
+- TOUCH_GRID_BUS -> GPIO38
+- GPIO39 -> P40.1
+- TOUCH_GRID_BUS -> GPIO39
+- GPIO40 -> P41.1
+- TOUCH_GRID_BUS -> GPIO40
+- GPIO41 -> P42.1
+- TOUCH_GRID_BUS -> GPIO41
+- GPIO42 -> P43.1
+- TOUCH_GRID_BUS -> GPIO42
+- GPIO43 -> P44.1
+- TOUCH_GRID_BUS -> GPIO43
+- GPIO44 -> P45.1
+- TOUCH_GRID_BUS -> GPIO44
+- GPIO45 -> P46.1
+- TOUCH_GRID_BUS -> GPIO45
+- GPIO46 -> P47.1
+- TOUCH_GRID_BUS -> GPIO46
+- GPIO47 -> P48.1
+- TOUCH_GRID_BUS -> GPIO47
+- GPIO48 -> P49.1
+- TOUCH_GRID_BUS -> GPIO48
+- GPIO49 -> P50.1
+- TOUCH_GRID_BUS -> GPIO49
+- GPIO50 -> P51.1
+- TOUCH_GRID_BUS -> GPIO50
+- GPIO51 -> P52.1
+- TOUCH_GRID_BUS -> GPIO51
+- GPIO52 -> P53.1
+- TOUCH_GRID_BUS -> GPIO52
+- GPIO53 -> P54.1
+- TOUCH_GRID_BUS -> GPIO53
+- GPIO54 -> P55.1
+- TOUCH_GRID_BUS -> GPIO54
+- GPIO55 -> P56.1
+- TOUCH_GRID_BUS -> GPIO55
+- GPIO56 -> P57.1
+- TOUCH_GRID_BUS -> GPIO56
+- GPIO57 -> P58.1
+- TOUCH_GRID_BUS -> GPIO57
+- GPIO58 -> P59.1
+- TOUCH_GRID_BUS -> GPIO58
+- GPIO59 -> P60.1
+- TOUCH_GRID_BUS -> GPIO59
+- GPIO60 -> P61.1
+- TOUCH_GRID_BUS -> GPIO60
+- GPIO61 -> P62.1
+- TOUCH_GRID_BUS -> GPIO61
+- GPIO62 -> P63.1
+- TOUCH_GRID_BUS -> GPIO62
+- GPIO63 -> P64.1
+- TOUCH_GRID_BUS -> GPIO63

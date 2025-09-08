@@ -9,7 +9,7 @@ import sys
 from pathlib import Path
 
 
-def main():
+def main() -> None:
     if len(sys.argv) < 2:
         print("usage: read_metadata.py part.metadata.json")
         raise SystemExit(1)
