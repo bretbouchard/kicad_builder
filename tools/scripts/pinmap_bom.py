@@ -3,9 +3,9 @@
 Scans tools/vendor_symbols/mappings/*.json and writes a CSV summary to stdout.
 """
 
+import csv
 import json
 import pathlib
-import csv
 import sys
 
 

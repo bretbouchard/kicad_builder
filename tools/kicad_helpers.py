@@ -1,5 +1,5 @@
 from dataclasses import dataclass, field
-from typing import Dict, Any
+from typing import Any, Dict
 
 
 @dataclass
@@ -140,12 +140,12 @@ class Schematic:
     def add_power_flag(self, net: str):
         """Add power flag symbol for a net"""
         self.add_symbol(
-            Symbol(lib="power", name="PWR_FLAG", ref=f"PWR{len(self.symbols)+1}", value=net, fields={"Net": net})
+            Symbol(lib="power", name="PWR_FLAG", ref=f"PWR{len(self.symbols) + 1}", value=net, fields={"Net": net})
         )
 
     def add_gnd(self):
         """Add ground symbol"""
-        self.add_symbol(Symbol(lib="power", name="GND", ref=f"GND{len(self.symbols)+1}", value="Ground"))
+        self.add_symbol(Symbol(lib="power", name="GND", ref=f"GND{len(self.symbols) + 1}", value="Ground"))
 
     def add_hier_pin(self, name: str, direction: str):
         """Add hierarchical pin to this sheet"""
@@ -250,7 +250,7 @@ class HierarchicalSchematic:
                         raise ValueError("Output pins cannot drive other output pins")
                     else:
                         errors.append(
-                            f"Pin direction conflict {parent_pin_name}: " f"{p_pin.direction} vs {c_pin.direction}"
+                            f"Pin direction conflict {parent_pin_name}: {p_pin.direction} vs {c_pin.direction}"
                         )
                 # Special case: parent "in" to child "out" should fail for data pins
                 # but allow for power pins (like 5V, GND, etc.)

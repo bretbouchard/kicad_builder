@@ -12,21 +12,22 @@ Usage:
   pytest hardware/projects/led_touch_grid/tests/test_mcu_sheet.py -q
 """
 
-from pathlib import Path
 import json
 import sys
+from pathlib import Path
+
 import pytest
 
 # Add project root for imports (tools/)
 sys.path.insert(0, str(Path(__file__).resolve().parents[3]))
 
-from tools.kicad_helpers import (  # noqa: E402
-    Schematic,
-    Symbol,
-)
 from hardware.projects.led_touch_grid.gen.mcu_sheet import (  # noqa: E402
     generate_mcu_sheet,
     validate_mcu_power_decoupling,
+)
+from tools.kicad_helpers import (  # noqa: E402
+    Schematic,
+    Symbol,
 )
 
 
@@ -57,7 +58,7 @@ class TestMCUSheetGeneratorSuccess:
             for s in mcu_symbols
             if ((s.get("value") and "RP2040" in s.get("value")) or s.get("name") == "RP2040")
         }
-        rp2040_msg = "Expected U1/U2 RP2040 symbols, " f"found: {rp2040_refs}"
+        rp2040_msg = f"Expected U1/U2 RP2040 symbols, found: {rp2040_refs}"
         assert {"U1", "U2"}.issubset(rp2040_refs), rp2040_msg
 
         # Crystal + load caps (Y1/Y2 + four 22pF caps)
@@ -69,7 +70,7 @@ class TestMCUSheetGeneratorSuccess:
 
         # Decoupling capacitors (100nF) aggregate (>=8 for two MCUs)
         decoupling_caps = [s for s in mcu_symbols if "100nF" in (s.get("value") or "")]
-        decap_msg = "Expected >=8 total 100nF decoupling capacitors for two MCUs, " f"found {len(decoupling_caps)}"
+        decap_msg = f"Expected >=8 total 100nF decoupling capacitors for two MCUs, found {len(decoupling_caps)}"
         assert len(decoupling_caps) >= 8, decap_msg
 
         # Hierarchical pins
@@ -85,7 +86,7 @@ class TestMCUSheetGeneratorSuccess:
             "3.3V_IN",
             "GND",
         }
-        pins_msg = "Missing hierarchical pins: " f"{expected_pins - pin_names}"
+        pins_msg = f"Missing hierarchical pins: {expected_pins - pin_names}"
         assert expected_pins.issubset(pin_names), pins_msg
 
     def test_decoupling_validation_passes(self):
@@ -100,7 +101,7 @@ class TestMCUSheetGeneratorSuccess:
             )
         )
         for i in range(4):
-            sch.add_symbol(Symbol(lib="Device", name="C", ref=f"C{i+1}", value="100nF 50V"))
+            sch.add_symbol(Symbol(lib="Device", name="C", ref=f"C{i + 1}", value="100nF 50V"))
         # Should not raise
         validate_mcu_power_decoupling(sch)
 

@@ -1,10 +1,9 @@
 import json
 from pathlib import Path
 
-
 from tools.kicad_helpers import (
-    Schematic,
     HierarchicalSchematic,
+    Schematic,
     Sheet,
     Symbol,
 )

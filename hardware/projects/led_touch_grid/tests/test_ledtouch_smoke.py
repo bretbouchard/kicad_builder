@@ -15,9 +15,10 @@ Requirements met:
 Usage: pytest hardware/projects/led_touch_grid/tests/test_smoke.py -v
 """
 
-import pytest
 import sys
 from pathlib import Path
+
+import pytest
 
 # Add project root to path for imports
 sys.path.insert(0, str(Path(__file__).resolve().parents[3]))
@@ -90,7 +91,9 @@ class TestGeneratorImports:
     def test_power_sheet_import(self):
         """Test power sheet generator import."""
         try:
-            from hardware.projects.led_touch_grid.gen.power_sheet import generate_power_sheet
+            from hardware.projects.led_touch_grid.gen.power_sheet import (
+                generate_power_sheet,
+            )
 
             assert callable(generate_power_sheet), "generate_power_sheet is not callable"
         except ImportError as e:
@@ -99,7 +102,9 @@ class TestGeneratorImports:
     def test_mcu_sheet_import(self):
         """Test MCU sheet generator import."""
         try:
-            from hardware.projects.led_touch_grid.gen.mcu_sheet import generate_mcu_sheet
+            from hardware.projects.led_touch_grid.gen.mcu_sheet import (
+                generate_mcu_sheet,
+            )
 
             assert callable(generate_mcu_sheet), "generate_mcu_sheet is not callable"
         except ImportError as e:
@@ -108,7 +113,9 @@ class TestGeneratorImports:
     def test_touch_sheet_import(self):
         """Test touch sheet generator import."""
         try:
-            from hardware.projects.led_touch_grid.gen.touch_sheet import generate_touch_sheet
+            from hardware.projects.led_touch_grid.gen.touch_sheet import (
+                generate_touch_sheet,
+            )
 
             assert callable(generate_touch_sheet), "generate_touch_sheet is not callable"
         except ImportError as e:
@@ -117,7 +124,9 @@ class TestGeneratorImports:
     def test_led_sheet_import(self):
         """Test LED sheet generator import."""
         try:
-            from hardware.projects.led_touch_grid.gen.led_sheet import generate_led_sheet
+            from hardware.projects.led_touch_grid.gen.led_sheet import (
+                generate_led_sheet,
+            )
 
             assert callable(generate_led_sheet), "generate_led_sheet is not callable"
         except ImportError as e:
@@ -135,7 +144,9 @@ class TestGeneratorImports:
     def test_root_schematic_import(self):
         """Test root schematic generator import."""
         try:
-            from hardware.projects.led_touch_grid.gen.root_schematic import generate_root_schematic
+            from hardware.projects.led_touch_grid.gen.root_schematic import (
+                generate_root_schematic,
+            )
 
             assert callable(generate_root_schematic), "generate_root_schematic is not callable"
         except ImportError as e:
@@ -207,7 +218,10 @@ class TestConfiguration:
 
     def test_grid_constants(self):
         """Test that grid constants are properly defined."""
-        from hardware.projects.led_touch_grid.gen.touch_sheet import GRID_SIZE, PAD_SIZE_MM
+        from hardware.projects.led_touch_grid.gen.touch_sheet import (
+            GRID_SIZE,
+            PAD_SIZE_MM,
+        )
 
         assert GRID_SIZE == (8, 8), f"Expected GRID_SIZE=(8,8), got {GRID_SIZE}"
         assert PAD_SIZE_MM == (19.0, 19.0), f"Expected PAD_SIZE_MM=(19.0,19.0), got {PAD_SIZE_MM}"
@@ -215,11 +229,11 @@ class TestConfiguration:
     def test_led_constants(self):
         """Test that LED constants are properly defined."""
         from hardware.projects.led_touch_grid.gen.led_sheet import (
+            CONFIG_CHAINED,
+            CONFIG_PARALLEL,
             GRID_SIZE,
             LEDS_PER_PAD,
             TOTAL_LEDS,
-            CONFIG_PARALLEL,
-            CONFIG_CHAINED,
         )
 
         assert GRID_SIZE == (8, 8), f"Expected GRID_SIZE=(8,8), got {GRID_SIZE}"
@@ -230,7 +244,7 @@ class TestConfiguration:
 
     def test_power_constants(self):
         """Test that power constants are properly defined."""
-        from hardware.projects.led_touch_grid.gen.power_sheet import V5_INPUT_AT, LDO_AT
+        from hardware.projects.led_touch_grid.gen.power_sheet import LDO_AT, V5_INPUT_AT
 
         assert V5_INPUT_AT == (50.0, 50.0), f"Expected V5_INPUT_AT=(50.0,50.0), got {V5_INPUT_AT}"
         assert LDO_AT == (100.0, 50.0), f"Expected LDO_AT=(100.0,50.0), got {LDO_AT}"

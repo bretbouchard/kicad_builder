@@ -5,13 +5,16 @@ This script builds a tiny circuit (RP2040 power pins + nets), runs SKiDL's
 ERC, and emits an XML netlist under `out/` so CI and local dev can validate
 the pre-KiCad stage.
 """
+
 from __future__ import annotations
-import os
-from skidl import Part, Net, ERC, generate_netlist
-from pathlib import Path
+
 import json
+import os
 import sys
+from pathlib import Path
 from typing import Any, Dict, List
+
+from skidl import ERC, Net, Part, generate_netlist
 
 
 def build_circuit() -> None:
@@ -217,7 +220,7 @@ def main() -> None:
     write_outputs(nl)
 
     if not ok:
-        print("Netlist generation produced errors (see messages above)." " Exiting with code 2.")
+        print("Netlist generation produced errors (see messages above). Exiting with code 2.")
         sys.exit(2)
     print("Netlist generated and basic ERC checks passed.")
 

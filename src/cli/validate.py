@@ -1,8 +1,9 @@
 from __future__ import annotations
 
 import argparse
+
 from src.services.config_manager import load as load_config
-from src.services.validation_engine import validate_project_config, ValidationError
+from src.services.validation_engine import ValidationError, validate_project_config
 
 
 def main(argv: list[str] | None = None) -> int:

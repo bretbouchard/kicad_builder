@@ -18,17 +18,19 @@ Requirements met:
 Usage: python gen/netlist.py
 """
 
+# ruff: noqa: E402
+
 import sys
+from collections import defaultdict
 from pathlib import Path
 from typing import Dict, List
-from collections import defaultdict
 
 # Add project root to path for imports
 project_root = Path(__file__).resolve()
 while not (project_root / "tools").exists() and project_root != project_root.parent:
     project_root = project_root.parent
 sys.path.insert(0, str(project_root))
-from tools.kicad_helpers import Schematic, HierarchicalSchematic
+from tools.kicad_helpers import HierarchicalSchematic, Schematic
 
 # Component and net categories for verification
 POWER_NETS = {"5V_OUT", "3.3V_OUT", "GND", "EXT_5V_IN", "EXT_GND"}
@@ -235,7 +237,9 @@ def generate_netlist(project_name: str = "led_touch_grid") -> None:
 
     # Import and generate hierarchical schematic first
     try:
-        from hardware.projects.led_touch_grid.gen.root_schematic import generate_root_schematic
+        from hardware.projects.led_touch_grid.gen.root_schematic import (
+            generate_root_schematic,
+        )
 
         hier_schematic = generate_root_schematic(project_name)
 

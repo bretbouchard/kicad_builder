@@ -1,6 +1,7 @@
 import importlib
-import pytest
 from pathlib import Path
+
+import pytest
 
 
 def test_plugin_system_discovery_contract():

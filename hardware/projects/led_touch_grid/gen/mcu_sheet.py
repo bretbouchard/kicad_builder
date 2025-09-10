@@ -1,6 +1,7 @@
 import sys
-import json
 from pathlib import Path
+
+# ruff: noqa: E402
 
 # Add project root to path for imports
 project_root = Path(__file__).resolve()
@@ -8,7 +9,10 @@ while not (project_root / "tools").exists() and project_root != project_root.par
     project_root = project_root.parent
 sys.path.insert(0, str(project_root))
 
-from tools.kicad_helpers import HierarchicalSchematic, Symbol
+import json
+
+# Defer importing project helpers until after sys.path is set to avoid
+# import-time side effects and satisfy linters (E402).
 
 
 def generate_mcu_summary(project_name: str, symbols: list) -> None:
@@ -25,7 +29,9 @@ def generate_mcu_summary(project_name: str, symbols: list) -> None:
     summary_file.write_text(json.dumps(summary_data, indent=2))
 
 
-def generate_mcu_sheet(project_name: str = "led_touch_grid") -> HierarchicalSchematic:
+def generate_mcu_sheet(project_name: str = "led_touch_grid") -> object:
+    from tools.kicad_helpers import HierarchicalSchematic, Symbol
+
     hier = HierarchicalSchematic(f"{project_name}_mcu_hier")
     # Create the mcu sheet
     hier.create_sheet("mcu")
@@ -39,7 +45,7 @@ def generate_mcu_sheet(project_name: str = "led_touch_grid") -> HierarchicalSche
         Symbol(ref="Y2", value="12MHz", lib="Device", name="Crystal", sheet="mcu"),
         # Load capacitors for crystals (22pF)
         *[
-            Symbol(ref=f"C{i+20}", value="22pF 50V", lib="Device", name="Capacitor_SMD", sheet="mcu")
+            Symbol(ref=f"C{i + 20}", value="22pF 50V", lib="Device", name="Capacitor_SMD", sheet="mcu")
             for i in range(1, 5)
         ],
     ]
@@ -86,7 +92,7 @@ def validate_mcu_power_decoupling(hier_schematic):
         raise ValueError("Invalid schematic object type")
 
     # Count MCUs and calculate required decoupling capacitors (4 per MCU)
-    mcus = [symbol for symbol in symbols if symbol.lib in ["MCU", "RP2040"] or "RP2040" in symbol.name]
+    mcus = [symbol for symbol in symbols if symbol.lib in ["MCU", "RP2040"] or "RP2040" in getattr(symbol, "name", "")]
     required_decaps = len(mcus) * 4
 
     decaps = [symbol for symbol in symbols if "100nF" in symbol.value]

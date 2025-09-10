@@ -1,7 +1,7 @@
 from pathlib import Path
 
-from src.services import auto_register
 from src.lib import generator_registry as registry
+from src.services import auto_register
 
 
 def test_auto_register_happy_and_failure(tmp_path: Path):

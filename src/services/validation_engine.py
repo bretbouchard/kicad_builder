@@ -17,9 +17,10 @@ class ValidationError(Exception):
 def validate_project_config(config: ProjectConfig, rules: Optional[List[Dict[str, Any]]] = None) -> bool:
     """Validate a ProjectConfig.
 
-    If `rules` (a list of JSON Schema fragments) are provided and `jsonschema` is
-    available, validate against them. Otherwise perform basic required-field checks.
-    Returns True on success or raises ValidationError on failure.
+    If `rules` (a list of JSON Schema fragments) are provided and
+    `jsonschema` is available, validate against them. Otherwise perform
+    basic required-field checks. Returns True on success or raises
+    ValidationError on failure.
     """
     # Basic required checks via Pydantic: ensure instance type
     if not isinstance(config, ProjectConfig):

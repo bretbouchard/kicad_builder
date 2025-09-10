@@ -21,7 +21,7 @@ import os
 import pathlib
 import sys
 import time
-from typing import Dict, Any, Optional, Iterable, List, Tuple, TYPE_CHECKING
+from typing import TYPE_CHECKING, Any, Dict, Iterable, List, Optional, Tuple
 
 try:
     # prefer requests if available at runtime
@@ -65,7 +65,7 @@ def mouser_search(api_key: str, query: str) -> Optional[Dict[str, Any]]:
             r.raise_for_status()
             return r.json()
         # urllib fallback (rare)
-        from urllib import request, parse
+        from urllib import parse, request
 
         q = url + "?" + parse.urlencode(params)
         with request.urlopen(q, timeout=15) as fh:

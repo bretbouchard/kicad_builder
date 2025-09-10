@@ -24,8 +24,8 @@ Requires:
 import json
 import subprocess
 import sys
-from pathlib import Path
 from datetime import datetime
+from pathlib import Path
 
 
 def run_kicad_cli(args, cwd=None):

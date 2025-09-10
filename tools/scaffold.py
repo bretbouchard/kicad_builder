@@ -6,7 +6,9 @@ Usage: python tools/scaffold.py NAME
 Creates a minimal hardware project skeleton under
 hardware/projects/NAME. Files are written only if missing.
 """
+
 from __future__ import annotations
+
 import json
 import subprocess
 import sys
@@ -15,12 +17,7 @@ from pathlib import Path
 
 from jinja2 import Template
 
-
-DAID_TMPL = (
-    "# DAID Metadata\n"
-    "# Generated: {{ timestamp }}\n"
-    "# Git SHA: {{ git_sha }}\n"
-)
+DAID_TMPL = "# DAID Metadata\n# Generated: {{ timestamp }}\n# Git SHA: {{ git_sha }}\n"
 
 
 MAKEFILE_TMPL = (
@@ -64,12 +61,15 @@ def write_if_missing(path: Path, content: str) -> None:
 
 def git_sha_short() -> str:
     try:
-        out = subprocess.check_output([
-            "git",
-            "rev-parse",
-            "--short",
-            "HEAD",
-        ], text=True)
+        out = subprocess.check_output(
+            [
+                "git",
+                "rev-parse",
+                "--short",
+                "HEAD",
+            ],
+            text=True,
+        )
         return out.strip()
     except Exception:
         return "unknown"

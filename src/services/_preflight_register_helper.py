@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 from __future__ import annotations
 
-import sys
-import json
-import traceback
 import importlib.util
+import json
+import sys
+import traceback
 from pathlib import Path
 
 
@@ -41,23 +41,32 @@ def main(argv: list[str]) -> int:
         regs: list[str | None] = []
 
         def _stub_register(*args: object, **kwargs: object) -> None:
+            # Try to extract the registered name and optional namespace so
+            # callers can perform lazy registration under the correct key.
             name: str | None = None
+            namespace: str | None = None
             try:
                 if len(args) > 0:
                     val = args[0]
                     if isinstance(val, str):
                         name = val
-                else:
-                    # mypy/pyd temporary: kwargs is object; use getattr
-                    try:
-                        val = kwargs.get("name")  # type: ignore[attr-defined]
-                        if isinstance(val, str):
-                            name = val
-                    except Exception:
-                        name = None
+                # kwargs may include 'name' or 'namespace'
+                try:
+                    kname = kwargs.get("name")  # type: ignore[attr-defined]
+                    kns = kwargs.get("namespace")  # type: ignore[attr-defined]
+                    if isinstance(kname, str):
+                        name = kname
+                    if isinstance(kns, str):
+                        namespace = kns
+                except Exception:
+                    pass
             except Exception:
                 name = None
-            regs.append(name)
+
+            if name and namespace:
+                regs.append(f"{namespace}:{name}")
+            else:
+                regs.append(name)
 
         if hasattr(mod, "GENERATOR"):
             g = getattr(mod, "GENERATOR")
@@ -76,7 +85,8 @@ def main(argv: list[str]) -> int:
             except Exception:
                 raise
 
-        # on success print a small JSON summary to stdout
+        # on success print a small JSON summary to stdout containing the
+        # discovered registration names (optionally namespaced).
         sys.stdout.write(json.dumps({"registrations": regs}))
         return 0
     except SystemExit as se:

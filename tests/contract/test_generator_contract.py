@@ -1,6 +1,7 @@
 import importlib
-import pytest
 from pathlib import Path
+
+import pytest
 
 
 def test_generator_contract_against_examples():

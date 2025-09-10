@@ -46,7 +46,7 @@ class PCBPlacementBuilder:
         """Generate placement CSV for 16x16 LED grid."""
         for row in range(LED_GRID_SIZE):
             for col in range(LED_GRID_SIZE):
-                ref = f"LED{row*LED_GRID_SIZE+col+1:03d}"
+                ref = f"LED{row * LED_GRID_SIZE + col + 1:03d}"
                 x = col * LED_SPACING
                 y = row * LED_SPACING
                 self.led_grid.append(
@@ -66,7 +66,7 @@ class PCBPlacementBuilder:
         TOUCH_START_Y = 50.0
         for row in range(TOUCH_GRID_SIZE):
             for col in range(TOUCH_GRID_SIZE):
-                ref = f"TP{row*TOUCH_GRID_SIZE+col+1:02d}"
+                ref = f"TP{row * TOUCH_GRID_SIZE + col + 1:02d}"
                 x = TOUCH_START_X + col * TOUCH_SPACING
                 y = TOUCH_START_Y + row * TOUCH_SPACING
                 self.touch_grid.append(

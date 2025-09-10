@@ -8,23 +8,24 @@ Covers:
 - Pad count validation failure (simulate missing pad)
 """
 
-from pathlib import Path
 import json
 import sys
+from pathlib import Path
+
 import pytest
 
 # Add project root for imports (tools/)
 sys.path.insert(0, str(Path(__file__).resolve().parents[3]))
 
-from tools.kicad_helpers import (  # noqa: E402
-    Schematic,
-    Symbol,
-    HierarchicalSchematic,
-)
 from hardware.projects.led_touch_grid.gen.touch_sheet import (  # noqa: E402
+    EXPECTED_PAD_COUNT,
     generate_touch_sheet,
     validate_touch_pad_count,
-    EXPECTED_PAD_COUNT,
+)
+from tools.kicad_helpers import (  # noqa: E402
+    HierarchicalSchematic,
+    Schematic,
+    Symbol,
 )
 
 

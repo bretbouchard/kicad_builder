@@ -1,6 +1,7 @@
 import pytest
-from tools.kicad_helpers import Schematic, Symbol
+
 from hardware.projects.led_touch_grid.validation.i2c.core import I2CValidator
+from tools.kicad_helpers import Schematic, Symbol
 
 
 @pytest.fixture

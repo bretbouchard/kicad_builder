@@ -13,8 +13,8 @@ Requirements:
 
 """
 
-import numpy as np
 import matplotlib
+import numpy as np
 
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
@@ -59,7 +59,7 @@ def simulate_touch_sensitivity(R, C, delta_C=2e-12, save_prefix=None):
     Simulate change in frequency response when touch increases capacitance.
     delta_C: Capacitance change due to touch (F)
     """
-    print(f"Simulating baseline (C={C*1e12:.1f} pF), touch (C+ΔC={C+delta_C:.1e} F)")
+    print(f"Simulating baseline (C={C * 1e12:.1f} pF), touch (C+ΔC={C + delta_C:.1e} F)")
     if save_prefix:
         plot_frequency_response(R, C, save_path=f"{save_prefix}_baseline.png")
         plot_frequency_response(R, C + delta_C, save_path=f"{save_prefix}_touched.png")
@@ -79,7 +79,7 @@ def recommend_component_values(target_fc=1e3, pad_C=20e-12):
     fc = 1/(2πRC)
     """
     R = 1 / (2 * np.pi * target_fc * pad_C)
-    print(f"Recommended R for fc={target_fc:.1f} Hz, C={pad_C*1e12:.1f} pF: {R/1e6:.2f} MΩ")
+    print(f"Recommended R for fc={target_fc:.1f} Hz, C={pad_C * 1e12:.1f} pF: {R / 1e6:.2f} MΩ")
     return R
 
 

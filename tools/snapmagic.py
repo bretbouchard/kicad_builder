@@ -23,8 +23,7 @@ import csv
 import json
 import shutil
 from pathlib import Path
-from typing import List, Dict, Optional
-
+from typing import Dict, List, Optional
 
 ROOT = Path(__file__).resolve().parents[1]
 INBOX = ROOT / "inbox"

@@ -1,7 +1,8 @@
 from __future__ import annotations
+
 import json
 
-from src.lib.generator_registry import register, clear_registry
+from src.lib.generator_registry import clear_registry, register
 
 
 def test_cli_generate_simple(tmp_path, monkeypatch):

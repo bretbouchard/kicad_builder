@@ -1,6 +1,5 @@
-import sys
 import pathlib
-
+import sys
 
 # Ensure the repository root is on sys.path so tests can import the
 # `tools` package regardless of how pytest is invoked (pre-commit hooks,

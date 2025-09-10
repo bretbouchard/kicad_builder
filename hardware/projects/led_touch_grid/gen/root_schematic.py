@@ -18,6 +18,8 @@ TODOs:
 Follows conventions from other sheet generators (see power_sheet.py, mcu_sheet.py, led_sheet.py, io_sheet.py).
 """
 
+# ruff: noqa: E402
+
 from __future__ import annotations
 
 import sys
@@ -28,16 +30,16 @@ while not (project_root / "tools").exists() and project_root != project_root.par
     project_root = project_root.parent
 sys.path.insert(0, str(project_root))
 
-from tools.kicad_helpers import (
-    HierarchicalSchematic,
-)
+from hardware.projects.led_touch_grid.gen.io_sheet import IOSchematicBuilder
+from hardware.projects.led_touch_grid.gen.led_sheet import LEDSheetBuilder
+from hardware.projects.led_touch_grid.gen.mcu_sheet import generate_mcu_sheet
 
 # Import child sheet generators
 from hardware.projects.led_touch_grid.gen.power_sheet import PowerSchematicBuilder
-from hardware.projects.led_touch_grid.gen.mcu_sheet import generate_mcu_sheet
 from hardware.projects.led_touch_grid.gen.touch_sheet import TouchSchematicBuilder
-from hardware.projects.led_touch_grid.gen.led_sheet import LEDSheetBuilder
-from hardware.projects.led_touch_grid.gen.io_sheet import IOSchematicBuilder
+from tools.kicad_helpers import (
+    HierarchicalSchematic,
+)
 
 
 class RootSchematicBuilder:

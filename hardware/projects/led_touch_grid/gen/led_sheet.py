@@ -1,5 +1,4 @@
 import sys
-import json
 from pathlib import Path
 
 # Add project root to path for imports
@@ -7,6 +6,8 @@ project_root = Path(__file__).resolve()
 while not (project_root / "tools").exists() and project_root != project_root.parent:
     project_root = project_root.parent
 sys.path.insert(0, str(project_root))
+
+import json
 
 from tools.kicad_helpers import HierarchicalSchematic, Symbol
 
@@ -100,7 +101,7 @@ class LEDSheetBuilder:
         # Add decoupling capacitors to both sheets
         for i in range(self.config.expected_led_count):
             decoupling_symbol = Symbol(
-                ref=f"C{i+1}",
+                ref=f"C{i + 1}",
                 value=self.config.decoupling_value,
                 lib="Device",
                 name="C",
@@ -114,7 +115,7 @@ class LEDSheetBuilder:
         expected_bulk = 1 + (self.config.expected_led_count // 32 - 1)
         for i in range(expected_bulk):
             bulk_symbol = Symbol(
-                ref=f"CB{i+1}",
+                ref=f"CB{i + 1}",
                 value="1000µF",
                 lib="Device",
                 name="CP",
@@ -142,9 +143,7 @@ class LEDSheetBuilder:
             if s.lib == self.config.led_symbol[0] and s.name == self.config.led_symbol[1]
         ]
         if len(led_symbols) != self.config.expected_led_count:
-            raise ValueError(
-                f"LED count mismatch: expected {self.config.expected_led_count}, " f"got {len(led_symbols)}"
-            )
+            raise ValueError(f"LED count mismatch: expected {self.config.expected_led_count}, got {len(led_symbols)}")
 
         # Validate decoupling capacitors
         decoupling_caps = [
@@ -162,7 +161,7 @@ class LEDSheetBuilder:
         bulk_caps = [s for s in self.schematic.symbols if s.ref.startswith("CB")]
         expected_bulk = 1 + (self.config.expected_led_count // 32 - 1)
         if len(bulk_caps) != expected_bulk:
-            raise ValueError(f"Bulk capacitor count mismatch: expected {expected_bulk}, " f"got {len(bulk_caps)}")
+            raise ValueError(f"Bulk capacitor count mismatch: expected {expected_bulk}, got {len(bulk_caps)}")
 
     def get_schematic(self):
         """Legacy method for backward compatibility"""

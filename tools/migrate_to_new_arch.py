@@ -7,8 +7,8 @@ the destination and leaves a small migration stamp file.
 from __future__ import annotations
 
 import shutil
-from pathlib import Path
 import sys
+from pathlib import Path
 
 
 def migrate_project(src: str | Path, dest: str | Path) -> None:

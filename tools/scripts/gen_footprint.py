@@ -11,7 +11,6 @@ Usage:
 import argparse
 from pathlib import Path
 
-
 FOOT_TEMPLATE = """(module {name} (layer F.Cu) (tedit 00000000)
     (descr "Generated footprint — verify dimensions against datasheet")
     (tags "generated footprint")
@@ -130,9 +129,9 @@ def make_pads(
 
 def make_ep(ep: float, ep_shape: str = "rect") -> str:
     if ep_shape == "round":
-        return '  (pad "EP" smd circle (at 0 0) ' f"(size {ep} {ep}) " "(layers F.Cu F.Paste F.Mask) (thermal))"
+        return f'  (pad "EP" smd circle (at 0 0) (size {ep} {ep}) (layers F.Cu F.Paste F.Mask) (thermal))'
     else:
-        return '  (pad "EP" smd rect (at 0 0) ' f"(size {ep} {ep}) " "(layers F.Cu F.Paste F.Mask) (thermal))"
+        return f'  (pad "EP" smd rect (at 0 0) (size {ep} {ep}) (layers F.Cu F.Paste F.Mask) (thermal))'
 
 
 def make_paste_fp(ep: float, paste_reduction: float = 0.0, ep_shape: str = "rect") -> str:
@@ -141,8 +140,8 @@ def make_paste_fp(ep: float, paste_reduction: float = 0.0, ep_shape: str = "rect
         return ""
     size = max(0.0, ep - paste_reduction)
     if ep_shape == "round":
-        return '  (pad "EP_PASTE" smd circle (at 0 0) ' f"(size {size:.2f} {size:.2f}) " "(layers F.Paste))"
-    return '  (pad "EP_PASTE" smd rect (at 0 0) ' f"(size {size:.2f} {size:.2f}) " "(layers F.Paste))"
+        return f'  (pad "EP_PASTE" smd circle (at 0 0) (size {size:.2f} {size:.2f}) (layers F.Paste))'
+    return f'  (pad "EP_PASTE" smd rect (at 0 0) (size {size:.2f} {size:.2f}) (layers F.Paste))'
 
 
 def make_ep_vias(
@@ -221,16 +220,16 @@ def make_courtyard(ep: float, half_span: float, courtyard: float = 0.5) -> str:
     w = 0.15
     lines: list[str] = []
     lines.append(
-        "  (fp_line (start " f"{x1:.2f} {y1:.2f}) (end {x2:.2f} {y1:.2f}) " "(layer F.CrtYd) (width " + str(w) + "))"
+        f"  (fp_line (start {x1:.2f} {y1:.2f}) (end {x2:.2f} {y1:.2f}) (layer F.CrtYd) (width " + str(w) + "))"
     )
     lines.append(
-        "  (fp_line (start " f"{x2:.2f} {y1:.2f}) (end {x2:.2f} {y2:.2f}) " "(layer F.CrtYd) (width " + str(w) + "))"
+        f"  (fp_line (start {x2:.2f} {y1:.2f}) (end {x2:.2f} {y2:.2f}) (layer F.CrtYd) (width " + str(w) + "))"
     )
     lines.append(
-        "  (fp_line (start " f"{x2:.2f} {y2:.2f}) (end {x1:.2f} {y2:.2f}) " "(layer F.CrtYd) (width " + str(w) + "))"
+        f"  (fp_line (start {x2:.2f} {y2:.2f}) (end {x1:.2f} {y2:.2f}) (layer F.CrtYd) (width " + str(w) + "))"
     )
     lines.append(
-        "  (fp_line (start " f"{x1:.2f} {y2:.2f}) (end {x1:.2f} {y1:.2f}) " "(layer F.CrtYd) (width " + str(w) + "))"
+        f"  (fp_line (start {x1:.2f} {y2:.2f}) (end {x1:.2f} {y1:.2f}) (layer F.CrtYd) (width " + str(w) + "))"
     )
     return "\n".join(lines)
 
@@ -354,9 +353,7 @@ def main() -> None:
     tent_note = ""
     if args.ep_via_tenting != "none":
         tent_y = -args.ep / 2 - 1.0
-        tent_note = ('  (fp_text user "EP_VIA_TENT={}" ' "(at 0 {}) (layer F.Fab))\n").format(
-            args.ep_via_tenting, tent_y
-        )
+        tent_note = ('  (fp_text user "EP_VIA_TENT={}" (at 0 {}) (layer F.Fab))\n').format(args.ep_via_tenting, tent_y)
         # prefer placing note before courtyard/paste for visibility
         if courtyard_fp:
             courtyard_fp = tent_note + courtyard_fp

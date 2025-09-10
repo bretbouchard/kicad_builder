@@ -3,8 +3,8 @@
 Sanity check for generated schematic/netlist content.
 """
 
-from pathlib import Path
 import json
+from pathlib import Path
 
 
 def test_schematic_symbol_counts():

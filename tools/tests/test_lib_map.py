@@ -1,4 +1,5 @@
 import pytest
+
 from tools.lib_map import (
     resolve_symbol_footprint,
     validate_library_completeness,

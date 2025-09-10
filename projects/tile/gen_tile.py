@@ -6,9 +6,9 @@ schematic description and writes `out/tile_summary.json` and a human-readable
 emit true KiCad 9 `.kicad_sch` S-expressions.
 """
 
-from pathlib import Path
 import json
 import sys
+from pathlib import Path
 
 try:
     from kicad_helpers import Schematic, Symbol

@@ -21,6 +21,8 @@ TODOs:
 Follows conventions from other sheet generators (see power_sheet.py, mcu_sheet.py, led_sheet.py).
 """
 
+# ruff: noqa: E402
+
 from __future__ import annotations
 
 import sys

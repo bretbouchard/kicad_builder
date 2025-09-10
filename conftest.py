@@ -82,8 +82,8 @@ if Sexp is not None:
 
 # Runtime shim: relax SKiDL's strict top-level pin/unit assertion during tests.
 try:
-    import skidl.tools.kicad8.lib as _kicad8_lib
     import skidl.tools as _skidl_tools
+    import skidl.tools.kicad8.lib as _kicad8_lib
 
     _orig_parse_lib_part = getattr(_kicad8_lib, "parse_lib_part", None)
 
@@ -94,7 +94,7 @@ try:
                 return _orig_parse_lib_part(part, partial_parse)
             except AssertionError as e:
                 msg = str(e)
-                if ("Top-level pins must be present if and only if" " there are no units") in msg:
+                if ("Top-level pins must be present if and only if there are no units") in msg:
                     # Log and continue parsing. Tests use symbol fixtures
                     # that may be more permissive than upstream asserts.
                     print("CONFTSET: relaxed top-level pins vs units")
@@ -120,6 +120,7 @@ except Exception:
 # at a fresh temp directory to force fresh parsing during tests.
 try:
     import tempfile
+
     import skidl
 
     skidl.config.pickle_dir = tempfile.mkdtemp(prefix="skidl-pickle-")

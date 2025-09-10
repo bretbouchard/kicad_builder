@@ -5,7 +5,9 @@ Lightweight checks for Python, key modules, and KiCad tooling. Designed to be
 safe to run in local dev shells and CI. Exits with 0 on success, nonzero on
 major failures.
 """
+
 from __future__ import annotations
+
 import os
 import shutil
 import subprocess
@@ -62,9 +64,7 @@ def run_cmd(cmd: list[str]) -> str | None:
 
 def git_sha_short() -> str | None:
     try:
-        out = subprocess.check_output(
-            ["git", "rev-parse", "--short", "HEAD"], text=True
-        ).strip()
+        out = subprocess.check_output(["git", "rev-parse", "--short", "HEAD"], text=True).strip()
         print(f"git: HEAD {out}")
         return out
     except Exception:
@@ -84,10 +84,7 @@ def main() -> int:
 
     ignore_py = os.environ.get("BUTTONS_IGNORE_PYTHON_CHECK")
     if ignore_py:
-        print(
-            "BUTTONS_IGNORE_PYTHON_CHECK set; skipping Python "
-            "version failure"
-        )
+        print("BUTTONS_IGNORE_PYTHON_CHECK set; skipping Python version failure")
         ok &= True
     else:
         ok &= check_python()

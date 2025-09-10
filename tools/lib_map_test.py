@@ -4,18 +4,18 @@ Test script for LED touch grid component library and symbol mapping.
 Validates the enhanced lib_map.py functionality.
 """
 
-import sys
 import os
+import sys
 
 sys.path.insert(0, os.path.dirname(__file__))
 
 from lib_map import (
     Symbol,
-    resolve_lib_id,
-    validate_klc_rules,
+    create_led_touch_grid_symbols,
     get_part_info,
     load_rp2040_pinmap,
-    create_led_touch_grid_symbols,
+    resolve_lib_id,
+    validate_klc_rules,
     validate_symbol_library,
 )
 

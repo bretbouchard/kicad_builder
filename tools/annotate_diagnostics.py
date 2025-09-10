@@ -6,6 +6,7 @@ GitHub workflow commands (eg. `::error file=...,line=...::message`) so the
 annotations appear in the Checks UI. The script never fails (exit 0) so it can
 be used as a best-effort annotator in CI before a failing collector step runs.
 """
+
 from __future__ import annotations
 
 import json

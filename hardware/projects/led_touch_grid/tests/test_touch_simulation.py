@@ -1,4 +1,5 @@
 import numpy as np
+
 from hardware.projects.led_touch_grid.gen import touch_simulation
 
 

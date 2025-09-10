@@ -14,19 +14,22 @@ Usage:
 """
 
 import json
-from pathlib import Path
 import sys
+from pathlib import Path
+
 import pytest
 
 # Add project root (tools/) for imports used by generator and helpers
 sys.path.insert(0, str(Path(__file__).resolve().parents[3]))
 
+from hardware.projects.led_touch_grid.gen.power_sheet import (  # noqa: E402
+    generate_power_sheet,
+)
 from tools.kicad_helpers import (  # noqa: E402
     HierarchicalSchematic,
     Schematic,
     Symbol,
 )
-from hardware.projects.led_touch_grid.gen.power_sheet import generate_power_sheet  # noqa: E402
 
 
 def load_hierarchy(project_name: str):

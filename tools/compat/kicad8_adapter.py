@@ -10,7 +10,7 @@ This is a non-invasive, test-time shim intended to live in the repo
 so we don't have to edit site-packages permanently.
 """
 
-from typing import Any, List, Optional, Tuple, Dict
+from typing import Any, Dict, List, Optional, Tuple
 
 
 def install() -> None:
@@ -21,12 +21,12 @@ def install() -> None:
     from disk and creating units/pins as a best-effort fallback.
     """
     try:
-        from simp_sexp import Sexp
-        from skidl.pin import pin_types
-        from skidl import Pin
-        from skidl.utilities import num_to_chars, to_list
-        import skidl.tools.kicad8.lib as _kicad8_lib
         import skidl.tools as _skidl_tools
+        import skidl.tools.kicad8.lib as _kicad8_lib
+        from simp_sexp import Sexp
+        from skidl import Pin
+        from skidl.pin import pin_types
+        from skidl.utilities import num_to_chars, to_list
     except Exception:
         # Environment doesn't have SKiDL or Sexp; nothing to do.
         return

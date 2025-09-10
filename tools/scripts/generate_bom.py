@@ -4,10 +4,9 @@ Generates normalized BOM with manufacturer/supplier data from lib_map
 """
 
 import csv
-from pathlib import Path
-from typing import List, Dict, Optional, TypedDict
-
 import sys
+from pathlib import Path
+from typing import Dict, List, Optional, TypedDict
 
 # When this script is executed directly (e.g. via subprocess in tests), Python
 # doesn't automatically add the repository root to sys.path which makes
@@ -82,7 +81,7 @@ def normalize_components(components: List[Component]) -> Dict[str, ComponentGrou
         part_info = get_part_info(comp["Part"]) if comp.get("Part") else None
         # Use a string key derived from value and footprint to keep dict keys
         # simple and mypy-friendly.
-        key = f"{comp.get('Value','')}|{comp.get('Footprint','')}"
+        key = f"{comp.get('Value', '')}|{comp.get('Footprint', '')}"
 
         if key not in groups:
             groups[key] = ComponentGroup(

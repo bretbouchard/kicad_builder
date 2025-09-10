@@ -1,12 +1,13 @@
 """Generate hierarchical KiCad schematic for button grid project."""
 
 import json
+import os
 import subprocess
 from datetime import datetime, timezone
 from pathlib import Path
-import os
-from skidl import Part, config  # type: ignore[import]
 from typing import Optional
+
+from skidl import Part, config  # type: ignore[import]
 
 # SKiDL configuration
 
@@ -33,7 +34,7 @@ def create_power_sheet() -> Optional[str]:
         Part(
             lib="REPO-Device",  # Matches actual library name in sym-lib-table
             name="PWR_FLAG",
-            libpath=("/Users/bretbouchard/apps/buttons/tools/vendor_symbols/" "REPO-Device.lib"),
+            libpath=("/Users/bretbouchard/apps/buttons/tools/vendor_symbols/REPO-Device.lib"),
             footprint="",
         )
         # generate_netlist expects a board or list of parts; return a string

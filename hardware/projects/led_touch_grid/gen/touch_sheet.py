@@ -16,8 +16,8 @@ Physical geometry (19mm spacing, pad size) is handled later in PCB placement
 generation (not in schematic symbol generation).
 """
 
-import sys
 import json
+import sys
 from pathlib import Path
 from typing import List, Tuple
 
@@ -28,8 +28,8 @@ while not (project_root / "tools").exists() and project_root != project_root.par
 sys.path.insert(0, str(project_root))
 
 from tools.kicad_helpers import (  # noqa: E402
-    Schematic,
     HierarchicalSchematic,
+    Schematic,
     Symbol,
 )
 

@@ -1,25 +1,22 @@
 #!/usr/bin/env python3
 """
-Generate placement CSV and BOM for an array of tiles, each containing a grid of pads with LEDs.
+Generate placement CSV and BOM for an array of tiles.
 
-Output files (by default):
-- projects/button_bar/placements/grid_placements.csv
-- projects/button_bar/placements/generated_bom.csv
-- projects/button_bar/placements/ref_mapping.json
+Outputs (defaults):
+ - projects/button_bar/placements/grid_placements.csv
+ - projects/button_bar/placements/generated_bom.csv
+ - projects/button_bar/placements/ref_mapping.json
 
-This is a deterministic generator that assigns reference designators and XY positions
-in millimeters. It does NOT modify any KiCad files. Use the companion script
-`kicad_place_from_csv.py` to apply placements into a KiCad board (run inside KiCad's
-Python environment or with kicad-cli if you have KiCad's Python available).
+Deterministic generator that assigns reference designators and XY positions
+in millimeters. It does not modify KiCad files. Use
+`kicad_place_from_csv.py` to apply placements inside KiCad's Python env.
 
-Usage:
-  python tools/generate_grid_placements.py --help
+Usage: python tools/generate_grid_placements.py --help
 
-Assumptions (reasonable defaults):
-- Each "tile" contains a grid of touch pads (default 8x8 => 64 pads) and 4 LEDs per pad
-  arranged 2x2 (=> 256 LEDs per tile).
-- Spacing and offsets are configurable in mm.
-
+Assumptions:
+ - Each tile contains an 8x8 grid of touch pads by default (64 pads) and
+     4 LEDs per pad arranged 2x2 (256 LEDs per tile).
+ - Spacing and offsets are configurable in mm.
 """
 
 from __future__ import annotations
@@ -35,6 +32,17 @@ OUT_DIR = "projects/button_bar/placements"
 
 @dataclass
 class LEDPlacement:
+    ref: str
+    footprint: str
+    x_mm: float
+    y_mm: float
+    data_line: int = 0
+    rotation: float = 0.0
+    layer: str = "F.Cu"
+
+
+@dataclass
+class TouchPadPlacement:
     ref: str
     footprint: str
     x_mm: float
@@ -62,7 +70,7 @@ def generate_tile(
     touch_footprint: str = "Custom:Touch_Pad_19x19mm",
     start_tp_index: int = 1,
 ) -> Tuple[List[TouchPadPlacement], List[LEDPlacement], int, int]:
-    """Return placements for touch pads and LEDs in one tile and next indices."""
+    """Return touch and LED placements for a single tile and next indices."""
     touch_placements: List[TouchPadPlacement] = []
     led_placements: List[LEDPlacement] = []
     pad_cols = pads_x
@@ -137,13 +145,13 @@ def generate_grid(
     out_bom = out_bom or os.path.join(OUT_DIR, "generated_bom.csv")
     out_map = out_map or os.path.join(OUT_DIR, "ref_mapping.json")
 
-    placements: List[LEDPlacement] = []
+    placements: List[TouchPadPlacement | LEDPlacement] = []
     ref_idx = 1
     for ty in range(tiles_y):
         for tx in range(tiles_x):
             origin_x = tx * tile_spacing_x
             origin_y = ty * tile_spacing_y
-            tile_places, ref_idx = generate_tile(
+            touch_places, led_places, _tp_idx, led_idx = generate_tile(
                 tile_idx=ty * tiles_x + tx,
                 tile_origin_x=origin_x,
                 tile_origin_y=origin_y,
@@ -156,7 +164,9 @@ def generate_grid(
                 led_footprint=led_footprint,
                 start_led_index=ref_idx,
             )
-            placements.extend(tile_places)
+            placements.extend(touch_places)
+            placements.extend(led_places)
+            ref_idx = led_idx
 
     # Write placements CSV
     with open(out_csv, "w", newline="") as f:
@@ -215,7 +225,7 @@ def generate_grid(
 if __name__ == "__main__":
     import argparse
 
-    parser = argparse.ArgumentParser(description=("Generate grid placements for LED/tile arrays"))
+    parser = argparse.ArgumentParser(description="Generate grid placements")
     parser.add_argument("--tiles-x", type=int, default=1)
     parser.add_argument("--tiles-y", type=int, default=1)
     parser.add_argument("--tile-spacing-x", type=float, default=100.0)
@@ -257,4 +267,3 @@ if __name__ == "__main__":
         led_spacing=args.led_spacing,
         led_footprint=args.led_footprint,
     )
-class TouchPadPlacement:\n    def __init__(self, ref, footprint, x, y):\n        self.ref = ref\n        self.footprint = footprint\n        self.x = x\n        self.y = y\n

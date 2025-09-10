@@ -1,6 +1,6 @@
 import subprocess
-from pathlib import Path
 import tempfile
+from pathlib import Path
 
 
 def test_generate_placement_creates_csv() -> None:

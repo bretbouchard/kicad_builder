@@ -3,11 +3,18 @@
 import os
 import sys
 import tempfile
+
 import pytest
 
 # Add the tools directory to the path so we can import kicad_helpers
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
-from kicad_helpers import HierarchicalSchematic, Sheet, HierarchicalPin, Symbol, Schematic
+from kicad_helpers import (
+    HierarchicalPin,
+    HierarchicalSchematic,
+    Schematic,
+    Sheet,
+    Symbol,
+)
 
 
 class TestHierarchicalPin:

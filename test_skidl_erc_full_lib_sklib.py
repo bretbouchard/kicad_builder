@@ -1,7 +1,6 @@
 # Generated test fixture - skip ruff checks for long generated literals
 # ruff: noqa
-from skidl import Pin, Part, Alias, SchLib, SKIDL, TEMPLATE
-
+from skidl import SKIDL, TEMPLATE, Alias, Part, Pin, SchLib
 from skidl.pin import pin_types
 
 SKIDL_lib_version = "0.0.1"

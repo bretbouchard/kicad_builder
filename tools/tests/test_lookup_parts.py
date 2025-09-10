@@ -1,9 +1,8 @@
-import os
-import types
-
 import importlib.util
+import os
 import pathlib
 import sys
+import types
 
 import pytest
 

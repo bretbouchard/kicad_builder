@@ -4,9 +4,9 @@ Reads BOM CSV and emits placement CSV with placeholder coordinates.
 """
 
 import csv
+import os
 import pathlib
 import tempfile
-import os
 
 
 def main(bom_path: pathlib.Path, out_path: pathlib.Path):

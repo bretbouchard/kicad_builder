@@ -5,11 +5,12 @@ Scans the workspace for any `auto_register_diagnostics.json` files, prints a
 summary for CI logs, and exits with code 1 if any diagnostics are found.
 This is intended to be used in CI to fail early and provide a concise report.
 """
+
 from __future__ import annotations
 
 import json
 from pathlib import Path
-from typing import Dict, List, Any
+from typing import Any, Dict, List
 
 
 def find_diagnostics(root: Path) -> List[Path]:

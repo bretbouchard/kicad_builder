@@ -12,14 +12,12 @@ it will be parsed as CSV, otherwise it is treated as JSON and validated for a
 `pin_to_signal` mapping.
 """
 
-from pathlib import Path
 import argparse
-import json
 import csv
+import json
 import sys
-
-
-from typing import Dict, Any
+from pathlib import Path
+from typing import Any, Dict
 
 
 def csv_to_pinmap(path: Path, package: str = "") -> Dict[str, Any]:

@@ -1,3 +1,4 @@
+# ruff: noqa: E402
 #!/usr/bin/env python3
 """gen_symbol.py
 
@@ -7,15 +8,14 @@ Usage:
   python3 gen_symbol.py pinmap.json out.lib --footprint "LIB:FOO" --package RP2040
 """
 
-from pathlib import Path
 import argparse
 import json
-
+from pathlib import Path
 
 TEMPLATE_HEADER = "(kicad_symbol_lib (version 20211014) (generator gen_symbol))\n"
 
 
-from typing import Dict, Any
+from typing import Any, Dict
 
 
 def make_symbol(name: str, pinmap: Dict[str, Any], footprint: str = "REPO-MCU:REPO-MCU-QFN56") -> str:

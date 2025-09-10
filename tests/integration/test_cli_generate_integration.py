@@ -1,10 +1,10 @@
 import json
+from importlib import import_module
 from pathlib import Path
 
-from importlib import import_module
 from src import cli
-from src.services import auto_register
 from src.lib import generator_registry as registry
+from src.services import auto_register
 
 # ensure submodule is loaded so linters and runtime have `generate` available
 import_module("src.cli.generate")

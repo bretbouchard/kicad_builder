@@ -1,5 +1,6 @@
 import os
-from skidl import Part, Net, ERC, generate_netlist
+
+from skidl import ERC, Net, Part, generate_netlist
 
 
 def _set_stub_symbol_env() -> None:

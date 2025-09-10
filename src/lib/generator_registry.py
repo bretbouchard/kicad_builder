@@ -3,7 +3,6 @@ from __future__ import annotations
 from threading import RLock
 from typing import Any, Dict, List, Optional
 
-
 _registry: Dict[str, Any] = {}
 _lock = RLock()
 
@@ -108,7 +107,12 @@ class LazyGenerator:
         return f"<LazyGenerator {self.module_path}:{self.attr}>"
 
 
-def register_lazy(name: str, module_path: str, attr: str, namespace: Optional[str] = None) -> None:
+def register_lazy(
+    name: str,
+    module_path: str,
+    attr: str,
+    namespace: Optional[str] = None,
+) -> None:
     """Register a lazy generator that imports the real object on first use.
 
     If `attr` == "register" the LazyGenerator will call the module's

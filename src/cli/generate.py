@@ -3,15 +3,15 @@ from __future__ import annotations
 import argparse
 from pathlib import Path
 
-from src.services.config_manager import load as load_config
-from src.services.validation_engine import (
-    validate_project_config,
-    ValidationError,
-)
 from src.lib.generator_registry import get as get_generator
 from src.services.auto_register import (
-    auto_register_generators,
     AutoRegisterError,
+    auto_register_generators,
+)
+from src.services.config_manager import load as load_config
+from src.services.validation_engine import (
+    ValidationError,
+    validate_project_config,
 )
 
 
@@ -39,8 +39,19 @@ def main(argv: list[str] | None = None) -> int:
 
     # Attempt to auto-register generators and write diagnostics to the
     # output directory on failure so CI/consumers can inspect problems.
+    # If callers (tests) have pre-populated the registry, skip auto-
+    # registration to avoid rejecting execution due to unrelated modules
+    # in other search paths.
     try:
-        auto_register_generators(diagnostics_path=Path(args.out) / "auto_register_diagnostics.json")
+        # Only scan the output 'gens' directory for ad-hoc generator modules
+        # dropped by users or tests. Scanning the repo's generators here can
+        # cause duplicate-registration errors if tests have already
+        # pre-registered them, so we avoid scanning repo locations.
+        search_paths = [Path(args.out) / "gens"]
+        auto_register_generators(
+            search_paths=search_paths,
+            diagnostics_path=(Path(args.out) / "auto_register_diagnostics.json"),
+        )
     except AutoRegisterError:
         # Write human-readable message and return non-zero to indicate
         # registration problems. Diagnostics are already written by the

@@ -36,6 +36,6 @@ def test_apa102_footprint() -> None:
     assert paste_layers_present, "Missing F.Paste layers in pad layers"
 
     target_clearance = 0.25
-    assert 0.24 <= mod.courtyard_clearance <= 0.26, (
-        f"Courtyard clearance {mod.courtyard_clearance:.3f}mm invalid " f"(should be {target_clearance}±0.01mm)"
-    )
+    assert (
+        0.24 <= mod.courtyard_clearance <= 0.26
+    ), f"Courtyard clearance {mod.courtyard_clearance:.3f}mm invalid (should be {target_clearance}±0.01mm)"

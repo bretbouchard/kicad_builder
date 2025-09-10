@@ -1,14 +1,14 @@
 from __future__ import annotations
 
-from pathlib import Path
 import importlib.util
-import sys
-from types import ModuleType
-from typing import Iterable, List, Dict, Any, Optional
-import traceback
-from datetime import datetime, timezone
 import json
 import subprocess
+import sys
+import traceback
+from datetime import datetime, timezone
+from pathlib import Path
+from types import ModuleType
+from typing import Any, Dict, Iterable, List, Optional
 
 # note: we import specific registry helpers lazily where needed to avoid
 # import-time cycles with preflight subprocess work.
@@ -116,7 +116,7 @@ def _preflight_import(path: Path, module_name: str, timeout: int) -> Optional[st
     return None
 
 
-def _preflight_register(path: Path, module_name: str, timeout: int) -> Optional[str]:
+def _preflight_register(path: Path, module_name: str, timeout: int) -> tuple[Optional[str], List[str] | None]:
     """Attempt to perform a registration dry-run in a subprocess.
 
     The subprocess will import the module and, if it exposes a `GENERATOR`
@@ -139,12 +139,26 @@ def _preflight_register(path: Path, module_name: str, timeout: int) -> Optional[
             timeout=timeout,
         )
     except subprocess.TimeoutExpired:
-        return f"timeout after {timeout}s"
+        return f"timeout after {timeout}s", None
 
     if proc.returncode != 0:
-        return proc.stderr or proc.stdout or f"returncode {proc.returncode}"
+        msg = proc.stderr or proc.stdout or f"returncode {proc.returncode}"
+        return msg, None
 
-    return None
+    # parse stdout JSON for discovered registrations
+    registrations: List[str] = []
+    try:
+        out = proc.stdout or ""
+        if out:
+            parsed = json.loads(out)
+            if isinstance(parsed, dict) and "registrations" in parsed:
+                maybe = parsed["registrations"]
+                if isinstance(maybe, list):
+                    registrations = [str(x) for x in maybe]
+    except Exception:
+        registrations = []
+
+    return None, registrations
 
 
 def discover_generator_files(paths: Iterable[Path]) -> list[Path]:
@@ -219,36 +233,46 @@ def auto_register_generators(
             failures.append(entry)
             continue
         # Prefer explicit registration entrypoints.
-        # Run a preflight registration subprocess to detect registration-time
-        # exceptions before mutating the in-process registry. On success we
-        # register a lazy proxy so the real import/registration happens on
-        # first use.
-        try:
-            # Attempt preflight register; record an error if it fails.
-            preflight_err = _preflight_register(f, _module_name_for_path(f), PREFLIGHT_IMPORT_TIMEOUT)
-            if preflight_err is not None:
+        # Determine whether the module exposes a GENERATOR symbol or a
+        # register(register) callable so we can scope the preflight
+        # registration run and correctly classify failures.
+        has_generator = hasattr(mod, "GENERATOR")
+        has_register_callable = hasattr(mod, "register") and callable(getattr(mod, "register"))
+
+        # Only attempt a preflight registration dry-run if the module actually
+        # exposes a registration entrypoint; this avoids running the helper for
+        # modules that simply export constants.
+        if has_generator or has_register_callable:
+            try:
+                preflight_err, registrations = _preflight_register(
+                    f, _module_name_for_path(f), PREFLIGHT_IMPORT_TIMEOUT
+                )
+                if preflight_err is not None:
+                    failures.append(
+                        {
+                            "path": str(f),
+                            # classify the failure according to the entrypoint
+                            "type": ("register_callable" if has_register_callable else "register"),
+                            # surface the underlying stderr so callers can see
+                            # the real exception message (e.g. "boom")
+                            "message": preflight_err,
+                            "ts": datetime.now(timezone.utc).isoformat(),
+                            "traceback": preflight_err,
+                        }
+                    )
+                    continue
+            except Exception as exc:
                 failures.append(
                     {
                         "path": str(f),
-                        "type": "register",
-                        "message": "preflight register failed",
+                        "type": ("register_callable" if has_register_callable else "register"),
+                        "message": f"preflight registration error: {exc}",
                         "ts": datetime.now(timezone.utc).isoformat(),
-                        "traceback": preflight_err,
                     }
                 )
                 continue
-        except Exception as exc:
-            failures.append(
-                {
-                    "path": str(f),
-                    "type": "register",
-                    "message": f"preflight registration error: {exc}",
-                    "ts": datetime.now(timezone.utc).isoformat(),
-                }
-            )
-            continue
 
-        if hasattr(mod, "GENERATOR"):
+        if has_generator:
             g = getattr(mod, "GENERATOR")
             register_name = getattr(g, "name", f.stem)
             # register a lazy proxy so the module is imported later on demand
@@ -256,9 +280,9 @@ def auto_register_generators(
                 from src.lib.generator_registry import register_lazy
 
                 module_path = _module_name_for_path(f)
-                # if GENERATOR is a symbol, we register by attribute name
-                attr = getattr(g, "__name__", f.stem)
-                register_lazy(register_name, module_path, attr)
+                # GENERATOR is a module-level symbol. Register the attribute
+                # name explicitly so the lazy loader can retrieve it on import.
+                register_lazy(register_name, module_path, "GENERATOR")
             except Exception as exc:
                 tb_text = traceback.format_exc()
                 entry = {
@@ -269,7 +293,7 @@ def auto_register_generators(
                     "traceback": tb_text,
                 }
                 failures.append(entry)
-        elif hasattr(mod, "register") and callable(getattr(mod, "register")):
+        elif has_register_callable:
             # for modules that expose a register(register) callable we register
             # a lazy proxy that will import the module and call its register
             # implementation on first use (via the LazyGenerator wrapper).
@@ -277,8 +301,17 @@ def auto_register_generators(
                 from src.lib.generator_registry import register_lazy
 
                 module_path = _module_name_for_path(f)
-                # use a well-known attr name for modules' register entrypoint
-                register_lazy(f.stem, module_path, "register")
+                # Prefer registering lazy placeholders under the names the
+                # module claims during its dry-run registration. If the
+                # preflight helper returned discovered registration names
+                # (e.g. ["vendor:example"]) register_lazy for each name so
+                # lookups using the public name succeed without eager import.
+                if registrations:
+                    for name in registrations:
+                        register_lazy(name, module_path, "register")
+                else:
+                    # fallback: use filename stem as the public name
+                    register_lazy(f.stem, module_path, "register")
             except Exception as exc:
                 tb_text = traceback.format_exc()
                 entry = {
@@ -294,7 +327,7 @@ def auto_register_generators(
                 {
                     "path": str(f),
                     "type": "no_entrypoint",
-                    "message": "module does not export GENERATOR or register()",
+                    "message": ("module does not export GENERATOR or register()"),
                     "ts": datetime.now(timezone.utc).isoformat(),
                 }
             )

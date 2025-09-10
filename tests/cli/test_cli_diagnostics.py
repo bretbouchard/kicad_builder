@@ -1,5 +1,5 @@
-import json
 import importlib
+import json
 
 
 def test_cli_writes_diagnostics_on_autoregister_failure(tmp_path, monkeypatch):
@@ -13,7 +13,6 @@ def test_cli_writes_diagnostics_on_autoregister_failure(tmp_path, monkeypatch):
     (gen_dir / "empty.py").write_text("# empty\n", encoding="utf8")
 
     # Monkeypatch the auto_register search path by pointing its discover to our tmp gens
-    auto_register = importlib.import_module("src.services.auto_register")
 
     # Run CLI generate.main and expect exit code 4
     cli = importlib.import_module("src.cli.generate")
