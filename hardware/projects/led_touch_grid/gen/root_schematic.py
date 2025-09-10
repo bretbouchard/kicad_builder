@@ -28,17 +28,16 @@ while not (project_root / "tools").exists() and project_root != project_root.par
     project_root = project_root.parent
 sys.path.insert(0, str(project_root))
 
-import sys
-from pathlib import Pathfrom tools.kicad_helpers import (
+from tools.kicad_helpers import (
     HierarchicalSchematic,
 )
 
 # Import child sheet generators
-from hardware.projects.led_touch_grid.gen.power_sheet import PowerSheetBuilder
-from hardware.projects.led_touch_grid.gen.mcu_sheet import MCUSheetBuilder
-from hardware.projects.led_touch_grid.gen.touch_sheet import TouchSheetBuilder
+from hardware.projects.led_touch_grid.gen.power_sheet import PowerSchematicBuilder
+from hardware.projects.led_touch_grid.gen.mcu_sheet import generate_mcu_sheet
+from hardware.projects.led_touch_grid.gen.touch_sheet import TouchSchematicBuilder
 from hardware.projects.led_touch_grid.gen.led_sheet import LEDSheetBuilder
-from hardware.projects.led_touch_grid.gen.io_sheet import IOSheetBuilder
+from hardware.projects.led_touch_grid.gen.io_sheet import IOSchematicBuilder
 
 
 class RootSchematicBuilder:
@@ -59,28 +58,30 @@ class RootSchematicBuilder:
 
     def _add_child_sheets(self):
         """Instantiate and add all child sheets."""
-        self.power = PowerSheetBuilder().build()
-        self.mcu = MCUSheetBuilder().build()
-        self.touch = TouchSheetBuilder().build()
-        self.led = LEDSheetBuilder().build()
-        self.io = IOSheetBuilder().build()
+        # Generate each child sheet and add to root
+        self.power_sheet = PowerSchematicBuilder(self.project_name).build()
+        self.mcu_sheet = generate_mcu_sheet(self.project_name)
+        self.touch_sheet = TouchSchematicBuilder(self.project_name).build()
+        self.led_sheet = LEDSheetBuilder(self.project_name).build()
+        self.io_sheet = IOSchematicBuilder(self.project_name).build()
 
-        self.hier.add_sheet(self.power.sheets["power"])
-        self.hier.add_sheet(self.mcu.sheets["mcu"])
-        self.hier.add_sheet(self.touch.sheets["touch"])
-        self.hier.add_sheet(self.led.sheets["led"])
-        self.hier.add_sheet(self.io.sheets["io"])
+        # Add sheets to root hierarchical schematic
+        self.hier.add_sheet(self.power_sheet.sheets["power"])
+        self.hier.add_sheet(self.mcu_sheet.sheets["mcu"])
+        self.hier.add_sheet(self.touch_sheet.sheets["touch"])
+        self.hier.add_sheet(self.led_sheet.sheets["led"])
+        self.hier.add_sheet(self.io_sheet.sheets["io"])
 
     def _connect_hierarchical_pins(self):
         """Connect hierarchical pins between sheets for power, data, and control."""
 
-        # Power connections
+        # Power connections - use correct pin names for each sheet
         self.hier.connect_hier_pins("power", "3.3V_OUT", "mcu", "3.3V_IN")
         self.hier.connect_hier_pins("power", "3.3V_OUT", "touch", "3.3V_IN")
         self.hier.connect_hier_pins("power", "5V_OUT", "led", "5V_IN")
         self.hier.connect_hier_pins("power", "GND", "mcu", "GND")
         self.hier.connect_hier_pins("power", "GND", "touch", "GND")
-        self.hier.connect_hier_pins("power", "GND", "led", "GND")
+        self.hier.connect_hier_pins("power", "GND", "led", "GND_IN")  # LED sheet uses GND_IN
         self.hier.connect_hier_pins("power", "GND", "io", "GND")
 
         # Data/control connections
@@ -93,12 +94,11 @@ class RootSchematicBuilder:
         self.hier.connect_hier_pins("io", "I2C_SCL", "mcu", "I2C_SCL")
         self.hier.connect_hier_pins("io", "RESET", "mcu", "RESET")
         self.hier.connect_hier_pins("io", "3.3V_IN", "mcu", "3.3V_IN")
-        self.hier.connect_hier_pins("io", "5V_IN", "mcu", "5V_IN")
+        # Remove 5V_IN connection to MCU since MCU doesn't have 5V_IN pin
         self.hier.connect_hier_pins("io", "GND", "mcu", "GND")
 
-        # Connect SPI interface
-        self.hier.connect_hier_pins("mcu", "MOSI0", "led", "SPI_DATA")
-        self.hier.connect_hier_pins("mcu", "SCK", "led", "SPI_CLK")
+        # Connect SPI interface - MCU has LED_SPI_BUS, LED has DATA_IN/CLOCK_IN
+        self.hier.connect_hier_pins("mcu", "LED_SPI_BUS", "led", "DATA_IN")
 
     def build(self):
         if self._built:
@@ -127,4 +127,9 @@ def generate_root_schematic(project_name: str = "led_touch_grid"):
 
 
 if __name__ == "__main__":
-    generate_root_schematic()
+    import argparse
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument("project_name", nargs="?", default="led_touch_grid")
+    args = parser.parse_args()
+    generate_root_schematic(args.project_name)

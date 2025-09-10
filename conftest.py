@@ -114,6 +114,19 @@ except Exception:
     # If SKiDL isn't importable, silently skip the shim.
     pass
 
+# Tests should avoid loading pickled SKiDL libraries from the repo or
+# external locations because pickled objects can reference module paths
+# that don't resolve in the test environment. Point SKiDL's pickle_dir
+# at a fresh temp directory to force fresh parsing during tests.
+try:
+    import tempfile
+    import skidl
+
+    skidl.config.pickle_dir = tempfile.mkdtemp(prefix="skidl-pickle-")
+except Exception:
+    # Best-effort: if skidl isn't available, skip this tweak.
+    pass
+
 # Ensure Part indexing returns a usable unit even when SKiDL didn't
 # populate part.unit correctly due to permissive fixtures.
 try:

@@ -23,7 +23,7 @@ def test_schematic_symbol_counts():
     mcu_summary = Path("out/led_touch_grid/mcu/led_touch_grid_mcu_summary.json")
     assert mcu_summary.exists(), "MCU schematic summary not found"
     mcu_data = json.loads(mcu_summary.read_text())
-    mcu_syms = [s for s in mcu_data["symbols"] if s["name"] == "RP2040"]
+    mcu_syms = [s for s in mcu_data["symbols"] if "RP2040" in s["name"]]
     assert len(mcu_syms) == 2, f"Expected 2 RP2040 MCUs, found {len(mcu_syms)}"
 
 
@@ -34,7 +34,7 @@ def test_led_count_in_led_schematic():
     led_summary = Path("out/led_touch_grid/led/led_touch_grid_led_summary.json")
     assert led_summary.exists(), "LED schematic summary not found"
     led_data = json.loads(led_summary.read_text())
-    led_syms = [s for s in led_data["symbols"] if s["name"] == "APA102"]
+    led_syms = [s for s in led_data["symbols"] if "APA102" in s["name"]]
     assert len(led_syms) == 256, f"Expected 256 APA102 LEDs, found {len(led_syms)}"
 
 

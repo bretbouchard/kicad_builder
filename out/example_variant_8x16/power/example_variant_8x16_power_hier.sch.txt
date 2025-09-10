@@ -1,0 +1,1 @@
+Root schematic: example_variant_8x16_power_hier

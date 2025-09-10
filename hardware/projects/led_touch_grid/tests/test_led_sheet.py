@@ -15,9 +15,9 @@ def test_led_sheet_generation(tmp_path):
     out_dir.mkdir(parents=True, exist_ok=True)
     hier.write(out_dir=str(out_dir))
 
-    # Check output files exist
-    sch_path = out_dir / "test_led_touch_grid_led.kicad_sch"
-    sch_txt_path = out_dir / "test_led_touch_grid_led.sch.txt"
+    # Check output files exist - updated naming convention to use _led_hier
+    sch_path = out_dir / "test_led_touch_grid_led_hier.kicad_sch"
+    sch_txt_path = out_dir / "test_led_touch_grid_led_hier.sch.txt"
     # Accept either .kicad_sch or .sch.txt as output (scaffold may not emit .kicad_sch)
     assert (
         sch_path.exists() or sch_txt_path.exists()

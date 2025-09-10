@@ -19,6 +19,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[3]))
 from tools.kicad_helpers import (  # noqa: E402
     Schematic,
     Symbol,
+    HierarchicalSchematic,
 )
 from hardware.projects.led_touch_grid.gen.touch_sheet import (  # noqa: E402
     generate_touch_sheet,
@@ -58,7 +59,8 @@ class TestTouchSheetGeneratorSuccess:
         assert not missing, f"Missing hierarchical pins: {missing}"
 
     def test_validate_pad_count_passes(self):
-        sch = Schematic("touch_ok")
+        hier = HierarchicalSchematic("test")
+        sch = hier.create_sheet("touch_ok")
         # Add dummy 64 pad symbols
         for i in range(1, EXPECTED_PAD_COUNT + 1):
             sch.add_symbol(

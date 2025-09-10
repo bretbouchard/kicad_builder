@@ -17,6 +17,7 @@ generation (not in schematic symbol generation).
 """
 
 import sys
+import json
 from pathlib import Path
 from typing import List, Tuple
 
@@ -30,8 +31,6 @@ from tools.kicad_helpers import (  # noqa: E402
     Schematic,
     HierarchicalSchematic,
     Symbol,
-    Sheet,
-    HierarchicalPin,
 )
 
 GRID_ROWS = 8
@@ -56,7 +55,7 @@ def create_touch_pad_symbols() -> List[Symbol]:
             symbols.append(
                 Symbol(
                     lib="Device",
-                    name="PAD",  # Placeholder symbol name
+                    name="PAD",
                     ref=f"P{ref_idx}",
                     at=(x, y),
                     value="TouchPad",
@@ -98,58 +97,77 @@ def validate_touch_pad_count(sch: Schematic) -> None:
     print("Touch pad count validation passed.")
 
 
-class TouchSheetBuilder:
+def generate_touch_summary(project_name: str, symbols: List[Symbol]) -> None:
+    """Generate the touch summary JSON file for test compatibility."""
+    summary_data = {
+        "symbols": [{"name": sym.name} for sym in symbols if sym.name == "PAD"],
+        "total_pads": len([sym for sym in symbols if sym.name == "PAD"]),
+    }
+
+    out_dir = Path("out") / project_name / "touch"
+    out_dir.mkdir(parents=True, exist_ok=True)
+
+    summary_file = out_dir / f"{project_name}_touch_summary.json"
+    summary_file.write_text(json.dumps(summary_data, indent=2))
+
+
+class TouchSchematicBuilder:
     def __init__(self, project_name: str = "led_touch_grid"):
         self.project_name = project_name
         self.sheets = {}
 
     def build(self, for_root: bool = False):
-        touch_sch = Schematic(title=f"{self.project_name}_touch")
+        # Create hierarchical schematic
+        hier_schematic = HierarchicalSchematic(title=f"{self.project_name}_touch_hier")
+
+        # Create touch sheet
+        touch_sheet = hier_schematic.create_sheet("touch")
+
+        # Add hierarchical pins
+        hier_schematic.add_hier_pin("touch", "TOUCH_GRID_BUS", "inout")
+        hier_schematic.add_hier_pin("touch", "3.3V_IN", "in")
+        hier_schematic.add_hier_pin("touch", "GND", "inout")
 
         # Symbols
         pad_syms = create_touch_pad_symbols()
         for sym in pad_syms:
-            touch_sch.add_symbol(sym)
+            hier_schematic.add_symbol_to_sheet("touch", sym)
 
         # Power / reference
-        touch_sch.add_power_flag("3.3V_OUT")
-        touch_sch.add_gnd()
+        power_symbol = Symbol(ref="P1", value="+3.3V", lib="power", name="+3.3V", fields={"Net": "3.3V"})
+        ground_symbol = Symbol(ref="G1", value="GND", lib="power", name="GND", fields={"Net": "GND"})
+
+        hier_schematic.add_symbol_to_sheet("touch", power_symbol)
+        hier_schematic.add_symbol_to_sheet("touch", ground_symbol)
 
         # Wires (abstract connectivity)
         for a, b in create_touch_nets(pad_syms):
-            touch_sch.add_wire(a, b)
-
-        # Sheet & hierarchical interface
-        touch_sheet = Sheet(
-            name="touch",
-            schematic=touch_sch,
-            hierarchical_pins=[
-                HierarchicalPin("TOUCH_GRID_BUS", "inout"),
-                HierarchicalPin("3.3V_IN", "in"),
-                HierarchicalPin("GND", "inout"),
-            ],
-        )
+            touch_sheet.add_wire(a, b)
 
         self.sheets["touch"] = touch_sheet
-        if for_root:
 
+        if for_root:
+            # For root integration, return a simple wrapper
             class Result:
                 sheets = {"touch": touch_sheet}
 
             return Result()
         else:
-            hier = HierarchicalSchematic(title=f"{self.project_name}_touch_hier")
-            hier.add_sheet(touch_sheet)
+            # Write output and validate
             out_dir = Path("out") / self.project_name / "touch"
             out_dir.mkdir(parents=True, exist_ok=True)
-            hier.write(out_dir=str(out_dir))
-            validate_touch_pad_count(touch_sheet.schematic)
-            return hier
+            hier_schematic.write(out_dir=str(out_dir))
+            validate_touch_pad_count(touch_sheet)
+
+            # Generate summary file for test compatibility
+            generate_touch_summary(self.project_name, pad_syms)
+
+            return hier_schematic
 
 
 def generate_touch_sheet(project_name: str = "led_touch_grid") -> None:
     """Generate touch sheet artifacts + run validations."""
-    builder = TouchSheetBuilder(project_name=project_name)
+    builder = TouchSchematicBuilder(project_name=project_name)
     hier = builder.build(for_root=False)
     try:
         hier.run_full_erc()
@@ -160,7 +178,18 @@ def generate_touch_sheet(project_name: str = "led_touch_grid") -> None:
 
 
 if __name__ == "__main__":
-    generate_touch_sheet()
+    import argparse
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument("project_name", nargs="?", default="led_touch_grid")
+    args = parser.parse_args()
+    generate_touch_sheet(args.project_name)
 
 
 # TODO: Make configurable (Issue #45)
+
+GRID_SIZE = (8, 8)
+
+
+GRID_SIZE = (8, 8)
+PAD_SIZE_MM = (19.0, 19.0)

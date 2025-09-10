@@ -47,28 +47,27 @@ class KicadMod:
             )
 
         # Parse courtyard clearance
-        # Flexible regex to find courtyard lines regardless of attribute order
+        # Fixed regex to properly handle nested parentheses in KiCad format
         courtyard_lines = re.findall(
             r"""(?x)
             \(fp_line
-            (?=.*\(layer \s* ("?F\\.CrtYd"?)\))  # Lookahead for layer
-            .*?
-            \(start \s+ ([\d\.-]+) \s+ ([\d\.-]+)\)  # Start coords
-            .*?
-            \(end \s+ ([\d\.-]+) \s+ ([\d\.-]+)\)     # End coords
+            \s+ \(start \s+ ([\d\.-]+) \s+ ([\d\.-]+)\)  # Start coords
+            \s+ \(end \s+ ([\d\.-]+) \s+ ([\d\.-]+)\)     # End coords
+            \s+ \(layer \s+ F\.CrtYd \)                  # Layer after coordinates
+            \s+ \(width \s+ [\d\.-]+ \)                  # Width parameter
             """,
             content,
             re.DOTALL,
         )
 
-        # Process coordinates with correct indices (skip layer name group)
+        # Process coordinates with correct indices
         x_coords: List[float] = []
         y_coords: List[float] = []
         for line in courtyard_lines:
-            x1 = float(line[1])
-            y1 = float(line[2])
-            x2 = float(line[3])
-            y2 = float(line[4])
+            x1 = float(line[0])
+            y1 = float(line[1])
+            x2 = float(line[2])
+            y2 = float(line[3])
             x_coords.extend([x1, x2])
             y_coords.extend([y1, y2])
 

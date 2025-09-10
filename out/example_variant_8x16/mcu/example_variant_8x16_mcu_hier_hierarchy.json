@@ -1,0 +1,247 @@
+{
+  "title": "example_variant_8x16_mcu_hier",
+  "sheets": {
+    "mcu": {
+      "name": "mcu",
+      "title": "mcu",
+      "symbols": [
+        {
+          "ref": "U1",
+          "value": "RP2040",
+          "lib": "MCU_RaspberryPi",
+          "name": "RP2040-QFN56",
+          "at": [
+            0,
+            0
+          ],
+          "footprint": "",
+          "fields": {}
+        },
+        {
+          "ref": "U2",
+          "value": "RP2040",
+          "lib": "MCU_RaspberryPi",
+          "name": "RP2040-QFN56",
+          "at": [
+            0,
+            0
+          ],
+          "footprint": "",
+          "fields": {}
+        },
+        {
+          "ref": "C1",
+          "value": "100nF 50V",
+          "lib": "Device",
+          "name": "Capacitor_SMD",
+          "at": [
+            0,
+            0
+          ],
+          "footprint": "",
+          "fields": {}
+        },
+        {
+          "ref": "C2",
+          "value": "100nF 50V",
+          "lib": "Device",
+          "name": "Capacitor_SMD",
+          "at": [
+            0,
+            0
+          ],
+          "footprint": "",
+          "fields": {}
+        },
+        {
+          "ref": "C3",
+          "value": "100nF 50V",
+          "lib": "Device",
+          "name": "Capacitor_SMD",
+          "at": [
+            0,
+            0
+          ],
+          "footprint": "",
+          "fields": {}
+        },
+        {
+          "ref": "C4",
+          "value": "100nF 50V",
+          "lib": "Device",
+          "name": "Capacitor_SMD",
+          "at": [
+            0,
+            0
+          ],
+          "footprint": "",
+          "fields": {}
+        },
+        {
+          "ref": "C5",
+          "value": "100nF 50V",
+          "lib": "Device",
+          "name": "Capacitor_SMD",
+          "at": [
+            0,
+            0
+          ],
+          "footprint": "",
+          "fields": {}
+        },
+        {
+          "ref": "C6",
+          "value": "100nF 50V",
+          "lib": "Device",
+          "name": "Capacitor_SMD",
+          "at": [
+            0,
+            0
+          ],
+          "footprint": "",
+          "fields": {}
+        },
+        {
+          "ref": "C7",
+          "value": "100nF 50V",
+          "lib": "Device",
+          "name": "Capacitor_SMD",
+          "at": [
+            0,
+            0
+          ],
+          "footprint": "",
+          "fields": {}
+        },
+        {
+          "ref": "C8",
+          "value": "100nF 50V",
+          "lib": "Device",
+          "name": "Capacitor_SMD",
+          "at": [
+            0,
+            0
+          ],
+          "footprint": "",
+          "fields": {}
+        },
+        {
+          "ref": "Y1",
+          "value": "12MHz",
+          "lib": "Device",
+          "name": "Crystal",
+          "at": [
+            0,
+            0
+          ],
+          "footprint": "",
+          "fields": {}
+        },
+        {
+          "ref": "Y2",
+          "value": "12MHz",
+          "lib": "Device",
+          "name": "Crystal",
+          "at": [
+            0,
+            0
+          ],
+          "footprint": "",
+          "fields": {}
+        },
+        {
+          "ref": "C21",
+          "value": "22pF 50V",
+          "lib": "Device",
+          "name": "Capacitor_SMD",
+          "at": [
+            0,
+            0
+          ],
+          "footprint": "",
+          "fields": {}
+        },
+        {
+          "ref": "C22",
+          "value": "22pF 50V",
+          "lib": "Device",
+          "name": "Capacitor_SMD",
+          "at": [
+            0,
+            0
+          ],
+          "footprint": "",
+          "fields": {}
+        },
+        {
+          "ref": "C23",
+          "value": "22pF 50V",
+          "lib": "Device",
+          "name": "Capacitor_SMD",
+          "at": [
+            0,
+            0
+          ],
+          "footprint": "",
+          "fields": {}
+        },
+        {
+          "ref": "C24",
+          "value": "22pF 50V",
+          "lib": "Device",
+          "name": "Capacitor_SMD",
+          "at": [
+            0,
+            0
+          ],
+          "footprint": "",
+          "fields": {}
+        }
+      ],
+      "hierarchical_pins": [
+        {
+          "name": "LED_SPI_BUS",
+          "direction": "out",
+          "sheet_ref": "mcu"
+        },
+        {
+          "name": "TOUCH_GPIO_BUS",
+          "direction": "inout",
+          "sheet_ref": "mcu"
+        },
+        {
+          "name": "I2C_SDA",
+          "direction": "inout",
+          "sheet_ref": "mcu"
+        },
+        {
+          "name": "I2C_SCL",
+          "direction": "inout",
+          "sheet_ref": "mcu"
+        },
+        {
+          "name": "RESET",
+          "direction": "in",
+          "sheet_ref": "mcu"
+        },
+        {
+          "name": "ENABLE",
+          "direction": "in",
+          "sheet_ref": "mcu"
+        },
+        {
+          "name": "3.3V_IN",
+          "direction": "in",
+          "sheet_ref": "mcu"
+        },
+        {
+          "name": "GND",
+          "direction": "power_in",
+          "sheet_ref": "mcu"
+        }
+      ],
+      "wires": []
+    }
+  },
+  "connections": []
+}

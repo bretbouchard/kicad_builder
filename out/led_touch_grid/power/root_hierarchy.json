@@ -1,0 +1,357 @@
+{
+  "title": "root",
+  "sheets": {
+    "led_touch_grid_power": {
+      "name": "led_touch_grid_power",
+      "title": "led_touch_grid_power",
+      "symbols": [
+        {
+          "ref": "J1",
+          "value": "USB-C Input",
+          "lib": "Connector_USB",
+          "name": "USB_C_Receptacle",
+          "at": [
+            50.0,
+            50.0
+          ],
+          "footprint": "Connector_USB:CUSB-B-RA_SMD",
+          "fields": {
+            "Type": "Power Input"
+          }
+        },
+        {
+          "ref": "D1",
+          "value": "Schottky 5V Protection",
+          "lib": "Diode",
+          "name": "D_SMA",
+          "at": [
+            75.0,
+            50.0
+          ],
+          "footprint": "Diode_SMD:D_SMA",
+          "fields": {
+            "Part": "BAT54C"
+          }
+        },
+        {
+          "ref": "U1",
+          "value": "3.3V LDO",
+          "lib": "Regulator_Linear",
+          "name": "SOT-223",
+          "at": [
+            100.0,
+            50.0
+          ],
+          "footprint": "Package_TO_SOT_SMD:SOT-223",
+          "fields": {
+            "Part": "AMS1117-3.3"
+          }
+        },
+        {
+          "ref": "C1",
+          "value": "1000\u00b5F 10V",
+          "lib": "Device",
+          "name": "C",
+          "at": [
+            150.0,
+            50.0
+          ],
+          "footprint": "Package_DIL:D6.3x5.3mm_P2.50mm_Horizontal",
+          "fields": {
+            "Voltage": "10V",
+            "Type": "Electrolytic"
+          }
+        },
+        {
+          "ref": "C2",
+          "value": "100nF 50V",
+          "lib": "Device",
+          "name": "C",
+          "at": [
+            200.0,
+            40.0
+          ],
+          "footprint": "Capacitor_SMD:C_0805_2012Metric",
+          "fields": {
+            "Voltage": "50V",
+            "Type": "Ceramic"
+          }
+        },
+        {
+          "ref": "C3",
+          "value": "100nF 50V",
+          "lib": "Device",
+          "name": "C",
+          "at": [
+            200.0,
+            60.0
+          ],
+          "footprint": "Capacitor_SMD:C_0805_2012Metric",
+          "fields": {
+            "Voltage": "50V",
+            "Type": "Ceramic"
+          }
+        },
+        {
+          "ref": "C4",
+          "value": "10\u00b5F 10V",
+          "lib": "Device",
+          "name": "C",
+          "at": [
+            100.0,
+            70.0
+          ],
+          "footprint": "Capacitor_SMD:C_0805_2012Metric",
+          "fields": {
+            "Voltage": "10V",
+            "Type": "Tantalum"
+          }
+        },
+        {
+          "ref": "C5",
+          "value": "10\u00b5F 6.3V",
+          "lib": "Device",
+          "name": "C",
+          "at": [
+            150.0,
+            70.0
+          ],
+          "footprint": "Capacitor_SMD:C_0805_2012Metric",
+          "fields": {
+            "Voltage": "6.3V",
+            "Type": "Tantalum"
+          }
+        },
+        {
+          "ref": "D2",
+          "value": "ESD Protection 5V",
+          "lib": "Diode_TVS",
+          "name": "SMA",
+          "at": [
+            25.0,
+            50.0
+          ],
+          "footprint": "Diode_SMD:D_SMA",
+          "fields": {
+            "Part": "PESD5V0S1BA"
+          }
+        },
+        {
+          "ref": "FB1",
+          "value": "Ferrite Bead 600\u03a9",
+          "lib": "Device",
+          "name": "FB_SMD_0805_2012Metric",
+          "at": [
+            60.0,
+            50.0
+          ],
+          "footprint": "Inductor_SMD:FB_SMD_0805_2012Metric",
+          "fields": {
+            "Impedance": "600\u03a9 @ 100MHz"
+          }
+        },
+        {
+          "ref": "PWR11",
+          "value": "5V_OUT",
+          "lib": "power",
+          "name": "PWR_FLAG",
+          "at": [
+            0,
+            0
+          ],
+          "footprint": "",
+          "fields": {
+            "Net": "5V_OUT"
+          }
+        },
+        {
+          "ref": "PWR12",
+          "value": "3.3V_OUT",
+          "lib": "power",
+          "name": "PWR_FLAG",
+          "at": [
+            0,
+            0
+          ],
+          "footprint": "",
+          "fields": {
+            "Net": "3.3V_OUT"
+          }
+        },
+        {
+          "ref": "PWR13",
+          "value": "GND",
+          "lib": "power",
+          "name": "PWR_FLAG",
+          "at": [
+            0,
+            0
+          ],
+          "footprint": "",
+          "fields": {
+            "Net": "GND"
+          }
+        },
+        {
+          "ref": "GND14",
+          "value": "Ground",
+          "lib": "power",
+          "name": "GND",
+          "at": [
+            0,
+            0
+          ],
+          "footprint": "",
+          "fields": {}
+        }
+      ],
+      "hierarchical_pins": [
+        {
+          "name": "5V_OUT",
+          "direction": "inout",
+          "sheet_ref": "led_touch_grid_power"
+        },
+        {
+          "name": "3.3V_OUT",
+          "direction": "inout",
+          "sheet_ref": "led_touch_grid_power"
+        },
+        {
+          "name": "GND",
+          "direction": "inout",
+          "sheet_ref": "led_touch_grid_power"
+        },
+        {
+          "name": "5V_IN",
+          "direction": "in",
+          "sheet_ref": "led_touch_grid_power"
+        },
+        {
+          "name": "EXT_5V_IN",
+          "direction": "inout",
+          "sheet_ref": "led_touch_grid_power"
+        },
+        {
+          "name": "EXT_GND",
+          "direction": "inout",
+          "sheet_ref": "led_touch_grid_power"
+        }
+      ],
+      "wires": [
+        [
+          "J1.VBUS",
+          "D2.1"
+        ],
+        [
+          "D2.2",
+          "FB1.1"
+        ],
+        [
+          "FB1.2",
+          "D1.A"
+        ],
+        [
+          "D1.K",
+          "C1.1"
+        ],
+        [
+          "C1.2",
+          "5V_OUT"
+        ],
+        [
+          "5V_OUT",
+          "5V_IN"
+        ],
+        [
+          "5V_IN",
+          "U1.VIN"
+        ],
+        [
+          "U1.VIN",
+          "C4.1"
+        ],
+        [
+          "C4.2",
+          "GND"
+        ],
+        [
+          "U1.VOUT",
+          "C5.1"
+        ],
+        [
+          "C5.2",
+          "GND"
+        ],
+        [
+          "C5.1",
+          "3.3V_OUT"
+        ],
+        [
+          "3.3V_OUT",
+          "C2.1"
+        ],
+        [
+          "C2.2",
+          "GND"
+        ],
+        [
+          "3.3V_OUT",
+          "C3.1"
+        ],
+        [
+          "C3.2",
+          "GND"
+        ],
+        [
+          "U1.GND",
+          "GND"
+        ],
+        [
+          "EXT_5V_IN",
+          "5V_OUT"
+        ],
+        [
+          "EXT_GND",
+          "GND"
+        ]
+      ]
+    },
+    "Root": {
+      "name": "Root",
+      "title": "Root",
+      "symbols": [],
+      "hierarchical_pins": [
+        {
+          "name": "POWER_5V",
+          "direction": "out",
+          "sheet_ref": "Root"
+        },
+        {
+          "name": "POWER_3V3",
+          "direction": "out",
+          "sheet_ref": "Root"
+        },
+        {
+          "name": "GND",
+          "direction": "out",
+          "sheet_ref": "Root"
+        }
+      ],
+      "wires": []
+    }
+  },
+  "connections": [
+    [
+      "Root.POWER_5V",
+      "led_touch_grid_power.5V_OUT"
+    ],
+    [
+      "Root.POWER_3V3",
+      "led_touch_grid_power.3.3V_OUT"
+    ],
+    [
+      "Root.GND",
+      "led_touch_grid_power.GND"
+    ]
+  ]
+}

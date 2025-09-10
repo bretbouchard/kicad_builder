@@ -23,8 +23,6 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[3]))
 
 from tools.kicad_helpers import (  # noqa: E402
     HierarchicalSchematic,
-    HierarchicalPin,
-    Sheet,
     Schematic,
     Symbol,
 )
@@ -85,18 +83,14 @@ class TestPowerSheetFailureCases:
         power_sch.add_symbol(Symbol(lib="Device", name="C", ref="C2", value="100nF 50V"))
         power_sch.add_symbol(Symbol(lib="Device", name="C", ref="C3", value="100nF 50V"))
 
-        power_sheet = Sheet(
-            name="power",
-            schematic=power_sch,
-            hierarchical_pins=[
-                HierarchicalPin("5V_OUT", "out"),
-            ],
-        )
-        hier.add_sheet(power_sheet)
-        hier.connect_hier_pins("root", "EXT_5V", "power", "5V_OUT")
+        hier.create_sheet("power")
+        hier.add_symbol_to_sheet("power", Symbol(lib="Device", name="C", ref="C2", value="100nF 50V"))
+        hier.add_symbol_to_sheet("power", Symbol(lib="Device", name="C", ref="C3", value="100nF 50V"))
+        hier.add_hier_pin("power", "5V_OUT", "out")
+        hier.connect_hier_pins("root", "5V_OUT", "power", "5V_OUT")
 
-        # Add LED symbol at root to activate bulk requirement
-        hier.add_symbol(Symbol(lib="LED", name="APA102", ref="LED1"))
+        # Add LED symbol to power sheet to activate bulk requirement
+        hier.add_symbol_to_sheet("power", Symbol(lib="LED", name="APA102", ref="LED1", value="LED"))
 
         with pytest.raises(ValueError, match="Missing bulk capacitor"):
             hier.run_full_erc()
@@ -109,18 +103,21 @@ class TestPowerSheetFailureCases:
         # Provide bulk cap so only decoupling fails when MCU present
         power_sch.add_symbol(Symbol(lib="Device", name="C", ref="CBULK", value="1000µF 10V"))
 
-        power_sheet = Sheet(
-            name="power",
-            schematic=power_sch,
-            hierarchical_pins=[
-                HierarchicalPin("5V_OUT", "out"),
-            ],
-        )
-        hier.add_sheet(power_sheet)
+        # Create hierarchical schematic with proper sheet configuration
+        # Create hierarchy with properly structured power subsystem
+        hier = HierarchicalSchematic(title="power_subsystem")
+        hier.create_sheet("power")
+
+        # Add components to the sheet using validated API
+        for sym in power_sch.symbols:
+            hier.add_symbol_to_sheet("power", sym)
+
+        # Configure hierarchical pins through validated method
+        hier.add_hier_pin("power", "5V_OUT", "out")
         hier.connect_hier_pins("root", "EXT_5V", "power", "5V_OUT")
 
         # Add MCU symbol to trigger decoupling requirement
-        hier.add_symbol(Symbol(lib="RP2040", name="RP2040", ref="U1"))
+        hier.add_symbol_to_sheet("power", Symbol(lib="RP2040", name="RP2040", ref="U1", value="MCU"))
 
         with pytest.raises(ValueError, match="Missing 100nF decoupling capacitor"):
             hier.run_full_erc()

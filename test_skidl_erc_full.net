@@ -1,14 +1,14 @@
 (export (version D)
   (design
     (source "/Users/bretbouchard/apps/buttons/hardware/projects/button_grid/tests/test_skidl_erc_full.py")
-    (date "09/07/2025 12:10 AM")
+    (date "09/10/2025 05:35 PM")
     (tool "SKiDL (2.0.1)"))
   (components
     (comp (ref "U1")
       (value "RP2040")
-      (footprint "RP2040:QFN40P700X700X90-57N")
-      (libsource (lib RP2040) (part "RP2040"))
-      (sheetpath (names "/top/7309222463817387291") (tstamps "/top/7309222463817387291"))))
+      (footprint "Package_QFN:QFN-56-1EP_7x7mm_P0.4mm_EP5.5x5.5mm")
+      (libsource (lib RP2040_clean) (part "RP2040"))
+      (sheetpath (names "/top/15628367186593138471") (tstamps "/top/15628367186593138471"))))
   (nets
     (net (code 1) (name "GND")
       (node (ref "U1") (pin "2")))

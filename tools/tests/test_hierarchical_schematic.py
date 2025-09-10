@@ -15,7 +15,7 @@ class TestHierarchicalPin:
 
     def test_hierarchical_pin_creation(self):
         """Test creating a hierarchical pin with default values."""
-        pin = HierarchicalPin(name="VCC", direction="out")
+        pin = HierarchicalPin(name="VCC", direction="out", sheet_ref="power")
         assert pin.name == "VCC"
         assert pin.direction == "out"
         assert pin.sheet_ref is None
@@ -38,8 +38,7 @@ class TestSheet:
 
     def test_sheet_creation(self):
         """Test creating a sheet with default values."""
-        sch = Schematic("test_sheet")
-        sheet = Sheet(name="power", schematic=sch)
+        sheet = Sheet(name="power")
         assert sheet.name == "power"
         assert sheet.schematic.title == "test_sheet"
         assert len(sheet.hierarchical_pins) == 0
@@ -47,7 +46,7 @@ class TestSheet:
     def test_add_hierarchical_pin(self):
         """Test adding hierarchical pins to a sheet."""
         sch = Schematic("test_sheet")
-        sheet = Sheet(name="power", schematic=sch)
+        sheet = Sheet(name="power")
 
         sheet.add_hier_pin("VCC", direction="out")
         sheet.add_hier_pin("GND", direction="in")
@@ -85,7 +84,7 @@ class TestHierarchicalSchematic:
         """Test adding sheets to hierarchical schematic."""
         hier_sch = HierarchicalSchematic("test_hierarchy")
         sch = Schematic("power_sheet")
-        sheet = Sheet(name="power", schematic=sch)
+        sheet = Sheet(name="power")
 
         hier_sch.add_sheet(sheet)
         assert "power" in hier_sch.sheets

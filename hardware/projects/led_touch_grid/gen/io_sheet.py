@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-I/O Connectivity Sheet Generator for LED Touch Grid
+I/O Connectivity Schematic Generator for LED Touch Grid
 
 Scaffold for Archon Task P3_T7:
 - Inter-tile and host connectivity
@@ -33,18 +33,14 @@ while not (project_root / "tools").exists() and project_root != project_root.par
     project_root = project_root.parent
 sys.path.insert(0, str(project_root))
 
-import sys
-from pathlib import Pathfrom tools.kicad_helpers import (
-    Schematic,
+from tools.kicad_helpers import (
     HierarchicalSchematic,
-    Sheet,
-    HierarchicalPin,
     Symbol,
 )
 
 
 @dataclass
-class IOSheetConfig:
+class IOSchematicConfig:
     """Configurable parameters for I/O sheet generation."""
 
     edge_connector_type: str = "Edge_Conn_20"  # Placeholder
@@ -54,7 +50,7 @@ class IOSheetConfig:
     add_mechanical: bool = True
 
 
-class IOSheetBuilder:
+class IOSchematicBuilder:
     """
     Scaffold for I/O connectivity sheet generator.
 
@@ -70,11 +66,12 @@ class IOSheetBuilder:
     def __init__(
         self,
         project_name: str = "led_touch_grid",
-        config: Optional[IOSheetConfig] = None,
+        config: Optional[IOSchematicConfig] = None,
     ):
         self.project_name = project_name
-        self.config = config or IOSheetConfig()
-        self.schematic = Schematic(title=f"{project_name}_io")
+        self.config = config or IOSchematicConfig()
+        self.hier_schematic = HierarchicalSchematic(title=f"{project_name}_io_hier")
+        self.io_sheet = self.hier_schematic.create_sheet("io")
         self.symbols: List[Symbol] = []
         self._built = False
 
@@ -98,30 +95,29 @@ class IOSheetBuilder:
         """TODO: Add mechanical outline/markers as symbol or annotation."""
         pass
 
-    def _expose_hierarchical_pins(self) -> Sheet:
+    def _expose_hierarchical_pins(self):
         """
         Expose hierarchical pins for all I/O signals.
         """
-        return Sheet(
-            name="io",
-            schematic=self.schematic,
-            hierarchical_pins=[
-                HierarchicalPin("5V_IN", "out"),
-                HierarchicalPin("3.3V_IN", "out"),
-                HierarchicalPin("GND", "inout"),
-                HierarchicalPin("SPI_MOSI", "inout"),
-                HierarchicalPin("SPI_MISO", "inout"),
-                HierarchicalPin("SPI_SCK", "inout"),
-                HierarchicalPin("I2C_SDA", "inout"),
-                HierarchicalPin("I2C_SCL", "inout"),
-                HierarchicalPin("USB_D_P", "inout"),
-                HierarchicalPin("USB_D_N", "inout"),
-                HierarchicalPin("SWDIO", "inout"),
-                HierarchicalPin("SWCLK", "inout"),
-                HierarchicalPin("STATUS_LED", "out"),
-                HierarchicalPin("RESET", "out"),
-            ],
-        )
+        pins = [
+            ("5V_IN", "out"),
+            ("3.3V_IN", "out"),
+            ("GND", "inout"),
+            ("SPI_MOSI", "inout"),
+            ("SPI_MISO", "inout"),
+            ("SPI_SCK", "inout"),
+            ("I2C_SDA", "inout"),
+            ("I2C_SCL", "inout"),
+            ("USB_D_P", "inout"),
+            ("USB_D_N", "inout"),
+            ("SWDIO", "inout"),
+            ("SWCLK", "inout"),
+            ("STATUS_LED", "out"),
+            ("RESET", "out"),
+        ]
+
+        for name, direction in pins:
+            self.hier_schematic.add_hier_pin("io", name, direction)
 
     def build(self, for_root: bool = False):
         # Scaffold: call placeholder methods
@@ -131,24 +127,23 @@ class IOSheetBuilder:
         self._add_status_indicators()
         self._add_mechanical_features()
 
-        sheet = self._expose_hierarchical_pins()
+        self._expose_hierarchical_pins()
+
         if for_root:
 
             class Result:
-                sheets = {"io": sheet}
+                sheets = {"io": self.io_sheet}
 
             return Result()
         else:
-            hier = HierarchicalSchematic(title=f"{self.project_name}_io_hier")
-            hier.add_sheet(sheet)
             out_dir = Path("out") / self.project_name / "io"
             out_dir.mkdir(parents=True, exist_ok=True)
-            hier.write(out_dir=str(out_dir))
-            return hier
+            self.hier_schematic.write(out_dir=str(out_dir))
+            return self.hier_schematic
 
 
 def generate_io_sheet(project_name: str = "led_touch_grid") -> None:
-    builder = IOSheetBuilder(project_name=project_name)
+    builder = IOSchematicBuilder(project_name=project_name)
     hier = builder.build(for_root=False)
     try:
         hier.run_full_erc()
@@ -159,4 +154,9 @@ def generate_io_sheet(project_name: str = "led_touch_grid") -> None:
 
 
 if __name__ == "__main__":
-    generate_io_sheet()
+    import argparse
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument("project_name", nargs="?", default="led_touch_grid")
+    args = parser.parse_args()
+    generate_io_sheet(args.project_name)

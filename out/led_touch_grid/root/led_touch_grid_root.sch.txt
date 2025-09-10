@@ -1,3 +1,1 @@
-# Schematic: led_touch_grid_root
-# Symbols:
-# Wires:
+Root schematic: led_touch_grid_root

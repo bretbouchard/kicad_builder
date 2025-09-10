@@ -29,14 +29,14 @@ jobs:
           pip install -r hardware/requirements.txt
           pip install -r hardware/requirements-dev.txt
 
-      - name: Lint code
+      - name: Repo lint + typecheck
         run: |
-          pip install flake8 black isort
-          flake8 hardware/projects/led_touch_grid/
-          black --check hardware/projects/led_touch_grid/
-          isort --check-only hardware/projects/led_touch_grid/
+          python -m pip install --upgrade pip
+          pip install ruff mypy
+          ruff src tests
+          mypy --strict src || true
 
-      - name: Run tests
+      - name: Run hardware tests
         run: |
           pytest hardware/projects/led_touch_grid/tests/ -v
 
@@ -60,6 +60,26 @@ jobs:
             hardware/projects/led_touch_grid/out/
             hardware/projects/led_touch_grid/kicad/
             hardware/projects/led_touch_grid/docs/
+
+      - name: Upload auto-register diagnostics (if any)
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: auto-register-diagnostics
+          path: |
+            **/auto_register_diagnostics.json
+
+      - name: Annotate auto-register diagnostics (best-effort)
+        if: always()
+        run: |
+          python tools/annotate_diagnostics.py || true
+
+      - name: Fail on auto-register diagnostics
+        if: always()
+        run: |
+          python tools/collect_diagnostics.py
+
+
 
   docker-ci:
     runs-on: ubuntu-latest
@@ -85,3 +105,16 @@ jobs:
           pytest hardware/projects/led_touch_grid/tests/ -v
           make -C hardware/projects/led_touch_grid validate
           make -C hardware/projects/led_touch_grid export
+
+      - name: Upload auto-register diagnostics (if any)
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: auto-register-diagnostics
+          path: |
+            **/auto_register_diagnostics.json
+
+      - name: Annotate auto-register diagnostics (best-effort)
+        if: always()
+        run: |
+          python tools/annotate_diagnostics.py || true

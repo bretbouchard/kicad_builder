@@ -50,7 +50,8 @@ def plot_frequency_response(R, C, save_path=None):
         plt.savefig(save_path)
         plt.close()
     else:
-        plt.show()
+        # Don't show plots when using non-interactive backend
+        plt.close()
 
 
 def simulate_touch_sensitivity(R, C, delta_C=2e-12, save_prefix=None):

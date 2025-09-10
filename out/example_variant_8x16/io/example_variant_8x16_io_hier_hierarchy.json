@@ -1,0 +1,84 @@
+{
+  "title": "example_variant_8x16_io_hier",
+  "sheets": {
+    "io": {
+      "name": "io",
+      "title": "io",
+      "symbols": [],
+      "hierarchical_pins": [
+        {
+          "name": "5V_IN",
+          "direction": "out",
+          "sheet_ref": "io"
+        },
+        {
+          "name": "3.3V_IN",
+          "direction": "out",
+          "sheet_ref": "io"
+        },
+        {
+          "name": "GND",
+          "direction": "inout",
+          "sheet_ref": "io"
+        },
+        {
+          "name": "SPI_MOSI",
+          "direction": "inout",
+          "sheet_ref": "io"
+        },
+        {
+          "name": "SPI_MISO",
+          "direction": "inout",
+          "sheet_ref": "io"
+        },
+        {
+          "name": "SPI_SCK",
+          "direction": "inout",
+          "sheet_ref": "io"
+        },
+        {
+          "name": "I2C_SDA",
+          "direction": "inout",
+          "sheet_ref": "io"
+        },
+        {
+          "name": "I2C_SCL",
+          "direction": "inout",
+          "sheet_ref": "io"
+        },
+        {
+          "name": "USB_D_P",
+          "direction": "inout",
+          "sheet_ref": "io"
+        },
+        {
+          "name": "USB_D_N",
+          "direction": "inout",
+          "sheet_ref": "io"
+        },
+        {
+          "name": "SWDIO",
+          "direction": "inout",
+          "sheet_ref": "io"
+        },
+        {
+          "name": "SWCLK",
+          "direction": "inout",
+          "sheet_ref": "io"
+        },
+        {
+          "name": "STATUS_LED",
+          "direction": "out",
+          "sheet_ref": "io"
+        },
+        {
+          "name": "RESET",
+          "direction": "out",
+          "sheet_ref": "io"
+        }
+      ],
+      "wires": []
+    }
+  },
+  "connections": []
+}

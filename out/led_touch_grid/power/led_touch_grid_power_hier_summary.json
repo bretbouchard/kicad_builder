@@ -1,58 +1,7 @@
 {
   "title": "led_touch_grid_power_hier",
-  "symbols": [],
-  "wires": [],
-  "sheets": {
-    "power": {
-      "title": "led_touch_grid_power",
-      "pins": [
-        {
-          "name": "5V_OUT",
-          "direction": "inout",
-          "sheet_ref": null
-        },
-        {
-          "name": "3.3V_OUT",
-          "direction": "inout",
-          "sheet_ref": null
-        },
-        {
-          "name": "GND",
-          "direction": "inout",
-          "sheet_ref": null
-        },
-        {
-          "name": "5V_IN",
-          "direction": "in",
-          "sheet_ref": null
-        },
-        {
-          "name": "EXT_5V_IN",
-          "direction": "inout",
-          "sheet_ref": null
-        },
-        {
-          "name": "EXT_GND",
-          "direction": "inout",
-          "sheet_ref": null
-        }
-      ]
-    }
-  },
-  "hier_connections": [
-    [
-      "root.POWER_5V",
-      "power.5V_OUT"
-    ],
-    [
-      "root.POWER_3V3",
-      "power.3.3V_OUT"
-    ],
-    [
-      "root.GND",
-      "power.GND"
-    ]
-  ],
-  "erc_status": "passed",
-  "erc_errors": []
+  "sheet_count": 1,
+  "total_symbols": 14,
+  "total_pins": 6,
+  "total_wires": 19
 }

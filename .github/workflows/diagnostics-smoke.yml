@@ -1,0 +1,39 @@
+name: Diagnostics Smoke Test
+
+on:
+  workflow_dispatch: {}
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Create sample diagnostics
+        run: |
+          mkdir -p ./.ci_tmp
+          cat > ./.ci_tmp/auto_register_diagnostics.json <<'JSON'
+          [
+            {"path": "src/lib/generators/fake.py", "type": "import", "message": "smoke-test"}
+          ]
+          JSON
+
+      - name: Upload diagnostics artifact (for inspection)
+        uses: actions/upload-artifact@v3
+        with:
+          name: smoke-diagnostics
+          path: ./.ci_tmp/auto_register_diagnostics.json
+
+      - name: Annotate diagnostics (best-effort)
+        run: |
+          python tools/annotate_diagnostics.py || true
+
+      - name: Run collector (should fail)
+        run: |
+          python tools/collect_diagnostics.py

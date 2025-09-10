@@ -1,84 +1,20 @@
+from collections import defaultdict
 from skidl import Pin, Part, Alias, SchLib, SKIDL, TEMPLATE
 
 from skidl.pin import pin_types
 
-SKIDL_lib_version = "0.0.1"
+SKIDL_lib_version = '0.0.1'
 
-conftest_lib = SchLib(tool=SKIDL).add_parts(
-    *[
-        Part(
-            **{
-                "name": "RP2040",
-                "dest": TEMPLATE,
-                "tool": SKIDL,
-                "aliases": Alias({"RP2040"}),
-                "ref_prefix": "U",
-                "fplist": ["RP2040:QFN40P700X700X90-57N"],
-                "footprint": "RP2040:QFN40P700X700X90-57N",
-                "keywords": "",
-                "description": "",
-                "datasheet": ("https://datasheets.raspberrypi.org/rp2040/" "rp2040-datasheet.pdf"),
-                "pins": [
-                    Pin(num="2", name="GPIO0", func=pin_types.BIDIR),
-                    Pin(num="3", name="GPIO1", func=pin_types.BIDIR),
-                    Pin(num="4", name="GPIO2", func=pin_types.BIDIR),
-                    Pin(num="5", name="GPIO3", func=pin_types.BIDIR),
-                    Pin(num="6", name="GPIO4", func=pin_types.BIDIR),
-                    Pin(num="7", name="GPIO5", func=pin_types.BIDIR),
-                    Pin(num="8", name="GPIO6", func=pin_types.BIDIR),
-                    Pin(num="9", name="GPIO7", func=pin_types.BIDIR),
-                    Pin(num="11", name="GPIO8", func=pin_types.BIDIR),
-                    Pin(num="12", name="GPIO9", func=pin_types.BIDIR),
-                    Pin(num="13", name="GPIO10", func=pin_types.BIDIR),
-                    Pin(num="14", name="GPIO11", func=pin_types.BIDIR),
-                    Pin(num="15", name="GPIO12", func=pin_types.BIDIR),
-                    Pin(num="16", name="GPIO13", func=pin_types.BIDIR),
-                    Pin(num="17", name="GPIO14", func=pin_types.BIDIR),
-                    Pin(num="18", name="GPIO15", func=pin_types.BIDIR),
-                    Pin(num="27", name="GPIO16", func=pin_types.BIDIR),
-                    Pin(num="28", name="GPIO17", func=pin_types.BIDIR),
-                    Pin(num="29", name="GPIO18", func=pin_types.BIDIR),
-                    Pin(num="30", name="GPIO19", func=pin_types.BIDIR),
-                    Pin(num="31", name="GPIO20", func=pin_types.BIDIR),
-                    Pin(num="32", name="GPIO21", func=pin_types.BIDIR),
-                    Pin(num="34", name="GPIO22", func=pin_types.BIDIR),
-                    Pin(num="35", name="GPIO23", func=pin_types.BIDIR),
-                    Pin(num="36", name="GPIO24", func=pin_types.BIDIR),
-                    Pin(num="37", name="GPIO25", func=pin_types.BIDIR),
-                    Pin(num="38", name="GPIO26/ADC0", func=pin_types.BIDIR),
-                    Pin(num="39", name="GPIO27/ADC1", func=pin_types.BIDIR),
-                    Pin(num="40", name="GPIO28/ADC2", func=pin_types.BIDIR),
-                    Pin(num="41", name="GPIO29/ADC3", func=pin_types.BIDIR),
-                    Pin(num="51", name="QSPI_SD3", func=pin_types.BIDIR),
-                    Pin(num="52", name="QSPI_SCLK", func=pin_types.BIDIR),
-                    Pin(num="53", name="QSPI_SD0", func=pin_types.BIDIR),
-                    Pin(num="54", name="QSPI_SD2", func=pin_types.BIDIR),
-                    Pin(num="55", name="QSPI_SD1", func=pin_types.BIDIR),
-                    Pin(num="56", name="QSPI_CSN", func=pin_types.BIDIR),
-                    Pin(num="20", name="XIN", func=pin_types.INPUT),
-                    Pin(num="21", name="XOUT", func=pin_types.OUTPUT),
-                    Pin(num="24", name="SWCLK", func=pin_types.INPUT),
-                    Pin(num="25", name="SWD", func=pin_types.BIDIR),
-                    Pin(num="26", name="RUN", func=pin_types.INPUT),
-                    Pin(num="19", name="TESTEN", func=pin_types.PASSIVE),
-                    Pin(num="47", name="USB_DP", func=pin_types.BIDIR),
-                    Pin(num="46", name="USB_DM", func=pin_types.BIDIR),
-                    Pin(num="45", name="VREG_VOUT", func=pin_types.OUTPUT),
-                    Pin(num="44", name="VREG_VIN", func=pin_types.INPUT),
-                    Pin(num="48", name="USB_VDD", func=pin_types.PWRIN),
-                    Pin(num="1", name="IOVDD", func=pin_types.PWRIN),
-                    Pin(num="10", name="IOVDD", func=pin_types.PWRIN),
-                    Pin(num="22", name="IOVDD", func=pin_types.PWRIN),
-                    Pin(num="33", name="IOVDD", func=pin_types.PWRIN),
-                    Pin(num="42", name="IOVDD", func=pin_types.PWRIN),
-                    Pin(num="49", name="IOVDD", func=pin_types.PWRIN),
-                    Pin(num="23", name="DVDD", func=pin_types.PWRIN),
-                    Pin(num="50", name="DVDD", func=pin_types.PWRIN),
-                    Pin(num="43", name="ADC_AVDD", func=pin_types.PWRIN),
-                    Pin(num="57", name="GND", func=pin_types.PWRIN),
-                ],
-                "unit_defs": [],
-            }
-        )
-    ]
-)
+conftest_lib = SchLib(tool=SKIDL).add_parts(*[
+        Part(**{ 'name':'RP2040', 'dest':TEMPLATE, 'tool':SKIDL, 'aliases':Alias({'RP2040'}), 'ref_prefix':'U', 'fplist':['Package_QFN:QFN-56-1EP_7x7mm_P0.4mm_EP5.5x5.5mm'], 'footprint':'Package_QFN:QFN-56-1EP_7x7mm_P0.4mm_EP5.5x5.5mm', 'keywords':'', 'description':'', 'datasheet':'https://datasheets.raspberrypi.org/rp2040/rp2040-datasheet.pdf', 'pins':[
+            Pin(num='1',name='VCC',func=pin_types.PWRIN),
+            Pin(num='2',name='GND',func=pin_types.PWRIN),
+            Pin(num='4',name='VBUS',func=pin_types.PWRIN),
+            Pin(num='9',name='RESET',func=pin_types.INPUT),
+            Pin(num='3',name='GPIO0',func=pin_types.BIDIR),
+            Pin(num='5',name='GPIO1',func=pin_types.BIDIR),
+            Pin(num='6',name='GPIO2',func=pin_types.BIDIR),
+            Pin(num='7',name='GPIO3',func=pin_types.BIDIR),
+            Pin(num='8',name='GPIO4',func=pin_types.BIDIR),
+            Pin(num='10',name='SWDIO',func=pin_types.BIDIR),
+            Pin(num='11',name='SWCLK',func=pin_types.BIDIR)], 'unit_defs':[] })])

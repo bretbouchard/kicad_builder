@@ -30,11 +30,8 @@ if not (project_root / "tools").exists():
     sys.exit(1)
 sys.path.insert(0, str(project_root))
 from tools.kicad_helpers import (  # noqa: E402
-    Schematic,
     HierarchicalSchematic,
     Symbol,
-    Sheet,
-    HierarchicalPin,
 )
 
 # Constants for component values and positions
@@ -202,52 +199,57 @@ def create_power_nets() -> List[Tuple[str, str]]:
 
 def generate_power_sheet(project_name: str = "led_touch_grid") -> None:
     """Generate the power sheet schematic."""
-    # Create child schematic for power sheet
-    power_sch = Schematic(title=f"{project_name}_power")
+    print(f"DEBUG: Generating power sheet for project: {project_name}")
+
+    # Create hierarchical schematic for power sheet
+    hier_sch = HierarchicalSchematic(title=f"{project_name}_power_hier")
+    power_sheet = hier_sch.create_sheet("power")
 
     # Add power symbols
     symbols = create_power_symbols()
     for sym in symbols:
-        power_sch.add_symbol(sym)
+        hier_sch.add_symbol_to_sheet("power", sym)
 
     # Add wires for connections
     wires = create_power_nets()
     for a, b in wires:
-        power_sch.add_wire(a, b)
+        power_sheet.add_wire(a, b)
 
     # Add power flags for nets
-    power_sch.add_power_flag("5V_OUT")
-    power_sch.add_power_flag("3.3V_OUT")
-    power_sch.add_power_flag("GND")
-    power_sch.add_gnd()
+    power_flag_5v = Symbol(lib="power", name="PWR_FLAG", ref="PWR1", value="5V_OUT", fields={"Net": "5V_OUT"})
+    power_flag_3v = Symbol(lib="power", name="PWR_FLAG", ref="PWR2", value="3.3V_OUT", fields={"Net": "3.3V_OUT"})
+    power_flag_gnd = Symbol(lib="power", name="PWR_FLAG", ref="PWR3", value="GND", fields={"Net": "GND"})
+    ground_symbol = Symbol(lib="power", name="GND", ref="GND1", value="Ground")
 
-    # Create sheet wrapper with hierarchical pins
-    power_sheet = Sheet(
-        name="power",
-        schematic=power_sch,
-        hierarchical_pins=[
-            HierarchicalPin(name="5V_OUT", direction="inout"),
-            HierarchicalPin(name="3.3V_OUT", direction="inout"),
-            HierarchicalPin(name="GND", direction="inout"),
-            HierarchicalPin(name="5V_IN", direction="in"),
-            HierarchicalPin(name="EXT_5V_IN", direction="inout"),
-            HierarchicalPin(name="EXT_GND", direction="inout"),
-        ],
-    )
+    hier_sch.add_symbol_to_sheet("power", power_flag_5v)
+    hier_sch.add_symbol_to_sheet("power", power_flag_3v)
+    hier_sch.add_symbol_to_sheet("power", power_flag_gnd)
+    hier_sch.add_symbol_to_sheet("power", ground_symbol)
 
-    # For standalone generation, wrap in hierarchical schematic
-    hier_sch = HierarchicalSchematic(title=f"{project_name}_power_hier")
-    hier_sch.add_sheet(power_sheet)
+    # Add hierarchical pins to the power sheet
+    pins = [
+        ("5V_OUT", "inout"),
+        ("3.3V_OUT", "inout"),
+        ("GND", "inout"),
+        ("5V_IN", "in"),
+        ("EXT_5V_IN", "inout"),
+        ("EXT_GND", "inout"),
+    ]
 
-    # Connect internal nets to hierarchical pins (simplified)
-    hier_sch.connect_hier_pins("root", "POWER_5V", "power", "5V_OUT")
-    hier_sch.connect_hier_pins("root", "POWER_3V3", "power", "3.3V_OUT")
-    hier_sch.connect_hier_pins("root", "GND", "power", "GND")
+    for name, direction in pins:
+        hier_sch.add_hier_pin("power", name, direction)
 
     # Write outputs
     out_dir = Path("out") / project_name / "power"
+    print(f"DEBUG: Output directory: {out_dir}")
+    print(f"DEBUG: Output directory exists: {out_dir.exists()}")
     out_dir.mkdir(parents=True, exist_ok=True)
+    print(f"DEBUG: Created output directory: {out_dir}")
+    print(f"DEBUG: Output directory exists after mkdir: {out_dir.exists()}")
+
+    print(f"DEBUG: About to write hierarchical schematic to: {str(out_dir)}")
     hier_sch.write(out_dir=str(out_dir))
+    print("DEBUG: Finished writing hierarchical schematic")
 
     # Run full ERC validation (hierarchy + power + pull-ups)
     try:
@@ -258,42 +260,59 @@ def generate_power_sheet(project_name: str = "led_touch_grid") -> None:
         sys.exit(1)
 
 
-class PowerSheetBuilder:
-    """Stub builder for test compatibility."""
+class PowerSchematicBuilder:
+    """Builder for test compatibility."""
+
+    def __init__(self, project_name: str = "test_power"):
+        self.project_name = project_name
+        self.hier_sch = HierarchicalSchematic(title=f"{project_name}_power_hier")
+        self.power_sheet = self.hier_sch.create_sheet("power")
 
     def build(self):
-        # Create child schematic for power sheet
-        power_sch = Schematic(title="test_power_sheet")
+        # Add power symbols
         symbols = create_power_symbols()
         for sym in symbols:
-            power_sch.add_symbol(sym)
+            self.hier_sch.add_symbol_to_sheet("power", sym)
+
+        # Add wires for connections
         wires = create_power_nets()
         for a, b in wires:
-            power_sch.add_wire(a, b)
-        power_sch.add_power_flag("5V_OUT")
-        power_sch.add_power_flag("3.3V_OUT")
-        power_sch.add_power_flag("GND")
-        power_sch.add_power_flag("EXT_5V_IN")
-        power_sch.add_power_flag("EXT_GND")
-        power_sch.add_gnd()
-        power_sheet = Sheet(
-            name="power",
-            schematic=power_sch,
-            hierarchical_pins=[
-                HierarchicalPin(name="5V_OUT", direction="inout"),
-                HierarchicalPin(name="3.3V_OUT", direction="inout"),
-                HierarchicalPin(name="GND", direction="inout"),
-                HierarchicalPin(name="5V_IN", direction="in"),
-                HierarchicalPin(name="EXT_5V_IN", direction="inout"),
-                HierarchicalPin(name="EXT_GND", direction="inout"),
-            ],
-        )
+            self.power_sheet.add_wire(a, b)
+
+        # Add power flags and ground
+        power_flag_5v = Symbol(lib="power", name="PWR_FLAG", ref="PWR1", value="5V_OUT", fields={"Net": "5V_OUT"})
+        power_flag_3v = Symbol(lib="power", name="PWR_FLAG", ref="PWR2", value="3.3V_OUT", fields={"Net": "3.3V_OUT"})
+        power_flag_gnd = Symbol(lib="power", name="PWR_FLAG", ref="PWR3", value="GND", fields={"Net": "GND"})
+        ground_symbol = Symbol(lib="power", name="GND", ref="GND1", value="Ground")
+
+        self.hier_sch.add_symbol_to_sheet("power", power_flag_5v)
+        self.hier_sch.add_symbol_to_sheet("power", power_flag_3v)
+        self.hier_sch.add_symbol_to_sheet("power", power_flag_gnd)
+        self.hier_sch.add_symbol_to_sheet("power", ground_symbol)
+
+        # Add hierarchical pins
+        pins = [
+            ("5V_OUT", "inout"),
+            ("3.3V_OUT", "inout"),
+            ("GND", "inout"),
+            ("5V_IN", "in"),
+            ("EXT_5V_IN", "inout"),
+            ("EXT_GND", "inout"),
+        ]
+
+        for name, direction in pins:
+            self.hier_sch.add_hier_pin("power", name, direction)
 
         class Result:
-            sheets = {"power": power_sheet}
+            sheets = {"power": self.power_sheet}
 
         return Result()
 
 
 if __name__ == "__main__":
-    generate_power_sheet()
+    import argparse
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument("project_name", nargs="?", default="led_touch_grid")
+    args = parser.parse_args()
+    generate_power_sheet(args.project_name)

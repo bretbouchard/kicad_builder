@@ -1,0 +1,11 @@
+{
+  "symbols": [
+    {
+      "name": "RP2040-QFN56"
+    },
+    {
+      "name": "RP2040-QFN56"
+    }
+  ],
+  "total_mcus": 2
+}

@@ -205,9 +205,9 @@ def generate_netlist_from_hier_schematic(
 
     # Add all symbols from all sheets (simplified)
     for sheet_name, sheet in hier_schematic.sheets.items():
-        print(f"DEBUG: Sheet '{sheet_name}' type: {type(sheet)} value: {sheet}")
+        print(f"DEBUG: Schematic '{sheet_name}' type: {type(sheet)} value: {sheet}")
         if not hasattr(sheet, "schematic"):
-            print(f"ERROR: Sheet '{sheet_name}' is not a Sheet object! It is: {type(sheet)} value: {sheet}")
+            print(f"ERROR: Schematic '{sheet_name}' is not a Schematic object! It is: {type(sheet)} value: {sheet}")
             continue
         for symbol in sheet.schematic.symbols:
             schematic.add_symbol(symbol)
