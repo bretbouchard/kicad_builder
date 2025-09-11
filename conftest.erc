@@ -1,9 +1,9 @@
-ERC WARNING: Only one pin (POWER-IN pin 1/VCC of RP2040/U1) attached to net VCC.
-ERC WARNING: No drivers for net VCC
-ERC WARNING: Insufficient drive current on net VCC for pin POWER-IN pin 1/VCC of RP2040/U1
 ERC WARNING: Only one pin (POWER-IN pin 2/GND of RP2040/U1) attached to net GND.
 ERC WARNING: No drivers for net GND
 ERC WARNING: Insufficient drive current on net GND for pin POWER-IN pin 2/GND of RP2040/U1
+ERC WARNING: Only one pin (POWER-IN pin 1/VCC of RP2040/U1) attached to net VCC.
+ERC WARNING: No drivers for net VCC
+ERC WARNING: Insufficient drive current on net VCC for pin POWER-IN pin 1/VCC of RP2040/U1
 ERC WARNING: Unconnected pin: POWER-IN pin 4/VBUS of RP2040/U1.
 ERC WARNING: Unconnected pin: INPUT pin 9/RESET of RP2040/U1.
 ERC WARNING: Unconnected pin: BIDIRECTIONAL pin 3/GPIO0 of RP2040/U1.
@@ -16,12 +16,12 @@ ERC WARNING: Unconnected pin: BIDIRECTIONAL pin 11/SWCLK of RP2040/U1.
 ERC INFO: 15 warnings found while running ERC.
 ERC INFO: 0 errors found while running ERC.
 
-ERC WARNING: Only one pin (POWER-IN pin 1/VCC of RP2040/U1) attached to net VCC.
-ERC WARNING: No drivers for net VCC
-ERC WARNING: Insufficient drive current on net VCC for pin POWER-IN pin 1/VCC of RP2040/U1
 ERC WARNING: Only one pin (POWER-IN pin 1/VCC of RP2040/U2) attached to net VCC_1.
 ERC WARNING: No drivers for net VCC_1
 ERC WARNING: Insufficient drive current on net VCC_1 for pin POWER-IN pin 1/VCC of RP2040/U2
+ERC WARNING: Only one pin (POWER-IN pin 2/GND of RP2040/U1) attached to net GND.
+ERC WARNING: No drivers for net GND
+ERC WARNING: Insufficient drive current on net GND for pin POWER-IN pin 2/GND of RP2040/U1
 ERC WARNING: Only one pin (POWER-IN pin 1/VCC of RP2040/U1) attached to net VCC.
 ERC WARNING: No drivers for net VCC
 ERC WARNING: Insufficient drive current on net VCC for pin POWER-IN pin 1/VCC of RP2040/U1
@@ -47,12 +47,12 @@ ERC WARNING: Unconnected pin: BIDIRECTIONAL pin 11/SWCLK of RP2040/U2.
 ERC INFO: 28 warnings found while running ERC.
 ERC INFO: 0 errors found while running ERC.
 
-ERC WARNING: Only one pin (POWER-IN pin 2/GND of RP2040/U1) attached to net GND.
-ERC WARNING: No drivers for net GND
-ERC WARNING: Insufficient drive current on net GND for pin POWER-IN pin 2/GND of RP2040/U1
 ERC WARNING: Only one pin (POWER-IN pin 1/VCC of RP2040/U2) attached to net VCC_1.
 ERC WARNING: No drivers for net VCC_1
 ERC WARNING: Insufficient drive current on net VCC_1 for pin POWER-IN pin 1/VCC of RP2040/U2
+ERC WARNING: Only one pin (POWER-IN pin 2/GND of RP2040/U1) attached to net GND.
+ERC WARNING: No drivers for net GND
+ERC WARNING: Insufficient drive current on net GND for pin POWER-IN pin 2/GND of RP2040/U1
 ERC WARNING: Only one pin (POWER-IN pin 1/VCC of RP2040/U1) attached to net VCC.
 ERC WARNING: No drivers for net VCC
 ERC WARNING: Insufficient drive current on net VCC for pin POWER-IN pin 1/VCC of RP2040/U1

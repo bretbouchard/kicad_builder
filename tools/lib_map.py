@@ -1,26 +1,52 @@
+from typing import Any, Optional
+
 # Symbol/footprint mapping for LED Touch Grid
 
 SYMBOL_FOOTPRINT_MAP: dict[str, dict[str, str]] = {
-    "RP2040": {"symbol": "RP2040:RP2040", "footprint": "MCU_QFN56.pretty:RP2040-QFN56"},
-    "APA102": {"symbol": "LED_Programmable:APA102", "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm"},
-    "SK9822": {"symbol": "LED_Programmable:SK9822", "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm"},
-    "Touch_Pad_19x19mm": {"symbol": "Custom:Touch_Pad", "footprint": "Custom:Touch_Pad_19x19mm"},
-    "USB-C": {"symbol": "Connector_USB:USB_C_Receptacle", "footprint": "Connector_USB:CUSB-B-RA_SMD"},
-    "SWD": {
-        "symbol": "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical",
-        "footprint": "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical",
+    "RP2040": {
+        "symbol": "RP2040:RP2040",
+        "footprint": "MCU_QFN56.pretty:RP2040-QFN56",
     },
-    "LED": {"symbol": "LED:LED", "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm"},
+    "APA102": {
+        "symbol": "LED_Programmable:APA102",
+        "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+    },
+    "SK9822": {
+        "symbol": "LED_Programmable:SK9822",
+        "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+    },
+    "Touch_Pad_19x19mm": {
+        "symbol": "Custom:Touch_Pad",
+        "footprint": "Custom:Touch_Pad_19x19mm",
+    },
+    "USB-C": {
+        "symbol": "Connector_USB:USB_C_Receptacle",
+        "footprint": "Connector_USB:CUSB-B-RA_SMD",
+    },
+    "SWD": {
+        "symbol": ("Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical"),
+        "footprint": ("Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical"),
+    },
+    "LED": {
+        "symbol": "LED:LED",
+        "footprint": "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+    },
     "Connector": {
         "symbol": "Connector_Generic:Conn_01x04",
-        "footprint": "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical",
+        "footprint": ("Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical"),
     },
 }
 
 
-def resolve_symbol_footprint(component_name: str) -> dict[str, str | None]:
+def resolve_symbol_footprint(component_name: str) -> dict[str, Optional[str]]:
     """Return symbol and footprint for a given component name."""
-    return SYMBOL_FOOTPRINT_MAP.get(component_name, {"symbol": None, "footprint": None})
+    found = SYMBOL_FOOTPRINT_MAP.get(component_name)
+    if found:
+        return {
+            "symbol": found.get("symbol"),
+            "footprint": found.get("footprint"),
+        }
+    return {"symbol": None, "footprint": None}
 
 
 def validate_library_completeness(required_components: list[str]) -> bool:
@@ -63,14 +89,15 @@ def resolve_lib_id(lib: str, name: str, use_vendor: bool = False) -> str:
     return f"{lib.capitalize()}:{name}"
 
 
-def validate_klc_rules(symbol: Symbol) -> list:
+def validate_klc_rules(symbol: Symbol) -> list[str]:
     """Stub for KLC rule validation."""
-    if "APA102" in symbol.name and "LED_APA102-2020" not in symbol.footprint:
+    # guard against None footprints
+    if "APA102" in symbol.name and symbol.footprint is not None and "LED_APA102-2020" not in symbol.footprint:
         return ["APA102 symbol must use LED_APA102-2020 footprint"]
     return []
 
 
-def get_part_info(part_ref: str) -> dict:
+def get_part_info(part_ref: str) -> dict[str, Optional[str]]:
     kv_map = {
         "RP2040": ("Raspberry Pi", "RP2040"),
         "APA102": ("Worldsemi", "APA102-2020"),
@@ -83,17 +110,27 @@ def get_part_info(part_ref: str) -> dict:
 
     for key, (mfg, part) in kv_map.items():
         if key in part_ref:
-            return {"mpn": part, "manufacturer": mfg, "supplier": "", "supplier_pn": ""}
+            return {
+                "mpn": part,
+                "manufacturer": mfg,
+                "supplier": "",
+                "supplier_pn": "",
+            }
 
     # For unknown components, return None values as expected by test
-    return {"mpn": None, "manufacturer": None, "supplier": None, "supplier_pn": None}
+    return {
+        "mpn": None,
+        "manufacturer": None,
+        "supplier": None,
+        "supplier_pn": None,
+    }
 
 
 def get_footprint(part_ref: str) -> str:
     return "dummy_footprint"
 
 
-def load_rp2040_pinmap(package: str) -> dict:
+def load_rp2040_pinmap(package: str) -> dict[str, Any]:
     return {
         "package": package,
         "pin_to_signal": {
@@ -106,22 +143,57 @@ def load_rp2040_pinmap(package: str) -> dict:
             "42": "IOVDD",
             "49": "IOVDD",
         },
-        "signal_to_pin": {"IOVDD": [1, 10, 22, 33, 42, 49], "GPIO0": [2], "GPIO1": [3]},
+        "signal_to_pin": {
+            "IOVDD": [1, 10, 22, 33, 42, 49],
+            "GPIO0": [2],
+            "GPIO1": [3],
+        },
     }
 
 
-def create_led_touch_grid_symbols() -> dict:
+def create_led_touch_grid_symbols() -> dict[str, Symbol]:
     """Return symbol data structure expected by tests"""
-    symbols = {}
-    symbol_configs = [
-        ("RP2040_QFN56", 56, "MCU_QFN56.pretty:RP2040-QFN56", "Raspberry Pi", {}),
-        ("APA102-2020", 4, "LED_SMD:LED_APA102-2020", "Worldsemi", {"Voltage": "5V"}),
-        ("SK9822-2020", 4, "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm", "Cree", {"Voltage": "5V"}),
-        ("Touch_Pad_19x19mm", 2, "Custom:Touch_Pad_19x19mm", "Custom", {"Layer": "F.Cu"}),
+    symbols: dict[str, Symbol] = {}
+    # typed symbol configs to help mypy infer types in comprehensions below
+    symbol_configs: list[tuple[str, int, str, str, dict[str, str]]] = [
+        (
+            "RP2040_QFN56",
+            56,
+            "MCU_QFN56.pretty:RP2040-QFN56",
+            "Raspberry Pi",
+            {},
+        ),
+        (
+            "APA102-2020",
+            4,
+            "LED_SMD:LED_APA102-2020",
+            "Worldsemi",
+            {"Voltage": "5V"},
+        ),
+        (
+            "SK9822-2020",
+            4,
+            "LED_SMD:LED_RGB_PLCC4_5.0x5.0mm",
+            "Cree",
+            {"Voltage": "5V"},
+        ),
+        (
+            "Touch_Pad_19x19mm",
+            2,
+            "Custom:Touch_Pad_19x19mm",
+            "Custom",
+            {"Layer": "F.Cu"},
+        ),
         ("Touch_Sensor_TTP223", 3, "Custom:Touch_Sensor_TTP223", "Custom", {}),
         ("AMS1117-3.3", 3, "Package_TO_SOT_SMD:SOT-223-3_TabPin2", "AMS", {}),
         ("PESD5V0S1BA", 2, "Package_TO_SOT_SMD:SOT-23", "Nexperia", {}),
-        ("USB_C_Receptacle", 24, "Connector_USB:USB_C_Receptacle", "Custom", {}),
+        (
+            "USB_C_Receptacle",
+            24,
+            "Connector_USB:USB_C_Receptacle",
+            "Custom",
+            {},
+        ),
         ("W25Q32JV", 8, "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm", "Winbond", {}),
     ]
 
@@ -153,9 +225,9 @@ def create_led_touch_grid_symbols() -> dict:
     return symbols
 
 
-def validate_symbol_library(symbols: dict) -> dict:
+def validate_symbol_library(symbols: dict[str, Symbol]) -> dict[str, list[str]]:
     """Validate symbol library and return results"""
-    results = {}
+    results: dict[str, list[str]] = {}
     for name, symbol in symbols.items():
         issues = validate_klc_rules(symbol)
         results[name] = issues

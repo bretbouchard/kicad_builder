@@ -5,7 +5,7 @@ Some Sexp.search implementations return plain lists; wrap results at test
 startup to keep behavior consistent for the test suite.
 """
 
-from typing import Any
+from typing import Any, Optional
 
 try:
     from simp_sexp import Sexp
@@ -15,7 +15,7 @@ except Exception:
 if Sexp is not None:
     _orig_search = Sexp.search
 
-    def _fixed_search(self, *args, **kwargs) -> Any:
+    def _fixed_search(self, *args: object, **kwargs: object) -> Any:
         """Wrap returned nodes as Sexp only for symbol-related searches.
 
         The upstream Sexp.search is used broadly; we only normalize results
@@ -89,7 +89,7 @@ try:
 
     if _orig_parse_lib_part:
 
-        def _wrapped_parse_lib_part(part, partial_parse):
+        def _wrapped_parse_lib_part(part: Any, partial_parse: Any) -> Optional[Any]:
             try:
                 return _orig_parse_lib_part(part, partial_parse)
             except AssertionError as e:
@@ -105,8 +105,9 @@ try:
         # that reference either will see the wrapper.
         _kicad8_lib.parse_lib_part = _wrapped_parse_lib_part
         try:
-            if _skidl_tools.tool_modules.get("kicad8"):
-                _skidl_tools.tool_modules["kicad8"].parse_lib_part = _wrapped_parse_lib_part
+            tm = getattr(_skidl_tools, "tool_modules", None)
+            if tm and tm.get("kicad8"):
+                tm["kicad8"].parse_lib_part = _wrapped_parse_lib_part
         except Exception:
             # Best-effort; if this fails, fall back to module-level patch.
             pass
@@ -137,7 +138,7 @@ try:
 
     if _orig_getitem:
 
-        def _patched_getitem(self, key):
+        def _patched_getitem(self, key: Any) -> Any:
             res = _orig_getitem(self, key)
             if res is None:
                 # Try to interpret numeric keys like 1 -> unit 'uA' or first unit

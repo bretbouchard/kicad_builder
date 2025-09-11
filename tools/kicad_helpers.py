@@ -1,5 +1,7 @@
+from __future__ import annotations
+
 from dataclasses import dataclass, field
-from typing import Any, Dict
+from typing import Any, Dict, Optional
 
 
 @dataclass
@@ -8,12 +10,12 @@ class HierarchicalPin:
 
     name: str
     direction: str
-    sheet_ref: str | None = ""
+    sheet_ref: Optional[str] = None
     position: tuple[float, float] = (0, 0)
     unit: int = 0
     electrical_type: str = "passive"
 
-    def __init__(self, name: str, direction: str, sheet_ref: str = ""):
+    def __init__(self, name: str, direction: str, sheet_ref: Optional[str] = None) -> None:
         # Validate direction
         valid_directions = ["in", "out", "inout", "power_in", "power_out"]
         if direction not in valid_directions:
@@ -57,12 +59,12 @@ class Symbol:
         at: tuple[float, float] = (0, 0),
         footprint: str = "",
         sheet: str = "",
-        fields: Dict[str, str] = None,
+        fields: Optional[Dict[str, str]] = None,
         uuid: str = "",
         in_bom: bool = True,
         on_board: bool = True,
-        **kwargs,
-    ):
+        **kwargs: Any,
+    ) -> None:
         # Handle both 'at' and 'position' parameters for backward compatibility
         if "position" in kwargs:
             at = kwargs["position"]
@@ -86,26 +88,31 @@ class Sheet:
     hier_pins: list[HierarchicalPin] = field(default_factory=list)
     symbols: list[Symbol] = field(default_factory=list)
     wires: list[tuple[str, str]] = field(default_factory=list)
+    schematic: Optional["Schematic"] = None
 
-    def __init__(self, name: str, schematic=None):
+    def __init__(self, name: str, schematic: Optional["Schematic"] = None) -> None:
         self.name = name
         self.hier_pins = []
         self.symbols = []
         self.wires = []
-        # For test compatibility, if schematic is None, create a default one
+        # Ensure the schematic attribute is set on the instance.
+        # If no schematic provided, create a default Schematic named
+        # "test_sheet" for test compatibility.
         self.schematic = schematic if schematic is not None else Schematic("test_sheet")
 
     @property
-    def hierarchical_pins(self):
+    def hierarchical_pins(self) -> list[HierarchicalPin]:
         """Alias for hier_pins for test compatibility"""
         return self.hier_pins
 
     @property
-    def title(self):
-        """Title property for compatibility"""
-        return self.schematic.title if self.schematic else self.name
+    def title(self) -> str:
+        """Title property for compatibility."""
+        if self.schematic:
+            return self.schematic.title
+        return self.name
 
-    def add_hier_pin(self, name: str, direction: str):
+    def add_hier_pin(self, name: str, direction: str) -> None:
         """Add hierarchical pin to this sheet"""
         self.hier_pins.append(HierarchicalPin(name=name, direction=direction, sheet_ref=self.name))
 
@@ -113,53 +120,66 @@ class Sheet:
 class Schematic:
     """Represents a hierarchical schematic sheet with parent relationship"""
 
-    def __init__(self, name: str = "", title: str = ""):
+    def __init__(self, name: str = "", title: str = "") -> None:
         # For backward compatibility, allow both name and title parameters
         self.name = title if title else name
         self.hier_pins: list[HierarchicalPin] = []
         self.symbols: list[Symbol] = []
         self.wires: list[tuple[str, str]] = []
-        self.sheets: dict[str, Any] = {}
+        self.sheets: dict[str, "Schematic"] = {}
 
     @property
-    def title(self):
-        """Title property for compatibility"""
+    def title(self) -> str:
+        """Title property for compatibility."""
         return self.name
 
     @property
-    def sheets_property(self):
+    def sheets_property(self) -> dict[str, "Schematic"]:
         """Accessor for hierarchical sheets (single sheet for simple schematics)"""
         return {self.name: self}
 
-    def add_sheet(self, sheet_name: str, sheet_title: str = ""):
+    def add_sheet(self, sheet_name: str, sheet_title: str = "") -> "Schematic":
         """Add a sheet to this schematic for backward compatibility"""
         if sheet_name not in self.sheets:
             self.sheets[sheet_name] = Schematic(sheet_title or sheet_name)
         return self.sheets[sheet_name]
 
-    def add_power_flag(self, net: str):
+    def add_power_flag(self, net: str) -> None:
         """Add power flag symbol for a net"""
         self.add_symbol(
-            Symbol(lib="power", name="PWR_FLAG", ref=f"PWR{len(self.symbols) + 1}", value=net, fields={"Net": net})
+            Symbol(
+                lib="power",
+                name="PWR_FLAG",
+                ref=f"PWR{len(self.symbols) + 1}",
+                value=net,
+                fields={"Net": net},
+            )
         )
 
-    def add_gnd(self):
+    def add_gnd(self) -> None:
         """Add ground symbol"""
-        self.add_symbol(Symbol(lib="power", name="GND", ref=f"GND{len(self.symbols) + 1}", value="Ground"))
+        self.add_symbol(
+            Symbol(
+                lib="power",
+                name="GND",
+                ref=f"GND{len(self.symbols) + 1}",
+                value="Ground",
+            )
+        )
 
-    def add_hier_pin(self, name: str, direction: str):
+    def add_hier_pin(self, name: str, direction: str) -> None:
         """Add hierarchical pin to this sheet"""
         self.hier_pins.append(HierarchicalPin(name=name, direction=direction, sheet_ref=self.name))
 
-    def add_symbol(self, symbol: Symbol):
+    def add_symbol(self, symbol: Symbol) -> None:
         """Add component to schematic"""
         self.symbols.append(symbol)
 
-    def add_wire(self, net1: str, net2: str):
+    def add_wire(self, net1: str, net2: str) -> None:
         """Add wire connection"""
         self.wires.append((net1, net2))
 
-    def add_net(self, net_name: str, connections: list[str]):
+    def add_net(self, net_name: str, connections: list[str]) -> None:
         """Add a net with connections (for test compatibility)"""
         for conn in connections:
             self.wires.append((net_name, conn))
@@ -182,16 +202,18 @@ class HierarchicalSchematic:
         self.sheets[name] = new_sheet
         return new_sheet
 
-    def add_symbol_to_sheet(self, sheet_name: str, symbol: Symbol):
+    def add_symbol_to_sheet(self, sheet_name: str, symbol: Symbol) -> None:
         """Add component to specified schematic sheet"""
         if sheet_name in self.sheets:
             self.sheets[sheet_name].add_symbol(symbol)
         else:
             raise ValueError(f"Sheet {sheet_name} not found")
 
-    def add_hier_pin(self, sheet_name: str, name: str, direction: str):
-        """Add hierarchical pin to a sheet"""
-        # Create Root sheet on demand if it doesn't exist
+    def add_hier_pin(self, sheet_name: str, name: str, direction: str) -> None:
+        """Add hierarchical pin to a sheet.
+
+        Create the Root sheet on demand if needed.
+        """
         if sheet_name == "Root" and sheet_name not in self.sheets:
             self.create_sheet("Root")
         self.sheets[sheet_name].add_hier_pin(name, direction)
@@ -203,18 +225,22 @@ class HierarchicalSchematic:
         self.sheets[sheet.name] = sheet
         return self
 
-    def connect_hier_pins(self, parent_sheet: str, parent_pin: str, child_sheet: str, child_pin: str):
-        """Connect hierarchical pins between sheets with direction validation"""
-        # Create root sheet on demand if it doesn't exist
+    def connect_hier_pins(self, parent_sheet: str, parent_pin: str, child_sheet: str, child_pin: str) -> None:
+        """Connect hierarchical pins between sheets with direction validation.
+
+        Ensure a root sheet exists and record the connection.
+        """
         if parent_sheet == "root" and parent_sheet not in self.sheets:
             self.create_sheet("root")
-            # Add the pin to the root sheet if it doesn't exist - root pins are typically inputs
+            # Add the pin to the root sheet if it doesn't exist.
+            # Root pins are typically inputs.
             self.add_hier_pin("root", parent_pin, "in")
+
         self.hier_connections.append((f"{parent_sheet}.{parent_pin}", f"{child_sheet}.{child_pin}"))
 
     def validate_hierarchy(self) -> list[str]:
         """Validate hierarchy connections and pin directions"""
-        errors = []
+        errors: list[str] = []
         for parent_ref, child_ref in self.hier_connections:
             try:
                 # Parse the connection references
@@ -243,7 +269,7 @@ class HierarchicalSchematic:
                 p_pin = parent_pins[parent_pin_name]
                 c_pin = child_pins[child_pin_name]
                 if p_pin.direction == c_pin.direction:
-                    # For test compatibility, check if this is the specific case the test expects
+                    # For test compatibility, check specific expected cases.
                     if p_pin.direction == "in" and c_pin.direction == "in":
                         raise ValueError("Input pins cannot drive other input pins")
                     elif p_pin.direction == "out" and c_pin.direction == "out":
@@ -255,10 +281,12 @@ class HierarchicalSchematic:
                 # Special case: parent "in" to child "out" should fail for data pins
                 # but allow for power pins (like 5V, GND, etc.)
                 elif p_pin.direction == "in" and c_pin.direction == "out":
-                    # Allow power-related connections but fail for data connections
-                    if parent_pin_name.upper().startswith(
-                        ("5V", "3V", "GND", "VCC", "VDD")
-                    ) or child_pin_name.upper().startswith(("5V", "3V", "GND", "VCC", "VDD")):
+                    # Allow power-related connections but fail for data connections.
+                    parent_up = parent_pin_name.upper()
+                    child_up = child_pin_name.upper()
+                    power_prefixes = ("5V", "3V", "GND", "VCC", "VDD")
+
+                    if parent_up.startswith(power_prefixes) or child_up.startswith(power_prefixes):
                         # Power connections are allowed
                         pass
                     else:
@@ -271,14 +299,14 @@ class HierarchicalSchematic:
 
         # Check power rules across all sheets
         for sheet_name, sheet in self.sheets.items():
-            # Rule 1: If LEDs are present, must have bulk capacitor (1000μF)
+            # Rule 1: If LEDs are present, must have bulk capacitor (1000μF).
             led_symbols = [sym for sym in sheet.symbols if sym.lib == "LED"]
             if led_symbols:
                 bulk_caps = [sym for sym in sheet.symbols if sym.ref.startswith("C") and "1000µF" in sym.value]
                 if not bulk_caps:
                     errors.append("Missing bulk capacitor")
 
-            # Rule 2: If MCUs are present, must have decoupling capacitor (100nF)
+            # Rule 2: If MCUs are present, must have decoupling capacitor (100nF).
             mcu_symbols = [sym for sym in sheet.symbols if sym.lib == "MCU" or sym.lib == "RP2040"]
             if mcu_symbols:
                 decoupling_caps = [sym for sym in sheet.symbols if sym.ref.startswith("C") and "100nF" in sym.value]
@@ -290,7 +318,7 @@ class HierarchicalSchematic:
 
         return errors
 
-    def _find_pin(self, sheet_name: str, pin_name: str):
+    def _find_pin(self, sheet_name: str, pin_name: str) -> Optional[HierarchicalPin]:
         """Find a hierarchical pin in a sheet"""
         sheet = self.sheets.get(sheet_name)
         if not sheet:
@@ -301,19 +329,20 @@ class HierarchicalSchematic:
                 return pin
         return None
 
-    def summary(self):
+    def summary(self) -> dict[str, Any]:
         """Generate summary information about the hierarchical schematic"""
-        summary_data = {"title": self.title, "sheets": {}}
+        summary_data: dict[str, Any] = {"title": self.title, "sheets": {}}
 
+        sheets_map: dict[str, Any] = summary_data["sheets"]  # typed alias
         for sheet_name, sheet in self.sheets.items():
-            summary_data["sheets"][sheet_name] = {
+            sheets_map[sheet_name] = {
                 "title": sheet.title,
                 "pins": [{"name": pin.name, "direction": pin.direction} for pin in sheet.hier_pins],
             }
 
         return summary_data
 
-    def validate_power_decoupling(self):
+    def validate_power_decoupling(self) -> None:
         """Validate power decoupling rules"""
         for sheet_name, sheet in self.sheets.items():
             # Handle both Sheet and Schematic objects
@@ -324,17 +353,17 @@ class HierarchicalSchematic:
                 # This is a Schematic object
                 symbols = sheet.symbols
 
-            # Check for MCUs
+            # Check for MCUs.
             mcu_symbols = [sym for sym in symbols if sym.lib in ["MCU", "RP2040"] or "RP2040" in sym.name]
 
             if mcu_symbols:
                 # Look for 100nF decoupling capacitors
                 decoupling_caps = [sym for sym in symbols if sym.ref.startswith("C") and "100nF" in sym.value]
 
-                if not decoupling_caps:  # If no decoupling capacitors found
+                if not decoupling_caps:
                     raise ValueError("Missing 100nF decoupling capacitor")
 
-    def validate_i2c_pullups(self):
+    def validate_i2c_pullups(self) -> None:
         """Validate I2C pullup resistor rules"""
         for sheet_name, sheet in self.sheets.items():
             # Handle both Sheet and Schematic objects
@@ -385,7 +414,7 @@ class HierarchicalSchematic:
                     if len(net_pullups) > 1:
                         raise ValueError("Multiple pull-up sets")
 
-    def write(self, out_dir: str):
+    def write(self, out_dir: str) -> None:
         """Write schematic files to output directory"""
         # Validate hierarchy before writing
         self.validate_hierarchy()
@@ -402,7 +431,14 @@ class HierarchicalSchematic:
 
         root_kicad_file = out_path / f"{self.title}.kicad_sch"
         root_kicad_file.write_text(
-            f'(kicad_sch (version 20231120) (generator eeschema))\n  (uuid {self.title})\n  (paper "A4")\n  (title_block\n    (title {self.title})\n  )'
+            (
+                "(kicad_sch (version 20231120) (generator eeschema))\n"
+                f"  (uuid {self.title})\n"
+                '  (paper "A4")\n'
+                "  (title_block\n"
+                f"    (title {self.title})\n"
+                "  )"
+            )
         )
 
         # Create sheets directory
@@ -410,10 +446,15 @@ class HierarchicalSchematic:
         sheets_dir.mkdir(exist_ok=True)
 
         # Write hierarchy data
-        hierarchy_data = {"title": self.title, "sheets": {}, "connections": self.hier_connections}
+        hierarchy_data: dict[str, Any] = {
+            "title": self.title,
+            "sheets": {},
+            "connections": self.hier_connections,
+        }
 
         for sheet_name, sheet in self.sheets.items():
-            hierarchy_data["sheets"][sheet_name] = {
+            sheets_map = hierarchy_data["sheets"]
+            sheets_map[sheet_name] = {
                 "name": sheet.name,
                 "title": sheet.title,
                 "symbols": [
@@ -441,7 +482,14 @@ class HierarchicalSchematic:
 
             sheet_kicad_file = sheets_dir / f"{sheet.title}.kicad_sch"
             sheet_kicad_file.write_text(
-                f'(kicad_sch (version 20231120) (generator eeschema))\n  (uuid {self.title})\n  (paper "A4")\n  (title_block\n    (title {self.title})\n  )'
+                (
+                    "(kicad_sch (version 20231120) (generator eeschema))\n"
+                    f"  (uuid {self.title})\n"
+                    '  (paper "A4")\n'
+                    "  (title_block\n"
+                    f"    (title {self.title})\n"
+                    "  )"
+                )
             )
 
         # Write hierarchy JSON

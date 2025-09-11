@@ -47,7 +47,7 @@ class LazyGenerator:
         self.public_name = public_name
         self.call_register_on_load = call_register_on_load
 
-    def _load(self):
+    def _load(self) -> Any:
         if self._real is not None:
             return self._real
         # import on demand
@@ -92,14 +92,15 @@ class LazyGenerator:
                 self._real = _registry.get(self.public_name)
             return self._real
 
+        # Fallback: load the attribute from the module and cache it
         self._real = getattr(mod, self.attr)
         return self._real
 
-    def __call__(self, *a: object, **k: object):
+    def __call__(self, *a: object, **k: object) -> Any:
         real = self._load()
         return real(*a, **k)
 
-    def __getattr__(self, item: str):
+    def __getattr__(self, item: str) -> Any:
         real = self._load()
         return getattr(real, item)
 

@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from pathlib import Path
-from typing import Any
+from typing import Any, Callable
 
 from src.lib.base_generator import BaseGenerator
 
@@ -20,7 +20,7 @@ class VendorGenerator(BaseGenerator):
         return True
 
 
-def register(registry):
+def register(registry: Callable[..., None]) -> None:
     # auto_register passes the `register` function from the registry module.
     # Call it directly to register under a vendor namespace.
     registry("example", VendorGenerator(), namespace="vendor")

@@ -28,7 +28,7 @@ from datetime import datetime
 from pathlib import Path
 
 
-def run_kicad_cli(args, cwd=None):
+def run_kicad_cli(args: list[str], cwd: str | None = None) -> str:
     """Run a kicad-cli command and return output, raise on error."""
     result = subprocess.run(
         ["kicad-cli"] + args,
@@ -42,7 +42,7 @@ def run_kicad_cli(args, cwd=None):
     return result.stdout
 
 
-def get_git_sha():
+def get_git_sha() -> str:
     try:
         return subprocess.check_output(["git", "rev-parse", "HEAD"]).decode().strip()
     except Exception:
@@ -54,13 +54,13 @@ class FabricationOutputBuilder:
     Fabrication output generation system for LED Touch Grid.
     """
 
-    def __init__(self, project_name: str = "led_touch_grid"):
+    def __init__(self, project_name: str = "led_touch_grid") -> None:
         self.project_name = project_name
         self.out_dir = Path("out") / project_name / "fabrication"
         self.out_dir.mkdir(parents=True, exist_ok=True)
         self.kicad_pcb = Path("out") / project_name / f"{project_name}.kicad_pcb"
 
-    def _generate_gerbers(self):
+    def _generate_gerbers(self) -> None:
         """Generate Gerber files using KiCad CLI."""
         gerber_dir = self.out_dir / "gerber"
         gerber_dir.mkdir(parents=True, exist_ok=True)
@@ -68,7 +68,7 @@ class FabricationOutputBuilder:
         if not any(gerber_dir.glob("*.gbr")):
             raise RuntimeError("No Gerber files generated!")
 
-    def _generate_drill_files(self):
+    def _generate_drill_files(self) -> None:
         """Generate drill files using KiCad CLI."""
         drill_dir = self.out_dir / "drill"
         drill_dir.mkdir(parents=True, exist_ok=True)
@@ -76,27 +76,27 @@ class FabricationOutputBuilder:
         if not any(drill_dir.glob("*.drl")):
             raise RuntimeError("No drill files generated!")
 
-    def _generate_pick_and_place(self):
+    def _generate_pick_and_place(self) -> None:
         """Generate pick-and-place CSV using KiCad CLI."""
         pnp_csv = self.out_dir / "pnp.csv"
         run_kicad_cli(["pcb", "export", "pos", str(self.kicad_pcb), "--output", str(pnp_csv)])
         if not pnp_csv.exists():
             raise RuntimeError("Pick-and-place file not generated!")
 
-    def _run_drc_validation(self):
+    def _run_drc_validation(self) -> None:
         """Run DRC validation using KiCad CLI."""
         drc_report = self.out_dir / "drc_report.txt"
         out = run_kicad_cli(["pcb", "drc", str(self.kicad_pcb)])
         drc_report.write_text(out)
 
-    def _generate_bom(self):
+    def _generate_bom(self) -> None:
         """Generate BOM CSV using KiCad CLI."""
         bom_csv = self.out_dir / "bom.csv"
         run_kicad_cli(["sch", "export", "bom", str(self.kicad_pcb.with_suffix(".kicad_sch")), "--output", str(bom_csv)])
         if not bom_csv.exists():
             raise RuntimeError("BOM file not generated!")
 
-    def _inject_daid_metadata(self):
+    def _inject_daid_metadata(self) -> None:
         """Inject DAID metadata (git SHA, timestamp, tool versions)."""
         meta = {
             "git_sha": get_git_sha(),
@@ -110,14 +110,14 @@ class FabricationOutputBuilder:
         meta_json = self.out_dir / "daid_metadata.json"
         meta_json.write_text(json.dumps(meta, indent=2))
 
-    def _get_kicad_cli_version(self):
+    def _get_kicad_cli_version(self) -> str:
         try:
             out = subprocess.check_output(["kicad-cli", "--version"]).decode().strip()
             return out
         except Exception:
             return "UNKNOWN"
 
-    def _validate_outputs(self):
+    def _validate_outputs(self) -> None:
         """Validate output completeness and accuracy."""
         required = [
             self.out_dir / "gerber",
@@ -131,7 +131,7 @@ class FabricationOutputBuilder:
             raise RuntimeError(f"Missing fabrication outputs: {missing}")
         (self.out_dir / "validation_report.txt").write_text("All outputs present.\n")
 
-    def build(self):
+    def build(self) -> None:
         self._run_drc_validation()
         self._generate_gerbers()
         self._generate_drill_files()

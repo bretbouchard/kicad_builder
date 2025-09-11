@@ -49,10 +49,15 @@ def validate(data: Union[Dict[str, Any], ProjectConfig]) -> ProjectConfig:
     if isinstance(data, ProjectConfig):
         return data
 
-    try:
-        return ProjectConfig.model_validate(data)  # type: ignore[attr-defined]
-    except AttributeError:
-        return ProjectConfig.parse_obj(data)  # type: ignore[call-arg]
+    # Support both pydantic v2 (model_validate) and v1 (parse_obj).
+    model_validate = getattr(ProjectConfig, "model_validate", None)
+    if callable(model_validate):
+        return model_validate(data)  # type: ignore[no-any-return]
+    parse_obj = getattr(ProjectConfig, "parse_obj", None)
+    if callable(parse_obj):
+        return parse_obj(data)  # type: ignore[no-any-return]
+    # If neither API is present, raise a clear error.
+    raise ConfigManagerError("ProjectConfig does not expose model_validate or parse_obj")
 
 
 def _model_dump(model: ProjectConfig) -> Dict[str, Any]:

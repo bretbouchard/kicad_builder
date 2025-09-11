@@ -19,7 +19,7 @@ generation (not in schematic symbol generation).
 import json
 import sys
 from pathlib import Path
-from typing import List, Tuple
+from typing import Any, List, Tuple
 
 # Add project root for imports (before local import)  # noqa: E402
 project_root = Path(__file__).resolve()
@@ -112,11 +112,11 @@ def generate_touch_summary(project_name: str, symbols: List[Symbol]) -> None:
 
 
 class TouchSchematicBuilder:
-    def __init__(self, project_name: str = "led_touch_grid"):
-        self.project_name = project_name
-        self.sheets = {}
+    def __init__(self, project_name: str = "led_touch_grid") -> None:
+        self.project_name: str = project_name
+        self.sheets: dict[str, Schematic] = {}
 
-    def build(self, for_root: bool = False):
+    def build(self, for_root: bool = False) -> Any:
         # Create hierarchical schematic
         hier_schematic = HierarchicalSchematic(title=f"{self.project_name}_touch_hier")
 

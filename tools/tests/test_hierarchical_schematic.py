@@ -52,7 +52,7 @@ class TestSheet:
 
     def test_add_hierarchical_pin(self):
         """Test adding hierarchical pins to a sheet."""
-        sch = Schematic("test_sheet")
+        _ = Schematic("test_sheet")
         sheet = Sheet(name="power")
 
         sheet.add_hier_pin("VCC", direction="out")
@@ -90,7 +90,7 @@ class TestHierarchicalSchematic:
     def test_add_sheet(self):
         """Test adding sheets to hierarchical schematic."""
         hier_sch = HierarchicalSchematic("test_hierarchy")
-        sch = Schematic("power_sheet")
+        _ = Schematic("power_sheet")
         sheet = Sheet(name="power")
 
         hier_sch.add_sheet(sheet)

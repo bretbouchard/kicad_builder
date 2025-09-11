@@ -130,7 +130,8 @@ def main() -> None:
     cache: Dict[str, Any] = {}
     if cache_file.exists():
         try:
-            cache = json.loads(cache_file.read_text(encoding="utf8"))
+            cache_raw = json.loads(cache_file.read_text(encoding="utf8"))
+            cache = cache_raw if isinstance(cache_raw, dict) else {}
         except Exception:
             cache = {}
 
@@ -189,9 +190,10 @@ def main() -> None:
         # try cache first using primary key (component+value)
         cache_key = f"{comp}|{val}|{footprint}"
         if cache_key in cache:
-            hit = cache[cache_key]
-            r.setdefault("part_number", hit.get("part_number", ""))
-            r.setdefault("manufacturer", hit.get("manufacturer", ""))
+            hit = cache.get(cache_key, {})
+            if isinstance(hit, dict):
+                r.setdefault("part_number", hit.get("part_number", ""))
+                r.setdefault("manufacturer", hit.get("manufacturer", ""))
             continue
 
         if not api_key:
@@ -203,7 +205,7 @@ def main() -> None:
             cache[cache_key] = {}
             continue
 
-        products = resp.get("SearchResults", {}).get("Products") or resp.get("Products")
+        products = (resp.get("SearchResults", {}) or {}).get("Products") or resp.get("Products")
         if not products:
             cache[cache_key] = {}
             continue
@@ -224,8 +226,12 @@ def main() -> None:
                 best = (score, p)
 
         p0 = best[1] if best else products[0]
-        pn = p0.get("ManufacturerPartNumber") or p0.get("PartNumber") or ""
-        mf = p0.get("Manufacturer") or p0.get("Brand") or ""
+        if isinstance(p0, dict):
+            pn = p0.get("ManufacturerPartNumber") or p0.get("PartNumber") or ""
+            mf = p0.get("Manufacturer") or p0.get("Brand") or ""
+        else:
+            pn = ""
+            mf = ""
         r.setdefault("part_number", pn)
         r.setdefault("manufacturer", mf)
         cache[cache_key] = {"part_number": pn, "manufacturer": mf}

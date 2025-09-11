@@ -74,7 +74,7 @@ class RootSchematicBuilder:
         self.hier.add_sheet(self.led_sheet.sheets["led"])
         self.hier.add_sheet(self.io_sheet.sheets["io"])
 
-    def _connect_hierarchical_pins(self):
+    def _connect_hierarchical_pins(self) -> None:
         """Connect hierarchical pins between sheets for power, data, and control."""
 
         # Power connections - use correct pin names for each sheet
@@ -102,7 +102,7 @@ class RootSchematicBuilder:
         # Connect SPI interface - MCU has LED_SPI_BUS, LED has DATA_IN/CLOCK_IN
         self.hier.connect_hier_pins("mcu", "LED_SPI_BUS", "led", "DATA_IN")
 
-    def build(self):
+    def build(self) -> HierarchicalSchematic:
         if self._built:
             return self.hier
 
@@ -117,7 +117,7 @@ class RootSchematicBuilder:
         return self.hier
 
 
-def generate_root_schematic(project_name: str = "led_touch_grid"):
+def generate_root_schematic(project_name: str = "led_touch_grid") -> HierarchicalSchematic:
     builder = RootSchematicBuilder(project_name=project_name)
     hier = builder.build()
     try:

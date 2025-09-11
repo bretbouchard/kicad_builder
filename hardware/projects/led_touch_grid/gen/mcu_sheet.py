@@ -10,12 +10,13 @@ while not (project_root / "tools").exists() and project_root != project_root.par
 sys.path.insert(0, str(project_root))
 
 import json
+from typing import Any, List
 
 # Defer importing project helpers until after sys.path is set to avoid
 # import-time side effects and satisfy linters (E402).
 
 
-def generate_mcu_summary(project_name: str, symbols: list) -> None:
+def generate_mcu_summary(project_name: str, symbols: List[Any]) -> None:
     """Generate the MCU summary JSON file for test compatibility."""
     summary_data = {
         "symbols": [{"name": sym.name} for sym in symbols if "RP2040" in sym.name],
@@ -29,7 +30,7 @@ def generate_mcu_summary(project_name: str, symbols: list) -> None:
     summary_file.write_text(json.dumps(summary_data, indent=2))
 
 
-def generate_mcu_sheet(project_name: str = "led_touch_grid") -> object:
+def generate_mcu_sheet(project_name: str = "led_touch_grid") -> Any:
     from tools.kicad_helpers import HierarchicalSchematic, Symbol
 
     hier = HierarchicalSchematic(f"{project_name}_mcu_hier")
@@ -74,7 +75,7 @@ def generate_mcu_sheet(project_name: str = "led_touch_grid") -> object:
     return hier
 
 
-def validate_mcu_power_decoupling(hier_schematic):
+def validate_mcu_power_decoupling(hier_schematic: object) -> None:
     """Validate MCU power decoupling rules.
 
     Args:

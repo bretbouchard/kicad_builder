@@ -20,7 +20,7 @@ from lib_map import (
 )
 
 
-def test_symbol_creation():
+def test_symbol_creation() -> None:
     """Test basic symbol creation functionality"""
     print("Testing symbol creation...")
 
@@ -38,7 +38,7 @@ def test_symbol_creation():
     print("✓ Symbol creation test passed")
 
 
-def test_part_info_lookup():
+def test_part_info_lookup() -> None:
     """Test part information lookup functionality"""
     print("Testing part info lookup...")
 
@@ -65,7 +65,7 @@ def test_part_info_lookup():
     print("✓ Part info lookup test passed")
 
 
-def test_klc_validation():
+def test_klc_validation() -> None:
     """Test KLC validation rules"""
     print("Testing KLC validation...")
 
@@ -103,7 +103,7 @@ def test_klc_validation():
     print("✓ KLC validation test passed")
 
 
-def test_rp2040_pinmap():
+def test_rp2040_pinmap() -> None:
     """Test RP2040 pinmap loading"""
     print("Testing RP2040 pinmap loading...")
 
@@ -117,7 +117,7 @@ def test_rp2040_pinmap():
     print("✓ RP2040 pinmap loading test passed")
 
 
-def test_led_touch_grid_symbols():
+def test_led_touch_grid_symbols() -> None:
     """Test LED touch grid symbol creation"""
     print("Testing LED touch grid symbol creation...")
 
@@ -156,7 +156,7 @@ def test_led_touch_grid_symbols():
     print("✓ LED touch grid symbol creation test passed")
 
 
-def test_symbol_library_validation():
+def test_symbol_library_validation() -> None:
     """Test complete symbol library validation"""
     print("Testing symbol library validation...")
 
@@ -181,7 +181,7 @@ def test_symbol_library_validation():
     print("✓ Symbol library validation test passed")
 
 
-def test_lib_id_resolution():
+def test_lib_id_resolution() -> None:
     """Test library ID resolution"""
     print("Testing library ID resolution...")
 
@@ -200,7 +200,7 @@ def test_lib_id_resolution():
     print("✓ Library ID resolution test passed")
 
 
-def main():
+def main() -> int:
     """Run all tests"""
     print("Running LED touch grid component library tests...\n")
 

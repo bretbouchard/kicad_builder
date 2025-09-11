@@ -7,21 +7,29 @@ while not (project_root / "tools").exists() and project_root != project_root.par
     project_root = project_root.parent
 sys.path.insert(0, str(project_root))
 
-import json
+# The generator may be executed as a script in tests. We intentionally
+# insert the project root above so project imports work; exempt the
+# following imports from E402 (import not at top of file).
+import json  # noqa: E402
 
-from tools.kicad_helpers import HierarchicalSchematic, Symbol
+from tools.kicad_helpers import HierarchicalSchematic, Symbol  # noqa: E402
+from typing import List, Tuple  # noqa: E402
 
 
 class LEDConfig:
     """Configuration for LED sheet generation"""
 
-    def __init__(self):
+    led_symbol: Tuple[str, str]
+    expected_led_count: int
+    decoupling_value: str
+
+    def __init__(self) -> None:
         self.led_symbol = ("LED_Programmable", "APA102-2020")
         self.expected_led_count = 256
         self.decoupling_value = "100nF"
 
 
-def generate_led_summary(project_name: str, symbols: list) -> None:
+def generate_led_summary(project_name: str, symbols: List["Symbol"]) -> None:
     """Generate the LED summary JSON file for test compatibility."""
     summary_data = {
         "symbols": [{"name": sym.name} for sym in symbols if sym.name == "APA102-2020"],
@@ -36,9 +44,10 @@ def generate_led_summary(project_name: str, symbols: list) -> None:
 
 
 class LEDSheetBuilder:
-    def __init__(self, project_name: str):
+    def __init__(self, project_name: str) -> None:
         self.project_name = project_name
-        self.hierarchical_schematic = HierarchicalSchematic(f"{project_name}_led_hier")
+        hier_name = f"{project_name}_led_hier"
+        self.hierarchical_schematic = HierarchicalSchematic(hier_name)
         self.sheet_id = "led"
         self.config = LEDConfig()
 
@@ -58,7 +67,7 @@ class LEDSheetBuilder:
         self.hierarchical_schematic.add_hier_pin(self.sheet_id, "DATA_OUT", "out")
         self.hierarchical_schematic.add_hier_pin(self.sheet_id, "CLOCK_OUT", "out")
 
-    def _add_led_chain(self):
+    def _add_led_chain(self) -> None:
         """Add LED chain components to both sheets"""
         for i in range(1, self.config.expected_led_count + 1):
             led_symbol = Symbol(
@@ -67,14 +76,18 @@ class LEDSheetBuilder:
                 lib=self.config.led_symbol[0],
                 name=self.config.led_symbol[1],
                 at=(i * 2.54, 0),  # Position LEDs along X axis
-                fields={"Part": "APA102-2020", "Manufacturer": "Worldsemi", "LED_Index": str(i)},
+                fields={
+                    "Part": "APA102-2020",
+                    "Manufacturer": "Worldsemi",
+                    "LED_Index": str(i),
+                },
             )
             # Add to both the main schematic (for test compatibility)
             # and the LED sheet (for hierarchical design)
             self.hierarchical_schematic.add_symbol_to_sheet("main", led_symbol)
             self.hierarchical_schematic.add_symbol_to_sheet(self.sheet_id, led_symbol)
 
-    def add_apa102_strip(self, count: int):
+    def add_apa102_strip(self, count: int) -> None:
         """Add APA102 LED strip components"""
         for i in range(1, count + 1):
             led_symbol = Symbol(
@@ -83,7 +96,11 @@ class LEDSheetBuilder:
                 lib="LED_Programmable",
                 name="APA102-2020",
                 at=(i * 2.54, 0),  # Position LEDs along X axis
-                fields={"Part": "APA102-2020", "Manufacturer": "Worldsemi", "LED_Index": str(i)},
+                fields={
+                    "Part": "APA102-2020",
+                    "Manufacturer": "Worldsemi",
+                    "LED_Index": str(i),
+                },
             )
             self.hierarchical_schematic.add_symbol_to_sheet(self.sheet_id, led_symbol)
 
@@ -92,8 +109,20 @@ class LEDSheetBuilder:
         self._add_led_chain()
 
         # Add power and ground symbols
-        power_symbol = Symbol(ref="P1", value="+5V", lib="power", name="+5V", fields={"Net": "5V"})
-        ground_symbol = Symbol(ref="G1", value="GND", lib="power", name="GND", fields={"Net": "GND"})
+        power_symbol = Symbol(
+            ref="P1",
+            value="+5V",
+            lib="power",
+            name="+5V",
+            fields={"Net": "5V"},
+        )
+        ground_symbol = Symbol(
+            ref="G1",
+            value="GND",
+            lib="power",
+            name="GND",
+            fields={"Net": "GND"},
+        )
 
         self.hierarchical_schematic.add_symbol_to_sheet(self.sheet_id, power_symbol)
         self.hierarchical_schematic.add_symbol_to_sheet(self.sheet_id, ground_symbol)
@@ -134,7 +163,7 @@ class LEDSheetBuilder:
 
         return self.hierarchical_schematic
 
-    def _run_validations(self):
+    def _run_validations(self) -> None:
         """Run validation checks"""
         # Validate LED count
         led_symbols = [
@@ -163,7 +192,7 @@ class LEDSheetBuilder:
         if len(bulk_caps) != expected_bulk:
             raise ValueError(f"Bulk capacitor count mismatch: expected {expected_bulk}, got {len(bulk_caps)}")
 
-    def get_schematic(self):
+    def get_schematic(self) -> HierarchicalSchematic:
         """Legacy method for backward compatibility"""
         return self.build()
 

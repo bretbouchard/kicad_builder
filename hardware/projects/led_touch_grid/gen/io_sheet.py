@@ -77,27 +77,27 @@ class IOSchematicBuilder:
         self.symbols: List[Symbol] = []
         self._built = False
 
-    def _add_edge_connectors(self):
+    def _add_edge_connectors(self) -> None:
         """TODO: Instantiate edge connectors and connect power/SPI/I2C nets."""
-        pass
+        return None
 
-    def _add_usb_c(self):
+    def _add_usb_c(self) -> None:
         """TODO: Add USB-C symbol and route power/data nets."""
-        pass
+        return None
 
-    def _add_swd_header(self):
+    def _add_swd_header(self) -> None:
         """TODO: Add SWD programming header and connect to MCU."""
-        pass
+        return None
 
-    def _add_status_indicators(self):
+    def _add_status_indicators(self) -> None:
         """TODO: Add status indicator LEDs and drivers."""
-        pass
+        return None
 
-    def _add_mechanical_features(self):
+    def _add_mechanical_features(self) -> None:
         """TODO: Add mechanical outline/markers as symbol or annotation."""
-        pass
+        return None
 
-    def _expose_hierarchical_pins(self):
+    def _expose_hierarchical_pins(self) -> None:
         """
         Expose hierarchical pins for all I/O signals.
         """
@@ -120,8 +120,9 @@ class IOSchematicBuilder:
 
         for name, direction in pins:
             self.hier_schematic.add_hier_pin("io", name, direction)
+        return None
 
-    def build(self, for_root: bool = False):
+    def build(self, for_root: bool = False) -> "HierarchicalSchematic":
         # Scaffold: call placeholder methods
         self._add_edge_connectors()
         self._add_usb_c()
@@ -132,16 +133,13 @@ class IOSchematicBuilder:
         self._expose_hierarchical_pins()
 
         if for_root:
-
-            class Result:
-                sheets = {"io": self.io_sheet}
-
-            return Result()
-        else:
-            out_dir = Path("out") / self.project_name / "io"
-            out_dir.mkdir(parents=True, exist_ok=True)
-            self.hier_schematic.write(out_dir=str(out_dir))
+            # For root usage return the hierarchical schematic containing the io sheet
             return self.hier_schematic
+
+        out_dir = Path("out") / self.project_name / "io"
+        out_dir.mkdir(parents=True, exist_ok=True)
+        self.hier_schematic.write(out_dir=str(out_dir))
+        return self.hier_schematic
 
 
 def generate_io_sheet(project_name: str = "led_touch_grid") -> None:

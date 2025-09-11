@@ -11,17 +11,20 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
-from typing import Iterable
+from typing import Iterable, Dict, Any
 
 
 def find_diagnostics(root: Path) -> Iterable[Path]:
     return root.glob("**/auto_register_diagnostics.json")
 
 
-def emit_annotation(fp: Path, entry: dict) -> None:
+def emit_annotation(fp: Path, entry: Dict[str, Any]) -> None:
     # prefer snippet start_line if present
     snippet = entry.get("snippet")
-    line = snippet.get("start_line") if snippet else None
+    line = None
+    if isinstance(snippet, dict):
+        # snippet may be a mapping with start_line
+        line = snippet.get("start_line")
     file_path = entry.get("path", str(fp))
     level = "error"
     msg = entry.get("message", "auto-register failure")

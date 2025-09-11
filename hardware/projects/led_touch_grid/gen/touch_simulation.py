@@ -1,7 +1,9 @@
 """
 Touch Circuit Simulation and Validation
 
-Simulates RC circuit for capacitive touch pad, models frequency response, validates touch sensitivity and SNR, generates plots, and provides component value recommendations.
+Simulates RC circuit for capacitive touch pad, models frequency response, and
+validates touch sensitivity and SNR. Generates plots and provides component
+value recommendations.
 
 Usage:
     python -m hardware.projects.led_touch_grid.gen.touch_simulation

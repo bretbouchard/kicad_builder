@@ -1,14 +1,16 @@
 #!/usr/bin/env python3
 """generate_pinmap.py
 
-Convert a CSV (pin,signal) into a canonical pinmap JSON or pretty-print/validate an existing JSON.
+Convert a CSV (pin,signal) into a canonical pinmap JSON or
+pretty-print/validate an existing JSON.
 
 Usage:
   python3 generate_pinmap.py input.csv --out out.json --package RP2040
   python3 generate_pinmap.py mapping.json --out out.json
 
-The script accepts '-' as input to read from stdin. If input has a .csv or .tsv suffix
-it will be parsed as CSV, otherwise it is treated as JSON and validated for a
+The script accepts '-' as input to read from stdin. If input has a
+.csv or .tsv suffix it will be parsed as CSV, otherwise it is treated
+as JSON and validated for a `pin_to_signal` mapping.
 `pin_to_signal` mapping.
 """
 
@@ -40,9 +42,11 @@ def csv_to_pinmap(path: Path, package: str = "") -> Dict[str, Any]:
     }
 
 
-def json_validate(path: Path):
+def json_validate(path: Path) -> Dict[str, Any]:
     try:
-        data = json.loads(path.read_text())
+        data_raw = json.loads(path.read_text())
+        # Narrow the raw JSON to the expected mapping shape for type checkers
+        data: Dict[str, Any] = data_raw
     except json.JSONDecodeError as e:
         raise SystemExit(f"Invalid JSON in {path}: {e}")
     if "pin_to_signal" not in data:
@@ -53,9 +57,8 @@ def json_validate(path: Path):
 def build_reverse(map_obj: Dict[str, str]) -> Dict[str, list[object]]:
     rev: Dict[str, list[object]] = {}
     for p, s in map_obj.items():
-        val: object
-        if isinstance(p, str) and p.isdigit():
-            val = int(p)
+        if p.isdigit():
+            val: object = int(p)
         else:
             val = p
         rev.setdefault(s, []).append(val)

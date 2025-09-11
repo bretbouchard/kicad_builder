@@ -23,6 +23,7 @@ from __future__ import annotations
 import csv
 import os
 import sys
+from typing import Any, cast
 
 
 def _read_dotenv(dotenv_path: str) -> dict[str, str]:
@@ -67,14 +68,21 @@ def mm_to_nm(mm: float) -> int:
 def create_board_from_csv(out_board: str, csv_path: str) -> None:
     """Create a new KiCad board and add footprint modules based on CSV."""
     try:
-        import pcbnew  # type: ignore[import]
+        # pcbnew is only available inside KiCad's Python environment.
+        # Mypy can't resolve it in a normal venv; ignore type checking here.
+        import pcbnew
+
+        pcbnew = cast(Any, pcbnew)
     except Exception as e:
         raise RuntimeError("This script must be run inside KiCad (pcbnew available)") from e
 
     # Ensure a wx App exists for GUI-related pcbnew calls (needed when running
     # KiCad's python from command line on macOS)
     try:
-        import wx  # type: ignore[import]
+        # wx is optional and only present in GUI-enabled KiCad environments.
+        import wx
+
+        wx = cast(Any, wx)
 
         if not wx.GetApp():
             _app = wx.App(False)

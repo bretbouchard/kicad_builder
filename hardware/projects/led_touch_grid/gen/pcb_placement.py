@@ -19,6 +19,7 @@ from __future__ import annotations
 import csv
 import sys
 from pathlib import Path
+from typing import Any, Dict, List
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[3]))
 
@@ -34,15 +35,16 @@ class PCBPlacementBuilder:
     Automated PCB grid placement system for LED and touch grids.
     """
 
-    def __init__(self, project_name: str = "led_touch_grid", grid_size: int = 8):
+    def __init__(self, project_name: str = "led_touch_grid", grid_size: int = 8) -> None:
         self.grid_size = grid_size
         self.project_name = project_name
         self.out_dir = Path("out") / project_name / "placement"
         self.out_dir.mkdir(parents=True, exist_ok=True)
-        self.led_grid = []
-        self.touch_grid = []
+        # Annotate mutable lists for mypy
+        self.led_grid: List[Dict[str, Any]] = []
+        self.touch_grid: List[Dict[str, Any]] = []
 
-    def _generate_led_grid(self):
+    def _generate_led_grid(self) -> None:
         """Generate placement CSV for 16x16 LED grid."""
         for row in range(LED_GRID_SIZE):
             for col in range(LED_GRID_SIZE):
@@ -60,7 +62,7 @@ class PCBPlacementBuilder:
                     }
                 )
 
-    def _generate_touch_grid(self):
+    def _generate_touch_grid(self) -> None:
         """Generate placement CSV for 8x8 touch pad grid."""
         TOUCH_START_X = 50.0
         TOUCH_START_Y = 50.0
@@ -80,7 +82,7 @@ class PCBPlacementBuilder:
                     }
                 )
 
-    def _validate_placement(self):
+    def _validate_placement(self) -> None:
         """Validate placement accuracy and detect conflicts."""
         # Check for duplicate refs
         refs = set()
@@ -89,14 +91,14 @@ class PCBPlacementBuilder:
                 raise ValueError(f"Duplicate reference designator: {item['ref']}")
             refs.add(item["ref"])
         # Check for overlapping positions (within tolerance)
-        positions = {}
+        positions: dict[tuple[float, float], str] = {}
         for item in self.led_grid + self.touch_grid:
             pos = (round(item["x_mm"], 2), round(item["y_mm"], 2))
             if pos in positions:
                 raise ValueError(f"Placement conflict at {pos}: {item['ref']} and {positions[pos]}")
             positions[pos] = item["ref"]
 
-    def build(self):
+    def build(self) -> None:
         self._generate_led_grid()
         self._generate_touch_grid()
         self._validate_placement()

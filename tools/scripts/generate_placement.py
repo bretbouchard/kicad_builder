@@ -9,7 +9,7 @@ import pathlib
 import tempfile
 
 
-def main(bom_path: pathlib.Path, out_path: pathlib.Path):
+def main(bom_path: pathlib.Path, out_path: pathlib.Path) -> None:
     rows = []
     with bom_path.open("r", encoding="utf8") as f:
         reader = list(csv.DictReader(f))

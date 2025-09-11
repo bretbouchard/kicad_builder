@@ -22,7 +22,7 @@ def main() -> None:
     if schema_p.exists():
         schema = json.loads(schema_p.read_text())
         try:
-            import jsonschema  # type: ignore
+            import jsonschema
         except Exception:
             # fallback to lightweight checks
             for k, v in d.items():

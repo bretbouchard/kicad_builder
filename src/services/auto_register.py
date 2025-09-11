@@ -73,7 +73,7 @@ def _load_module_from_path(
         # Ensure the module is inserted under the chosen name before exec so
         # relative imports and package context are available.
         sys.modules[module_name] = mod
-        spec.loader.exec_module(mod)  # type: ignore[attr-defined]
+        spec.loader.exec_module(mod)
         return mod, None
     except Exception:
         return None, traceback.format_exc()

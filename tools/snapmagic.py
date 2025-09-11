@@ -25,11 +25,11 @@ import shutil
 from pathlib import Path
 from typing import Dict, List, Optional
 
-ROOT = Path(__file__).resolve().parents[1]
-INBOX = ROOT / "inbox"
-PROJECT_FOOTPRINTS = ROOT / "projects" / "button_bar" / "components" / "footprints"
-PROJECT_SYMBOLS = ROOT / "projects" / "button_bar" / "components" / "symbols"
-MAPPING_FILE = ROOT / "projects" / "button_bar" / "snapmagic_mapping.json"
+ROOT: Path = Path(__file__).resolve().parents[1]
+INBOX: Path = ROOT / "inbox"
+PROJECT_FOOTPRINTS: Path = ROOT / "projects" / "button_bar" / "components" / "footprints"
+PROJECT_SYMBOLS: Path = ROOT / "projects" / "button_bar" / "components" / "symbols"
+MAPPING_FILE: Path = ROOT / "projects" / "button_bar" / "snapmagic_mapping.json"
 
 
 def read_bom(bom_path: Path) -> List[str]:
@@ -181,7 +181,7 @@ def run(parts: List[str], do_write: bool = True) -> List[Dict[str, Optional[str]
     return mapping
 
 
-def main(argv: Optional[List[str]] = None):
+def main(argv: Optional[List[str]] = None) -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("parts", nargs="*", help="Part names to search/install")
     ap.add_argument("--from-bom", help="Path to BOM CSV to extract part names")

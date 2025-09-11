@@ -18,7 +18,7 @@ except Exception:
     from kicad_helpers import Schematic, Symbol
 
 
-def build_tile():
+def build_tile() -> "Schematic":
     sch = Schematic("tile")
 
     # Add an RP2040 symbol placeholder
@@ -51,7 +51,7 @@ def build_tile():
     return sch
 
 
-def main():
+def main() -> None:
     out = Path("out")
     out.mkdir(exist_ok=True)
     sch = build_tile()

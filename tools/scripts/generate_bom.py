@@ -10,17 +10,19 @@ from typing import Dict, List, Optional, TypedDict
 
 # When this script is executed directly (e.g. via subprocess in tests), Python
 # doesn't automatically add the repository root to sys.path which makes
-# absolute imports like `from tools.lib_map import ...` fail. Insert the repo
-# root at the front of sys.path so `tools` can be imported reliably. Keep
-# this manipulation near the top so import machinery behaves predictably.
-try:
-    # Normal import path when running inside the project environment.
-    from tools.lib_map import get_part_info  # Absolute import path
-except Exception:  # pragma: no cover - fallback for script execution in tests
-    _REPO_ROOT = Path(__file__).resolve().parents[2]
-    if str(_REPO_ROOT) not in sys.path:
-        sys.path.insert(0, str(_REPO_ROOT))
-    from tools.lib_map import get_part_info
+# absolute imports like `from tools.lib_map import ...` fail. Ensure the repo
+# root is on sys.path before attempting imports so `tools` can be imported
+# reliably whether the script is run as a module or as a script.
+# Keep this manipulation near the top so import machinery behaves predictably.
+_REPO_ROOT = Path(__file__).resolve().parents[2]
+if str(_REPO_ROOT) not in sys.path:
+    sys.path.insert(0, str(_REPO_ROOT))
+
+# The script is intended to be runnable as a file (tests spawn it as a
+# subprocess). We insert the repository root above and then import
+# project modules; this import must appear after the sys.path
+# manipulation. Exempt from E402 (import not at top of file).
+from tools.lib_map import get_part_info  # Absolute import path  # noqa: E402
 
 
 class Component(TypedDict):

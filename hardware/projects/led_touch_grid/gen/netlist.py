@@ -22,6 +22,7 @@ Usage: python gen/netlist.py
 
 import sys
 from collections import defaultdict
+from typing import Any
 from pathlib import Path
 from typing import Dict, List
 
@@ -43,11 +44,12 @@ CONTROL_PINS = ["RESET", "ENABLE", "STATUS"]
 class NetlistGenerator:
     """Netlist generator for LED Touch Grid project."""
 
-    def __init__(self, project_name: str = "led_touch_grid"):
+    def __init__(self, project_name: str = "led_touch_grid") -> None:
         self.project_name = project_name
-        self.components = []
-        self.nets = defaultdict(list)
-        self.net_stats = {
+        # Annotate attributes for mypy
+        self.components: list[dict[str, Any]] = []
+        self.nets: dict[str, list[str]] = defaultdict(list)
+        self.net_stats: dict[str, int] = {
             "power_nets": 0,
             "gpio_nets": 0,
             "spi_nets": 0,
@@ -56,20 +58,24 @@ class NetlistGenerator:
             "other_nets": 0,
         }
 
-    def extract_symbols_from_schematic(self, schematic: Schematic) -> List[Dict[str, str]]:
+    def extract_symbols_from_schematic(self, schematic: Schematic) -> List[Dict[str, Any]]:
         """
-        Extract component information from schematic with type-safe return value
-        Returns list of component dictionaries with known string values
+        Extract component information from schematic.
+        Returns list of component dictionaries with mixed value types.
         """
-        components = []
+        components: List[Dict[str, Any]] = []
 
         for symbol in schematic.symbols:
-            comp = {
-                "reference": symbol.ref,
-                "value": symbol.value,
-                "footprint": symbol.footprint,
-                "library": symbol.lib,
-                "fields": symbol.fields,
+            # Normalize fields to simple str->str mapping for downstream code
+            raw_fields = getattr(symbol, "fields", {}) or {}
+            fields: Dict[str, str] = {str(k): str(v) for k, v in dict(raw_fields).items()}
+
+            comp: Dict[str, Any] = {
+                "reference": str(getattr(symbol, "ref", "")),
+                "value": str(getattr(symbol, "value", "")),
+                "footprint": str(getattr(symbol, "footprint", "")),
+                "library": str(getattr(symbol, "lib", "")),
+                "fields": fields,
                 "pins": {},  # Will be populated with net connections
             }
             components.append(comp)
@@ -78,12 +84,28 @@ class NetlistGenerator:
 
     def extract_nets_from_wires(self, schematic: Schematic) -> Dict[str, List[str]]:
         """Extract net connections from wires."""
-        nets = defaultdict(list)
+        nets: dict[str, List[str]] = defaultdict(list)
 
         for wire in schematic.wires:
             # Add both endpoints to the net
-            nets[wire.a].append(wire.b)
-            nets[wire.b].append(wire.a)
+            # wire is expected to have .a and .b attributes
+            # Support wire shapes: objects with .a/.b or simple 2-tuples/lists
+            a = getattr(wire, "a", None)
+            b = getattr(wire, "b", None)
+            if a is None or b is None:
+                # Try sequence access
+                try:
+                    if isinstance(wire, (list, tuple)) and len(wire) >= 2:
+                        a = wire[0]
+                        b = wire[1]
+                except Exception:
+                    a = None
+                    b = None
+
+            if a is None or b is None:
+                continue
+            nets[a].append(b)
+            nets[b].append(a)
 
         return nets
 
@@ -207,19 +229,29 @@ def generate_netlist_from_hier_schematic(
 
     # Add all symbols from all sheets (simplified)
     for sheet_name, sheet in hier_schematic.sheets.items():
-        print(f"DEBUG: Schematic '{sheet_name}' type: {type(sheet)} value: {sheet}")
-        if not hasattr(sheet, "schematic"):
-            print(f"ERROR: Schematic '{sheet_name}' is not a Schematic object! It is: {type(sheet)} value: {sheet}")
+        print(f"DEBUG: Schematic '{sheet_name}' type: {type(sheet)}")
+        sheet_sch = getattr(sheet, "schematic", None)
+        if sheet_sch is None:
+            print(f"ERROR: Schematic '{sheet_name}' missing nested schematic; skipping")
             continue
-        for symbol in sheet.schematic.symbols:
+        # sheet_sch is treated as Any here for compatibility
+        for symbol in sheet_sch.symbols:  # type: ignore[attr-defined]
             schematic.add_symbol(symbol)
 
     # Add all wires from all sheets (simplified)
     for sheet_name, sheet in hier_schematic.sheets.items():
-        if not hasattr(sheet, "schematic"):
+        sheet_sch = getattr(sheet, "schematic", None)
+        if sheet_sch is None:
             continue
-        for wire in sheet.schematic.wires:
-            schematic.add_wire(wire.a, wire.b)
+        for wire in sheet_sch.wires:  # type: ignore[attr-defined]
+            a = getattr(wire, "a", None)
+            b = getattr(wire, "b", None)
+            if a is None or b is None:
+                if isinstance(wire, (list, tuple)) and len(wire) >= 2:
+                    a, b = wire[0], wire[1]
+                else:
+                    continue
+            schematic.add_wire(a, b)
 
     # Generate netlist
     netlist_content = generator.generate_netlist(schematic)
