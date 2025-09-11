@@ -61,4 +61,6 @@ copilot-setup.zip
 .augment/rules/byterover-rules.md
 
 # Ignore generated vendor symbols (large, generated artifacts)
+tools/vendor_symbols/tmp/ruff_report.json
 tools/vendor_symbols/
+tmp/ruff_report.json

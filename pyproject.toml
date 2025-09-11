@@ -6,8 +6,10 @@ max-line-length = 120
 extend-ignore = ["E203", "W503"]
 
 [tool.ruff]
-line-length = 120
+# Lint configuration. Keep top-level to ensure the ruff parser used
+# by our CI and local tools can read these values reliably.
 extend-select = ["E","F","W"]
+line-length = 120
 
 [tool.mypy]
 python_version = "3.11"
